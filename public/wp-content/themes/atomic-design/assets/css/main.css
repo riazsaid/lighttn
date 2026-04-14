@@ -1,0 +1,30 @@
+/* ============================================================
+   MAIN CSS BUNDLE
+   Import order matters:
+   1. fonts   → fonts.css       (local @font-face declarations)
+   2. tokens  → variables.css   (all CSS custom properties)
+   3. reset   → base.css        (reset, typography, buttons)
+   4. layout  → layout.css      (container, section, grids)
+   5. header  → components/header.css
+   6. footer  → components/footer.css
+   7. hero    → components/hero.css
+   Add new component files below as the theme grows.
+   ============================================================ */
+
+@import url("./fonts.css");
+@import url("./variables.css");
+@import url("./base.css");
+@import url("./layout.css");
+@import url("./components/header.css");
+@import url("./components/footer.css");
+@import url("./components/area-coverage-grid.css");
+@import url("./components/hero.css");
+@import url("./components/faq-accordion.css");
+@import url("./components/testimonials.css");
+@import url("./components/industry-solutions.css");
+@import url("./components/trust-bar.css");
+@import url("./components/numbered-process-grid.css");
+@import url("./components/service-links-grid.css");
+@import url("./components/title-description-columns.css");
+@import url("./components/why-choose-grid.css");
+@import url("./components/page-specific.css");

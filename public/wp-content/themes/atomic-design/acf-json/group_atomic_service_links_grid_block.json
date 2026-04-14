@@ -1,0 +1,121 @@
+{
+    "key": "group_atomic_service_links_grid_block",
+    "title": "Service Links Grid Block",
+    "fields": [
+        {
+            "key": "field_atomic_service_overview_heading_block",
+            "label": "Service Overview H2",
+            "name": "service_overview_heading",
+            "type": "text",
+            "instructions": "Optional top heading for the section.",
+            "required": 0
+        },
+        {
+            "key": "field_atomic_service_overview_content_block",
+            "label": "Service Overview Paragraph",
+            "name": "service_overview_content",
+            "type": "wysiwyg",
+            "instructions": "Optional overview copy above the service cards. Links are supported.",
+            "required": 0,
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_atomic_service_links_heading_block",
+            "label": "Service Links H2",
+            "name": "service_links_heading",
+            "type": "text",
+            "instructions": "Primary visible heading if you do not use the overview heading.",
+            "required": 0
+        },
+        {
+            "key": "field_atomic_service_links_layout_block",
+            "label": "Layout",
+            "name": "service_links_layout",
+            "type": "button_group",
+            "instructions": "Choose the desktop grid layout for the service cards.",
+            "required": 0,
+            "choices": {
+                "three-column": "Three Columns",
+                "two-column": "Two Columns"
+            },
+            "default_value": "three-column",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_atomic_service_links_items_block",
+            "label": "Services",
+            "name": "service_links_items",
+            "type": "repeater",
+            "instructions": "Add one service card per row.",
+            "required": 0,
+            "layout": "block",
+            "button_label": "Add service",
+            "collapsed": "field_atomic_service_link_title_block",
+            "sub_fields": [
+                {
+                    "key": "field_atomic_service_link_image_block",
+                    "label": "Service Image",
+                    "name": "service_link_image",
+                    "type": "image",
+                    "required": 0,
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_atomic_service_link_title_block",
+                    "label": "Service Title",
+                    "name": "service_link_title",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_atomic_service_link_body_block",
+                    "label": "Service Body",
+                    "name": "service_link_body",
+                    "type": "wysiwyg",
+                    "required": 0,
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0
+                },
+                {
+                    "key": "field_atomic_service_link_text_block",
+                    "label": "Service Link Text",
+                    "name": "service_link_text",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_atomic_service_link_url_block",
+                    "label": "Service URL",
+                    "name": "service_link_url",
+                    "type": "url",
+                    "required": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/service-links-grid"
+            }
+        ]
+    ],
+    "menu_order": 36,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the Service Links Grid ACF block.",
+    "show_in_rest": 1,
+    "modified": 1775692800
+}

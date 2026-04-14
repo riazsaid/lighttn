@@ -1,0 +1,27 @@
+/* Keep ACF WYSIWYG editors compact on admin screens. */
+
+.acf-field-wysiwyg iframe {
+    height: 180px !important;
+    min-height: 180px !important;
+}
+
+.acf-field-wysiwyg .wp-editor-area {
+    height: 180px !important;
+    min-height: 180px !important;
+}
+
+.acf-field-wysiwyg .quicktags-toolbar + textarea.wp-editor-area {
+    height: 180px !important;
+    min-height: 180px !important;
+}
+
+.acf-field-wysiwyg .mce-container iframe,
+.acf-field-wysiwyg .mce-edit-area iframe,
+.acf-field-wysiwyg .wp-editor-wrap .mce-tinymce iframe {
+    height: 180px !important;
+}
+
+.acf-field-wysiwyg .wp-editor-wrap .mce-tinymce,
+.acf-field-wysiwyg .wp-editor-wrap .tmce-active .wp-editor-area {
+    max-height: none !important;
+}

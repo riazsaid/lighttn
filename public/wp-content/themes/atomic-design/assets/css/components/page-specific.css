@@ -1,0 +1,69 @@
+/* ============================================================
+   PAGE-SPECIFIC STYLES (static / normal pages)
+   Target by body class. WordPress adds:
+   - .page              → all static pages
+   - .page-id-{id}      → e.g. .page-id-5 for the page with ID 5
+   - .page-slug-{slug}  → e.g. .page-slug-about for slug "about"
+   Use this file for unique design per page. Loaded after other
+   component CSS so these rules take precedence.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   EXAMPLE: All static pages
+   Uncomment and adjust as needed.
+---------------------------------------------------------- */
+/*
+.page #site-content {
+    --section-space: clamp(3rem, 6vw, 5rem);
+}
+*/
+
+/* ----------------------------------------------------------
+   EXAMPLE: Home page (slug: home or front page)
+---------------------------------------------------------- */
+/*
+.page-slug-home .hero__title {
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+}
+*/
+
+/* ----------------------------------------------------------
+   EXAMPLE: About page (slug: about)
+---------------------------------------------------------- */
+/*
+.page-slug-about .cpt-intro__content {
+    max-width: 55ch;
+}
+*/
+
+/* ----------------------------------------------------------
+   EXAMPLE: Contact page (slug: contact)
+---------------------------------------------------------- */
+/*
+.page-id-12 .section {
+    padding-block: var(--space-xl);
+}
+*/
+
+.single-industry .industry-static-image {
+    padding: 0 0 4rem;
+    background: #000;
+}
+
+.single-industry .industry-static-image__media {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.single-industry .industry-static-image__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid #1993ff;
+}
+
+@media (max-width: 767px) {
+    .single-industry .industry-static-image {
+        padding-bottom: 3rem;
+    }
+}

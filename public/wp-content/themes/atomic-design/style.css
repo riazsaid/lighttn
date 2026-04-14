@@ -1,0 +1,19 @@
+/*
+Theme Name: Atomic Design
+Theme URI: https://example.com/
+Author: Riaz
+Author URI: https://example.com/
+Description: Custom Gutenberg + ACF Pro theme using atomic design for the Custom Phenolic Labels website.
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: atomic-design
+*/
+
+/* Entry point: real styles are in assets/css/*.css, enqueued from functions.php */
+
+body {
+    margin: 0;
+}
+
+

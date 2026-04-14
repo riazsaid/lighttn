@@ -1,0 +1,151 @@
+.title-description-columns {
+    padding-bottom: var(--section-space-210);
+}
+
+.title-description-columns__heading {
+    padding-bottom: var(--space-lg);
+    font-family: var(--font-heading);
+    font-size: var(--h1);
+    font-weight: 600;
+    line-height:var(--lh-xxl);
+    text-align: center;
+    color: var(--text);
+}
+
+.title-description-columns__content {
+    max-width: var(--container);
+}
+
+.title-description-columns__source,
+.title-description-columns__column {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.4vw, 1.3125rem);
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.title-description-columns__split {
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 5vw, 5rem);
+}
+.title-description-columns__split p{
+    font-size: var(--h5);
+    line-height: var(--lh-sm);
+}
+.title-description-columns__content.is-split .title-description-columns__source {
+    display: none;
+}
+
+.title-description-columns__content.is-split .title-description-columns__split {
+    display: grid;
+}
+
+.title-description-columns__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.title-description-columns__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: min(100%, 27rem);
+    padding: 1rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    color: #fff;
+    background: var(--accent);
+    text-decoration: none;
+    transition: background var(--dur-fast) var(--ease);
+}
+
+.title-description-columns__cta:hover {
+    background: var(--accent-hover);
+}
+
+.title-description-columns__source p,
+.title-description-columns__source ul,
+.title-description-columns__source ol,
+.title-description-columns__source blockquote,
+.title-description-columns__source h2,
+.title-description-columns__source h3,
+.title-description-columns__source h4,
+.title-description-columns__column p,
+.title-description-columns__column ul,
+.title-description-columns__column ol,
+.title-description-columns__column blockquote,
+.title-description-columns__column h2,
+.title-description-columns__column h3,
+.title-description-columns__column h4 {
+    margin: 0 0 1rem;
+    break-inside: avoid;
+}
+
+.title-description-columns__source p:last-child,
+.title-description-columns__source ul:last-child,
+.title-description-columns__source ol:last-child,
+.title-description-columns__source blockquote:last-child,
+.title-description-columns__source h2:last-child,
+.title-description-columns__source h3:last-child,
+.title-description-columns__source h4:last-child,
+.title-description-columns__column p:last-child,
+.title-description-columns__column ul:last-child,
+.title-description-columns__column ol:last-child,
+.title-description-columns__column blockquote:last-child,
+.title-description-columns__column h2:last-child,
+.title-description-columns__column h3:last-child,
+.title-description-columns__column h4:last-child {
+    margin-bottom: 0;
+}
+
+.title-description-columns__source a,
+.title-description-columns__column a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+}
+
+.title-description-columns__source a:hover,
+.title-description-columns__column a:hover {
+    color: var(--accent-hover);
+}
+
+@media (max-width: 48rem) {
+    .title-description-columns {
+        padding-block: 4rem;
+    }
+
+    .title-description-columns__heading {
+        margin-bottom: 2rem;
+        font-size: clamp(2rem, 8vw, 2.6rem);
+        text-align: left;
+    }
+
+    .title-description-columns__source,
+    .title-description-columns__column {
+        font-size: 1rem;
+    }
+
+    .title-description-columns__content.is-split .title-description-columns__source {
+        display: block;
+    }
+
+    .title-description-columns__content.is-split .title-description-columns__split {
+        display: none;
+    }
+
+    .title-description-columns__actions {
+        justify-content: stretch;
+    }
+
+    .title-description-columns__cta {
+        width: 100%;
+        min-width: 0;
+    }
+}
+

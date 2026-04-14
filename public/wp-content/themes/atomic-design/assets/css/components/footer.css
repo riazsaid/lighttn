@@ -1,0 +1,200 @@
+/* ============================================================
+   SITE FOOTER
+   Three-column layout:
+   Left:   brand + tagline + copyright
+   Center: footer nav links
+   Right:  "Get a Fast Quote" CTA card
+   ============================================================ */
+
+.site-footer {
+    font-family: var(--font-heading);
+}
+
+.footer-wrapper {
+    display: flex;
+}
+
+/* ============================================================
+   TOP AREA — brand + nav + CTA card
+   ============================================================ */
+
+.site-footer__left {
+    padding-block: var(--space-xl) var(--space-lg);
+    flex: 1;
+    display: flex;
+    /* spacing between items */
+    flex-wrap: wrap;
+    /* allows responsive wrapping */
+}
+
+.site-footer__brand,
+.site-footer__nav {
+    flex: 1 1 50%;
+}
+
+.site-footer__copy-wrapper,
+.site-footer__logo {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 48rem) {
+
+    /* --bp-tablet */
+    .site-footer__left {}
+}
+
+@media (min-width: 64rem) {
+
+    /* --bp-desktop */
+    .site-footer__left {}
+}
+
+/* ============================================================
+   BRAND COLUMN
+   ============================================================ */
+
+.site-footer__brand .site-footer__logo {
+    font-family: var(--font-kannada);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: var(--space-xs);
+    display: block;
+}
+
+.site-footer__tagline {
+    font-size: var(--body-sm);
+    color: var(--text-muted);
+    max-width: 28ch;
+    line-height: var(--lh-body);
+    /* margin-bottom: var(--space-sm); */
+}
+
+.site-footer__contact-item {
+    display: block;
+    font-size: var(--body-sm);
+    color: var(--text-muted);
+    text-decoration: none;
+    line-height: 1.8;
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.site-footer__contact-item:hover {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.site-footer__address {
+    font-style: normal;
+}
+
+/* ============================================================
+   FOOTER NAV
+   ============================================================ */
+
+.site-footer__nav-title {
+    font-size: var(--tiny);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+/* WordPress wp_nav_menu outputs a <ul> */
+.site-footer__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    line-height: 16px;
+}
+
+.site-footer__menu a {
+    font-size: var(--body-sm);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.site-footer__menu a:hover {
+    color: var(--text);
+    text-decoration: none;
+}
+
+/* ============================================================
+   CTA CARD
+   ============================================================ */
+
+.site-footer__cta {
+    padding: var(--space-xs);
+    border-radius: var(--radius-md);
+    background-color: var(--accent);
+    /* background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 55%, var(--bg) 100%); */
+    border: 1px solid rgba(99, 149, 255, 0.22);
+    box-shadow: var(--shadow);
+}
+
+.site-footer__cta-title {
+    font-size: var(--h1);
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: var(--space-xs);
+}
+
+.site-footer__cta-text {
+    font-family: var(--font-body);
+    font-size: var(--body-lg);
+    color: var(--text-muted);
+    line-height: var(--lh-body);
+    /* margin-bottom: var(--space-md); */
+    padding-block: var(--space-xmd) var(--space-md);
+
+}
+
+.site-footer__cta a {
+    font-size: var(--h4);
+    background-color: var(--bg);
+}
+
+/* ============================================================
+   BOTTOM BAR — copyright + legal links
+   ============================================================ */
+
+.site-footer__rigth {
+    padding-block: var(--space-md);
+    flex: 1;
+}
+
+.site-footer__copy {
+    font-size: var(--body-sm);
+    color: var(--text-muted);
+}
+
+.site-footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+}
+
+.site-footer__legal a {
+    font-size: var(--body-sm);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.site-footer__legal a:hover {
+    color: var(--text);
+    text-decoration: none;
+}
+
+@media (max-width: 47.99rem) {
+
+    /* below --bp-tablet */
+    .site-footer__right {}
+}

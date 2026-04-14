@@ -1,0 +1,10 @@
+/* Basic editor styles to roughly match front-end */
+
+body.block-editor-page {
+    font-family: var(--font-body);
+}
+
+.editor-styles-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}

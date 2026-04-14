@@ -1,0 +1,142 @@
+/* ============================================================
+   LAYOUT — containers, sections, grids
+   Header & footer have their own CSS files.
+   ============================================================ */
+
+/* ============================================================
+   SITE SHELL
+   ============================================================ */
+
+.site-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+#site-content {
+    flex: 1;
+}
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.container {
+    width: min(100% - (var(--gutter) * 2), var(--container));
+    margin-inline: auto;
+}
+
+/* ============================================================
+   GUTENBERG ALIGNMENTS
+   Enable true full-width / wide blocks.
+   ============================================================ */
+
+.alignfull {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+.alignwide {
+    width: min(100% - (var(--gutter) * 2), calc(var(--container) + 12rem));
+    margin-inline: auto;
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+
+.section {
+    padding-bottom: var(--section-space-210);
+}
+
+.section--tight {
+    padding-bottom: var(--section-space-142);
+}
+
+.section--flush {
+    padding-bottom: 0;
+}
+
+/* ============================================================
+   GUTENBERG GROUP SPACING PRESETS (core/group)
+   These map to our section spacing tokens so editors can control
+   vertical spacing without inventing random values.
+   ============================================================ */
+
+.wp-block-group.is-style-section-210 {
+    padding-bottom: var(--section-space-210);
+}
+
+.wp-block-group.is-style-section-142 {
+    padding-bottom: var(--section-space-142);
+}
+
+.wp-block-group.is-style-section-flush {
+    padding-bottom: 0;
+}
+
+/* Make Group inner content use the same width as .container */
+.wp-block-group.is-style-section-210>.wp-block-group__inner-container,
+.wp-block-group.is-style-section-142>.wp-block-group__inner-container,
+.wp-block-group.is-style-section-flush>.wp-block-group__inner-container {
+    width: min(100% - (var(--gutter) * 2), var(--container));
+    margin-inline: auto;
+}
+
+/* Section heading block (eyebrow + title + subtitle) */
+.section__head {
+    display: grid;
+    gap: 0.6rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+/* ============================================================
+   GRIDS
+   Mobile-first: stack by default, expand at --bp-tablet
+   ============================================================ */
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
+}
+
+@media (min-width: 48rem) {
+
+    /* --bp-tablet */
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 64rem) {
+
+    /* --bp-desktop */
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

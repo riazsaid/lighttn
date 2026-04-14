@@ -1,0 +1,300 @@
+{
+    "key": "group_cpl_testimonials",
+    "title": "Testimonials",
+    "fields": [
+        {
+            "key": "field_cpl_testimonials_heading",
+            "label": "Section Heading",
+            "name": "testimonials_heading",
+            "type": "text",
+            "instructions": "Heading displayed above the testimonials grid. Leave blank to hide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "What Our Clients Say",
+            "placeholder": "e.g. What Our Clients Say",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_cpl_testimonials_bg_type",
+            "label": "Background Type",
+            "name": "testimonials_bg_type",
+            "type": "button_group",
+            "instructions": "Choose a solid colour or a two-colour gradient for the section background.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "choices": {
+                "none":     "None (inherit)",
+                "solid":    "Solid",
+                "gradient": "Gradient"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_cpl_testimonials_color_1",
+            "label": "Background Colour",
+            "name": "testimonials_color_1",
+            "type": "color_picker",
+            "instructions": "Solid colour or gradient start colour.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_cpl_testimonials_bg_type",
+                        "operator": "!=",
+                        "value": "none"
+                    }
+                ]
+            ],
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "#11131a",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_cpl_testimonials_color_2",
+            "label": "Gradient End Colour",
+            "name": "testimonials_color_2",
+            "type": "color_picker",
+            "instructions": "Only used when background type is Gradient.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_cpl_testimonials_bg_type",
+                        "operator": "==",
+                        "value": "gradient"
+                    }
+                ]
+            ],
+            "wrapper": { "width": "50", "class": "", "id": "" },
+            "default_value": "#0b0c10",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_cpl_testimonials_read_more",
+            "label": "Read More Link",
+            "name": "testimonials_read_more",
+            "type": "link",
+            "instructions": "Optional CTA link shown below the grid (e.g. to a reviews page).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_cpl_google_reviews_logo",
+            "label": "Google Reviews Logo",
+            "name": "google_reviews_logo",
+            "type": "image",
+            "instructions": "Logo/avatar shown in the Google reviews badge (left side).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_cpl_google_reviews_business_name",
+            "label": "Business Title",
+            "name": "google_reviews_business_name",
+            "type": "text",
+            "instructions": "Title shown above the rating (e.g. business name).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "e.g. Mike's Trophies & Awards Inc",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_cpl_google_reviews_rating",
+            "label": "Google Rating",
+            "name": "google_reviews_rating",
+            "type": "range",
+            "instructions": "Average Google rating shown on the badge.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": 5,
+            "min": 0,
+            "max": 5,
+            "step": 0.1,
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_cpl_google_reviews_review_count",
+            "label": "Review Count",
+            "name": "google_reviews_review_count",
+            "type": "text",
+            "instructions": "Number shown in: “based on X reviews”.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "155",
+            "placeholder": "e.g. 155",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_cpl_testimonials_list",
+            "label": "Testimonials",
+            "name": "testimonials_list",
+            "type": "repeater",
+            "instructions": "Add client testimonials. These are shared across all CPT template pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_cpl_testi_name",
+            "button_label": "Add Testimonial",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_cpl_testi_avatar",
+                    "label": "Avatar",
+                    "name": "reviewer_avatar",
+                    "type": "image",
+                    "instructions": "Square headshot. 120×120px minimum.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "", "class": "", "id": "" },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_cpl_testimonials_list"
+                },
+                {
+                    "key": "field_cpl_testi_name",
+                    "label": "Name",
+                    "name": "reviewer_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "Jane Smith",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_cpl_testimonials_list"
+                },
+                {
+                    "key": "field_cpl_testi_title",
+                    "label": "Title / Company",
+                    "name": "reviewer_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "CEO, Acme Corp",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_cpl_testimonials_list"
+                },
+                {
+                    "key": "field_cpl_testi_rating",
+                    "label": "Stars",
+                    "name": "star_rating",
+                    "type": "range",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "", "class": "", "id": "" },
+                    "default_value": 5,
+                    "min": 1,
+                    "max": 5,
+                    "step": 1,
+                    "prepend": "",
+                    "append": "★",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_cpl_testimonials_list"
+                },
+                {
+                    "key": "field_cpl_testi_date",
+                    "label": "Date",
+                    "name": "review_date",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "Jan 2025",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_cpl_testimonials_list"
+                },
+                {
+                    "key": "field_cpl_testi_text",
+                    "label": "Testimonial",
+                    "name": "testimonial_text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "Write the testimonial text here…",
+                    "rows": 3,
+                    "new_lines": "wpautop",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_cpl_testimonials_list"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "atomic-design-testimonials"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/testimonials"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Central testimonials store. Data saved to options table and pulled into all CPT templates automatically. Editable at Synced Components → Testimonials.",
+    "show_in_rest": 1,
+    "modified": 1742256001
+}

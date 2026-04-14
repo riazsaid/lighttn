@@ -1,0 +1,75 @@
+{
+    "key": "group_cpl_trust_bar",
+    "title": "Trust Bar",
+    "fields": [
+        {
+            "key": "field_cpl_trust_bar_list",
+            "label": "Items",
+            "name": "trust_bar_items",
+            "type": "repeater",
+            "instructions": "Key facts or selling points. Each item: icon + single text field. Wraps by width.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_cpl_trust_item_text",
+            "button_label": "Add item",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_cpl_trust_item_icon",
+                    "label": "Icon",
+                    "name": "item_icon",
+                    "type": "image",
+                    "instructions": "White/light line-art icon. ~48–64px.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "20", "class": "", "id": "" },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_cpl_trust_bar_list"
+                },
+                {
+                    "key": "field_cpl_trust_item_text",
+                    "label": "Text",
+                    "name": "item_text",
+                    "type": "text",
+                    "instructions": "e.g. 5.0 Google (162+ Reviews) or 38 Years in Business (Est. 1987). Wraps by column width.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "80", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "5.0 Google (162+ Reviews)",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_cpl_trust_bar_list"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "atomic-design-trust-bar"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Trust Bar: icon + single text per item. Wraps by design width. Template and static pages.",
+    "show_in_rest": 1,
+    "modified": 1742256003
+}

@@ -1,0 +1,46 @@
+### OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+### Node / build artifacts (if used later)
+/node_modules/
+/dist/
+/build/
+
+### Composer / PHP
+/vendor/
+/composer.lock
+/.env
+/public/.env
+
+### DDEV
+.ddev/.downloads/
+.ddev/.importdb/
+.ddev/.homeadditions/
+.ddev/.logs/
+.ddev/.global_commands/
+.ddev/backups/
+.ddev/commands/host/*
+!.ddev/commands/host/.gitkeep
+.ddev/commands/web/*
+!.ddev/commands/web/.gitkeep
+
+### WordPress core & uploads
+public/wp/*
+!public/wp-content/
+public/wp-config-ddev.php
+public/wp-content/uploads/
+public/wp-content/wflogs/
+public/wp-content/cache/
+public/wp-content/upgrade/
+wp-content/uploads/
+
+### Log files
+*.log
+*.sql
+*.sql.gz
+
+### Local scripts
+*.sh

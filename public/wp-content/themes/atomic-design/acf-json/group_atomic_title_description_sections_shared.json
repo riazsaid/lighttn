@@ -1,0 +1,132 @@
+{
+    "key": "group_atomic_title_description_sections_shared",
+    "title": "Title + Description Sections",
+    "fields": [
+        {
+            "key": "field_atomic_title_description_sections",
+            "label": "Title + Description Sections",
+            "name": "title_description_sections",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add one section per row. Each section renders a centered title with rich text split into two columns.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_atomic_title_description_heading",
+            "button_label": "Add section",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_title_description_heading",
+                    "label": "Section Title",
+                    "name": "title_description_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Visible heading above the content.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Experience You Can Trust",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_title_description_sections"
+                },
+                {
+                    "key": "field_atomic_title_description_content",
+                    "label": "Description",
+                    "name": "title_description_content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Rich text content. Paragraphs are split into two columns automatically, so links and SEO markup are preserved.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_title_description_sections"
+                },
+                {
+                    "key": "field_atomic_title_description_cta",
+                    "label": "CTA Link",
+                    "name": "title_description_cta",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Optional call-to-action link shown below the content.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_title_description_sections"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "industry"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "location"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service-location"
+            }
+        ]
+    ],
+    "menu_order": 25,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Repeatable title + rich text sections for CPT templates.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1775174400
+}

@@ -1,0 +1,313 @@
+/* ============================================================
+   SITE HEADER
+   Sticky, glass-blur nav with logo + primary menu + CTA.
+   Mobile: hamburger toggle slides nav in from top.
+   ============================================================ */
+
+/* ============================================================
+   TOP BAR — phone number + quick CTA
+   ============================================================ */
+
+.site-header__topbar {
+    font-family: var(--font-roboto);
+}
+
+.site-header__topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* phone + button right-aligned */
+    gap: 1.25rem;
+    /* padding-block: 0.4rem; */
+}
+
+.site-header__phone {
+    font-size: var(--h5);
+    font-weight: 400;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.site-header__phone:hover {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.site-header__topbar-cta {
+    height: 1.9rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    border-radius: 0;
+    font-weight: 600;
+}
+
+/* ============================================================
+   MAIN HEADER BAR
+   ============================================================ */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* background: rgba(11, 12, 16, 0.88); */
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-md);
+    padding-block: 0.85rem 1.4rem;
+    position: relative;
+}
+
+/* ============================================================
+   LOGO / BRAND
+   ============================================================ */
+.site-branding {
+    position: absolute;
+    left: 0px;
+}
+
+.site-branding a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity var(--dur-fast) var(--ease);
+}
+
+.site-branding a:hover {
+    opacity: 0.82;
+    text-decoration: none;
+}
+
+.site-logo {
+    display: block;
+    width: auto;
+    height: 121px;
+    max-width: min(320px, 60vw);
+    object-fit: contain;
+}
+
+@media (max-width: 640px) {
+    .site-logo {
+        height: 38px;
+        max-width: 70vw;
+    }
+}
+
+/* ============================================================
+   PRIMARY NAVIGATION
+   Desktop: horizontal flex row.
+   Mobile: slide-down overlay (toggled via .is-open class).
+   ============================================================ */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* WordPress outputs <ul> directly inside nav */
+.site-nav .menu,
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.site-nav ul li::after {
+    content: " | ";
+    font-size: 18px;
+
+}
+
+.site-nav ul li:last-child::after {
+    content: "";
+}
+
+.site-nav a {
+    font-size: var(--body-lg);
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.site-nav a:hover,
+.site-nav .current-menu-item>a,
+.site-nav .current-page-ancestor>a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+/* ============================================================
+   HEADER CTA BUTTON (desktop only)
+   ============================================================ */
+
+.site-header__cta {
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   HAMBURGER TOGGLE (hidden on desktop)
+   ============================================================ */
+
+.site-header__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition:
+        background var(--dur-fast) var(--ease),
+        border-color var(--dur-fast) var(--ease);
+}
+
+.site-header__toggle:hover {
+    background: var(--panel-strong);
+    border-color: var(--border-strong);
+}
+
+/* Three bars */
+.site-header__toggle span {
+    display: block;
+    width: 1.1rem;
+    height: 2px;
+    background: var(--text-soft);
+    border-radius: 2px;
+    position: relative;
+    pointer-events: none;
+    transition:
+        background var(--dur-fast) var(--ease),
+        transform var(--dur-fast) var(--ease);
+}
+
+.site-header__toggle span::before,
+.site-header__toggle span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--text-soft);
+    border-radius: 2px;
+    transition: transform var(--dur-fast) var(--ease);
+}
+
+.site-header__toggle span::before {
+    top: -5px;
+}
+
+.site-header__toggle span::after {
+    top: 5px;
+}
+
+/* Animate to X when open */
+.site-header__toggle[aria-expanded="true"] span {
+    background: transparent;
+}
+
+.site-header__toggle[aria-expanded="true"] span::before {
+    transform: rotate(45deg) translateY(5px);
+}
+
+.site-header__toggle[aria-expanded="true"] span::after {
+    transform: rotate(-45deg) translateY(-5px);
+}
+
+/* Subtle scroll shadow */
+.site-header.is-scrolled {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET & MOBILE
+   ============================================================ */
+
+@media (max-width: 47.99rem) {
+
+    /* below --bp-tablet */
+    .site-header__topbar {
+        display: none;
+        /* hide top bar on mobile — saves space */
+    }
+}
+
+@media (max-width: 63.99rem) {
+    /* below --bp-desktop */
+
+    .site-header__toggle {
+        display: flex;
+    }
+
+    .site-header__cta {
+        display: none;
+    }
+
+    /* Mobile nav panel */
+    .site-nav {
+        position: fixed;
+        inset-inline: 0;
+        top: 61px;
+        /* matches header height */
+        padding: var(--space-md) var(--gutter) var(--space-lg);
+        background: rgba(11, 12, 16, 0.97);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        transform: translateY(-110%);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+            transform var(--dur-med) var(--ease),
+            opacity var(--dur-med) var(--ease);
+        z-index: 99;
+    }
+
+    .site-nav.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .site-nav .menu,
+    .site-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .site-nav li {
+        width: 100%;
+    }
+
+    .site-nav li:first-child {
+        border-top: 1px solid var(--border);
+    }
+
+    .site-nav a {
+        display: block;
+        padding: 0.875rem 0;
+        font-size: var(--body);
+        color: var(--text-soft);
+    }
+
+    .site-nav a:hover {
+        color: var(--text);
+        padding-left: 0.4rem;
+    }
+}

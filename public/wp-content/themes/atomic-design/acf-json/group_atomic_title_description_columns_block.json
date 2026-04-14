@@ -1,0 +1,85 @@
+{
+    "key": "group_atomic_title_description_columns_block",
+    "title": "Title + Description Columns Block",
+    "fields": [
+        {
+            "key": "field_atomic_block_title_description_heading",
+            "label": "Section Title",
+            "name": "title_description_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Visible heading above the content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Experience You Can Trust",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_block_title_description_content",
+            "label": "Description",
+            "name": "title_description_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Rich text content. Paragraphs are split into two columns automatically, so links and SEO markup are preserved.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_block_title_description_cta",
+            "label": "CTA Link",
+            "name": "title_description_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Optional call-to-action link shown below the content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/title-description-columns"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the Title + Description Columns ACF block (acf/title-description-columns).",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1775178000
+}

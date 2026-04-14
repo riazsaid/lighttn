@@ -1,0 +1,162 @@
+{
+    "key": "group_atomic_faq_shared",
+    "title": "FAQs",
+    "fields": [
+        {
+            "key": "field_atomic_faq_heading",
+            "label": "FAQs Section Heading",
+            "name": "faqs_section_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional heading shown above FAQ items. Leave blank to hide.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "e.g. Frequently Asked Questions",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_faq_layout",
+            "label": "FAQ Layout",
+            "name": "faq_layout",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Choose how many columns to display FAQ items in.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "choices": {
+                "two-column": "Two Columns",
+                "single-column": "Single Column"
+            },
+            "default_value": "two-column",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_atomic_faq_items",
+            "label": "FAQ Items",
+            "name": "faq_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add each question and answer. Toggle \u201cOpen by Default\u201d to expand that item on page load.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add FAQ",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_faq_question",
+                    "label": "Question",
+                    "name": "faq_question",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "60", "class": "", "id": "" },
+                    "default_value": "",
+                    "placeholder": "e.g. What areas do you service?",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_faq_items"
+                },
+                {
+                    "key": "field_atomic_faq_answer",
+                    "label": "Answer",
+                    "name": "faq_answer",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Add internal links to related services or pages for SEO.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "40", "class": "", "id": "" },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_faq_items"
+                },
+                {
+                    "key": "field_atomic_faq_default_open",
+                    "label": "Open by Default?",
+                    "name": "default_open",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": { "width": "", "class": "", "id": "" },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_faq_items"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/faq-accordion"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "industry"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "location"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service-location"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Shared FAQ accordion fields. Appears on every page and CPT. Each page has its own unique FAQs. Importable via n8n REST API.",
+    "show_in_rest": 1,
+    "modified": 1742256000
+}
