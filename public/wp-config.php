@@ -86,8 +86,8 @@ defined( 'DB_PASSWORD' ) || define( 'DB_PASSWORD', getenv( 'DB_PASSWORD' ) ?: ''
 /** Database hostname */
 defined( 'DB_HOST' ) || define( 'DB_HOST', getenv( 'DB_HOST' ) ?: 'localhost' );
 
-defined( 'WP_HOME' ) || define( 'WP_HOME', 'https://second2026.dreamhosters.com' );
-defined( 'WP_SITEURL' ) || define( 'WP_SITEURL', 'https://second2026.dreamhosters.com' );
+defined( 'WP_HOME' ) || define( 'WP_HOME', 'https://new.lighttn.com' );
+defined( 'WP_SITEURL' ) || define( 'WP_SITEURL', 'https://new.lighttn.com' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
