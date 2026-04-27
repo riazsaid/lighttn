@@ -1,0 +1,47 @@
+{
+    "key": "group_atomic_service_location_permalink",
+    "title": "Service Location Permalink",
+    "fields": [
+        {
+            "key": "field_atomic_service_location_permalink_uri",
+            "label": "Custom permalink url",
+            "name": "_permalink_uri",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional custom permalink path for this service location.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service-location"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Custom permalink field for service-location posts.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1777003200
+}

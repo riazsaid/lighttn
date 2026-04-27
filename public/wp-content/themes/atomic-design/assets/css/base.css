@@ -13,14 +13,14 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 body {
     font-family: var(--font-body);
-    font-size: var(--h4);
-    line-height: var(--lh-md);
-    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-primary);
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -56,7 +56,7 @@ h5,
 h6,
 .display {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
+    letter-spacing: 0.04em;
 
 }
 
@@ -97,9 +97,9 @@ h6 {
 }
 
 p {
-    font-size: var(--body-lg);
+    font-size: 16px;
     color: var(--text-soft);
-    line-height: var(--lh-2xs);
+    line-height: 1.7;
 }
 
 .body1 {
@@ -119,11 +119,11 @@ p {
 .eyebrow {
     display: block;
     font-family: var(--font-body);
-    font-size: var(--tiny);
-    font-weight: 600;
-    letter-spacing: 0.18em;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--cyan);
 }
 
 .body-lg {
@@ -161,9 +161,10 @@ p {
     height: var(--btn-height);
     padding: 0 var(--btn-pad-x);
     border-radius: var(--btn-radius);
-    font-family: var(--font-heading);
-    font-size: var(--btn-font-size);
+    font-family: var(--font-body);
+    font-size: 14px;
     font-weight: 500;
+    letter-spacing: 0.06em;
     text-decoration: none;
     border: 1px solid transparent;
     cursor: pointer;

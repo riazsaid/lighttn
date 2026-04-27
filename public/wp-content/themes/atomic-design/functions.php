@@ -41,7 +41,7 @@ function atomic_design_assets()
     // To change fonts: update the URL here AND update --font-display / --font-body in variables.css.
     wp_enqueue_style(
         'atomic-design-fonts',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Rajdhani:wght@400;500;600&display=swap',
         [],
         null
     );
@@ -389,14 +389,13 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
  *         }
  *       }
  *     ],
- *     "industry_static_image": 123
  *   }
  * }
  */
 function atomic_design_get_rest_post_types()
 {
-    // CPTs that carry shared template ACF fields (imported via n8n REST API).
-    return ['service', 'industry', 'location', 'service-location'];
+    // Light TN CPTs that carry shared template ACF fields.
+    return ['service', 'location', 'service-location'];
 }
 
 function atomic_design_get_allowed_template_acf_fields()
@@ -415,7 +414,7 @@ function atomic_design_get_allowed_template_acf_fields()
         'numbered_process_sections',
         'service_links_sections',
         'area_coverage_sections',
-        'industry_static_image',
+        '_permalink_uri',
     ];
 }
 
@@ -450,6 +449,47 @@ function atomic_design_register_rank_math_rest_meta()
 }
 add_action('init', 'atomic_design_register_rank_math_rest_meta');
 
+function atomic_design_get_template_acf_value($field_name, $post_id)
+{
+    if ($field_name === '_permalink_uri') {
+        return get_post_meta($post_id, '_permalink_uri', true);
+    }
+
+    return get_field($field_name, $post_id);
+}
+
+function atomic_design_update_template_acf_value($field_name, $field_value, $post_id)
+{
+    if ($field_name === '_permalink_uri') {
+        return update_field('field_atomic_service_location_permalink_uri', $field_value, $post_id);
+    }
+
+    return update_field($field_name, $field_value, $post_id);
+}
+
+function atomic_design_sync_service_location_permalink($post_id, $custom_uri)
+{
+    $custom_uri = is_string($custom_uri) ? trim($custom_uri) : '';
+    if ($custom_uri === '') {
+        return;
+    }
+
+    if (
+        !class_exists('Permalink_Manager_URI_Functions') ||
+        !class_exists('Permalink_Manager_Helper_Functions')
+    ) {
+        return;
+    }
+
+    $sanitized_uri = Permalink_Manager_Helper_Functions::sanitize_title(trim($custom_uri, '/'), true);
+    if ($sanitized_uri === '') {
+        return;
+    }
+
+    Permalink_Manager_URI_Functions::save_single_uri($post_id, $sanitized_uri, false, false);
+    Permalink_Manager_URI_Functions::save_all_uris();
+}
+
 function atomic_design_get_template_acf_for_rest($object)
 {
     if (!function_exists('get_field')) {
@@ -460,7 +500,7 @@ function atomic_design_get_template_acf_for_rest($object)
     $response = [];
 
     foreach (atomic_design_get_allowed_template_acf_fields() as $field_name) {
-        $response[$field_name] = get_field($field_name, $post_id);
+        $response[$field_name] = atomic_design_get_template_acf_value($field_name, $post_id);
     }
 
     return $response;
@@ -512,7 +552,14 @@ function atomic_design_capture_template_acf_rest_payload($prepared_post, $reques
         "rest_after_insert_{$post_type}",
         function ($post) use ($template_payload) {
             foreach ($template_payload as $field_name => $field_value) {
-                update_field($field_name, $field_value, $post->ID);
+                atomic_design_update_template_acf_value($field_name, $field_value, $post->ID);
+            }
+
+            if (
+                $post->post_type === 'service-location' &&
+                array_key_exists('_permalink_uri', $template_payload)
+            ) {
+                atomic_design_sync_service_location_permalink($post->ID, $template_payload['_permalink_uri']);
             }
         },
         10,

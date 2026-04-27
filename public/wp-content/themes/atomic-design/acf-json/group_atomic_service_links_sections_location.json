@@ -7,7 +7,7 @@
             "label": "Service Links Sections",
             "name": "service_links_sections",
             "type": "repeater",
-            "instructions": "Add one service links section per row for service, industry, and location templates.",
+            "instructions": "Add one service links section per row for service, location, and service-location templates.",
             "required": 0,
             "layout": "block",
             "button_label": "Add service section",
@@ -129,7 +129,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "industry"
+                "value": "service-location"
             }
         ]
     ],
@@ -140,7 +140,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Repeatable service links sections for service, industry, and location pages.",
+    "description": "Repeatable service links sections for service, location, and service-location pages.",
     "show_in_rest": 1,
     "modified": 1775788800
 }

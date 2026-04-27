@@ -100,13 +100,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "industry"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "location"
             }
         ],
