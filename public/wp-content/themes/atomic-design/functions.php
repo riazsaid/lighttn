@@ -205,17 +205,6 @@ function atomic_design_register_acf_options_pages()
         ]
     );
 
-    // Industry Solutions — same grid on all service template pages (icon, title, description, link).
-    acf_add_options_sub_page(
-        [
-            'page_title'  => 'Industry Solutions',
-            'menu_title'  => 'Industry Solutions',
-            'menu_slug'   => 'atomic-design-industry-solutions',
-            'parent_slug' => 'atomic-design-synced-components',
-            'capability'  => 'manage_options',
-        ]
-    );
-
     // Trust Bar — key facts / selling points (icon + two-line text). Same on template and static pages.
     acf_add_options_sub_page(
         [
@@ -666,66 +655,22 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
  *         "default_open": 0
  *       }
  *     ],
- *     "why_choose_sections": [
- *       {
- *         "why_choose_heading": "Why Custom Phenolic Labels",
- *         "why_choose_items": [
- *           {
- *             "why_choose_item_title": "Custom Engraving,\nDone In-House",
- *             "why_choose_item_description": "Supporting paragraph."
- *           }
- *         ]
- *       }
- *     ],
  *     "title_description_sections": [
  *       {
  *         "title_description_heading": "Experience You Can Trust",
  *         "title_description_content": "<p>Paragraph one.<\/p><p>Paragraph two.<\/p>"
  *       }
  *     ],
- *     "numbered_process_sections": [
+ *     "insight_columns_sections": [
  *       {
- *         "numbered_process_heading": "Our Process: From Data to Delivery",
- *         "numbered_process_description": "<p>Section intro.<\/p>",
- *         "numbered_process_items": [
+ *         "insight_columns_heading": "Nashville. We Know It.",
+ *         "insight_columns_intro": "<p>Short intro copy.<\/p>",
+ *         "insight_columns_items": [
  *           {
- *             "numbered_process_item_title": "Data Intake & Review",
- *             "numbered_process_item_description": "<p>Step details.<\/p>"
+ *             "title": "Estate Properties Across Nashville’s Premier Neighborhoods",
+ *             "description": "<p>Column copy.<\/p>"
  *           }
  *         ]
- *       }
- *     ],
- *     "service_links_sections": [
- *       {
- *         "service_overview_heading": "Service Overview",
- *         "service_overview_content": "<p>Overview copy.<\/p>",
- *         "service_links_heading": "Engraved Products for Ashburn",
- *         "service_links_layout": "three-column",
- *         "service_links_items": [
- *           {
- *             "service_link_image": 123,
- *             "service_link_title": "Phenolic Labels",
- *             "service_link_body": "<p>Card body.<\/p>",
- *             "service_link_text": "Ashburn VA Phenolic Labels",
- *             "service_link_url": "\/services\/phenolic-labels\/"
- *           }
- *         ]
- *       }
- *     ],
- *     "area_coverage_sections": [
- *       {
- *         "area_coverage_heading": "Shipping to Ashburn and Northern Virginia Data Centers",
- *         "area_coverage_description": "<p>Intro copy.<\/p>",
- *         "area_coverage_items": [
- *           {
- *             "area_coverage_label": "Ashburn\n(Data Center Alley)"
- *           }
- *         ],
- *         "area_coverage_cta": {
- *           "title": "Get a Fast Quote",
- *           "url": "\/contact\/",
- *           "target": "_self"
- *         }
  *       }
  *     ],
  *   }
@@ -746,11 +691,8 @@ function atomic_design_get_allowed_template_acf_fields()
         'faqs_section_heading',
         'faq_layout',
         'faq_items',
-        'why_choose_sections',
         'title_description_sections',
-        'numbered_process_sections',
-        'service_links_sections',
-        'area_coverage_sections',
+        'insight_columns_sections',
         '_permalink_uri',
     ];
 }
@@ -952,29 +894,6 @@ function atomic_design_register_acf_blocks()
     );
 
     // ----------------------------------------------------------
-    // Industry Solutions block
-    // Same partial & CSS as on CPT pages. Use on normal pages.
-    // ----------------------------------------------------------
-    acf_register_block_type(
-        [
-            'name'            => 'industry-solutions',
-            'title'           => __('Industry Solutions', 'atomic-design'),
-            'description'     => __('Industry solutions grid from Synced Components → Industry Solutions. Same section as on service/location pages.', 'atomic-design'),
-            'render_template' => get_template_directory() . '/blocks/industry-solutions/industry-solutions.php',
-            'category'        => 'atomic-blocks',
-            'icon'            => 'grid-view',
-            'keywords'        => ['industry', 'solutions', 'grid'],
-            'mode'            => 'preview',
-            'supports'        => [
-                'align'           => false,
-                'mode'            => false,
-                'jsx'             => true,
-                'customClassName' => true,
-            ],
-        ]
-    );
-
-    // ----------------------------------------------------------
     // Trust Bar block — same partial & CSS on template and static pages.
     // ----------------------------------------------------------
     acf_register_block_type(
@@ -1089,38 +1008,14 @@ function atomic_design_register_acf_blocks()
     );
 
     // ----------------------------------------------------------
-    // Why Choose Grid block
-    // Manual Gutenberg section for normal pages/posts.
-    // CPT templates use the separate why_choose_sections repeater flow.
-    // ----------------------------------------------------------
-    acf_register_block_type(
-        [
-            'name'            => 'why-choose-grid',
-            'title'           => __('Why Choose Grid', 'atomic-design'),
-            'description'     => __('Heading plus a two-column list of reasons, benefits, or differentiators.', 'atomic-design'),
-            'render_template' => get_template_directory() . '/blocks/why-choose-grid/why-choose-grid.php',
-            'category'        => 'atomic-blocks',
-            'icon'            => 'screenoptions',
-            'keywords'        => ['why choose', 'benefits', 'features', 'reasons'],
-            'mode'            => 'edit',
-            'supports'        => [
-                'align'           => ['wide', 'full'],
-                'mode'            => false,
-                'jsx'             => true,
-                'customClassName' => true,
-            ],
-        ]
-    );
-
-    // ----------------------------------------------------------
     // Title + Description Columns block
-    // Reusable heading + rich text section with auto-split columns.
+    // Reusable heading + rich text section.
     // ----------------------------------------------------------
     acf_register_block_type(
         [
             'name'            => 'title-description-columns',
             'title'           => __('Title + Description Columns', 'atomic-design'),
-            'description'     => __('Centered heading with rich text automatically split into two columns.', 'atomic-design'),
+            'description'     => __('Left-aligned heading with rich text content.', 'atomic-design'),
             'render_template' => get_template_directory() . '/blocks/title-description-columns/title-description-columns.php',
             'category'        => 'atomic-blocks',
             'icon'            => 'editor-paragraph',
@@ -1136,18 +1031,18 @@ function atomic_design_register_acf_blocks()
     );
 
     // ----------------------------------------------------------
-    // Numbered Process Grid block
-    // Heading + intro + auto-numbered process cards.
+    // Insight Columns block
+    // Heading + intro + reusable text columns.
     // ----------------------------------------------------------
     acf_register_block_type(
         [
-            'name'            => 'numbered-process-grid',
-            'title'           => __('Numbered Process Grid', 'atomic-design'),
-            'description'     => __('Section with heading, intro, and automatically numbered process steps.', 'atomic-design'),
-            'render_template' => get_template_directory() . '/blocks/numbered-process-grid/numbered-process-grid.php',
+            'name'            => 'insight-columns',
+            'title'           => __('Insight Columns', 'atomic-design'),
+            'description'     => __('Heading, intro copy, and reusable text columns for local expertise or detail sections.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/insight-columns/insight-columns.php',
             'category'        => 'atomic-blocks',
-            'icon'            => 'list-view',
-            'keywords'        => ['process', 'steps', 'numbered', 'workflow'],
+            'icon'            => 'columns',
+            'keywords'        => ['insight', 'columns', 'local', 'expertise', 'why choose'],
             'mode'            => 'edit',
             'supports'        => [
                 'align'           => ['wide', 'full'],
@@ -1158,51 +1053,6 @@ function atomic_design_register_acf_blocks()
         ]
     );
 
-    // ----------------------------------------------------------
-    // Service Links Grid block
-    // Overview copy + linked service cards with optional images.
-    // ----------------------------------------------------------
-    acf_register_block_type(
-        [
-            'name'            => 'service-links-grid',
-            'title'           => __('Service Links Grid', 'atomic-design'),
-            'description'     => __('Overview copy plus a grid of linked service cards.', 'atomic-design'),
-            'render_template' => get_template_directory() . '/blocks/service-links-grid/service-links-grid.php',
-            'category'        => 'atomic-blocks',
-            'icon'            => 'images-alt2',
-            'keywords'        => ['services', 'links', 'cards', 'grid', 'products'],
-            'mode'            => 'edit',
-            'supports'        => [
-                'align'           => ['wide', 'full'],
-                'mode'            => false,
-                'jsx'             => true,
-                'customClassName' => true,
-            ],
-        ]
-    );
-
-    // ----------------------------------------------------------
-    // Area Coverage Grid block
-    // Heading, intro text, list of served areas, and optional CTA.
-    // ----------------------------------------------------------
-    acf_register_block_type(
-        [
-            'name'            => 'area-coverage-grid',
-            'title'           => __('Area Coverage Grid', 'atomic-design'),
-            'description'     => __('Location coverage section with area labels and an optional CTA.', 'atomic-design'),
-            'render_template' => get_template_directory() . '/blocks/area-coverage-grid/area-coverage-grid.php',
-            'category'        => 'atomic-blocks',
-            'icon'            => 'location-alt',
-            'keywords'        => ['areas', 'coverage', 'location', 'shipping'],
-            'mode'            => 'edit',
-            'supports'        => [
-                'align'           => ['wide', 'full'],
-                'mode'            => false,
-                'jsx'             => true,
-                'customClassName' => true,
-            ],
-        ]
-    );
 }
 add_action('acf/init', 'atomic_design_register_acf_blocks');
 
@@ -1276,39 +1126,6 @@ function atomic_design_global_block_editor_notices()
     <?php
 }
 add_action('admin_footer', 'atomic_design_global_block_editor_notices');
-
-/**
- * Restrict certain custom ACF blocks to intended editor contexts.
- *
- * Example: Why Choose Grid is for normal static content pages/posts,
- * not the CPT template-driven flows that already use dedicated repeaters.
- */
-function atomic_design_limit_custom_blocks($allowed_blocks, $block_editor_context)
-{
-    if (
-        !is_array($allowed_blocks)
-        || !isset($block_editor_context->post)
-        || !is_object($block_editor_context->post)
-    ) {
-        return $allowed_blocks;
-    }
-
-    $post_type = $block_editor_context->post->post_type ?? '';
-
-    if ($post_type !== 'post' && $post_type !== 'page') {
-        $allowed_blocks = array_values(
-            array_filter(
-                $allowed_blocks,
-                static function ($block_name) {
-                    return $block_name !== 'acf/why-choose-grid';
-                }
-            )
-        );
-    }
-
-    return $allowed_blocks;
-}
-add_filter('allowed_block_types_all', 'atomic_design_limit_custom_blocks', 10, 2);
 
 /**
  * Add extra body classes for static pages: page-slug-{slug}.

@@ -8,7 +8,7 @@
             "name": "title_description_sections",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Add one section per row. Each section renders a centered title with rich text split into two columns.",
+            "instructions": "Add one section per row. Each section renders a left-aligned title with rich text content.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -51,7 +51,7 @@
                     "name": "title_description_content",
                     "aria-label": "",
                     "type": "wysiwyg",
-                    "instructions": "Rich text content. Paragraphs are split into two columns automatically, so links and SEO markup are preserved.",
+                    "instructions": "Rich text content shown below the title.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
