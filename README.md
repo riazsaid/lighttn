@@ -7,7 +7,6 @@ It includes:
 - A `public/` WordPress docroot
 - The shared `atomic-design` custom theme as the starter theme base
 - A DDEV config at `.ddev/config.yaml`
-- A Git repository initialized locally for this site
 
 ### Local Development
 
