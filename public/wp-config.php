@@ -86,16 +86,8 @@ defined( 'DB_PASSWORD' ) || define( 'DB_PASSWORD', getenv( 'DB_PASSWORD' ) ?: ''
 /** Database hostname */
 defined( 'DB_HOST' ) || define( 'DB_HOST', getenv( 'DB_HOST' ) ?: 'localhost' );
 
-$wp_home    = getenv( 'WP_HOME' ) ?: '';
-$wp_siteurl = getenv( 'WP_SITEURL' ) ?: $wp_home;
-
-if ( '' !== $wp_home ) {
-	defined( 'WP_HOME' ) || define( 'WP_HOME', $wp_home );
-}
-
-if ( '' !== $wp_siteurl ) {
-	defined( 'WP_SITEURL' ) || define( 'WP_SITEURL', $wp_siteurl );
-}
+defined( 'WP_HOME' ) || define( 'WP_HOME', 'https://second2026.dreamhosters.com' );
+defined( 'WP_SITEURL' ) || define( 'WP_SITEURL', 'https://second2026.dreamhosters.com' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -114,15 +106,15 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',          '/JAIWTmNzMuh8+gKDsJau5GI8kzMAZK8xTrfZdyfCR1gx/Zbf4FbERTiQa+2r8T3' );
-define( 'SECURE_AUTH_KEY',   '4b//BGvLyUEK8awGpgPcUyhVzoHBTtcqNOtmyOL4nx85UvlOBOoL0ZMt/V00G05y' );
-define( 'LOGGED_IN_KEY',     '2+6twTGhIq4uUQclOoxtdMDhUsic7Fqg5wsOeFSVyKnPIWvR98bgTvqoW7QKKreP' );
-define( 'NONCE_KEY',         'gsbSPqdoRzFUASYDYyFbm3wyCy3IwKejJ+DYYYHYyBJJDx167z8EwLNT0WNceF5m' );
-define( 'AUTH_SALT',         'rX3c41Zn9cTSwg9lKzGy9B68sz2gbu6cB3zp/HNMeGiu55jn/DNASGS26Lth6B/X' );
-define( 'SECURE_AUTH_SALT',  'jvfdIVqc8MZwpIuSiZZrTubWQ9RqJlB1vkBlAT79McnQSKhW7yJnRHbIFOBw2Tiw' );
-define( 'LOGGED_IN_SALT',    'JYe/LD7yQtgw966DWfnwUE3bSi7KsWTAwzOCkeJ/2ebZRM3kohjgwyRunt0ftn3t' );
-define( 'NONCE_SALT',        'p4YnTcDxxxm5zK6KycDVrAQozFNJGTZ2/lFNNkFzq+1Mq6rcsZJpG2NqoLFoJcDH' );
-define( 'WP_CACHE_KEY_SALT', 'lighttn.local' );
+define( 'AUTH_KEY',          'brPJ7{!<b--*5r-}0vQh{/4]eJ,QeNz5a2drnP;ufZqb-y,t:K]iD|8Aa1JAI}jt' );
+define( 'SECURE_AUTH_KEY',   ',*-I/~ud.ncq>LkuU;: 1@[:;5|Ex?/5-(U(2U;UDYP@{@)rk$bd}2,fso|1.H4?' );
+define( 'LOGGED_IN_KEY',     '(o.|G#;TeokP&i|NOBf({P;UXAWk-id;~3~HKYyQC{b<J2j?l7sbaD1=rlz|iuiL' );
+define( 'NONCE_KEY',         '!`Son5Ae!l08nNe#H}zVE hW}GQ0P+0)]]ZdpPH~zZ-Js}#cVs~@h/GaxPhmWsqI' );
+define( 'AUTH_SALT',         'H^8@%=F)}#yWsCPcxRj8Hd{;0,p_Za%Z)cZ(Viqf/E8nceo[+XZ/S@(OA2e>v]TP' );
+define( 'SECURE_AUTH_SALT',  'nszwQYGnz +hli6SZ>L`?` *hhFhgB>v{%n5m)(~-yk@k^|~[+4J?dZu?|d<OE|K' );
+define( 'LOGGED_IN_SALT',    '~FF.%9p,ftf[Vr61=FuL3#tv%RB/.wne:>9ZT}@|P~^ol}Y22Je/iPBtUB[Wi!ry' );
+define( 'NONCE_SALT',        '{3YnjK)puCHHF^Y6m9UvvMG1@fok;w>9p1v%@,VWY@W09&Dq>$a}Z-WPMjDgX${s' );
+define( 'WP_CACHE_KEY_SALT', ';NrJVGg;BGDo88>Rmi.RD4j[kJxPVc3/`!VbMqD^#F#w]-rJr)#`>5!78tn}$GG4' );
 
 
 /**#@-*/
