@@ -1,6 +1,6 @@
 ## LightTN WordPress Site
 
-This folder is the standalone WordPress project for **LightTN**, initialized to mirror the working local setup used in `cpl`.
+This folder is the standalone WordPress project for **Light TN**, initialized to mirror the working local setup used in `cpl`.
 
 It includes:
 
