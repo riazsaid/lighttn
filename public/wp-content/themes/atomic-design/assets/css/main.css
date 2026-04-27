@@ -17,16 +17,12 @@
 @import url("./layout.css");
 @import url("./components/header.css");
 @import url("./components/footer.css");
-@import url("./components/area-coverage-grid.css");
 @import url("./components/hero.css");
 @import url("./components/faq-accordion.css");
 @import url("./components/testimonials.css");
-@import url("./components/industry-solutions.css");
 @import url("./components/trust-bar.css");
 @import url("./components/partners-affiliations.css");
 @import url("./components/why-choose-light-tn.css");
-@import url("./components/numbered-process-grid.css");
-@import url("./components/service-links-grid.css");
+@import url("./components/insight-columns.css");
 @import url("./components/title-description-columns.css");
-@import url("./components/why-choose-grid.css");
 @import url("./components/page-specific.css");

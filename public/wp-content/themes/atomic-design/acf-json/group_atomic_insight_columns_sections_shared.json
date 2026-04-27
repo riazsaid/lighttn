@@ -1,14 +1,14 @@
 {
-    "key": "group_atomic_numbered_process_sections_shared",
-    "title": "Numbered Process Sections",
+    "key": "group_atomic_insight_columns_sections_shared",
+    "title": "Insight Columns Sections",
     "fields": [
         {
-            "key": "field_atomic_numbered_process_sections",
-            "label": "Numbered Process Sections",
-            "name": "numbered_process_sections",
+            "key": "field_atomic_insight_columns_sections",
+            "label": "Insight Columns Sections",
+            "name": "insight_columns_sections",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Add one process section per row for CPT templates. Each section includes intro text and automatically numbered steps.",
+            "instructions": "Add one insight column section per row. Each section renders a heading, optional intro, and repeatable text columns.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -20,17 +20,17 @@
             "pagination": 0,
             "min": 0,
             "max": 0,
-            "collapsed": "field_atomic_numbered_process_heading",
-            "button_label": "Add process section",
+            "collapsed": "field_atomic_insight_columns_heading",
+            "button_label": "Add insight section",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_atomic_numbered_process_heading",
-                    "label": "Section Heading",
-                    "name": "numbered_process_heading",
+                    "key": "field_atomic_insight_columns_heading",
+                    "label": "Section Title",
+                    "name": "insight_columns_heading",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "Main heading for the section.",
+                    "instructions": "Visible heading above the columns.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -39,20 +39,20 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Our Process: From Data to Delivery",
+                    "placeholder": "Nashville. We Know It.",
                     "prepend": "",
                     "append": "",
                     "allow_in_bindings": 0,
-                    "parent_repeater": "field_atomic_numbered_process_sections",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_insight_columns_sections"
                 },
                 {
-                    "key": "field_atomic_numbered_process_description",
-                    "label": "Section Description",
-                    "name": "numbered_process_description",
+                    "key": "field_atomic_insight_columns_intro",
+                    "label": "Intro Copy",
+                    "name": "insight_columns_intro",
                     "aria-label": "",
                     "type": "wysiwyg",
-                    "instructions": "Intro text under the heading. Links are supported.",
+                    "instructions": "Optional short paragraph shown under the section title.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -66,40 +66,15 @@
                     "media_upload": 0,
                     "delay": 0,
                     "allow_in_bindings": 0,
-                    "parent_repeater": "field_atomic_numbered_process_sections"
+                    "parent_repeater": "field_atomic_insight_columns_sections"
                 },
                 {
-                    "key": "field_atomic_numbered_process_layout",
-                    "label": "Layout",
-                    "name": "numbered_process_layout",
-                    "aria-label": "",
-                    "type": "button_group",
-                    "instructions": "Choose the desktop grid layout for the step cards.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "three-column": "Three Columns",
-                        "two-column": "Two Columns"
-                    },
-                    "default_value": "three-column",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "allow_in_bindings": 0,
-                    "layout": "horizontal",
-                    "parent_repeater": "field_atomic_numbered_process_sections"
-                },
-                {
-                    "key": "field_atomic_numbered_process_items",
-                    "label": "Process Steps",
-                    "name": "numbered_process_items",
+                    "key": "field_atomic_insight_columns_items",
+                    "label": "Columns",
+                    "name": "insight_columns_items",
                     "aria-label": "",
                     "type": "repeater",
-                    "instructions": "Add one step per row. Numbers are generated automatically.",
+                    "instructions": "Add one text column per row.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -107,48 +82,46 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "table",
+                    "layout": "block",
                     "pagination": 0,
                     "min": 0,
                     "max": 0,
-                    "collapsed": "field_atomic_numbered_process_item_title",
-                    "button_label": "Add step",
+                    "collapsed": "field_atomic_insight_columns_item_title",
+                    "button_label": "Add column",
                     "rows_per_page": 20,
-                    "parent_repeater": "field_atomic_numbered_process_sections",
+                    "parent_repeater": "field_atomic_insight_columns_sections",
                     "sub_fields": [
                         {
-                            "key": "field_atomic_numbered_process_item_title",
-                            "label": "Step Title",
-                            "name": "numbered_process_item_title",
+                            "key": "field_atomic_insight_columns_item_title",
+                            "label": "Column Title",
+                            "name": "title",
                             "aria-label": "",
                             "type": "text",
-                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "35",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "Data Intake & Review",
+                            "placeholder": "Estate Properties Across Nashville’s Premier Neighborhoods",
                             "prepend": "",
                             "append": "",
                             "allow_in_bindings": 0,
-                            "parent_repeater": "field_atomic_numbered_process_items",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_atomic_insight_columns_items"
                         },
                         {
-                            "key": "field_atomic_numbered_process_item_description",
-                            "label": "Step Description",
-                            "name": "numbered_process_item_description",
+                            "key": "field_atomic_insight_columns_item_description",
+                            "label": "Column Copy",
+                            "name": "description",
                             "aria-label": "",
                             "type": "wysiwyg",
-                            "instructions": "Step details. Links are supported.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "65",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
@@ -158,7 +131,7 @@
                             "media_upload": 0,
                             "delay": 0,
                             "allow_in_bindings": 0,
-                            "parent_repeater": "field_atomic_numbered_process_items"
+                            "parent_repeater": "field_atomic_insight_columns_items"
                         }
                     ]
                 }
@@ -188,15 +161,15 @@
             }
         ]
     ],
-    "menu_order": 35,
+    "menu_order": 30,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Repeatable numbered process sections for CPT templates.",
+    "description": "Repeatable Insight Columns sections for CPT templates.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1775260801
+    "modified": 1775265600
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Shared title + rich text section rendered in two columns.
+ * Shared title + rich text section.
  *
  * Args:
  * - section_heading (string) Required.
@@ -28,15 +28,8 @@ $description = wpautop($description);
         <div class="title-description-columns__inner">
             <h2 class="title-description-columns__heading"><?php echo esc_html($section_heading); ?></h2>
 
-            <div class="title-description-columns__content" data-title-description-columns>
-                <div class="title-description-columns__source" data-title-description-source>
-                    <?php echo wp_kses_post($description); ?>
-                </div>
-
-                <div class="title-description-columns__split" data-title-description-split hidden>
-                    <div class="title-description-columns__column" data-title-description-left></div>
-                    <div class="title-description-columns__column" data-title-description-right></div>
-                </div>
+            <div class="title-description-columns__content">
+                <?php echo wp_kses_post($description); ?>
             </div>
 
             <?php if (!empty($cta['url']) && !empty($cta['title'])) : ?>
