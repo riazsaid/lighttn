@@ -183,6 +183,17 @@ function atomic_design_register_acf_options_pages()
         ]
     );
 
+    // Hero Settings — shared CTA and trust markers used by hero sections site-wide.
+    acf_add_options_sub_page(
+        [
+            'page_title'  => 'Hero Settings',
+            'menu_title'  => 'Hero Settings',
+            'menu_slug'   => 'atomic-design-hero-settings',
+            'parent_slug' => 'atomic-design-synced-components',
+            'capability'  => 'manage_options',
+        ]
+    );
+
     // Central testimonials store — one set of reviews reused across all CPT templates.
     acf_add_options_sub_page(
         [
@@ -211,6 +222,28 @@ function atomic_design_register_acf_options_pages()
             'page_title'  => 'Trust Bar',
             'menu_title'  => 'Trust Bar',
             'menu_slug'   => 'atomic-design-trust-bar',
+            'parent_slug' => 'atomic-design-synced-components',
+            'capability'  => 'manage_options',
+        ]
+    );
+
+    // Partners & Affiliations — global logo grids reusable via Gutenberg block.
+    acf_add_options_sub_page(
+        [
+            'page_title'  => 'Partners & Affiliations',
+            'menu_title'  => 'Partners & Affiliations',
+            'menu_slug'   => 'atomic-design-partners-affiliations',
+            'parent_slug' => 'atomic-design-synced-components',
+            'capability'  => 'manage_options',
+        ]
+    );
+
+    // Why Choose Light TN — global icon-card section reusable via Gutenberg block.
+    acf_add_options_sub_page(
+        [
+            'page_title'  => 'Why Choose Light TN',
+            'menu_title'  => 'Why Choose Light TN',
+            'menu_slug'   => 'atomic-design-why-choose-light-tn',
             'parent_slug' => 'atomic-design-synced-components',
             'capability'  => 'manage_options',
         ]
@@ -286,6 +319,314 @@ function atomic_design_register_acf_fields()
         'show_in_rest'          => 1,
     ]);
 
+    acf_add_local_field_group([
+        'key'    => 'group_atomic_hero_settings',
+        'title'  => 'Hero Settings',
+        'fields' => [
+            [
+                'key'           => 'field_atomic_hero_global_primary_link',
+                'label'         => 'CTA Link',
+                'name'          => 'hero_global_primary_link',
+                'type'          => 'link',
+                'instructions'  => 'Global hero button shown on all hero sections.',
+                'return_format' => 'array',
+            ],
+            [
+                'key'           => 'field_atomic_hero_global_cta_icon',
+                'label'         => 'CTA Icon',
+                'name'          => 'hero_global_cta_icon',
+                'type'          => 'image',
+                'instructions'  => 'Optional icon inside the CTA button. Leave empty to use the default arrow.',
+                'return_format' => 'array',
+                'preview_size'  => 'thumbnail',
+                'library'       => 'all',
+            ],
+            [
+                'key'           => 'field_atomic_hero_certification_icon',
+                'label'         => 'Certification Icon',
+                'name'          => 'hero_certification_icon',
+                'type'          => 'image',
+                'return_format' => 'array',
+                'preview_size'  => 'thumbnail',
+                'library'       => 'all',
+                'wrapper'       => ['width' => '35'],
+            ],
+            [
+                'key'           => 'field_atomic_hero_certification_text',
+                'label'         => 'Certification Text',
+                'name'          => 'hero_certification_text',
+                'type'          => 'textarea',
+                'default_value' => "Certified\nProfessional\nInstaller",
+                'rows'          => 3,
+                'wrapper'       => ['width' => '65'],
+            ],
+            [
+                'key'          => 'field_atomic_hero_review_initials',
+                'label'        => 'Review Initials',
+                'name'         => 'hero_review_initials',
+                'type'         => 'repeater',
+                'layout'       => 'table',
+                'button_label' => 'Add initial',
+                'sub_fields'   => [
+                    [
+                        'key'     => 'field_atomic_hero_review_initial',
+                        'label'   => 'Initial',
+                        'name'    => 'initial',
+                        'type'    => 'text',
+                        'wrapper' => ['width' => '35'],
+                    ],
+                    [
+                        'key'           => 'field_atomic_hero_review_initial_color',
+                        'label'         => 'Color',
+                        'name'          => 'color',
+                        'type'          => 'text',
+                        'default_value' => '#6ba8df',
+                        'wrapper'       => ['width' => '65'],
+                    ],
+                ],
+            ],
+            [
+                'key'           => 'field_atomic_hero_review_label',
+                'label'         => 'Review Label',
+                'name'          => 'hero_review_label',
+                'type'          => 'text',
+                'default_value' => '100+ Glowing Reviews',
+                'wrapper'       => ['width' => '50'],
+            ],
+            [
+                'key'           => 'field_atomic_hero_review_rating',
+                'label'         => 'Star Rating',
+                'name'          => 'hero_review_rating',
+                'type'          => 'number',
+                'default_value' => 5,
+                'min'           => 0,
+                'max'           => 5,
+                'step'          => 1,
+                'wrapper'       => ['width' => '50'],
+            ],
+            [
+                'key'           => 'field_atomic_hero_bbb_logo',
+                'label'         => 'BBB Logo',
+                'name'          => 'hero_bbb_logo',
+                'type'          => 'image',
+                'return_format' => 'array',
+                'preview_size'  => 'thumbnail',
+                'library'       => 'all',
+                'wrapper'       => ['width' => '35'],
+            ],
+            [
+                'key'           => 'field_atomic_hero_bbb_text',
+                'label'         => 'BBB Text Fallback',
+                'name'          => 'hero_bbb_text',
+                'type'          => 'text',
+                'default_value' => 'A+ Rating',
+                'wrapper'       => ['width' => '65'],
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'options_page',
+                    'operator' => '==',
+                    'value'    => 'atomic-design-hero-settings',
+                ],
+            ],
+        ],
+        'menu_order'            => 0,
+        'position'              => 'normal',
+        'style'                 => 'default',
+        'label_placement'       => 'top',
+        'instruction_placement' => 'label',
+        'active'                => true,
+        'show_in_rest'          => 1,
+    ]);
+
+    acf_add_local_field_group([
+        'key'    => 'group_atomic_partners_affiliations',
+        'title'  => 'Partners & Affiliations',
+        'fields' => [
+            [
+                'key'           => 'field_atomic_partners_heading',
+                'label'         => 'Partners Heading',
+                'name'          => 'partners_heading',
+                'type'          => 'text',
+                'default_value' => 'Partners',
+                'placeholder'   => 'Partners',
+            ],
+            [
+                'key'          => 'field_atomic_partners_items',
+                'label'        => 'Partner Logos',
+                'name'         => 'partners_items',
+                'type'         => 'repeater',
+                'instructions' => 'Add one partner logo per card.',
+                'layout'       => 'block',
+                'button_label' => 'Add partner',
+                'sub_fields'   => [
+                    [
+                        'key'     => 'field_atomic_partner_name',
+                        'label'   => 'Name',
+                        'name'    => 'name',
+                        'type'    => 'text',
+                        'wrapper' => ['width' => '35'],
+                    ],
+                    [
+                        'key'           => 'field_atomic_partner_logo',
+                        'label'         => 'Logo',
+                        'name'          => 'logo',
+                        'type'          => 'image',
+                        'return_format' => 'array',
+                        'preview_size'  => 'medium',
+                        'library'       => 'all',
+                        'wrapper'       => ['width' => '35'],
+                    ],
+                    [
+                        'key'     => 'field_atomic_partner_link',
+                        'label'   => 'Link',
+                        'name'    => 'link',
+                        'type'    => 'url',
+                        'wrapper' => ['width' => '30'],
+                    ],
+                ],
+            ],
+            [
+                'key'           => 'field_atomic_affiliations_heading',
+                'label'         => 'Affiliations Heading',
+                'name'          => 'affiliations_heading',
+                'type'          => 'text',
+                'default_value' => 'Affiliations',
+                'placeholder'   => 'Affiliations',
+            ],
+            [
+                'key'          => 'field_atomic_affiliations_items',
+                'label'        => 'Affiliation Logos',
+                'name'         => 'affiliations_items',
+                'type'         => 'repeater',
+                'instructions' => 'Add one affiliation logo per card.',
+                'layout'       => 'block',
+                'button_label' => 'Add affiliation',
+                'sub_fields'   => [
+                    [
+                        'key'     => 'field_atomic_affiliation_name',
+                        'label'   => 'Name',
+                        'name'    => 'name',
+                        'type'    => 'text',
+                        'wrapper' => ['width' => '35'],
+                    ],
+                    [
+                        'key'           => 'field_atomic_affiliation_logo',
+                        'label'         => 'Logo',
+                        'name'          => 'logo',
+                        'type'          => 'image',
+                        'return_format' => 'array',
+                        'preview_size'  => 'medium',
+                        'library'       => 'all',
+                        'wrapper'       => ['width' => '35'],
+                    ],
+                    [
+                        'key'     => 'field_atomic_affiliation_link',
+                        'label'   => 'Link',
+                        'name'    => 'link',
+                        'type'    => 'url',
+                        'wrapper' => ['width' => '30'],
+                    ],
+                ],
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'options_page',
+                    'operator' => '==',
+                    'value'    => 'atomic-design-partners-affiliations',
+                ],
+            ],
+        ],
+        'menu_order'            => 0,
+        'position'              => 'normal',
+        'style'                 => 'default',
+        'label_placement'       => 'top',
+        'instruction_placement' => 'label',
+        'active'                => true,
+        'show_in_rest'          => 1,
+    ]);
+
+    acf_add_local_field_group([
+        'key'    => 'group_atomic_why_choose_light_tn',
+        'title'  => 'Why Choose Light TN',
+        'fields' => [
+            [
+                'key'           => 'field_atomic_why_choose_light_tn_heading',
+                'label'         => 'Heading',
+                'name'          => 'why_choose_light_tn_heading',
+                'type'          => 'text',
+                'default_value' => 'Why Choose Light TN',
+                'placeholder'   => 'Why Choose Light TN',
+            ],
+            [
+                'key'          => 'field_atomic_why_choose_light_tn_description',
+                'label'        => 'Intro Copy',
+                'name'         => 'why_choose_light_tn_description',
+                'type'         => 'wysiwyg',
+                'instructions' => 'Short paragraph shown below the heading.',
+                'tabs'         => 'visual',
+                'toolbar'      => 'basic',
+                'media_upload' => 0,
+            ],
+            [
+                'key'          => 'field_atomic_why_choose_light_tn_items',
+                'label'        => 'Reason Cards',
+                'name'         => 'why_choose_light_tn_items',
+                'type'         => 'repeater',
+                'instructions' => 'Add the icon, title, and body copy for each reason card.',
+                'layout'       => 'block',
+                'button_label' => 'Add reason card',
+                'sub_fields'   => [
+                    [
+                        'key'           => 'field_atomic_why_choose_light_tn_item_icon',
+                        'label'         => 'Icon',
+                        'name'          => 'icon',
+                        'type'          => 'image',
+                        'return_format' => 'array',
+                        'preview_size'  => 'thumbnail',
+                        'library'       => 'all',
+                        'wrapper'       => ['width' => '25'],
+                    ],
+                    [
+                        'key'     => 'field_atomic_why_choose_light_tn_item_title',
+                        'label'   => 'Title',
+                        'name'    => 'title',
+                        'type'    => 'text',
+                        'wrapper' => ['width' => '35'],
+                    ],
+                    [
+                        'key'     => 'field_atomic_why_choose_light_tn_item_description',
+                        'label'   => 'Description',
+                        'name'    => 'description',
+                        'type'    => 'textarea',
+                        'rows'    => 4,
+                        'wrapper' => ['width' => '40'],
+                    ],
+                ],
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'options_page',
+                    'operator' => '==',
+                    'value'    => 'atomic-design-why-choose-light-tn',
+                ],
+            ],
+        ],
+        'menu_order'            => 0,
+        'position'              => 'normal',
+        'style'                 => 'default',
+        'label_placement'       => 'top',
+        'instruction_placement' => 'label',
+        'active'                => true,
+        'show_in_rest'          => 1,
+    ]);
+
     // FAQ field group is defined in acf-json/group_atomic_faq_shared.json
     // so it appears as a real editable group in ACF > Field Groups admin.
 }
@@ -315,8 +656,6 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
  *   "acf": {
  *     "hero_title": "Industrial Phenolic Labels",
  *     "hero_subtitle": "<p>Built for harsh environments.</p>",
- *     "hero_primary_link": {"title":"Request a Quote","url":"\/contact","target":"_self"},
- *     "hero_secondary_link": {"title":"View Materials","url":"\/materials","target":"_self"},
  *     "hero_media": 123,
  *     "faqs_section_heading": "FAQs",
  *     "faq_layout": "two-column",
@@ -403,8 +742,6 @@ function atomic_design_get_allowed_template_acf_fields()
     return [
         'hero_title',
         'hero_subtitle',
-        'hero_primary_link',
-        'hero_secondary_link',
         'hero_media',
         'faqs_section_heading',
         'faq_layout',
@@ -649,6 +986,50 @@ function atomic_design_register_acf_blocks()
             'category'        => 'atomic-blocks',
             'icon'            => 'awards',
             'keywords'        => ['trust', 'facts', 'selling points', 'key points'],
+            'mode'            => 'preview',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Partners & Affiliations block — global logo grids.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'partners-affiliations',
+            'title'           => __('Partners & Affiliations', 'atomic-design'),
+            'description'     => __('Global partners and affiliations logo grids from Synced Components.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/partners-affiliations/partners-affiliations.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'groups',
+            'keywords'        => ['partners', 'affiliations', 'logos', 'global'],
+            'mode'            => 'preview',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Why Choose Light TN block — global icon-card section.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'why-choose-light-tn',
+            'title'           => __('Why Choose Light TN', 'atomic-design'),
+            'description'     => __('Global Why Choose Light TN icon cards from Synced Components.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/why-choose-light-tn/why-choose-light-tn.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'awards',
+            'keywords'        => ['why choose', 'light tn', 'benefits', 'reasons', 'global'],
             'mode'            => 'preview',
             'supports'        => [
                 'align'           => ['wide', 'full'],

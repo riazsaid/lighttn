@@ -1,0 +1,118 @@
+.why-choose-light-tn {
+    padding: 72px 0 80px;
+    background: #fff;
+    color: #000;
+}
+
+.why-choose-light-tn__inner {
+    max-width: 1140px;
+}
+
+.why-choose-light-tn__header {
+    max-width: 830px;
+    margin-bottom: clamp(58px, 7vw, 88px);
+}
+
+.why-choose-light-tn__heading {
+    margin: 0 0 22px;
+    font-family: var(--font-body);
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.why-choose-light-tn__intro {
+    max-width: 760px;
+    font-family: var(--font-body);
+    font-size: clamp(15px, 1.35vw, 17px);
+    line-height: 1.45;
+    color: #111;
+}
+
+.why-choose-light-tn__intro p {
+    margin: 0 0 1em;
+}
+
+.why-choose-light-tn__intro p:last-child {
+    margin-bottom: 0;
+}
+
+.why-choose-light-tn__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.why-choose-light-tn__card {
+    min-height: 214px;
+    padding: 22px 22px 20px;
+    border: 1px solid rgba(46, 63, 79, 0.13);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+}
+
+.why-choose-light-tn__icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 18px;
+}
+
+.why-choose-light-tn__icon-image {
+    display: block;
+    max-width: 46px;
+    max-height: 46px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.why-choose-light-tn__card-title {
+    margin: 0 0 24px;
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #111;
+}
+
+.why-choose-light-tn__card-description {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.32;
+    color: #111;
+}
+
+@media (max-width: 1024px) {
+    .why-choose-light-tn__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .why-choose-light-tn {
+        padding: 56px 0;
+    }
+
+    .why-choose-light-tn__header {
+        margin-bottom: 36px;
+    }
+
+    .why-choose-light-tn__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .why-choose-light-tn__card {
+        min-height: 0;
+        padding: 22px;
+    }
+}

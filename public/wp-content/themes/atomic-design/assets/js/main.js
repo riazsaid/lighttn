@@ -234,4 +234,88 @@
     window.addEventListener('resize', onTitleDescriptionResize);
     balanceTitleDescriptionColumns();
 
+    function initPartnersAffiliationsCarousels() {
+        const carousels = document.querySelectorAll('[data-partners-carousel]');
+
+        carousels.forEach(carousel => {
+            const viewport = carousel.querySelector('.partners-affiliations-block__viewport');
+            const track = carousel.querySelector('.partners-affiliations-block__track');
+            const dots = carousel.querySelector('.partners-affiliations-block__dots');
+            const cards = track ? Array.from(track.querySelectorAll('.partners-affiliations-block__card')) : [];
+
+            if (!viewport || !track || !dots || cards.length <= 3) {
+                return;
+            }
+
+            let currentPage = 0;
+            let dotButtons = [];
+
+            const getPerPage = () => window.matchMedia('(max-width: 760px)').matches ? 1 : 3;
+            const getTrackGap = () => parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || 0) || 0;
+            const getTotalSlides = () => Math.max(cards.length - getPerPage() + 1, 1);
+
+            const setActiveDot = () => {
+                dotButtons.forEach((button, index) => {
+                    const isActive = index === currentPage;
+                    button.classList.toggle('is-active', isActive);
+                    button.setAttribute('aria-current', isActive ? 'true' : 'false');
+                });
+            };
+
+            const moveToPage = page => {
+                const totalSlides = getTotalSlides();
+                const cardWidth = cards[0].getBoundingClientRect().width;
+                const slideWidth = cardWidth + getTrackGap();
+
+                currentPage = Math.max(0, Math.min(page, totalSlides - 1));
+                track.style.transform = 'translateX(' + (-currentPage * slideWidth) + 'px)';
+                setActiveDot();
+            };
+
+            const rebuildDots = () => {
+                const totalSlides = getTotalSlides();
+
+                currentPage = Math.min(currentPage, totalSlides - 1);
+                dots.innerHTML = '';
+                dotButtons = [];
+
+                if (totalSlides <= 1) {
+                    dots.hidden = true;
+                    track.style.transform = '';
+                    return;
+                }
+
+                dots.hidden = false;
+
+                for (let index = 0; index < totalSlides; index += 1) {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'partners-affiliations-block__dot';
+                    button.setAttribute('aria-label', 'Show partner logos set ' + (index + 1));
+                    button.addEventListener('click', () => moveToPage(index));
+                    dots.appendChild(button);
+                    dotButtons.push(button);
+                }
+
+                moveToPage(currentPage);
+            };
+
+            if (carousel.dataset.partnersCarouselReady === 'true') {
+                return;
+            }
+
+            carousel.dataset.partnersCarouselReady = 'true';
+            rebuildDots();
+
+            let resizeTimer = null;
+            window.addEventListener('resize', () => {
+                window.clearTimeout(resizeTimer);
+                resizeTimer = window.setTimeout(rebuildDots, 120);
+            });
+        });
+    }
+
+    window.addEventListener('load', initPartnersAffiliationsCarousels);
+    initPartnersAffiliationsCarousels();
+
 })();
