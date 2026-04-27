@@ -45,40 +45,6 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_atomic_shared_hero_primary_link",
-            "label": "Primary Link",
-            "name": "hero_primary_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "First hero link.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_atomic_shared_hero_secondary_link",
-            "label": "Secondary Link",
-            "name": "hero_secondary_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "Second hero link.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "allow_in_bindings": 0
-        },
-        {
             "key": "field_atomic_shared_hero_media",
             "label": "Background Image",
             "name": "hero_media",

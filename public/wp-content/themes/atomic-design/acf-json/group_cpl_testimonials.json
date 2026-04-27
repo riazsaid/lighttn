@@ -18,6 +18,21 @@
             "allow_in_bindings": 0
         },
         {
+            "key": "field_cpl_testimonials_intro",
+            "label": "Section Intro",
+            "name": "testimonials_intro",
+            "type": "textarea",
+            "instructions": "Intro copy displayed beside the testimonial cards.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "Our clients’ feedback reflects our focus on thoughtful design, professional installation, and outdoor systems that perform exactly as intended.",
+            "placeholder": "Short intro paragraph",
+            "rows": 3,
+            "new_lines": "wpautop",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_cpl_testimonials_bg_type",
             "label": "Background Type",
             "name": "testimonials_bg_type",

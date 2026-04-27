@@ -16,8 +16,6 @@ if (!function_exists('get_field')) {
 
 $title     = get_field('hero_title') ?: '';
 $subtitle  = get_field('hero_subtitle') ?: '';
-$primary   = get_field('hero_primary_link');
-$secondary = get_field('hero_secondary_link');
 $bg_image  = get_field('hero_media'); // Reused field: now treated as the background image.
 
 if ($is_preview && empty($title) && empty($subtitle)) {
@@ -42,8 +40,6 @@ get_template_part(
     [
         'title'      => $title,
         'subtitle'   => $subtitle,
-        'primary'    => $primary,
-        'secondary'  => $secondary,
         'bg_url'     => $bg_url,
         'align'      => !empty($block['align']) ? $block['align'] : 'full',
         'class_name' => !empty($block['className']) ? $block['className'] : '',
