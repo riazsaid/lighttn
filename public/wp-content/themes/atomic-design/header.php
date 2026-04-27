@@ -24,41 +24,25 @@
         if (empty($phone_number)) {
             $phone_number = get_option('atomic_phone_number', '');
         }
-        // Hard fallback so the top bar always renders during development.
+        // Hard fallback so the header always renders during development.
         if (empty($phone_number)) {
-            $phone_number = '(000) 000-0000';
+            $phone_number = '(615) 808-8882';
         }
         $phone_tel = preg_replace('/[^+\d]/', '', $phone_number);
         ?>
-
-        <!-- TOP BAR: phone + CTA (hidden on mobile) -->
-        <div class="site-header__topbar">
-            <div class="container site-header__topbar-inner">
-                <a class="site-header__phone"
-                   href="tel:<?php echo esc_attr($phone_tel); ?>">
-                    <?php echo esc_html($phone_number); ?>
-                </a>
-                <a class="btn btn-primary site-header__topbar-cta"
-                   href="<?php echo esc_url(home_url('/request-quote/')); ?>">
-                    <?php esc_html_e('Get a Quote', 'atomic-design'); ?>
-                </a>
-            </div>
-        </div>
 
         <div class="container site-header__inner">
 
             <!-- Brand / Logo -->
             <div class="site-branding">
-                <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <img
-                        class="site-logo"
-                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo.png'); ?>"
-                        alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
-                        width="420"
-                        height="80"
-                        loading="eager"
-                        decoding="async"
-                    />
+                <a class="site-branding__link" href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
+                    <span class="site-brand-mark" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="site-branding__wordmark"><?php esc_html_e('LIGHT TN', 'atomic-design'); ?></span>
                 </a>
             </div>
 
@@ -75,6 +59,18 @@
                 ]);
                 ?>
             </nav>
+
+            <div class="site-header__actions">
+                <a class="site-header__phone"
+                   href="tel:<?php echo esc_attr($phone_tel); ?>">
+                    <?php echo esc_html($phone_number); ?>
+                </a>
+                <a class="site-header__contact"
+                   href="<?php echo esc_url(home_url('/contact-us/')); ?>">
+                    <span><?php esc_html_e('Contact Us', 'atomic-design'); ?></span>
+                    <span class="site-header__contact-icon" aria-hidden="true"></span>
+                </a>
+            </div>
 
             <!-- Mobile hamburger button -->
             <button class="site-header__toggle"

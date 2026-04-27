@@ -8,18 +8,34 @@
    /* ----------------------------------------------------------
        COLORS
     ---------------------------------------------------------- */
-   --bg: #000;
-   --bg-soft: #121212;
-   --accent: #3663AF;
-   --accent-hover: #1d4ed8;
-   --text: #ffffff;
-   --text-soft: #B3B3B3;
-   --accent-soft: #2E5293;
-   --shadow: 0 20px 60px rgba(0, 0, 0, 0.40);
-   --color-brand: #2355CA;
-   --color-brand-dark: #1B46B6;
-   --color-accent: #F38330;
-   --color-text-primary: #4B4B4B;
+   --cyan: #29B5E8;
+   --cyan-hover: #1A9FD4;
+   --light-blue: #A8DDEF;
+   --charcoal: #2E3F4F;
+   --bg-page: #F6FBFD;
+   --bg-dark: #181818;
+   --bg-darkest: #111111;
+   --bg-surface: #FFFFFF;
+   --text-primary: #2E3F4F;
+   --text-muted: #7A8FA0;
+   --text-inverse: #FFFFFF;
+   --border: rgba(41, 181, 232, 0.18);
+
+   --bg: var(--bg-page);
+   --bg-soft: var(--bg-surface);
+   --accent: var(--cyan);
+   --accent-hover: var(--cyan-hover);
+   --text: var(--text-primary);
+   --text-soft: var(--text-muted);
+   --accent-soft: var(--light-blue);
+   --shadow: 0 20px 60px rgba(46, 63, 79, 0.12);
+   --panel: rgba(41, 181, 232, 0.08);
+   --panel-strong: rgba(41, 181, 232, 0.14);
+   --border-strong: rgba(41, 181, 232, 0.32);
+   --color-brand: var(--cyan);
+   --color-brand-dark: var(--cyan-hover);
+   --color-accent: var(--light-blue);
+   --color-text-primary: var(--text-primary);
 
 
    /* --panel:         rgba(255, 255, 255, 0.05);
@@ -36,18 +52,18 @@
        - --font-heading for headings/display
        - --font-body for body text/UI copy
     ---------------------------------------------------------- */
-   --font-heading: "Montserrat", "Myriad Pro", "Roboto", sans-serif;
-   --font-body: "Myriad Pro", "Roboto", sans-serif;
-   --font-display: var(--font-body);
-   --font-roboto: "Roboto", sans-serif;
+   --font-heading: "Rajdhani", sans-serif;
+   --font-body: "DM Sans", sans-serif;
+   --font-display: var(--font-heading);
+   --font-roboto: var(--font-body);
    --font-kannada: "Kannada Sangam MN", sans-serif;
 
    /* Fluid type scale */
-   --h1: clamp(2.2rem, 4vw, 3rem);
+   --h1: clamp(40px, 6vw, 72px);
    /* 60px */
    /* max = 3rem */
 
-   --h2: clamp(1.8rem, 3vw, 2.5rem);
+   --h2: clamp(28px, 3.5vw, 48px);
    /* 50px */
    /* max = 2.5rem */
 
@@ -67,10 +83,12 @@
    /* 18px */
    /* max = 0.9rem */
 
-   --body-lg: clamp(0.75rem, 1.2vw, 0.8rem);
+   --body-lg: 16px;
    /* 16px */
-   --body-sm: clamp(0.55rem, 1vw, 0.6rem);
+   --body-sm: 13px;
    /* 12px */
+   --small: 13px;
+   --tiny: 11px;
 
 
    /* ----------------------------------------------------------
@@ -103,24 +121,25 @@
    /* ----------------------------------------------------------
        BORDER RADIUS
     ---------------------------------------------------------- */
-   --radius-sm: 10px;
-   --radius-md: 16px;
-   --radius-lg: 24px;
+   --radius-sm: 6px;
+   --radius-md: 12px;
+   --radius-lg: 20px;
+   --radius-xl: 32px;
    --radius-pill: 999px;
 
    /* ----------------------------------------------------------
        LAYOUT & SPACING
     ---------------------------------------------------------- */
-   --container: 1280px;
-   --gutter: clamp(1.25rem, 4vw, 2.25rem);
+   --container: 1200px;
+   --gutter: clamp(20px, 4vw, 48px);
    /* Section-to-section spacing */
-   --section-space-210: 10.5rem;
+   --section-space-210: 100px;
    /* 210px */
-   --section-space-142: 7.1rem;
+   --section-space-142: 64px;
    /* 142px */
    /* Default section spacing (most sections) */
    --section-space: var(--section-space-210);
-   --grid-gap: clamp(1rem, 2.2vw, 4.2rem);
+   --grid-gap: clamp(24px, 4vw, 48px);
 
    /* Explicit named spacing steps */
    --space-lg: 3.8rem;
@@ -152,8 +171,8 @@
        BUTTONS
        Change once here — all buttons update.
     ---------------------------------------------------------- */
-   /* --btn-height: 2.75rem; */
-   /* --btn-pad-x: 1.25rem; */
+   --btn-height: 44px;
+   --btn-pad-x: 22px;
    --btn-radius: 0;
    --btn-font-size: 1rem;
 
