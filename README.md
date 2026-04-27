@@ -11,7 +11,7 @@ It includes:
 
 ### Local Development
 
-Run the project with DDEV once Docker is available:
+Run the project with DDEV:
 
 ```bash
 ddev start
