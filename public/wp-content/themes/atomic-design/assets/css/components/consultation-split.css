@@ -1,0 +1,194 @@
+.consultation-split {
+    padding: clamp(70px, 8vw, 96px) 0;
+    background: #72c8e7;
+    color: #fff;
+}
+
+.consultation-split__inner {
+    max-width: 1160px;
+}
+
+.consultation-split__header {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    gap: clamp(28px, 5vw, 46px);
+    align-items: start;
+    margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.consultation-split__heading {
+    max-width: 430px;
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.consultation-split__intro {
+    max-width: 680px;
+    font-family: var(--font-body);
+    font-size: clamp(15px, 1.25vw, 18px);
+    font-weight: 400;
+    line-height: 1.46;
+    color: #fff;
+}
+
+.consultation-split__intro p {
+    margin: 0 0 1em;
+}
+
+.consultation-split__intro p:last-child {
+    margin-bottom: 0;
+}
+
+.consultation-split__grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.38fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
+.consultation-split__card {
+    min-width: 0;
+    border-radius: 28px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.consultation-split__card--form {
+    padding: 30px 26px 24px;
+}
+
+.consultation-split__card--visual {
+    min-height: 430px;
+}
+
+.consultation-split__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.consultation-split__placeholder {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    color: #65727b;
+}
+
+.consultation-split .wpforms-container {
+    margin: 0;
+}
+
+.consultation-split .wpforms-container .wpforms-field {
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.consultation-split .wpforms-container input,
+.consultation-split .wpforms-container textarea,
+.consultation-split .wpforms-container select {
+    width: 100%;
+    padding: 12px 0 13px;
+    border: 0;
+    border-bottom: 1px solid rgba(24, 24, 24, 0.18);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #121212;
+}
+
+.consultation-split .wpforms-container input::placeholder,
+.consultation-split .wpforms-container textarea::placeholder {
+    color: #c3c3c3;
+}
+
+.consultation-split .wpforms-container textarea {
+    min-height: 54px;
+    resize: vertical;
+}
+
+.consultation-split .wpforms-container .wpforms-submit-container {
+    padding: 0;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.consultation-split .wpforms-container .wpforms-submit {
+    min-width: 144px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 28px;
+    border: 0;
+    border-radius: 999px;
+    background: #050505;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    transition:
+        background-color var(--dur-fast) var(--ease),
+        transform var(--dur-fast) var(--ease);
+}
+
+.consultation-split .wpforms-container .wpforms-submit:hover,
+.consultation-split .wpforms-container .wpforms-submit:focus-visible {
+    background: #111;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 860px) {
+    .consultation-split__header,
+    .consultation-split__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .consultation-split__card--visual {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 640px) {
+    .consultation-split {
+        padding: 54px 0;
+    }
+
+    .consultation-split__heading {
+        max-width: 320px;
+        font-size: clamp(28px, 8vw, 36px);
+    }
+
+    .consultation-split__card {
+        border-radius: 22px;
+    }
+
+    .consultation-split__card--form {
+        padding: 24px 20px 20px;
+    }
+
+    .consultation-split .wpforms-container .wpforms-submit-container {
+        text-align: center;
+    }
+
+    .consultation-split .wpforms-container .wpforms-submit {
+        width: 100%;
+    }
+}
