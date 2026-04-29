@@ -37,27 +37,28 @@ $class_name = !empty($args['class_name']) ? (string) $args['class_name'] : '';
 $classes    = trim('why-choose-light-tn align' . $align . ' ' . $class_name);
 ?>
 
-<section class="<?php echo esc_attr($classes); ?>">
+<section class="<?php echo esc_attr($classes); ?> scroll-reveal">
     <div class="container why-choose-light-tn__inner">
-        <div class="why-choose-light-tn__header">
-            <h2 class="why-choose-light-tn__heading"><?php echo esc_html($heading); ?></h2>
+        <div class="why-choose-light-tn__header scroll-reveal" style="--reveal-delay: 70ms;">
+            <h2 class="why-choose-light-tn__heading scroll-reveal" style="--reveal-delay: 110ms;"><?php echo esc_html($heading); ?></h2>
 
             <?php if (trim(wp_strip_all_tags($intro)) !== '') : ?>
-                <div class="why-choose-light-tn__intro">
+                <div class="why-choose-light-tn__intro scroll-reveal" style="--reveal-delay: 170ms;">
                     <?php echo wp_kses_post($intro); ?>
                 </div>
             <?php endif; ?>
         </div>
 
         <div class="why-choose-light-tn__grid">
-            <?php foreach ($items as $item) :
+            <?php foreach ($items as $index => $item) :
                 $title       = isset($item['title']) ? trim((string) $item['title']) : '';
                 $description = isset($item['description']) ? trim((string) $item['description']) : '';
                 $icon        = $item['icon'] ?? null;
                 $icon_id     = is_array($icon) && !empty($icon['ID']) ? (int) $icon['ID'] : 0;
                 $icon_url    = is_array($icon) && !empty($icon['url']) ? $icon['url'] : '';
+                $delay       = 150 + ((int) $index * 90);
                 ?>
-                <article class="why-choose-light-tn__card">
+                <article class="why-choose-light-tn__card scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
                     <?php if ($icon_id || $icon_url) : ?>
                         <div class="why-choose-light-tn__icon" aria-hidden="true">
                             <?php if ($icon_id) : ?>

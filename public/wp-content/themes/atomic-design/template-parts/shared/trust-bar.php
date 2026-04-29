@@ -16,18 +16,19 @@ if (empty($items) || !is_array($items)) {
     return;
 }
 ?>
-<section class="trust-bar-block" aria-label="<?php esc_attr_e('Key facts', 'atomic-design'); ?>">
+<section class="trust-bar-block scroll-reveal" aria-label="<?php esc_attr_e('Key facts', 'atomic-design'); ?>">
     <div class="container trust-bar-block__inner">
         <div class="trust-bar-block__grid">
-            <?php foreach ($items as $item) :
+            <?php foreach ($items as $index => $item) :
                 $icon = $item['item_icon'] ?? null;
                 $text = $item['item_text'] ?? '';
                 $icon_url = is_array($icon) && !empty($icon['url']) ? $icon['url'] : '';
+                $delay = 80 + ((int) $index * 70);
                 if (empty($text) && empty($icon_url)) {
                     continue;
                 }
             ?>
-                <div class="trust-bar-block__item">
+                <div class="trust-bar-block__item scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
                     <?php if ($icon_url) : ?>
                         <div class="trust-bar-block__icon">
                             <img src="<?php echo esc_url($icon_url); ?>"

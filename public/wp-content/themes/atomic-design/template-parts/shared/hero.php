@@ -55,7 +55,7 @@ if ($title === '' && $subtitle === '') {
 
 $style_attr = '';
 if ($bg_url !== '') {
-    $style_attr = ' style="background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.54) 44%, rgba(0, 0, 0, 0.12) 100%), url(' . esc_url($bg_url) . ');"';
+    $style_attr = ' style="--hero-bg-image: url(' . esc_url($bg_url) . ');"';
 }
 
 $section_class = trim('hero align' . $align . ' ' . $class_name);
@@ -69,22 +69,23 @@ $has_reviews   = !empty($review_initials) || $review_label !== '' || $review_rat
         <div class="hero__panel"<?php echo $style_attr; ?>>
             <div class="hero__content">
                 <?php if ($title !== '') : ?>
-                    <h1 class="hero__title"><?php echo wp_kses_post($title); ?></h1>
+                    <h1 class="hero__title hero__reveal"><?php echo wp_kses_post($title); ?></h1>
                 <?php endif; ?>
 
                 <?php if ($subtitle !== '') : ?>
-                    <div class="hero__subtitle"><?php echo wp_kses_post(wpautop($subtitle)); ?></div>
+                    <div class="hero__subtitle hero__reveal"><?php echo wp_kses_post(wpautop($subtitle)); ?></div>
                 <?php endif; ?>
             </div>
 
             <?php if ($has_actions || $has_cert) : ?>
                 <div class="hero__lower">
                     <?php if ($has_actions) : ?>
-                        <div class="hero__actions">
+                        <div class="hero__actions hero__reveal">
                             <a class="hero__link hero__link--primary"
                                href="<?php echo esc_url($cta_link['url']); ?>"
                                target="<?php echo esc_attr($cta_link['target'] ?? '_self'); ?>">
-                                <span><?php echo esc_html($cta_link['title']); ?></span>
+                                <span class="hero__link-fill" aria-hidden="true"></span>
+                                <span class="hero__link-label"><?php echo esc_html($cta_link['title']); ?></span>
                                 <span class="hero__link-icon" aria-hidden="true">
                                     <?php if (!empty($cta_icon['ID'])) : ?>
                                         <?php echo wp_get_attachment_image($cta_icon['ID'], 'thumbnail', false, [
@@ -97,7 +98,8 @@ $has_reviews   = !empty($review_initials) || $review_label !== '' || $review_rat
                                              alt=""
                                              loading="lazy" />
                                     <?php else : ?>
-                                        ↗
+                                        <span class="hero__link-arrow hero__link-arrow--primary"></span>
+                                        <span class="hero__link-arrow hero__link-arrow--secondary"></span>
                                     <?php endif; ?>
                                 </span>
                             </a>
@@ -105,7 +107,7 @@ $has_reviews   = !empty($review_initials) || $review_label !== '' || $review_rat
                     <?php endif; ?>
 
                     <?php if ($has_cert) : ?>
-                        <div class="hero__certification">
+                        <div class="hero__certification hero__reveal">
                             <?php if (!empty($cert_icon['ID'])) : ?>
                                 <?php echo wp_get_attachment_image($cert_icon['ID'], 'thumbnail', false, [
                                     'class' => 'hero__certification-icon',
