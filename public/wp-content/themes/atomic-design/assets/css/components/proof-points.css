@@ -1,0 +1,116 @@
+.proof-points {
+    padding: clamp(68px, 8vw, 102px) 0;
+    background: #fff;
+    color: #000;
+}
+
+.proof-points__inner {
+    max-width: 1180px;
+}
+
+.proof-points__header {
+    margin-bottom: clamp(40px, 5vw, 56px);
+    text-align: center;
+}
+
+.proof-points__heading {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: clamp(28px, 3.1vw, 40px);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.proof-points__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(34px, 4vw, 52px) clamp(26px, 3vw, 38px);
+    align-items: start;
+}
+
+.proof-points__intro {
+    padding-top: 6px;
+}
+
+.proof-points__intro-title {
+    margin: 0 0 28px;
+    font-family: var(--font-body);
+    font-size: clamp(22px, 2vw, 28px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.proof-points__intro-copy,
+.proof-points__card-description {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    font-weight: 400;
+    line-height: 1.55;
+    color: #2b2b2b;
+}
+
+.proof-points__intro-copy p,
+.proof-points__card-description p {
+    margin: 0 0 1em;
+}
+
+.proof-points__intro-copy p:last-child,
+.proof-points__card-description p:last-child {
+    margin-bottom: 0;
+}
+
+.proof-points__card {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.proof-points__image-wrap {
+    overflow: hidden;
+    border-radius: 26px;
+}
+
+.proof-points__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.32 / 0.8;
+    object-fit: cover;
+}
+
+.proof-points__card-title {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: clamp(20px, 1.85vw, 28px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0;
+    color: #000;
+}
+
+@media (max-width: 1024px) {
+    .proof-points__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .proof-points__intro {
+        grid-column: 1 / -1;
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 680px) {
+    .proof-points__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .proof-points__card {
+        gap: 16px;
+    }
+}

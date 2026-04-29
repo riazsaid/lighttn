@@ -1,14 +1,14 @@
 {
-    "key": "group_atomic_insight_columns_sections_shared",
-    "title": "Content Columns Sections",
+    "key": "group_atomic_proof_points_sections_shared",
+    "title": "Proof Points Sections",
     "fields": [
         {
-            "key": "field_atomic_insight_columns_sections",
-            "label": "Content Columns Sections",
-            "name": "insight_columns_sections",
+            "key": "field_atomic_proof_points_sections",
+            "label": "Proof Points Sections",
+            "name": "proof_points_sections",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Add one content columns section per row. Each section renders a heading, optional intro, and repeatable text columns.",
+            "instructions": "Add one proof points section per row. Each section renders an intro column plus supporting proof cards.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -20,17 +20,17 @@
             "pagination": 0,
             "min": 0,
             "max": 0,
-            "collapsed": "field_atomic_insight_columns_heading",
-            "button_label": "Add content columns section",
+            "collapsed": "field_atomic_proof_points_heading",
+            "button_label": "Add proof points section",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_atomic_insight_columns_heading",
+                    "key": "field_atomic_proof_points_heading",
                     "label": "Section Title",
-                    "name": "insight_columns_heading",
+                    "name": "proof_points_heading",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "Visible heading above the three columns.",
+                    "instructions": "Visible section heading.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -39,24 +39,46 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Nashville. We Know It.",
+                    "placeholder": "Why Choose Light TN in Nashville",
                     "prepend": "",
                     "append": "",
                     "allow_in_bindings": 0,
                     "maxlength": "",
-                    "parent_repeater": "field_atomic_insight_columns_sections"
+                    "parent_repeater": "field_atomic_proof_points_sections"
                 },
                 {
-                    "key": "field_atomic_insight_columns_intro",
-                    "label": "Intro Copy",
-                    "name": "insight_columns_intro",
+                    "key": "field_atomic_proof_points_intro_title",
+                    "label": "Intro Title",
+                    "name": "proof_points_intro_title",
                     "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "Optional short paragraph shown under the section title.",
+                    "type": "text",
+                    "instructions": "Lead title shown in the first column.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Our Credentials and Commitment",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_proof_points_sections"
+                },
+                {
+                    "key": "field_atomic_proof_points_intro_copy",
+                    "label": "Intro Copy",
+                    "name": "proof_points_intro_copy",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Short supporting copy for the intro column.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -66,15 +88,15 @@
                     "media_upload": 0,
                     "delay": 0,
                     "allow_in_bindings": 0,
-                    "parent_repeater": "field_atomic_insight_columns_sections"
+                    "parent_repeater": "field_atomic_proof_points_sections"
                 },
                 {
-                    "key": "field_atomic_insight_columns_items",
-                    "label": "Content Columns",
-                    "name": "insight_columns_items",
+                    "key": "field_atomic_proof_points_items",
+                    "label": "Proof Cards",
+                    "name": "proof_points_items",
                     "aria-label": "",
                     "type": "repeater",
-                    "instructions": "Add one text column per row.",
+                    "instructions": "Add one proof card per row.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -86,35 +108,61 @@
                     "pagination": 0,
                     "min": 0,
                     "max": 0,
-                    "collapsed": "field_atomic_insight_columns_item_title",
-                    "button_label": "Add column",
+                    "collapsed": "field_atomic_proof_points_item_title",
+                    "button_label": "Add proof card",
                     "rows_per_page": 20,
-                    "parent_repeater": "field_atomic_insight_columns_sections",
+                    "parent_repeater": "field_atomic_proof_points_sections",
                     "sub_fields": [
                         {
-                            "key": "field_atomic_insight_columns_item_title",
-                            "label": "Column Title",
+                            "key": "field_atomic_proof_points_item_image",
+                            "label": "Card Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "allow_in_bindings": 0,
+                            "min_width": 0,
+                            "min_height": 0,
+                            "min_size": 0,
+                            "max_width": 0,
+                            "max_height": 0,
+                            "max_size": 0,
+                            "mime_types": "",
+                            "parent_repeater": "field_atomic_proof_points_items"
+                        },
+                        {
+                            "key": "field_atomic_proof_points_item_title",
+                            "label": "Card Title",
                             "name": "title",
                             "aria-label": "",
                             "type": "text",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "60",
                                 "class": "",
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "Estate Properties Across Nashville’s Premier Neighborhoods",
+                            "placeholder": "Licensed and Accredited",
                             "prepend": "",
                             "append": "",
                             "allow_in_bindings": 0,
                             "maxlength": "",
-                            "parent_repeater": "field_atomic_insight_columns_items"
+                            "parent_repeater": "field_atomic_proof_points_items"
                         },
                         {
-                            "key": "field_atomic_insight_columns_item_description",
-                            "label": "Column Copy",
+                            "key": "field_atomic_proof_points_item_description",
+                            "label": "Card Description",
                             "name": "description",
                             "aria-label": "",
                             "type": "wysiwyg",
@@ -131,7 +179,7 @@
                             "media_upload": 0,
                             "delay": 0,
                             "allow_in_bindings": 0,
-                            "parent_repeater": "field_atomic_insight_columns_items"
+                            "parent_repeater": "field_atomic_proof_points_items"
                         }
                     ]
                 }
@@ -161,15 +209,15 @@
             }
         ]
     ],
-    "menu_order": 30,
+    "menu_order": 34,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Repeatable Content Columns sections for CPT templates.",
+    "description": "Repeatable Proof Points sections for CPT templates.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1775265600
+    "modified": 1777420800
 }

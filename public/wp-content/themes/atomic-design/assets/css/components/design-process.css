@@ -1,0 +1,257 @@
+.design-process {
+    padding: clamp(70px, 8vw, 104px) 0;
+    background: #fff;
+    color: #000;
+}
+
+.design-process__inner {
+    max-width: 1240px;
+}
+
+.design-process__header {
+    margin-bottom: clamp(38px, 5vw, 58px);
+    text-align: center;
+}
+
+.design-process__heading {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: clamp(28px, 3.2vw, 38px);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.design-process__body {
+    display: grid;
+    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr) 106px;
+    gap: clamp(22px, 3vw, 42px);
+    align-items: center;
+}
+
+.design-process__summary-stack,
+.design-process__visual-stack {
+    position: relative;
+}
+
+.design-process__summary,
+.design-process__visual {
+    display: none;
+}
+
+.design-process__summary.is-active,
+.design-process__visual.is-active {
+    display: block;
+}
+
+.design-process__summary {
+    max-width: 280px;
+}
+
+.design-process__icon-wrap {
+    margin-bottom: 28px;
+}
+
+.design-process__icon {
+    display: block;
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+.design-process__step-title {
+    margin: 0 0 22px;
+    font-family: var(--font-body);
+    font-size: clamp(22px, 2vw, 26px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #000;
+}
+
+.design-process__step-description {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    font-weight: 400;
+    line-height: 1.58;
+    color: #3d3d3d;
+}
+
+.design-process__step-description p {
+    margin: 0 0 1em;
+}
+
+.design-process__step-description p:last-child {
+    margin-bottom: 0;
+}
+
+.design-process__image-wrap {
+    position: relative;
+    overflow: visible;
+}
+
+.design-process__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.46 / 1;
+    border-radius: 28px;
+    object-fit: cover;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.08);
+}
+
+.design-process__badge {
+    position: absolute;
+    right: clamp(-18px, -1vw, -10px);
+    bottom: clamp(-22px, -2vw, -14px);
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 154px;
+    padding: 12px 18px 10px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.09);
+}
+
+.design-process__badge-number {
+    font-family: var(--font-body);
+    font-size: clamp(46px, 5vw, 56px);
+    font-weight: 300;
+    line-height: 0.9;
+    color: #000;
+}
+
+.design-process__badge-title {
+    font-family: var(--font-body);
+    font-size: clamp(15px, 1.25vw, 18px);
+    font-weight: 600;
+    line-height: 1.08;
+    color: #000;
+}
+
+.design-process__rail {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 18px;
+    min-height: 100%;
+}
+
+.design-process__rail-button {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+    padding: 0;
+    border: 0;
+    border-left: 1px solid #dedede;
+    background: transparent;
+    color: #c4c4c4;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.design-process__rail-button:hover,
+.design-process__rail-button:focus-visible {
+    color: #878787;
+    border-color: #c7c7c7;
+    outline: none;
+}
+
+.design-process__rail-button.is-active {
+    color: #b4b4b4;
+    border-color: #d9d9d9;
+}
+
+.design-process__rail-number {
+    font-family: var(--font-body);
+    font-size: clamp(36px, 3.8vw, 50px);
+    font-weight: 300;
+    line-height: 1;
+}
+
+.design-process__rail-label {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+@media (max-width: 1024px) {
+    .design-process__body {
+        grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .design-process__rail {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        gap: 10px;
+        min-height: auto;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .design-process__rail-button {
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border-left: 0;
+        border-bottom: 1px solid #dedede;
+        text-align: left;
+    }
+
+    .design-process__rail-label {
+        writing-mode: initial;
+        transform: none;
+        white-space: nowrap;
+    }
+
+    .design-process__rail-number {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .design-process__body {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .design-process__summary {
+        max-width: none;
+    }
+
+    .design-process__icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .design-process__visual {
+        order: 2;
+    }
+
+    .design-process__badge {
+        right: 16px;
+        bottom: 16px;
+        min-width: 136px;
+        padding: 10px 14px;
+    }
+
+    .design-process__badge-number {
+        font-size: 36px;
+    }
+
+    .design-process__rail {
+        order: 3;
+        margin-top: 4px;
+    }
+}

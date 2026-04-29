@@ -1,0 +1,229 @@
+{
+    "key": "group_atomic_steps_grid_sections_shared",
+    "title": "Steps Grid Sections",
+    "fields": [
+        {
+            "key": "field_atomic_steps_grid_sections",
+            "label": "Steps Grid Sections",
+            "name": "steps_grid_sections",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add one steps grid section per row. Each section renders image-led step cards.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_atomic_steps_grid_heading",
+            "button_label": "Add steps grid section",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_steps_grid_heading",
+                    "label": "Section Title",
+                    "name": "steps_grid_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Visible section heading.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "How It Works",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_steps_grid_sections"
+                },
+                {
+                    "key": "field_atomic_steps_grid_heading_alignment",
+                    "label": "Heading Alignment",
+                    "name": "steps_grid_heading_alignment",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Choose whether the main heading is centered or left-aligned.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "center": "Center",
+                        "left": "Left"
+                    },
+                    "default_value": "center",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_steps_grid_sections"
+                },
+                {
+                    "key": "field_atomic_steps_grid_items",
+                    "label": "Step Cards",
+                    "name": "steps_grid_items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Add one card per row.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_atomic_steps_grid_item_title",
+                    "button_label": "Add step card",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_atomic_steps_grid_sections",
+                    "sub_fields": [
+                        {
+                            "key": "field_atomic_steps_grid_item_image",
+                            "label": "Card Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "34",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "allow_in_bindings": 0,
+                            "min_width": 0,
+                            "min_height": 0,
+                            "min_size": 0,
+                            "max_width": 0,
+                            "max_height": 0,
+                            "max_size": 0,
+                            "mime_types": "",
+                            "parent_repeater": "field_atomic_steps_grid_items"
+                        },
+                        {
+                            "key": "field_atomic_steps_grid_item_title",
+                            "label": "Card Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Nashville Property Consultation",
+                            "prepend": "",
+                            "append": "",
+                            "allow_in_bindings": 0,
+                            "maxlength": "",
+                            "parent_repeater": "field_atomic_steps_grid_items"
+                        },
+                        {
+                            "key": "field_atomic_steps_grid_item_timeline",
+                            "label": "Timeline",
+                            "name": "timeline",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Short bold timeline line, for example: Timeline: Week 1.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Timeline: Week 1",
+                            "prepend": "",
+                            "append": "",
+                            "allow_in_bindings": 0,
+                            "maxlength": "",
+                            "parent_repeater": "field_atomic_steps_grid_items"
+                        },
+                        {
+                            "key": "field_atomic_steps_grid_item_description",
+                            "label": "Card Description",
+                            "name": "description",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0,
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_atomic_steps_grid_items"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "location"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service-location"
+            }
+        ]
+    ],
+    "menu_order": 36,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Repeatable Steps Grid sections for CPT templates.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1777421700
+}
