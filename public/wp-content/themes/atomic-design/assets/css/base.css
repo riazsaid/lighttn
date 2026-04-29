@@ -235,10 +235,36 @@ p {
 }
 
 /* ============================================================
+   SHARED SCROLL REVEAL (VistaHaven-style section motion)
+   ============================================================ */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(42px) scale(0.985);
+    transition:
+        opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: transform, opacity;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ============================================================
    REDUCED MOTION
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
+
+    .scroll-reveal,
+    .scroll-reveal.revealed {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 
     *,
     *::before,

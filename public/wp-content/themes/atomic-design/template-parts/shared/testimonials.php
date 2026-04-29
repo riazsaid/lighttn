@@ -34,9 +34,9 @@ if ($bg_type === 'solid' && $color_1) {
 }
 ?>
 
-<section class="testimonials-block" <?php echo $bg_style; ?>>
+<section class="testimonials-block scroll-reveal" <?php echo $bg_style; ?>>
     <div class="container testimonials-block__inner">
-        <div class="testimonials-block__intro">
+        <div class="testimonials-block__intro scroll-reveal" style="--reveal-delay: 70ms;">
             <?php if ($heading) : ?>
                 <h2 class="testimonials-heading"><?php echo esc_html($heading); ?></h2>
             <?php endif; ?>
@@ -49,11 +49,12 @@ if ($bg_type === 'solid' && $color_1) {
         </div>
 
         <div class="testimonials-grid" role="list">
-            <?php foreach ($testimonials as $item) :
+            <?php foreach ($testimonials as $index => $item) :
                 $avatar = $item['reviewer_avatar'] ?? null;
                 $name   = $item['reviewer_name'] ?? '';
                 $rating = (int) ($item['star_rating'] ?? 5);
                 $text   = $item['testimonial_text'] ?? '';
+                $delay  = 120 + ((int) $index * 90);
 
                 if (empty($text) && empty($name)) {
                     continue;
@@ -61,7 +62,7 @@ if ($bg_type === 'solid' && $color_1) {
 
                 $rating = max(1, min(5, $rating));
                 ?>
-                <article class="testimonial-card" role="listitem">
+                <article class="testimonial-card scroll-reveal" role="listitem" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
                     <div class="star-rating" aria-label="<?php echo esc_attr($rating); ?> out of 5 stars">
                         <?php for ($i = 1; $i <= 5; $i++) : ?>
                             <span class="star <?php echo $i <= $rating ? 'star--filled' : 'star--empty'; ?>" aria-hidden="true">★</span>

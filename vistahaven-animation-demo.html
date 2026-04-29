@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VistaHaven Animation Demo</title>
+  <style>
+    :root {
+      --bg: #f3efe9;
+      --surface: rgba(255, 255, 255, 0.78);
+      --text: #1d1b18;
+      --muted: #6f675d;
+      --accent: #b88a4a;
+      --shadow: 0 24px 80px rgba(38, 28, 16, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 32%),
+        linear-gradient(135deg, #e7ddd0 0%, #f4f0ea 48%, #ddd1c0 100%);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .page {
+      width: min(100%, 1080px);
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    .stage {
+      width: min(100%, 1080px);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .info-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 620px;
+      transform-origin: center center;
+      opacity: 0.001;
+      transform: scale(2) rotate(6deg);
+      animation: vistahaven-enter 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(14, 13, 12, 0.18), rgba(14, 13, 12, 0.26)),
+        url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      color: #fffaf2;
+    }
+
+    .hero-nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: auto;
+      padding-bottom: 28px;
+    }
+
+    .nav-link {
+      height: 27px;
+      overflow: hidden;
+      text-decoration: none;
+      color: rgba(255, 250, 242, 0.8);
+      font: 300 17px/1.5 Arial, sans-serif;
+    }
+
+    .nav-link-stack {
+      display: flex;
+      flex-direction: column;
+      transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .nav-link-stack span {
+      white-space: nowrap;
+    }
+
+    .nav-link-stack span:first-child {
+      opacity: 0.6;
+    }
+
+    .nav-link:hover .nav-link-stack {
+      transform: translateY(-27px);
+    }
+
+    .eyebrow {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font: 600 12px/1.2 Arial, sans-serif;
+      color: rgba(255, 250, 242, 0.78);
+      margin-bottom: 16px;
+    }
+
+    .reveal {
+      display: block;
+      overflow: hidden;
+    }
+
+    .reveal > span {
+      display: block;
+      opacity: 0;
+      filter: blur(3px);
+      transform: translateY(38px);
+      animation: text-reveal 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .eyebrow.reveal > span {
+      animation-delay: 0.35s;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 10ch;
+      font-size: clamp(44px, 6vw, 88px);
+      line-height: 0.96;
+      font-weight: 600;
+    }
+
+    .headline-line:nth-child(1) > span {
+      animation-delay: 0.48s;
+    }
+
+    .headline-line:nth-child(2) > span {
+      animation-delay: 0.62s;
+    }
+
+    .headline-line:nth-child(3) > span {
+      animation-delay: 0.76s;
+    }
+
+    .lede {
+      margin: 18px 0 0;
+      max-width: 42ch;
+      color: rgba(255, 250, 242, 0.84);
+      font: 400 18px/1.7 Arial, sans-serif;
+    }
+
+    .lede.reveal > span {
+      animation-delay: 0.92s;
+    }
+
+    .hero-actions {
+      margin-top: 26px;
+    }
+
+    .hero-button {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: text-reveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 1.08s forwards;
+    }
+
+    .cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px 14px 22px;
+      border-radius: 999px;
+      overflow: hidden;
+      text-decoration: none;
+      background: #fff;
+      color: #1d1b18;
+      box-shadow: 0 14px 34px rgba(20, 16, 12, 0.16);
+      font: 600 15px/1 Arial, sans-serif;
+      transition: box-shadow 220ms ease;
+    }
+
+    .cta-fill {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -230px;
+      width: 100%;
+      background: #f4efe8;
+      transition: left 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .cta-label,
+    .cta-circle {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: block;
+      background: #111;
+      color: #fff;
+      flex: 0 0 34px;
+      overflow: hidden;
+    }
+
+    .cta-icon {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      transition:
+        top 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        right 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .cta-icon--primary {
+      top: 8px;
+      right: 8px;
+    }
+
+    .cta-icon--secondary {
+      top: 30px;
+      right: 30px;
+    }
+
+    .cta-arrow {
+      width: 10px;
+      height: 10px;
+      margin: 3px;
+      border-top: 1.5px solid currentColor;
+      border-right: 1.5px solid currentColor;
+      transform: rotate(45deg);
+    }
+
+    .cta:hover {
+      box-shadow: 0 18px 42px rgba(20, 16, 12, 0.18);
+    }
+
+    .cta:hover .cta-fill {
+      left: 0;
+    }
+
+    .cta:hover .cta-icon--primary {
+      top: -22px;
+      right: -22px;
+    }
+
+    .cta:hover .cta-icon--secondary {
+      top: 8px;
+      right: 8px;
+    }
+
+    .info-card {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .info-card h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 600;
+    }
+
+    .info-card p,
+    .info-card li,
+    .button {
+      font-family: Arial, sans-serif;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .button {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      width: fit-content;
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .button:hover {
+      filter: brightness(1.04);
+      transform: translateY(-1px);
+    }
+
+    .code {
+      font: 400 13px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: rgba(29, 27, 24, 0.06);
+      border-radius: 8px;
+      padding: 14px;
+      color: #3b352f;
+      overflow: auto;
+    }
+
+    .section-shell {
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.64);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      padding: 42px;
+      overflow: hidden;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      margin: 0 0 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font: 600 12px/1.2 Arial, sans-serif;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 0.98;
+      max-width: 10ch;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--muted);
+      font: 400 16px/1.8 Arial, sans-serif;
+      max-width: 44ch;
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(42px) scale(0.985);
+      transition:
+        opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--delay, 0ms);
+      will-change: transform, opacity;
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card,
+    .property-card,
+    .stat-card {
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(70, 52, 33, 0.08);
+      box-shadow: 0 10px 28px rgba(38, 28, 16, 0.08);
+    }
+
+    .service-card {
+      padding: 16px;
+      transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 260ms ease, border-color 260ms ease;
+    }
+
+    .service-media {
+      width: 100%;
+      aspect-ratio: 1.05;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), filter 260ms ease;
+    }
+
+    .service-index {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font: 700 13px/1 Arial, sans-serif;
+      letter-spacing: 0.16em;
+    }
+
+    .service-card h3,
+    .property-card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.02;
+    }
+
+    .service-card p,
+    .property-meta,
+    .property-card p,
+    .stat-label {
+      margin: 0;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .property-card {
+      display: grid;
+      gap: 0;
+      transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 260ms ease, border-color 260ms ease;
+    }
+
+    .property-image {
+      width: 100%;
+      aspect-ratio: 1.35;
+      background-size: cover;
+      background-position: center;
+      transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1), filter 260ms ease;
+    }
+
+    .property-body {
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .property-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .property-price {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .stat-card {
+      padding: 24px;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 240ms ease;
+    }
+
+    .stat-value {
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: 0.95;
+      margin: 0;
+    }
+
+    .stat-label {
+      font-size: 14px;
+    }
+
+    @keyframes vistahaven-enter {
+      0% {
+        opacity: 0.001;
+        transform: scale(2) rotate(6deg);
+      }
+
+      72% {
+        opacity: 1;
+        transform: scale(0.985) rotate(-0.2deg);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes text-reveal {
+      0% {
+        opacity: 0;
+        filter: blur(3px);
+        transform: translateY(38px);
+      }
+
+      100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+    }
+
+    .service-card:hover,
+    .property-card:hover,
+    .stat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 42px rgba(38, 28, 16, 0.12);
+    }
+
+    .service-card:hover,
+    .property-card:hover {
+      border-color: rgba(70, 52, 33, 0.16);
+    }
+
+    .service-card:hover .service-media,
+    .property-card:hover .property-image {
+      transform: scale(1.045);
+      filter: saturate(1.03);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-card {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+
+      .reveal > span,
+      .hero-button,
+      .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        animation: none;
+        transition: none;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .stage {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .services-grid,
+      .property-grid,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-shell {
+        padding: 28px;
+      }
+
+      .hero-card {
+        min-height: 480px;
+      }
+
+      .hero-content {
+        padding: 28px;
+      }
+
+      .hero-nav {
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="stage">
+      <section class="hero-card">
+        <div class="hero-image"></div>
+        <div class="hero-content">
+          <nav class="hero-nav">
+            <a class="nav-link" href="#hero"><span class="nav-link-stack"><span>Home</span><span>Home</span></span></a>
+            <a class="nav-link" href="#services-test"><span class="nav-link-stack"><span>Services</span><span>Services</span></span></a>
+            <a class="nav-link" href="#services-test"><span class="nav-link-stack"><span>Properties</span><span>Properties</span></span></a>
+          </nav>
+          <div class="eyebrow reveal"><span>Animation Demo</span></div>
+          <h1>
+            <span class="reveal headline-line"><span>VistaHaven</span></span>
+            <span class="reveal headline-line"><span>Style</span></span>
+            <span class="reveal headline-line"><span>Entrance</span></span>
+          </h1>
+          <p class="lede reveal">
+            <span>
+              This panel reproduces the same visible feel from the reference site:
+              near-zero opacity, scale from 2, rotate from 6deg, then staggered text
+              reveal into place.
+            </span>
+          </p>
+          <div class="hero-actions">
+            <a class="cta hero-button" href="#services-test">
+              <span class="cta-fill"></span>
+              <span class="cta-label">Explore Properties</span>
+              <span class="cta-circle">
+                <span class="cta-icon cta-icon--primary"><span class="cta-arrow"></span></span>
+                <span class="cta-icon cta-icon--secondary"><span class="cta-arrow"></span></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <aside class="info-card">
+        <div>
+          <h2>What this file is doing</h2>
+          <p>
+            The published Framer site exposes one clear appear preset, and the rest
+            of the layout follows the same motion language with staggered reveals,
+            lifted cards, and smooth on-scroll entrances.
+          </p>
+        </div>
+
+        <ul>
+          <li>CTA base layer starts off-canvas at `left: -230px`</li>
+          <li>CTA hover brings that internal layer back to `left: 0`</li>
+          <li>CTA circle swaps between two arrow slots on hover</li>
+          <li>Nav links use vertically stacked duplicate text</li>
+          <li>Other sections still keep the scroll-reveal test cases</li>
+        </ul>
+
+        <div class="code">Revised from actual Framer structure instead of vibe-matching</div>
+
+        <button class="button" type="button" onclick="window.location.reload()">
+          Replay page load
+        </button>
+      </aside>
+    </section>
+
+    <section class="section-shell" id="services-test">
+      <div class="section-head">
+        <div class="scroll-reveal">
+          <p class="section-kicker">What We Offer</p>
+          <h2 class="section-title">Comprehensive Real Estate Solutions</h2>
+        </div>
+        <p class="section-copy scroll-reveal" style="--delay: 120ms;">
+          The reference layout uses calm, upscale movement rather than dramatic transitions.
+          These service cards enter with a clean upward lift and staggered timing that feels
+          close to the live Framer page.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card scroll-reveal" style="--delay: 0ms;">
+          <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80');"></div>
+          <span class="service-index">01</span>
+          <h3>Luxury Residences</h3>
+          <p>Elegant homes with premium finishes, quiet presence, and resort-level comfort.</p>
+        </article>
+        <article class="service-card scroll-reveal" style="--delay: 120ms;">
+          <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80');"></div>
+          <span class="service-index">02</span>
+          <h3>Eco Green Buildings</h3>
+          <p>Sustainable living spaces designed for efficiency, light, and modern ease.</p>
+        </article>
+        <article class="service-card scroll-reveal" style="--delay: 240ms;">
+          <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');"></div>
+          <span class="service-index">03</span>
+          <h3>Vacation Homes</h3>
+          <p>Distinctive stays with strong architectural identity and destination appeal.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-head">
+        <div class="scroll-reveal">
+          <p class="section-kicker">Featured Properties</p>
+          <h2 class="section-title">Homes Tailored To Your Lifestyle</h2>
+        </div>
+        <p class="section-copy scroll-reveal" style="--delay: 120ms;">
+          Property tiles on the live site feel like they arrive in groups as you scroll.
+          These cards use the same idea: smooth fade, slight lift, and a clean stagger.
+        </p>
+      </div>
+
+      <div class="property-grid">
+        <article class="property-card scroll-reveal" style="--delay: 0ms;">
+          <div class="property-image" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="property-body">
+            <div class="property-meta">
+              <span>For Investment</span>
+              <span class="property-price">$690,000</span>
+            </div>
+            <h3>The One</h3>
+            <p>Bel Air, Los Angeles</p>
+          </div>
+        </article>
+        <article class="property-card scroll-reveal" style="--delay: 140ms;">
+          <div class="property-image" style="background-image:url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="property-body">
+            <div class="property-meta">
+              <span>For Sell</span>
+              <span class="property-price">$500,000</span>
+            </div>
+            <h3>Billionaire Mansion</h3>
+            <p>Bel Air, Los Angeles</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-head">
+        <div class="scroll-reveal">
+          <p class="section-kicker">Who We Are</p>
+          <h2 class="section-title">Numbers With Soft Stagger</h2>
+        </div>
+        <p class="section-copy scroll-reveal" style="--delay: 120ms;">
+          The stats area on VistaHaven is visually quiet, so the animation should stay restrained.
+          These blocks reveal gently without bouncing around.
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card scroll-reveal" style="--delay: 0ms;">
+          <h3 class="stat-value">200+</h3>
+          <p class="stat-label">Projects Complete</p>
+        </article>
+        <article class="stat-card scroll-reveal" style="--delay: 90ms;">
+          <h3 class="stat-value">70+</h3>
+          <p class="stat-label">Happy Clients</p>
+        </article>
+        <article class="stat-card scroll-reveal" style="--delay: 180ms;">
+          <h3 class="stat-value">$10M</h3>
+          <p class="stat-label">Project Value</p>
+        </article>
+        <article class="stat-card scroll-reveal" style="--delay: 270ms;">
+          <h3 class="stat-value">90%</h3>
+          <p class="stat-label">Client Retention Rate</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script>
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.18,
+        rootMargin: "0px 0px -8% 0px"
+      });
+
+      document.querySelectorAll(".scroll-reveal").forEach((element) => {
+        observer.observe(element);
+      });
+    } else {
+      document.querySelectorAll(".scroll-reveal").forEach((element) => {
+        element.classList.add("revealed");
+      });
+    }
+  </script>
+</body>
+</html>
