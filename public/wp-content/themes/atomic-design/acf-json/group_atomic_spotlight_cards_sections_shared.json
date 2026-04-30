@@ -1,0 +1,202 @@
+{
+    "key": "group_atomic_spotlight_cards_sections_shared",
+    "title": "Spotlight Cards Sections",
+    "fields": [
+        {
+            "key": "field_atomic_spotlight_cards_sections",
+            "label": "Spotlight Cards Sections",
+            "name": "spotlight_cards_sections",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add one spotlight cards section per row. Each section renders left intro copy, a right-side image, and supporting cards below.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_atomic_spotlight_cards_heading",
+            "button_label": "Add spotlight cards section",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_spotlight_cards_heading",
+                    "label": "Section Title",
+                    "name": "spotlight_cards_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Visible section heading shown on the left.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "What Sets Us Apart",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_spotlight_cards_sections"
+                },
+                {
+                    "key": "field_atomic_spotlight_cards_intro",
+                    "label": "Left Column Content",
+                    "name": "spotlight_cards_intro",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Text shown under the heading in the left column.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_spotlight_cards_sections"
+                },
+                {
+                    "key": "field_atomic_spotlight_cards_image",
+                    "label": "Main Image",
+                    "name": "spotlight_cards_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Image shown to the right of the intro content.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "allow_in_bindings": 0,
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_atomic_spotlight_cards_sections"
+                },
+                {
+                    "key": "field_atomic_spotlight_cards_items",
+                    "label": "Spotlight Cards",
+                    "name": "spotlight_cards_items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Add one supporting card per row.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_atomic_spotlight_cards_item_title",
+                    "button_label": "Add spotlight card",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_atomic_spotlight_cards_sections",
+                    "sub_fields": [
+                        {
+                            "key": "field_atomic_spotlight_cards_item_title",
+                            "label": "Card Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Landscape Architecture Coordination",
+                            "prepend": "",
+                            "append": "",
+                            "allow_in_bindings": 0,
+                            "maxlength": "",
+                            "parent_repeater": "field_atomic_spotlight_cards_items"
+                        },
+                        {
+                            "key": "field_atomic_spotlight_cards_item_description",
+                            "label": "Card Description",
+                            "name": "description",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0,
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_atomic_spotlight_cards_items"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "location"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service-location"
+            }
+        ]
+    ],
+    "menu_order": 40,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Repeatable Spotlight Cards sections for CPT templates.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1777507200
+}
