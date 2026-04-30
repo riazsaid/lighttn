@@ -98,7 +98,6 @@ h6 {
 
 p {
     font-size: 16px;
-    color: var(--text-soft);
     line-height: 1.7;
 }
 
@@ -170,7 +169,7 @@ p {
     cursor: pointer;
     white-space: nowrap;
     transition: background var(--dur-fast) var(--ease);
-    padding:0.8rem 1.1rem;
+    padding: 0.8rem 1.1rem;
 }
 
 .btn-primary {
