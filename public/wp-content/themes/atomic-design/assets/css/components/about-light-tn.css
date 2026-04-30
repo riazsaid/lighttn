@@ -1,0 +1,115 @@
+.about-light-tn {
+    padding: clamp(66px, 8vw, 98px) 0;
+    background: #fff;
+    color: #000;
+}
+
+.about-light-tn__inner {
+    max-width: 1180px;
+}
+
+.about-light-tn__top {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.45fr);
+    gap: clamp(28px, 4vw, 54px);
+    align-items: start;
+}
+
+.about-light-tn__intro {
+    min-width: 0;
+}
+
+.about-light-tn__heading,
+.about-light-tn__secondary-heading {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.about-light-tn__heading {
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.02;
+    margin-bottom: 24px;
+}
+
+.about-light-tn__intro-copy,
+.about-light-tn__column-copy {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    font-weight: 400;
+    line-height: 1.58;
+    color: #2a2a2a;
+}
+
+.about-light-tn__intro-copy p,
+.about-light-tn__column-copy p {
+    margin: 0 0 1em;
+}
+
+.about-light-tn__intro-copy p:last-child,
+.about-light-tn__column-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.about-light-tn__figure {
+    margin: 0;
+}
+
+.about-light-tn__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.64 / 1;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.about-light-tn__caption {
+    margin-top: 12px;
+    text-align: right;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--cyan);
+}
+
+.about-light-tn__bottom {
+    margin-top: clamp(28px, 4vw, 40px);
+}
+
+.about-light-tn__secondary-header {
+    margin-bottom: 18px;
+}
+
+.about-light-tn__secondary-heading {
+    font-size: clamp(26px, 2.8vw, 38px);
+    line-height: 1.03;
+}
+
+.about-light-tn__columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(22px, 3vw, 38px);
+}
+
+.about-light-tn__column {
+    min-width: 0;
+}
+
+@media (max-width: 980px) {
+    .about-light-tn__top,
+    .about-light-tn__columns {
+        grid-template-columns: 1fr;
+    }
+
+    .about-light-tn__figure {
+        max-width: 840px;
+    }
+
+    .about-light-tn__caption {
+        text-align: left;
+    }
+}

@@ -237,6 +237,28 @@ function atomic_design_register_acf_options_pages()
             'capability'  => 'manage_options',
         ]
     );
+
+    // Lighting & Audio Services — global service card grid reusable via Gutenberg block.
+    acf_add_options_sub_page(
+        [
+            'page_title'  => 'Lighting & Audio Services',
+            'menu_title'  => 'Lighting & Audio Services',
+            'menu_slug'   => 'atomic-design-lighting-audio-services',
+            'parent_slug' => 'atomic-design-synced-components',
+            'capability'  => 'manage_options',
+        ]
+    );
+
+    // About Light TN — global intro section reusable via Gutenberg block.
+    acf_add_options_sub_page(
+        [
+            'page_title'  => 'About Light TN',
+            'menu_title'  => 'About Light TN',
+            'menu_slug'   => 'atomic-design-about-light-tn',
+            'parent_slug' => 'atomic-design-synced-components',
+            'capability'  => 'manage_options',
+        ]
+    );
 }
 add_action('acf/init', 'atomic_design_register_acf_options_pages');
 
@@ -616,6 +638,169 @@ function atomic_design_register_acf_fields()
         'show_in_rest'          => 1,
     ]);
 
+    acf_add_local_field_group([
+        'key'    => 'group_atomic_lighting_audio_services',
+        'title'  => 'Lighting & Audio Services',
+        'fields' => [
+            [
+                'key'           => 'field_atomic_lighting_audio_services_heading',
+                'label'         => 'Heading',
+                'name'          => 'lighting_audio_services_heading',
+                'type'          => 'text',
+                'default_value' => 'Outdoor Lighting & Audio Services',
+                'placeholder'   => 'Outdoor Lighting & Audio Services',
+            ],
+            [
+                'key'          => 'field_atomic_lighting_audio_services_items',
+                'label'        => 'Service Cards',
+                'name'         => 'lighting_audio_services_items',
+                'type'         => 'repeater',
+                'instructions' => 'Add one service card per row.',
+                'layout'       => 'block',
+                'button_label' => 'Add service card',
+                'sub_fields'   => [
+                    [
+                        'key'           => 'field_atomic_lighting_audio_services_item_image',
+                        'label'         => 'Image',
+                        'name'          => 'image',
+                        'type'          => 'image',
+                        'return_format' => 'array',
+                        'preview_size'  => 'medium',
+                        'library'       => 'all',
+                        'wrapper'       => ['width' => '32'],
+                    ],
+                    [
+                        'key'     => 'field_atomic_lighting_audio_services_item_title',
+                        'label'   => 'Title',
+                        'name'    => 'title',
+                        'type'    => 'text',
+                        'wrapper' => ['width' => '28'],
+                    ],
+                    [
+                        'key'           => 'field_atomic_lighting_audio_services_item_link',
+                        'label'         => 'Link',
+                        'name'          => 'link',
+                        'type'          => 'link',
+                        'return_format' => 'array',
+                        'wrapper'       => ['width' => '40'],
+                    ],
+                    [
+                        'key'   => 'field_atomic_lighting_audio_services_item_description',
+                        'label' => 'Description',
+                        'name'  => 'description',
+                        'type'  => 'textarea',
+                        'rows'  => 6,
+                    ],
+                ],
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'options_page',
+                    'operator' => '==',
+                    'value'    => 'atomic-design-lighting-audio-services',
+                ],
+            ],
+        ],
+        'menu_order'            => 0,
+        'position'              => 'normal',
+        'style'                 => 'default',
+        'label_placement'       => 'top',
+        'instruction_placement' => 'label',
+        'active'                => true,
+        'show_in_rest'          => 1,
+    ]);
+
+    acf_add_local_field_group([
+        'key'    => 'group_atomic_about_light_tn',
+        'title'  => 'About Light TN',
+        'fields' => [
+            [
+                'key'           => 'field_atomic_about_light_tn_heading',
+                'label'         => 'Heading',
+                'name'          => 'about_light_tn_heading',
+                'type'          => 'text',
+                'default_value' => 'About Light TN',
+                'placeholder'   => 'About Light TN',
+            ],
+            [
+                'key'          => 'field_atomic_about_light_tn_intro_copy',
+                'label'        => 'Intro Copy',
+                'name'         => 'about_light_tn_intro_copy',
+                'type'         => 'wysiwyg',
+                'instructions' => 'Main body copy shown to the left of the image.',
+                'tabs'         => 'visual',
+                'toolbar'      => 'basic',
+                'media_upload' => 0,
+                'wrapper'      => ['width' => '45'],
+            ],
+            [
+                'key'           => 'field_atomic_about_light_tn_image',
+                'label'         => 'Main Image',
+                'name'          => 'about_light_tn_image',
+                'type'          => 'image',
+                'instructions'  => 'Primary image shown to the right of the intro copy.',
+                'return_format' => 'array',
+                'preview_size'  => 'medium',
+                'library'       => 'all',
+                'wrapper'       => ['width' => '55'],
+            ],
+            [
+                'key'           => 'field_atomic_about_light_tn_image_caption',
+                'label'         => 'Image Caption',
+                'name'          => 'about_light_tn_image_caption',
+                'type'          => 'text',
+                'instructions'  => 'Optional caption shown below the main image.',
+                'wrapper'       => ['width' => '100'],
+            ],
+            [
+                'key'           => 'field_atomic_about_light_tn_secondary_heading',
+                'label'         => 'Secondary Heading',
+                'name'          => 'about_light_tn_secondary_heading',
+                'type'          => 'text',
+                'default_value' => 'Meet Daryl',
+                'placeholder'   => 'Meet Daryl',
+            ],
+            [
+                'key'          => 'field_atomic_about_light_tn_columns',
+                'label'        => 'Detail Columns',
+                'name'         => 'about_light_tn_columns',
+                'type'         => 'repeater',
+                'instructions' => 'Add the text columns shown below the secondary heading. Three columns match the current design best.',
+                'layout'       => 'block',
+                'button_label' => 'Add detail column',
+                'sub_fields'   => [
+                    [
+                        'key'     => 'field_atomic_about_light_tn_column_copy',
+                        'label'   => 'Column Copy',
+                        'name'    => 'copy',
+                        'type'    => 'wysiwyg',
+                        'tabs'    => 'visual',
+                        'toolbar' => 'basic',
+                        'media_upload' => 0,
+                    ],
+                ],
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'options_page',
+                    'operator' => '==',
+                    'value'    => 'atomic-design-about-light-tn',
+                ],
+            ],
+        ],
+        'menu_order'            => 0,
+        'position'              => 'normal',
+        'style'                 => 'default',
+        'label_placement'       => 'top',
+        'instruction_placement' => 'label',
+        'active'                => true,
+        'show_in_rest'          => 1,
+    ]);
+
     // FAQ field group is defined in acf-json/group_atomic_faq_shared.json
     // so it appears as a real editable group in ACF > Field Groups admin.
 }
@@ -673,6 +858,95 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
  *         ]
  *       }
  *     ],
+ *     "consultation_split_sections": [
+ *       {
+ *         "consultation_split_heading": "Ready to light your property the right way?",
+ *         "consultation_split_intro": "<p>Short intro copy.<\/p>",
+ *         "consultation_split_form_id": 147,
+ *         "consultation_split_image": 123
+ *       }
+ *     ],
+ *     "design_process_sections": [
+ *       {
+ *         "design_process_heading": "Our Outdoor Lighting Design Process",
+ *         "design_process_steps": [
+ *           {
+ *             "step_nav_label": "We Protect Your Landscape",
+ *             "step_title": "Design Comes First",
+ *             "step_badge_title": "Design-Driven Layouts",
+ *             "step_description": "<p>Step copy.<\/p>",
+ *             "step_image": 123,
+ *             "step_icon": 456
+ *           }
+ *         ]
+ *       }
+ *     ],
+ *     "proof_points_sections": [
+ *       {
+ *         "proof_points_heading": "Why Choose Light TN in Nashville",
+ *         "proof_points_intro_title": "Our Credentials and Commitment",
+ *         "proof_points_intro_copy": "<p>Short intro copy.<\/p>",
+ *         "proof_points_items": [
+ *           {
+ *             "title": "Licensed and Accredited",
+ *             "description": "<p>Card copy.<\/p>",
+ *             "image": 123
+ *           }
+ *         ]
+ *       }
+ *     ],
+ *     "steps_grid_sections": [
+ *       {
+ *         "steps_grid_heading": "How It Works",
+ *         "steps_grid_heading_alignment": "center",
+ *         "steps_grid_items": [
+ *           {
+ *             "title": "Nashville Property Consultation",
+ *             "timeline": "Timeline: Week 1",
+ *             "description": "<p>Card copy.<\/p>",
+ *             "image": 123
+ *           }
+ *         ]
+ *       }
+ *     ],
+ *     "split_callout_sections": [
+ *       {
+ *         "split_callout_heading": "Investment & Pricing",
+ *         "split_callout_intro": "<p>Short intro copy.<\/p>",
+ *         "split_callout_link": {
+ *           "title": "See full pricing and what's included",
+ *           "url": "https:\/\/example.com",
+ *           "target": "_self"
+ *         },
+ *         "split_callout_panel_title": "Payment Terms:",
+ *         "split_callout_panel_copy": "<p>Panel copy.<\/p>"
+ *       }
+ *     ],
+ *     "detail_card_grid_sections": [
+ *       {
+ *         "detail_card_grid_heading": "Landscape Lighting Design Services",
+ *         "detail_card_grid_content": "<p>Left column copy.<\/p>",
+ *         "detail_card_grid_items": [
+ *           {
+ *             "title": "Site & Property Analysis",
+ *             "description": "<p>Card copy.<\/p>"
+ *           }
+ *         ]
+ *       }
+ *     ],
+ *     "spotlight_cards_sections": [
+ *       {
+ *         "spotlight_cards_heading": "What Sets Us Apart",
+ *         "spotlight_cards_intro": "<p>Left column copy.<\/p>",
+ *         "spotlight_cards_image": 123,
+ *         "spotlight_cards_items": [
+ *           {
+ *             "title": "Landscape Architecture Coordination",
+ *             "description": "<p>Card copy.<\/p>"
+ *           }
+ *         ]
+ *       }
+ *     ],
  *   }
  * }
  */
@@ -693,6 +967,13 @@ function atomic_design_get_allowed_template_acf_fields()
         'faq_items',
         'title_description_sections',
         'insight_columns_sections',
+        'proof_points_sections',
+        'steps_grid_sections',
+        'split_callout_sections',
+        'detail_card_grid_sections',
+        'spotlight_cards_sections',
+        'consultation_split_sections',
+        'design_process_sections',
         '_permalink_uri',
     ];
 }
@@ -960,6 +1241,50 @@ function atomic_design_register_acf_blocks()
     );
 
     // ----------------------------------------------------------
+    // Lighting & Audio Services block — global service card grid.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'lighting-audio-services',
+            'title'           => __('Lighting & Audio Services', 'atomic-design'),
+            'description'     => __('Global lighting and audio services card grid from Synced Components.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/lighting-audio-services/lighting-audio-services.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'screenoptions',
+            'keywords'        => ['services', 'lighting', 'audio', 'cards', 'global'],
+            'mode'            => 'preview',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // About Light TN block — global image + text panel section.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'about-light-tn',
+            'title'           => __('About Light TN', 'atomic-design'),
+            'description'     => __('Global About Light TN section from Synced Components.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/about-light-tn/about-light-tn.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'id-alt',
+            'keywords'        => ['about', 'light tn', 'intro', 'global'],
+            'mode'            => 'preview',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
     // Testimonials block
     // Same partial & CSS as on CPT pages. Use on normal pages.
     // ----------------------------------------------------------
@@ -1031,18 +1356,18 @@ function atomic_design_register_acf_blocks()
     );
 
     // ----------------------------------------------------------
-    // Insight Columns block
+    // Content Columns block
     // Heading + intro + reusable text columns.
     // ----------------------------------------------------------
     acf_register_block_type(
         [
             'name'            => 'insight-columns',
-            'title'           => __('Insight Columns', 'atomic-design'),
-            'description'     => __('Heading, intro copy, and reusable text columns for local expertise or detail sections.', 'atomic-design'),
+            'title'           => __('Content Columns', 'atomic-design'),
+            'description'     => __('Heading, intro copy, and reusable three-column text content.', 'atomic-design'),
             'render_template' => get_template_directory() . '/blocks/insight-columns/insight-columns.php',
             'category'        => 'atomic-blocks',
             'icon'            => 'columns',
-            'keywords'        => ['insight', 'columns', 'local', 'expertise', 'why choose'],
+            'keywords'        => ['content', 'columns', 'three columns', 'text columns', 'details'],
             'mode'            => 'edit',
             'supports'        => [
                 'align'           => ['wide', 'full'],
@@ -1053,6 +1378,166 @@ function atomic_design_register_acf_blocks()
         ]
     );
 
+    // ----------------------------------------------------------
+    // Proof Points block
+    // Intro column plus supporting image/text cards.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'proof-points',
+            'title'           => __('Proof Points', 'atomic-design'),
+            'description'     => __('Section with a lead intro column and supporting proof cards.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/proof-points/proof-points.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'images-alt2',
+            'keywords'        => ['proof points', 'credentials', 'reasons', 'cards', 'trust'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Steps Grid block
+    // Image-led process or how-it-works cards with heading alignment.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'steps-grid',
+            'title'           => __('Steps Grid', 'atomic-design'),
+            'description'     => __('Reusable image-led step cards with a configurable heading alignment.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/steps-grid/steps-grid.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'grid-view',
+            'keywords'        => ['steps', 'process', 'how it works', 'grid', 'cards'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Split Callout block
+    // Left intro content with right-side CTA and info panel.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'split-callout',
+            'title'           => __('Split Callout', 'atomic-design'),
+            'description'     => __('Two-column callout with left-side intro copy and right-side CTA/panel content.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/split-callout/split-callout.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'align-pull-right',
+            'keywords'        => ['callout', 'pricing', 'investment', 'two column', 'panel'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Detail Card Grid block
+    // Left text content with right-side card grid.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'detail-card-grid',
+            'title'           => __('Detail Card Grid', 'atomic-design'),
+            'description'     => __('Left column content paired with a two-column card grid.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/detail-card-grid/detail-card-grid.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'screenoptions',
+            'keywords'        => ['details', 'cards', 'grid', 'service', 'features'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Spotlight Cards block
+    // Left intro, right image, and a row of supporting cards.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'spotlight-cards',
+            'title'           => __('Spotlight Cards', 'atomic-design'),
+            'description'     => __('Left-side intro content with a right-side image and supporting cards.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/spotlight-cards/spotlight-cards.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'images-alt',
+            'keywords'        => ['spotlight', 'cards', 'features', 'highlights', 'image'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Consultation Split block
+    // Form on the left, visual panel on the right.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'consultation-split',
+            'title'           => __('Consultation Split', 'atomic-design'),
+            'description'     => __('Consultation form section with WPForms on the left and an image on the right.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/consultation-split/consultation-split.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'feedback',
+            'keywords'        => ['consultation', 'form', 'wpforms', 'contact', 'split'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Design Process block
+    // Interactive process section with step details and imagery.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'design-process',
+            'title'           => __('Design Process', 'atomic-design'),
+            'description'     => __('Interactive process section with step details, imagery, and a vertical step rail.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/design-process/design-process.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'editor-ol',
+            'keywords'        => ['process', 'steps', 'design process', 'timeline', 'workflow'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
 }
 add_action('acf/init', 'atomic_design_register_acf_blocks');
 

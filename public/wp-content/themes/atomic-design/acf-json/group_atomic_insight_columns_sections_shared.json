@@ -1,14 +1,14 @@
 {
     "key": "group_atomic_insight_columns_sections_shared",
-    "title": "Insight Columns Sections",
+    "title": "Content Columns Sections",
     "fields": [
         {
             "key": "field_atomic_insight_columns_sections",
-            "label": "Insight Columns Sections",
+            "label": "Content Columns Sections",
             "name": "insight_columns_sections",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Add one insight column section per row. Each section renders a heading, optional intro, and repeatable text columns.",
+            "instructions": "Add one content columns section per row. Each section renders a heading, optional intro, and repeatable text columns.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -21,7 +21,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "field_atomic_insight_columns_heading",
-            "button_label": "Add insight section",
+            "button_label": "Add content columns section",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -30,7 +30,7 @@
                     "name": "insight_columns_heading",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "Visible heading above the columns.",
+                    "instructions": "Visible heading above the three columns.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -70,7 +70,7 @@
                 },
                 {
                     "key": "field_atomic_insight_columns_items",
-                    "label": "Columns",
+                    "label": "Content Columns",
                     "name": "insight_columns_items",
                     "aria-label": "",
                     "type": "repeater",
@@ -168,7 +168,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Repeatable Insight Columns sections for CPT templates.",
+    "description": "Repeatable Content Columns sections for CPT templates.",
     "show_in_rest": 1,
     "display_title": "",
     "modified": 1775265600

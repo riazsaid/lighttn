@@ -1,0 +1,223 @@
+{
+    "key": "group_atomic_proof_points_sections_shared",
+    "title": "Proof Points Sections",
+    "fields": [
+        {
+            "key": "field_atomic_proof_points_sections",
+            "label": "Proof Points Sections",
+            "name": "proof_points_sections",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add one proof points section per row. Each section renders an intro column plus supporting proof cards.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_atomic_proof_points_heading",
+            "button_label": "Add proof points section",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_proof_points_heading",
+                    "label": "Section Title",
+                    "name": "proof_points_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Visible section heading.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Why Choose Light TN in Nashville",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_proof_points_sections"
+                },
+                {
+                    "key": "field_atomic_proof_points_intro_title",
+                    "label": "Intro Title",
+                    "name": "proof_points_intro_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Lead title shown in the first column.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Our Credentials and Commitment",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_proof_points_sections"
+                },
+                {
+                    "key": "field_atomic_proof_points_intro_copy",
+                    "label": "Intro Copy",
+                    "name": "proof_points_intro_copy",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Short supporting copy for the intro column.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_proof_points_sections"
+                },
+                {
+                    "key": "field_atomic_proof_points_items",
+                    "label": "Proof Cards",
+                    "name": "proof_points_items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Add one proof card per row.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_atomic_proof_points_item_title",
+                    "button_label": "Add proof card",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_atomic_proof_points_sections",
+                    "sub_fields": [
+                        {
+                            "key": "field_atomic_proof_points_item_image",
+                            "label": "Card Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "allow_in_bindings": 0,
+                            "min_width": 0,
+                            "min_height": 0,
+                            "min_size": 0,
+                            "max_width": 0,
+                            "max_height": 0,
+                            "max_size": 0,
+                            "mime_types": "",
+                            "parent_repeater": "field_atomic_proof_points_items"
+                        },
+                        {
+                            "key": "field_atomic_proof_points_item_title",
+                            "label": "Card Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "60",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Licensed and Accredited",
+                            "prepend": "",
+                            "append": "",
+                            "allow_in_bindings": 0,
+                            "maxlength": "",
+                            "parent_repeater": "field_atomic_proof_points_items"
+                        },
+                        {
+                            "key": "field_atomic_proof_points_item_description",
+                            "label": "Card Description",
+                            "name": "description",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0,
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_atomic_proof_points_items"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "location"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service-location"
+            }
+        ]
+    ],
+    "menu_order": 35,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Repeatable Proof Points sections for CPT templates.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1777420800
+}

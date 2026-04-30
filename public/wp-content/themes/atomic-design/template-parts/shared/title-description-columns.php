@@ -23,17 +23,17 @@ if ($section_heading === '' || $description === '') {
 $description = wpautop($description);
 ?>
 
-<section class="title-description-columns">
+<section class="title-description-columns scroll-reveal">
     <div class="container">
         <div class="title-description-columns__inner">
-            <h2 class="title-description-columns__heading"><?php echo esc_html($section_heading); ?></h2>
+            <h2 class="title-description-columns__heading scroll-reveal" style="--reveal-delay: 80ms;"><?php echo esc_html($section_heading); ?></h2>
 
-            <div class="title-description-columns__content">
+            <div class="title-description-columns__content scroll-reveal" style="--reveal-delay: 160ms;">
                 <?php echo wp_kses_post($description); ?>
             </div>
 
             <?php if (!empty($cta['url']) && !empty($cta['title'])) : ?>
-                <div class="title-description-columns__actions">
+                <div class="title-description-columns__actions scroll-reveal" style="--reveal-delay: 220ms;">
                     <a class="title-description-columns__cta"
                        href="<?php echo esc_url($cta['url']); ?>"
                        target="<?php echo esc_attr($cta['target'] ?: '_self'); ?>">

@@ -1,0 +1,30 @@
+name: Deploy LightTN Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Copy files to DreamHost
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DH_HOST }}
+          username: ${{ secrets.DH_USER }}
+          password: ${{ secrets.DH_SSH_KEY }}
+          source: "."
+          target: "new.lighttn.com"        # 👈 changed to your LightTN domain folder
+          rm: false
+          strip_components: 1
+          exclude: |
+            .git*
+            .ddev
+            docs
+            Designs
+            team-sync

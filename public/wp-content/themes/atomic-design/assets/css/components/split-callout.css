@@ -1,0 +1,114 @@
+.split-callout {
+    padding: clamp(70px, 8vw, 104px) 0;
+    background: #fff;
+    color: #000;
+}
+
+.split-callout__inner {
+    max-width: 1180px;
+}
+
+.split-callout__grid {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.45fr);
+    gap: clamp(28px, 4vw, 60px);
+    align-items: start;
+}
+
+.split-callout__intro {
+    min-width: 0;
+}
+
+.split-callout__heading {
+    margin: 0 0 28px;
+    font-family: var(--font-body);
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.split-callout__intro-copy,
+.split-callout__panel-copy {
+    font-family: var(--font-body);
+    font-size: clamp(14px, 1.1vw, 16px);
+    font-weight: 400;
+    line-height: 1.58;
+    color: #2a2a2a;
+}
+
+.split-callout__intro-copy p,
+.split-callout__panel-copy p {
+    margin: 0 0 1em;
+}
+
+.split-callout__intro-copy p:last-child,
+.split-callout__panel-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.split-callout__aside {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.split-callout__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 24px 28px;
+    border: 1px solid rgba(46, 63, 79, 0.12);
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    color: #111;
+    font-family: var(--font-body);
+    font-size: clamp(15px, 1.2vw, 17px);
+    font-weight: 700;
+    line-height: 1.35;
+    text-decoration: none;
+    transition:
+        transform var(--dur-fast) var(--ease),
+        box-shadow var(--dur-fast) var(--ease),
+        color var(--dur-fast) var(--ease);
+}
+
+.split-callout__link:hover,
+.split-callout__link:focus-visible {
+    color: var(--cyan-hover);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.13);
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.split-callout__panel {
+    padding: clamp(30px, 3vw, 38px);
+    border-radius: 28px;
+    background: #f3f3f3;
+}
+
+.split-callout__panel-title {
+    margin: 0 0 20px;
+    font-family: var(--font-body);
+    font-size: clamp(18px, 1.45vw, 21px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111;
+}
+
+@media (max-width: 900px) {
+    .split-callout__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .split-callout__link {
+        padding: 20px 22px;
+        border-radius: 28px;
+    }
+}

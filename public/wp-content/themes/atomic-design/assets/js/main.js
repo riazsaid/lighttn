@@ -43,6 +43,38 @@
         onScroll();
     }
 
+    function initScrollReveal() {
+        const nodes = Array.from(document.querySelectorAll('.scroll-reveal'));
+
+        if (!nodes.length) {
+            return;
+        }
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (reduceMotion || !('IntersectionObserver' in window)) {
+            nodes.forEach(node => node.classList.add('revealed'));
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add('revealed');
+                obs.unobserve(entry.target);
+            });
+        }, {
+            root: null,
+            threshold: 0.12,
+            rootMargin: '0px 0px -8% 0px'
+        });
+
+        nodes.forEach(node => observer.observe(node));
+    }
+
     function initPartnersAffiliationsCarousels() {
         const carousels = document.querySelectorAll('[data-partners-carousel]');
 
@@ -124,7 +156,54 @@
         });
     }
 
+    function initDesignProcessSections() {
+        const sections = document.querySelectorAll('[data-design-process]');
+
+        sections.forEach(section => {
+            if (section.dataset.designProcessReady === 'true') {
+                return;
+            }
+
+            const buttons = Array.from(section.querySelectorAll('[data-step-button]'));
+            const summaries = Array.from(section.querySelectorAll('[data-step-summary]'));
+            const visuals = Array.from(section.querySelectorAll('[data-step-visual]'));
+
+            if (!buttons.length || !summaries.length || !visuals.length) {
+                return;
+            }
+
+            const activateStep = index => {
+                buttons.forEach((button, buttonIndex) => {
+                    const isActive = buttonIndex === index;
+                    button.classList.toggle('is-active', isActive);
+                    button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+
+                summaries.forEach((summary, summaryIndex) => {
+                    const isActive = summaryIndex === index;
+                    summary.classList.toggle('is-active', isActive);
+                    summary.hidden = !isActive;
+                });
+
+                visuals.forEach((visual, visualIndex) => {
+                    const isActive = visualIndex === index;
+                    visual.classList.toggle('is-active', isActive);
+                    visual.hidden = !isActive;
+                });
+            };
+
+            buttons.forEach((button, index) => {
+                button.addEventListener('click', () => activateStep(index));
+            });
+
+            section.dataset.designProcessReady = 'true';
+            activateStep(0);
+        });
+    }
+
     window.addEventListener('load', initPartnersAffiliationsCarousels);
     initPartnersAffiliationsCarousels();
+    initDesignProcessSections();
+    initScrollReveal();
 
 })();

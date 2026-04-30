@@ -1,0 +1,213 @@
+{
+    "key": "group_atomic_design_process_block",
+    "title": "Design Process Block",
+    "fields": [
+        {
+            "key": "field_atomic_block_design_process_heading",
+            "label": "Section Title",
+            "name": "design_process_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Visible heading above the process section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Our Outdoor Lighting Design Process",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_block_design_process_steps",
+            "label": "Process Steps",
+            "name": "design_process_steps",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add one process step per row. The first step is shown by default.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_atomic_block_design_process_step_title",
+            "button_label": "Add step",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_block_design_process_step_nav_label",
+                    "label": "Step Rail Label",
+                    "name": "step_nav_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Short uppercase label shown in the step rail.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "We Protect Your Landscape",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_block_design_process_steps"
+                },
+                {
+                    "key": "field_atomic_block_design_process_step_title",
+                    "label": "Step Title",
+                    "name": "step_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Main title shown on the left side.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Design Comes First",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_block_design_process_steps"
+                },
+                {
+                    "key": "field_atomic_block_design_process_step_badge_title",
+                    "label": "Badge Title",
+                    "name": "step_badge_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional short title shown in the image badge. Defaults to the step title.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Design-Driven Layouts",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_block_design_process_steps"
+                },
+                {
+                    "key": "field_atomic_block_design_process_step_description",
+                    "label": "Step Description",
+                    "name": "step_description",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Paragraph copy shown beside the image.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_block_design_process_steps"
+                },
+                {
+                    "key": "field_atomic_block_design_process_step_icon",
+                    "label": "Step Icon",
+                    "name": "step_icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Optional icon shown above the left-side title.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "allow_in_bindings": 0,
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_atomic_block_design_process_steps"
+                },
+                {
+                    "key": "field_atomic_block_design_process_step_image",
+                    "label": "Step Image",
+                    "name": "step_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Main image shown for this step.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "allow_in_bindings": 0,
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_atomic_block_design_process_steps"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/design-process"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the Design Process ACF block.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1777419600
+}

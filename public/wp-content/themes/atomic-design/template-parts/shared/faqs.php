@@ -45,9 +45,9 @@ if ($faq_layout === 'two-column') {
 }
 ?>
 
-<section class="faq-accordion-block layout-<?php echo esc_attr($faq_layout); ?>" id="<?php echo esc_attr($section_id); ?>">
+<section class="faq-accordion-block layout-<?php echo esc_attr($faq_layout); ?> scroll-reveal" id="<?php echo esc_attr($section_id); ?>">
     <div class="container faq-container faq-container--<?php echo esc_attr($faq_layout); ?>">
-        <div class="faq-heading-wrap">
+        <div class="faq-heading-wrap scroll-reveal" style="--reveal-delay: 70ms;">
             <?php if (!empty($section_heading)) : ?>
                 <h2 class="faq-heading"><?php echo esc_html($section_heading); ?></h2>
             <?php endif; ?>
@@ -64,8 +64,9 @@ if ($faq_layout === 'two-column') {
                         $answer       = isset($faq['faq_answer']) ? $faq['faq_answer'] : '';
                         $default_open = !empty($faq['default_open']);
                         $faq_id       = $section_id . '-faq-' . $global_index;
+                        $delay        = 110 + ((int) $global_index * 70);
                         ?>
-                        <div class="faq-item <?php echo $default_open ? 'active' : ''; ?>" data-faq-item>
+                        <div class="faq-item scroll-reveal <?php echo $default_open ? 'active' : ''; ?>" data-faq-item style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
                             <button class="faq-question"
                                 aria-expanded="<?php echo $default_open ? 'true' : 'false'; ?>"
                                 aria-controls="<?php echo esc_attr($faq_id); ?>">

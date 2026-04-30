@@ -36,22 +36,23 @@ $section_class = trim('insight-columns align' . $align . ' ' . $class_name);
 
 <section class="<?php echo esc_attr($section_class); ?>">
     <div class="container insight-columns__inner">
-        <header class="insight-columns__header">
-            <h2 class="insight-columns__heading"><?php echo esc_html($section_heading); ?></h2>
+        <header class="insight-columns__header scroll-reveal">
+            <h2 class="insight-columns__heading scroll-reveal" style="--reveal-delay: 70ms;"><?php echo esc_html($section_heading); ?></h2>
 
             <?php if (trim(wp_strip_all_tags($intro)) !== '') : ?>
-                <div class="insight-columns__intro">
+                <div class="insight-columns__intro scroll-reveal" style="--reveal-delay: 150ms;">
                     <?php echo wp_kses_post(wpautop($intro)); ?>
                 </div>
             <?php endif; ?>
         </header>
 
         <div class="insight-columns__grid">
-            <?php foreach ($items as $item) :
+            <?php foreach ($items as $index => $item) :
                 $title       = isset($item['title']) ? trim((string) $item['title']) : '';
                 $description = isset($item['description']) ? trim((string) $item['description']) : '';
+                $delay       = 120 + ((int) $index * 100);
                 ?>
-                <article class="insight-columns__item">
+                <article class="insight-columns__item scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
                     <?php if ($title !== '') : ?>
                         <h3 class="insight-columns__item-title"><?php echo esc_html($title); ?></h3>
                     <?php endif; ?>

@@ -35,9 +35,9 @@ if (!$has_items) {
     return;
 }
 ?>
-<section class="partners-affiliations-block">
+<section class="partners-affiliations-block scroll-reveal">
     <div class="container partners-affiliations-block__inner">
-        <?php foreach ($groups as $group) :
+        <?php foreach ($groups as $group_index => $group) :
             $items = is_array($group['items']) ? $group['items'] : [];
             $items = array_values(array_filter($items, static function ($item) {
                 $name = isset($item['name']) ? trim((string) $item['name']) : '';
@@ -56,7 +56,7 @@ if (!$has_items) {
             $is_carousel = count($items) > 3;
             $list_class   = $is_carousel ? 'partners-affiliations-block__track' : 'partners-affiliations-block__grid';
             ?>
-            <div class="partners-affiliations-block__group">
+            <div class="partners-affiliations-block__group scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) (70 + ((int) $group_index * 120))); ?>ms;">
                 <?php if (!empty($group['heading'])) : ?>
                     <h2 class="partners-affiliations-block__heading"><?php echo esc_html($group['heading']); ?></h2>
                 <?php endif; ?>
@@ -69,7 +69,7 @@ if (!$has_items) {
                 <?php endif; ?>
 
                 <div class="<?php echo esc_attr($list_class); ?>">
-                    <?php foreach ($items as $item) :
+                    <?php foreach ($items as $item_index => $item) :
                         $name = isset($item['name']) ? trim((string) $item['name']) : '';
                         $logo = $item['logo'] ?? null;
                         $link = isset($item['link']) ? trim((string) $item['link']) : '';
@@ -82,8 +82,9 @@ if (!$has_items) {
 
                         $tag = $link !== '' ? 'a' : 'div';
                         $attrs = $link !== '' ? ' href="' . esc_url($link) . '"' : '';
+                        $delay = 130 + ((int) $item_index * 70);
                         ?>
-                        <<?php echo esc_html($tag); ?> class="partners-affiliations-block__card"<?php echo $attrs; ?>>
+                        <<?php echo esc_html($tag); ?> class="partners-affiliations-block__card scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;"<?php echo $attrs; ?>>
                             <?php if ($logo_id) : ?>
                                 <?php echo wp_get_attachment_image($logo_id, 'medium', false, [
                                     'class' => 'partners-affiliations-block__logo',
