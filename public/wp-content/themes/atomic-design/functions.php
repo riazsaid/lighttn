@@ -909,6 +909,44 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
  *         ]
  *       }
  *     ],
+ *     "split_callout_sections": [
+ *       {
+ *         "split_callout_heading": "Investment & Pricing",
+ *         "split_callout_intro": "<p>Short intro copy.<\/p>",
+ *         "split_callout_link": {
+ *           "title": "See full pricing and what's included",
+ *           "url": "https:\/\/example.com",
+ *           "target": "_self"
+ *         },
+ *         "split_callout_panel_title": "Payment Terms:",
+ *         "split_callout_panel_copy": "<p>Panel copy.<\/p>"
+ *       }
+ *     ],
+ *     "detail_card_grid_sections": [
+ *       {
+ *         "detail_card_grid_heading": "Landscape Lighting Design Services",
+ *         "detail_card_grid_content": "<p>Left column copy.<\/p>",
+ *         "detail_card_grid_items": [
+ *           {
+ *             "title": "Site & Property Analysis",
+ *             "description": "<p>Card copy.<\/p>"
+ *           }
+ *         ]
+ *       }
+ *     ],
+ *     "spotlight_cards_sections": [
+ *       {
+ *         "spotlight_cards_heading": "What Sets Us Apart",
+ *         "spotlight_cards_intro": "<p>Left column copy.<\/p>",
+ *         "spotlight_cards_image": 123,
+ *         "spotlight_cards_items": [
+ *           {
+ *             "title": "Landscape Architecture Coordination",
+ *             "description": "<p>Card copy.<\/p>"
+ *           }
+ *         ]
+ *       }
+ *     ],
  *   }
  * }
  */
@@ -931,6 +969,9 @@ function atomic_design_get_allowed_template_acf_fields()
         'insight_columns_sections',
         'proof_points_sections',
         'steps_grid_sections',
+        'split_callout_sections',
+        'detail_card_grid_sections',
+        'spotlight_cards_sections',
         'consultation_split_sections',
         'design_process_sections',
         '_permalink_uri',
@@ -1373,6 +1414,75 @@ function atomic_design_register_acf_blocks()
             'category'        => 'atomic-blocks',
             'icon'            => 'grid-view',
             'keywords'        => ['steps', 'process', 'how it works', 'grid', 'cards'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Split Callout block
+    // Left intro content with right-side CTA and info panel.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'split-callout',
+            'title'           => __('Split Callout', 'atomic-design'),
+            'description'     => __('Two-column callout with left-side intro copy and right-side CTA/panel content.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/split-callout/split-callout.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'align-pull-right',
+            'keywords'        => ['callout', 'pricing', 'investment', 'two column', 'panel'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Detail Card Grid block
+    // Left text content with right-side card grid.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'detail-card-grid',
+            'title'           => __('Detail Card Grid', 'atomic-design'),
+            'description'     => __('Left column content paired with a two-column card grid.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/detail-card-grid/detail-card-grid.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'screenoptions',
+            'keywords'        => ['details', 'cards', 'grid', 'service', 'features'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Spotlight Cards block
+    // Left intro, right image, and a row of supporting cards.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'spotlight-cards',
+            'title'           => __('Spotlight Cards', 'atomic-design'),
+            'description'     => __('Left-side intro content with a right-side image and supporting cards.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/spotlight-cards/spotlight-cards.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'images-alt',
+            'keywords'        => ['spotlight', 'cards', 'features', 'highlights', 'image'],
             'mode'            => 'edit',
             'supports'        => [
                 'align'           => ['wide', 'full'],

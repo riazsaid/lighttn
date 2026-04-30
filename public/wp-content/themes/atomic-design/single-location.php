@@ -4,7 +4,7 @@
  *
  * Structure:
  * Hero → Title Description 1 → Trust Bar → Title Description 2
- * → Insight Columns → Proof Points → Design Process → Steps Grid → Title Description 3 → Consultation Split → Testimonials → FAQs.
+ * → Detail Card Grid → Spotlight Cards → Insight Columns → Proof Points → Design Process → Steps Grid → Split Callout → Title Description 3 → Consultation Split → Testimonials → FAQs.
  */
 get_header();
 ?>
@@ -34,6 +34,12 @@ get_header();
             'post_id' => $post_id,
             'section_index' => 2,
         ]);
+        get_template_part('template-parts/shared/detail-card-grid-sections', null, [
+            'post_id' => $post_id,
+        ]);
+        get_template_part('template-parts/shared/spotlight-cards-sections', null, [
+            'post_id' => $post_id,
+        ]);
         get_template_part('template-parts/shared/insight-columns-sections', null, [
             'post_id' => $post_id,
         ]);
@@ -44,6 +50,9 @@ get_header();
             'post_id' => $post_id,
         ]);
         get_template_part('template-parts/shared/steps-grid-sections', null, [
+            'post_id' => $post_id,
+        ]);
+        get_template_part('template-parts/shared/split-callout-sections', null, [
             'post_id' => $post_id,
         ]);
         get_template_part('template-parts/shared/title-description-sections', null, [
