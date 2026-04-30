@@ -4,8 +4,18 @@
  *
  * e.g. /locations/{city-slug}/{service-slug}/
  * Structure:
- * Hero → Title Description 1 → Trust Bar → Title Description 2
- * → Insight Columns → Title Description 3 → Testimonials → FAQs
+ * Hero
+ * → Detail Card Grid (row 1)
+ * → Steps Grid (row 1)
+ * → Proof Points (row 1)
+ * → Content Columns (row 1)
+ * → Spotlight Cards (row 1)
+ * → Testimonials
+ * → About Light TN
+ * → Detail Card Grid (row 2)
+ * → FAQs
+ * → Partners & Affiliations
+ * → Consultation Split (row 1)
  */
 get_header();
 ?>
@@ -26,26 +36,38 @@ get_header();
     if (function_exists('get_field')) {
         $post_id = get_queried_object_id();
 
-        get_template_part('template-parts/shared/title-description-sections', null, [
+        get_template_part('template-parts/shared/detail-card-grid-sections', null, [
             'post_id' => $post_id,
             'section_index' => 1,
         ]);
-        get_template_part('template-parts/shared/trust-bar');
-        get_template_part('template-parts/shared/title-description-sections', null, [
+        get_template_part('template-parts/shared/steps-grid-sections', null, [
             'post_id' => $post_id,
-            'section_index' => 2,
+            'section_index' => 1,
+        ]);
+        get_template_part('template-parts/shared/proof-points-sections', null, [
+            'post_id' => $post_id,
+            'section_index' => 1,
         ]);
         get_template_part('template-parts/shared/insight-columns-sections', null, [
             'post_id' => $post_id,
+            'section_index' => 1,
         ]);
-        get_template_part('template-parts/shared/title-description-sections', null, [
+        get_template_part('template-parts/shared/spotlight-cards-sections', null, [
             'post_id' => $post_id,
-            'section_index' => 3,
+            'section_index' => 1,
         ]);
-    }
-    get_template_part('template-parts/shared/testimonials');
-    if (function_exists('get_field')) {
+        get_template_part('template-parts/shared/testimonials');
+        get_template_part('template-parts/shared/about-light-tn');
+        get_template_part('template-parts/shared/detail-card-grid-sections', null, [
+            'post_id' => $post_id,
+            'section_index' => 2,
+        ]);
         get_template_part('template-parts/shared/faqs', null, ['post_id' => $post_id]);
+        get_template_part('template-parts/shared/partners-affiliations');
+        get_template_part('template-parts/shared/consultation-split-sections', null, [
+            'post_id' => $post_id,
+            'section_index' => 1,
+        ]);
     }
     ?>
 </main>

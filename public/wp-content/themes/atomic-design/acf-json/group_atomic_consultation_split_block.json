@@ -1,0 +1,114 @@
+{
+    "key": "group_atomic_consultation_split_block",
+    "title": "Consultation Split Block",
+    "fields": [
+        {
+            "key": "field_atomic_block_consultation_split_heading",
+            "label": "Section Title",
+            "name": "consultation_split_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Visible heading above the split layout.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Ready to light your property the right way?",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_block_consultation_split_intro",
+            "label": "Intro Copy",
+            "name": "consultation_split_intro",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Optional copy shown to the right of the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_block_consultation_split_form_id",
+            "label": "WPForms Form ID",
+            "name": "consultation_split_form_id",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "WPForms form ID. Default for Light TN is 147.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 147,
+            "min": 1,
+            "max": 0,
+            "step": 1,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_block_consultation_split_image",
+            "label": "Right Side Image",
+            "name": "consultation_split_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Temporary right-side image. This can be swapped later if the design changes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "allow_in_bindings": 0,
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/consultation-split"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the Consultation Split ACF block.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1775430000
+}

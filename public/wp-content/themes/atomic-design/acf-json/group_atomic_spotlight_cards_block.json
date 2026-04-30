@@ -1,14 +1,14 @@
 {
-    "key": "group_atomic_insight_columns_block",
-    "title": "Content Columns Block",
+    "key": "group_atomic_spotlight_cards_block",
+    "title": "Spotlight Cards Block",
     "fields": [
         {
-            "key": "field_atomic_block_insight_columns_heading",
+            "key": "field_atomic_block_spotlight_cards_heading",
             "label": "Section Title",
-            "name": "insight_columns_heading",
+            "name": "spotlight_cards_heading",
             "aria-label": "",
             "type": "text",
-            "instructions": "Visible heading above the three columns.",
+            "instructions": "Visible section heading shown on the left.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -17,19 +17,19 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "Nashville. We Know It.",
+            "placeholder": "What Sets Us Apart",
             "prepend": "",
             "append": "",
             "allow_in_bindings": 0,
             "maxlength": ""
         },
         {
-            "key": "field_atomic_block_insight_columns_intro",
-            "label": "Intro Copy",
-            "name": "insight_columns_intro",
+            "key": "field_atomic_block_spotlight_cards_intro",
+            "label": "Left Column Content",
+            "name": "spotlight_cards_intro",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "Optional short paragraph shown under the section title.",
+            "instructions": "Text shown under the heading in the left column.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -45,12 +45,38 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_atomic_block_insight_columns_items",
-            "label": "Content Columns",
-            "name": "insight_columns_items",
+            "key": "field_atomic_block_spotlight_cards_image",
+            "label": "Main Image",
+            "name": "spotlight_cards_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Image shown to the right of the intro content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "allow_in_bindings": 0,
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_atomic_block_spotlight_cards_items",
+            "label": "Spotlight Cards",
+            "name": "spotlight_cards_items",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Add one text column per row.",
+            "instructions": "Add one supporting card per row.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -62,13 +88,13 @@
             "pagination": 0,
             "min": 0,
             "max": 0,
-            "collapsed": "field_atomic_block_insight_columns_item_title",
-            "button_label": "Add column",
+            "collapsed": "field_atomic_block_spotlight_cards_item_title",
+            "button_label": "Add spotlight card",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_atomic_block_insight_columns_item_title",
-                    "label": "Column Title",
+                    "key": "field_atomic_block_spotlight_cards_item_title",
+                    "label": "Card Title",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -80,16 +106,16 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Estate Properties Across Nashville’s Premier Neighborhoods",
+                    "placeholder": "Landscape Architecture Coordination",
                     "prepend": "",
                     "append": "",
                     "allow_in_bindings": 0,
                     "maxlength": "",
-                    "parent_repeater": "field_atomic_block_insight_columns_items"
+                    "parent_repeater": "field_atomic_block_spotlight_cards_items"
                 },
                 {
-                    "key": "field_atomic_block_insight_columns_item_description",
-                    "label": "Column Copy",
+                    "key": "field_atomic_block_spotlight_cards_item_description",
+                    "label": "Card Description",
                     "name": "description",
                     "aria-label": "",
                     "type": "wysiwyg",
@@ -106,7 +132,7 @@
                     "media_upload": 0,
                     "delay": 0,
                     "allow_in_bindings": 0,
-                    "parent_repeater": "field_atomic_block_insight_columns_items"
+                    "parent_repeater": "field_atomic_block_spotlight_cards_items"
                 }
             ]
         }
@@ -116,7 +142,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/insight-columns"
+                "value": "acf\/spotlight-cards"
             }
         ]
     ],
@@ -127,8 +153,8 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Fields for the Content Columns ACF block.",
+    "description": "Fields for the Spotlight Cards ACF block.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1775265600
+    "modified": 1777507200
 }

@@ -1,14 +1,14 @@
 {
-    "key": "group_atomic_insight_columns_sections_shared",
-    "title": "Content Columns Sections",
+    "key": "group_atomic_detail_card_grid_sections_shared",
+    "title": "Detail Card Grid Sections",
     "fields": [
         {
-            "key": "field_atomic_insight_columns_sections",
-            "label": "Content Columns Sections",
-            "name": "insight_columns_sections",
+            "key": "field_atomic_detail_card_grid_sections",
+            "label": "Detail Card Grid Sections",
+            "name": "detail_card_grid_sections",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Add one content columns section per row. Each section renders a heading, optional intro, and repeatable text columns.",
+            "instructions": "Add one detail card grid section per row. Each section renders left-side rich text and a right-side card grid.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -20,17 +20,17 @@
             "pagination": 0,
             "min": 0,
             "max": 0,
-            "collapsed": "field_atomic_insight_columns_heading",
-            "button_label": "Add content columns section",
+            "collapsed": "field_atomic_detail_card_grid_heading",
+            "button_label": "Add detail card grid section",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_atomic_insight_columns_heading",
+                    "key": "field_atomic_detail_card_grid_heading",
                     "label": "Section Title",
-                    "name": "insight_columns_heading",
+                    "name": "detail_card_grid_heading",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "Visible heading above the three columns.",
+                    "instructions": "Visible section heading shown on the left.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -39,20 +39,20 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Nashville. We Know It.",
+                    "placeholder": "Landscape Lighting Design Services",
                     "prepend": "",
                     "append": "",
                     "allow_in_bindings": 0,
                     "maxlength": "",
-                    "parent_repeater": "field_atomic_insight_columns_sections"
+                    "parent_repeater": "field_atomic_detail_card_grid_sections"
                 },
                 {
-                    "key": "field_atomic_insight_columns_intro",
-                    "label": "Intro Copy",
-                    "name": "insight_columns_intro",
+                    "key": "field_atomic_detail_card_grid_content",
+                    "label": "Left Column Content",
+                    "name": "detail_card_grid_content",
                     "aria-label": "",
                     "type": "wysiwyg",
-                    "instructions": "Optional short paragraph shown under the section title.",
+                    "instructions": "Rich text content shown in the left column. You can include bold labels and bullet lists here.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -66,15 +66,15 @@
                     "media_upload": 0,
                     "delay": 0,
                     "allow_in_bindings": 0,
-                    "parent_repeater": "field_atomic_insight_columns_sections"
+                    "parent_repeater": "field_atomic_detail_card_grid_sections"
                 },
                 {
-                    "key": "field_atomic_insight_columns_items",
-                    "label": "Content Columns",
-                    "name": "insight_columns_items",
+                    "key": "field_atomic_detail_card_grid_items",
+                    "label": "Detail Cards",
+                    "name": "detail_card_grid_items",
                     "aria-label": "",
                     "type": "repeater",
-                    "instructions": "Add one text column per row.",
+                    "instructions": "Add one card per row.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -86,14 +86,14 @@
                     "pagination": 0,
                     "min": 0,
                     "max": 0,
-                    "collapsed": "field_atomic_insight_columns_item_title",
-                    "button_label": "Add column",
+                    "collapsed": "field_atomic_detail_card_grid_item_title",
+                    "button_label": "Add detail card",
                     "rows_per_page": 20,
-                    "parent_repeater": "field_atomic_insight_columns_sections",
+                    "parent_repeater": "field_atomic_detail_card_grid_sections",
                     "sub_fields": [
                         {
-                            "key": "field_atomic_insight_columns_item_title",
-                            "label": "Column Title",
+                            "key": "field_atomic_detail_card_grid_item_title",
+                            "label": "Card Title",
                             "name": "title",
                             "aria-label": "",
                             "type": "text",
@@ -105,16 +105,16 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "Estate Properties Across Nashville’s Premier Neighborhoods",
+                            "placeholder": "Site & Property Analysis",
                             "prepend": "",
                             "append": "",
                             "allow_in_bindings": 0,
                             "maxlength": "",
-                            "parent_repeater": "field_atomic_insight_columns_items"
+                            "parent_repeater": "field_atomic_detail_card_grid_items"
                         },
                         {
-                            "key": "field_atomic_insight_columns_item_description",
-                            "label": "Column Copy",
+                            "key": "field_atomic_detail_card_grid_item_description",
+                            "label": "Card Description",
                             "name": "description",
                             "aria-label": "",
                             "type": "wysiwyg",
@@ -131,7 +131,7 @@
                             "media_upload": 0,
                             "delay": 0,
                             "allow_in_bindings": 0,
-                            "parent_repeater": "field_atomic_insight_columns_items"
+                            "parent_repeater": "field_atomic_detail_card_grid_items"
                         }
                     ]
                 }
@@ -161,15 +161,15 @@
             }
         ]
     ],
-    "menu_order": 30,
+    "menu_order": 20,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Repeatable Content Columns sections for CPT templates.",
+    "description": "Repeatable Detail Card Grid sections for CPT templates.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1775265600
+    "modified": 1777505700
 }
