@@ -929,11 +929,11 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
      *         "detail_card_grid_left_items": [
      *           {
      *             "title": "This service is ideal for:",
-     *             "body": "<ul><li>Property owners with significant landscape investment.<\/li><\/ul>"
+     *             "description": "<ul><li>Property owners with significant landscape investment.<\/li><\/ul>"
      *           },
      *           {
      *             "title": "What's Included",
-     *             "body": "<p>Custom design matched to your landscape features.<\/p>"
+     *             "description": "<p>Custom design matched to your landscape features.<\/p>"
      *           }
      *         ],
      *         "detail_card_grid_items": [

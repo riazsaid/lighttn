@@ -52,7 +52,7 @@
                     "name": "detail_card_grid_content",
                     "aria-label": "",
                     "type": "wysiwyg",
-                    "instructions": "Intro content shown before the left-side title/body rows.",
+                    "instructions": "Intro content shown before the left-side title/description rows.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -74,7 +74,7 @@
                     "name": "detail_card_grid_left_items",
                     "aria-label": "",
                     "type": "repeater",
-                    "instructions": "Add the left-side title/body rows. Two rows match the current design.",
+                    "instructions": "Add the left-side title/description rows. Two rows match the current design.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -113,9 +113,9 @@
                             "parent_repeater": "field_atomic_detail_card_grid_left_items"
                         },
                         {
-                            "key": "field_atomic_detail_card_grid_left_item_body",
-                            "label": "Body",
-                            "name": "body",
+                            "key": "field_atomic_detail_card_grid_left_item_description",
+                            "label": "Description",
+                            "name": "description",
                             "aria-label": "",
                             "type": "wysiwyg",
                             "required": 0,

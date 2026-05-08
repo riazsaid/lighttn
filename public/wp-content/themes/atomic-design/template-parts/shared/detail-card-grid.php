@@ -5,7 +5,7 @@
  * Args:
  * - section_heading (string) Required.
  * - content (string) Optional HTML.
- * - left_items (array) Optional repeater rows: title, body.
+ * - left_items (array) Optional repeater rows: title, description.
  * - items (array) Required repeater rows: title, description.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
  * - class_name (string) Optional extra class names.
@@ -23,9 +23,9 @@ $align           = !empty($args['align']) ? (string) $args['align'] : 'full';
 $class_name      = isset($args['class_name']) ? (string) $args['class_name'] : '';
 
 $left_items = array_values(array_filter($left_items, static function ($item) {
-    $title = isset($item['title']) ? trim((string) $item['title']) : '';
-    $body  = isset($item['body']) ? trim(wp_strip_all_tags((string) $item['body'])) : '';
-    return $title !== '' || $body !== '';
+    $title       = isset($item['title']) ? trim((string) $item['title']) : '';
+    $description = isset($item['description']) ? trim(wp_strip_all_tags((string) $item['description'])) : '';
+    return $title !== '' || $description !== '';
 }));
 
 $items = array_values(array_filter($items, static function ($item) {
@@ -58,17 +58,17 @@ $section_class = trim('detail-card-grid align' . $align . ' ' . $class_name);
                 <?php if (!empty($left_items)) : ?>
                     <div class="detail-card-grid__left-items">
                         <?php foreach ($left_items as $left_item) :
-                            $left_title = isset($left_item['title']) ? trim((string) $left_item['title']) : '';
-                            $left_body  = isset($left_item['body']) ? trim((string) $left_item['body']) : '';
+                            $left_title       = isset($left_item['title']) ? trim((string) $left_item['title']) : '';
+                            $left_description = isset($left_item['description']) ? trim((string) $left_item['description']) : '';
                             ?>
                             <div class="detail-card-grid__left-item">
                                 <?php if ($left_title !== '') : ?>
                                     <h3 class="detail-card-grid__left-item-title"><?php echo esc_html($left_title); ?></h3>
                                 <?php endif; ?>
 
-                                <?php if (trim(wp_strip_all_tags($left_body)) !== '') : ?>
+                                <?php if (trim(wp_strip_all_tags($left_description)) !== '') : ?>
                                     <div class="detail-card-grid__left-item-body">
-                                        <?php echo wp_kses_post(wpautop($left_body)); ?>
+                                        <?php echo wp_kses_post(wpautop($left_description)); ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
