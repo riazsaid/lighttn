@@ -8,7 +8,7 @@
             "name": "detail_card_grid_heading",
             "aria-label": "",
             "type": "text",
-            "instructions": "Visible section heading shown on the left.",
+            "instructions": "Visible section heading shown above the section content.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -29,7 +29,7 @@
             "name": "detail_card_grid_content",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "Intro content shown before the left-side title/description rows.",
+            "instructions": "Intro content shown below the section heading.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -45,12 +45,12 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_atomic_block_detail_card_grid_left_items",
-            "label": "Left Content Rows",
-            "name": "detail_card_grid_left_items",
+            "key": "field_atomic_block_detail_card_grid_ideal_items",
+            "label": "Ideal Items",
+            "name": "detail_card_grid_ideal_items",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Add the left-side title/description rows. Two rows match the current design.",
+            "instructions": "Add bullet items shown under the static title: This service is ideal for:",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -61,15 +61,15 @@
             "layout": "block",
             "pagination": 0,
             "min": 0,
-            "max": 2,
-            "collapsed": "field_atomic_block_detail_card_grid_left_item_title",
-            "button_label": "Add content row",
+            "max": 0,
+            "collapsed": "field_atomic_block_detail_card_grid_ideal_item",
+            "button_label": "Add ideal item",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_atomic_block_detail_card_grid_left_item_title",
-                    "label": "Title",
-                    "name": "title",
+                    "key": "field_atomic_block_detail_card_grid_ideal_item",
+                    "label": "Item",
+                    "name": "item",
                     "aria-label": "",
                     "type": "text",
                     "required": 0,
@@ -80,35 +80,35 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "This service is ideal for:",
+                    "placeholder": "Properties with significant landscape investment",
                     "prepend": "",
                     "append": "",
                     "allow_in_bindings": 0,
                     "maxlength": "",
-                    "parent_repeater": "field_atomic_block_detail_card_grid_left_items"
-                },
-                {
-                    "key": "field_atomic_block_detail_card_grid_left_item_description",
-                    "label": "Description",
-                    "name": "description",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "basic",
-                    "media_upload": 0,
-                    "delay": 0,
-                    "allow_in_bindings": 0,
-                    "parent_repeater": "field_atomic_block_detail_card_grid_left_items"
+                    "parent_repeater": "field_atomic_block_detail_card_grid_ideal_items"
                 }
             ]
+        },
+        {
+            "key": "field_atomic_block_detail_card_grid_included_description",
+            "label": "What's Included Description",
+            "name": "detail_card_grid_included_description",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Description shown under the static title: What's Included.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
+            "allow_in_bindings": 0
         },
         {
             "key": "field_atomic_block_detail_card_grid_items",
@@ -196,5 +196,5 @@
     "description": "Fields for the Detail Card Grid ACF block.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1778193000
+    "modified": 1778193600
 }
