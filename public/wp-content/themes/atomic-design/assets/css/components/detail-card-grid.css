@@ -13,10 +13,12 @@
     grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.45fr);
     gap: clamp(28px, 4vw, 56px);
     align-items: start;
+    margin-top: clamp(38px, 4.5vw, 58px);
 }
 
 .detail-card-grid__intro {
     min-width: 0;
+    max-width: 1120px;
 }
 
 .detail-card-grid__heading {
@@ -57,13 +59,12 @@
     color: #111;
 }
 
-.detail-card-grid__left-items {
+.detail-card-grid__support {
     display: grid;
-    gap: 24px;
-    margin-top: 28px;
+    gap: 28px;
 }
 
-.detail-card-grid__left-item-title {
+.detail-card-grid__support-title {
     margin: 0 0 8px;
     font-family: var(--font-body);
     font-size: clamp(15px, 1.15vw, 17px);
@@ -72,7 +73,8 @@
     color: #111;
 }
 
-.detail-card-grid__left-item-body {
+.detail-card-grid__ideal-list,
+.detail-card-grid__included-description {
     font-family: var(--font-body);
     font-size: clamp(14px, 1.1vw, 16px);
     font-weight: 400;
@@ -80,15 +82,24 @@
     color: #282828;
 }
 
-.detail-card-grid__left-item-body p,
-.detail-card-grid__left-item-body ul,
-.detail-card-grid__left-item-body ol {
+.detail-card-grid__ideal-list {
+    padding-left: 1.1em;
+    margin: 0;
+}
+
+.detail-card-grid__ideal-list li {
+    margin: 0 0 0.2em;
+}
+
+.detail-card-grid__included-description p,
+.detail-card-grid__included-description ul,
+.detail-card-grid__included-description ol {
     margin: 0 0 1em;
 }
 
-.detail-card-grid__left-item-body p:last-child,
-.detail-card-grid__left-item-body ul:last-child,
-.detail-card-grid__left-item-body ol:last-child {
+.detail-card-grid__included-description p:last-child,
+.detail-card-grid__included-description ul:last-child,
+.detail-card-grid__included-description ol:last-child {
     margin-bottom: 0;
 }
 

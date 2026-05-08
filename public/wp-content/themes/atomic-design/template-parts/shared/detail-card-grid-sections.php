@@ -30,13 +30,18 @@ if ($section_index > 0) {
 foreach ($sections as $section) {
     $section_heading = isset($section['detail_card_grid_heading']) ? (string) $section['detail_card_grid_heading'] : '';
     $content         = isset($section['detail_card_grid_content']) ? (string) $section['detail_card_grid_content'] : '';
-    $left_items      = isset($section['detail_card_grid_left_items']) && is_array($section['detail_card_grid_left_items'])
-        ? $section['detail_card_grid_left_items']
+    $ideal_items     = isset($section['detail_card_grid_ideal_items']) && is_array($section['detail_card_grid_ideal_items'])
+        ? $section['detail_card_grid_ideal_items']
         : [];
+    $included_description = isset($section['detail_card_grid_included_description'])
+        ? (string) $section['detail_card_grid_included_description']
+        : '';
     $items           = isset($section['detail_card_grid_items']) && is_array($section['detail_card_grid_items'])
         ? $section['detail_card_grid_items']
         : [];
-    $has_content     = trim(wp_strip_all_tags($content)) !== '' || !empty($left_items);
+    $has_content     = trim(wp_strip_all_tags($content)) !== ''
+        || !empty($ideal_items)
+        || trim(wp_strip_all_tags($included_description)) !== '';
 
     if (trim($section_heading) === '' || !$has_content || empty($items)) {
         continue;
@@ -48,7 +53,8 @@ foreach ($sections as $section) {
         [
             'section_heading' => $section_heading,
             'content'         => $content,
-            'left_items'      => $left_items,
+            'ideal_items'     => $ideal_items,
+            'included_description' => $included_description,
             'items'           => $items,
         ]
     );
