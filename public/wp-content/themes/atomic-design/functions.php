@@ -922,13 +922,23 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
  *         "split_callout_panel_copy": "<p>Panel copy.<\/p>"
  *       }
  *     ],
- *     "detail_card_grid_sections": [
- *       {
- *         "detail_card_grid_heading": "Landscape Lighting Design Services",
- *         "detail_card_grid_content": "<p>Left column copy.<\/p>",
- *         "detail_card_grid_items": [
- *           {
- *             "title": "Site & Property Analysis",
+     *     "detail_card_grid_sections": [
+     *       {
+     *         "detail_card_grid_heading": "Landscape Lighting Design Services",
+     *         "detail_card_grid_content": "<p>Left column copy.<\/p>",
+     *         "detail_card_grid_left_items": [
+     *           {
+     *             "title": "This service is ideal for:",
+     *             "body": "<ul><li>Property owners with significant landscape investment.<\/li><\/ul>"
+     *           },
+     *           {
+     *             "title": "What's Included",
+     *             "body": "<p>Custom design matched to your landscape features.<\/p>"
+     *           }
+     *         ],
+     *         "detail_card_grid_items": [
+     *           {
+     *             "title": "Site & Property Analysis",
  *             "description": "<p>Card copy.<\/p>"
  *           }
  *         ]
