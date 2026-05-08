@@ -161,6 +161,28 @@
                             "parent_repeater": "field_atomic_proof_points_items"
                         },
                         {
+                            "key": "field_atomic_proof_points_item_timeline",
+                            "label": "Timeline",
+                            "name": "timeline",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Short bold timeline line, for example: Timeline: Week 1.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Timeline: Week 1",
+                            "prepend": "",
+                            "append": "",
+                            "allow_in_bindings": 0,
+                            "maxlength": "",
+                            "parent_repeater": "field_atomic_proof_points_items"
+                        },
+                        {
                             "key": "field_atomic_proof_points_item_description",
                             "label": "Card Description",
                             "name": "description",
@@ -219,5 +241,5 @@
     "description": "Repeatable Proof Points sections for CPT templates.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1777420800
+    "modified": 1778193900
 }

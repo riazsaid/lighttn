@@ -93,6 +93,16 @@
     color: #000;
 }
 
+.proof-points__timeline {
+    margin-top: -8px;
+    margin-bottom: -10px;
+    font-family: var(--font-body);
+    font-size: clamp(13px, 1vw, 15px);
+    font-weight: 700;
+    line-height: 1.35;
+    color: #111;
+}
+
 @media (max-width: 1024px) {
     .proof-points__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
