@@ -889,6 +889,7 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
  *         "proof_points_items": [
  *           {
  *             "title": "Licensed and Accredited",
+ *             "timeline": "Timeline: Week 1",
  *             "description": "<p>Card copy.<\/p>",
  *             "image": 123
  *           }
