@@ -30,11 +30,15 @@ if ($section_index > 0) {
 foreach ($sections as $section) {
     $section_heading = isset($section['detail_card_grid_heading']) ? (string) $section['detail_card_grid_heading'] : '';
     $content         = isset($section['detail_card_grid_content']) ? (string) $section['detail_card_grid_content'] : '';
+    $left_items      = isset($section['detail_card_grid_left_items']) && is_array($section['detail_card_grid_left_items'])
+        ? $section['detail_card_grid_left_items']
+        : [];
     $items           = isset($section['detail_card_grid_items']) && is_array($section['detail_card_grid_items'])
         ? $section['detail_card_grid_items']
         : [];
+    $has_content     = trim(wp_strip_all_tags($content)) !== '' || !empty($left_items);
 
-    if (trim($section_heading) === '' || trim(wp_strip_all_tags($content)) === '' || empty($items)) {
+    if (trim($section_heading) === '' || !$has_content || empty($items)) {
         continue;
     }
 
@@ -44,6 +48,7 @@ foreach ($sections as $section) {
         [
             'section_heading' => $section_heading,
             'content'         => $content,
+            'left_items'      => $left_items,
             'items'           => $items,
         ]
     );

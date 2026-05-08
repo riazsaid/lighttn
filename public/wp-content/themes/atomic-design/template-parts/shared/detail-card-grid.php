@@ -5,6 +5,7 @@
  * Args:
  * - section_heading (string) Required.
  * - content (string) Optional HTML.
+ * - left_items (array) Optional repeater rows: title, description.
  * - items (array) Required repeater rows: title, description.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
  * - class_name (string) Optional extra class names.
@@ -16,9 +17,16 @@ if (!defined('ABSPATH')) {
 
 $section_heading = isset($args['section_heading']) ? trim((string) $args['section_heading']) : '';
 $content         = isset($args['content']) ? trim((string) $args['content']) : '';
+$left_items      = isset($args['left_items']) && is_array($args['left_items']) ? $args['left_items'] : [];
 $items           = isset($args['items']) && is_array($args['items']) ? $args['items'] : [];
 $align           = !empty($args['align']) ? (string) $args['align'] : 'full';
 $class_name      = isset($args['class_name']) ? (string) $args['class_name'] : '';
+
+$left_items = array_values(array_filter($left_items, static function ($item) {
+    $title       = isset($item['title']) ? trim((string) $item['title']) : '';
+    $description = isset($item['description']) ? trim(wp_strip_all_tags((string) $item['description'])) : '';
+    return $title !== '' || $description !== '';
+}));
 
 $items = array_values(array_filter($items, static function ($item) {
     $title       = isset($item['title']) ? trim((string) $item['title']) : '';
@@ -26,7 +34,9 @@ $items = array_values(array_filter($items, static function ($item) {
     return $title !== '' || $description !== '';
 }));
 
-if ($section_heading === '' || trim(wp_strip_all_tags($content)) === '' || empty($items)) {
+$has_content = trim(wp_strip_all_tags($content)) !== '' || !empty($left_items);
+
+if ($section_heading === '' || !$has_content || empty($items)) {
     return;
 }
 
@@ -39,9 +49,32 @@ $section_class = trim('detail-card-grid align' . $align . ' ' . $class_name);
             <div class="detail-card-grid__intro scroll-reveal" style="--reveal-delay: 70ms;">
                 <h2 class="detail-card-grid__heading"><?php echo esc_html($section_heading); ?></h2>
 
-                <div class="detail-card-grid__content">
-                    <?php echo wp_kses_post(wpautop($content)); ?>
-                </div>
+                <?php if (trim(wp_strip_all_tags($content)) !== '') : ?>
+                    <div class="detail-card-grid__content">
+                        <?php echo wp_kses_post(wpautop($content)); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (!empty($left_items)) : ?>
+                    <div class="detail-card-grid__left-items">
+                        <?php foreach ($left_items as $left_item) :
+                            $left_title       = isset($left_item['title']) ? trim((string) $left_item['title']) : '';
+                            $left_description = isset($left_item['description']) ? trim((string) $left_item['description']) : '';
+                            ?>
+                            <div class="detail-card-grid__left-item">
+                                <?php if ($left_title !== '') : ?>
+                                    <h3 class="detail-card-grid__left-item-title"><?php echo esc_html($left_title); ?></h3>
+                                <?php endif; ?>
+
+                                <?php if (trim(wp_strip_all_tags($left_description)) !== '') : ?>
+                                    <div class="detail-card-grid__left-item-body">
+                                        <?php echo wp_kses_post(wpautop($left_description)); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <div class="detail-card-grid__cards">
