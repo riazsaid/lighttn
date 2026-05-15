@@ -963,7 +963,7 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
 function atomic_design_get_rest_post_types()
 {
     // Light TN CPTs that carry shared template ACF fields.
-    return ['service', 'location', 'service-location'];
+    return ['services', 'locations', 'service-location'];
 }
 
 function atomic_design_get_allowed_template_acf_fields()
