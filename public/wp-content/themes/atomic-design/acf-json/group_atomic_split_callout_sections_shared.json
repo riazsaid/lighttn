@@ -138,14 +138,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "service"
+                "value": "services"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "location"
+                "value": "locations"
             }
         ],
         [
@@ -166,5 +166,5 @@
     "description": "Repeatable Split Callout sections for CPT templates.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1777504200
+    "modified": 1778843303
 }
