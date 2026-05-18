@@ -3,7 +3,9 @@
     background: #fff;
     color: #000;
 }
-
+.about-light-tn__figure img{
+    height: 100%;
+}
 .about-light-tn__inner {
     max-width: 1180px;
 }
