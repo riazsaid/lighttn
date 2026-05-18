@@ -40,7 +40,7 @@
    EXAMPLE: Contact page (slug: contact)
 ---------------------------------------------------------- */
 /*
-.page-id-12 .section {
+.page-id-12 section {
     padding-block: var(--space-xl);
 }
 */
