@@ -49,14 +49,15 @@
    /* ----------------------------------------------------------
        TYPOGRAPHY
        Primary pair:
-       - --font-heading for headings/display
+       - --font-display for headings/display
        - --font-body for body text/UI copy
     ---------------------------------------------------------- */
-   --font-heading: "Rajdhani", sans-serif;
-   --font-body: "DM Sans", sans-serif;
-   --font-display: var(--font-heading);
-   --font-roboto: var(--font-body);
-   --font-kannada: "Kannada Sangam MN", sans-serif;
+   --font-display: 'Rajdhani', sans-serif;
+   /* headlines, wordmark */
+   --font-body: 'DM Sans', sans-serif;
+   /* body, nav, UI */
+   --font-heading: var(--font-display);
+
 
    /* Fluid type scale */
    --h1: clamp(40px, 6vw, 72px);
@@ -125,13 +126,20 @@
    --radius-md: 12px;
    --radius-lg: 20px;
    --radius-xl: 32px;
-   --radius-pill: 999px;
+   --radius-pill: 100px;
 
    /* ----------------------------------------------------------
        LAYOUT & SPACING
     ---------------------------------------------------------- */
    --container: 1200px;
-   --gutter: clamp(20px, 4vw, 48px);
+   --gutter: 48px;
+   --gutter-mobile: 20px;
+   --gap-xs: 8px;
+   --gap-sm: 16px;
+   --gap-md: 24px;
+   --gap-lg: 48px;
+   --gap-xl: 80px;
+   --gap-2xl: 120px;
    /* Section-to-section spacing */
    --section-space-210: 100px;
    /* 210px */

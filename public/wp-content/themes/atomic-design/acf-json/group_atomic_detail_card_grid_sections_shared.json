@@ -8,7 +8,7 @@
             "name": "detail_card_grid_sections",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Add one detail card grid section per row. Each section renders left-side rich text and a right-side card grid.",
+            "instructions": "Add one detail card grid section per row. Each section renders top content, left supporting content, and a right-side card grid.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -30,7 +30,7 @@
                     "name": "detail_card_grid_heading",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "Visible section heading shown on the left.",
+                    "instructions": "Visible section heading shown above the section content.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -48,11 +48,79 @@
                 },
                 {
                     "key": "field_atomic_detail_card_grid_content",
-                    "label": "Left Column Content",
+                    "label": "Content",
                     "name": "detail_card_grid_content",
                     "aria-label": "",
                     "type": "wysiwyg",
-                    "instructions": "Rich text content shown in the left column. You can include bold labels and bullet lists here.",
+                    "instructions": "Intro content shown below the section heading.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_detail_card_grid_sections"
+                },
+                {
+                    "key": "field_atomic_detail_card_grid_ideal_items",
+                    "label": "Ideal Items",
+                    "name": "detail_card_grid_ideal_items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Add bullet items shown under the static title: This service is ideal for:",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_atomic_detail_card_grid_ideal_item",
+                    "button_label": "Add ideal item",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_atomic_detail_card_grid_sections",
+                    "sub_fields": [
+                        {
+                            "key": "field_atomic_detail_card_grid_ideal_item",
+                            "label": "Item",
+                            "name": "item",
+                            "aria-label": "",
+                            "type": "text",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Properties with significant landscape investment",
+                            "prepend": "",
+                            "append": "",
+                            "allow_in_bindings": 0,
+                            "maxlength": "",
+                            "parent_repeater": "field_atomic_detail_card_grid_ideal_items"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_atomic_detail_card_grid_included_description",
+                    "label": "What's Included Description",
+                    "name": "detail_card_grid_included_description",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Description shown under the static title: What's Included.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -143,14 +211,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "service"
+                "value": "services"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "location"
+                "value": "locations"
             }
         ],
         [
@@ -171,5 +239,5 @@
     "description": "Repeatable Detail Card Grid sections for CPT templates.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1777505700
+    "modified": 1778843303
 }
