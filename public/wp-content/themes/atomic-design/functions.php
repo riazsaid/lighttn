@@ -889,6 +889,7 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
  *         "proof_points_items": [
  *           {
  *             "title": "Licensed and Accredited",
+ *             "timeline": "Timeline: Week 1",
  *             "description": "<p>Card copy.<\/p>",
  *             "image": 123
  *           }
@@ -922,13 +923,22 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
  *         "split_callout_panel_copy": "<p>Panel copy.<\/p>"
  *       }
  *     ],
- *     "detail_card_grid_sections": [
- *       {
- *         "detail_card_grid_heading": "Landscape Lighting Design Services",
- *         "detail_card_grid_content": "<p>Left column copy.<\/p>",
- *         "detail_card_grid_items": [
- *           {
- *             "title": "Site & Property Analysis",
+     *     "detail_card_grid_sections": [
+     *       {
+     *         "detail_card_grid_heading": "Landscape Lighting Design Services",
+     *         "detail_card_grid_content": "<p>Left column copy.<\/p>",
+     *         "detail_card_grid_ideal_items": [
+     *           {
+     *             "item": "Properties with significant landscape investment"
+     *           },
+     *           {
+     *             "item": "Homes with specimen trees and mature plantings"
+     *           }
+     *         ],
+     *         "detail_card_grid_included_description": "<p>Custom design matched to your landscape features.<\/p>",
+     *         "detail_card_grid_items": [
+     *           {
+     *             "title": "Site & Property Analysis",
  *             "description": "<p>Card copy.<\/p>"
  *           }
  *         ]
@@ -953,7 +963,7 @@ add_filter('acf/settings/load_json', 'atomic_design_acf_json_load_point');
 function atomic_design_get_rest_post_types()
 {
     // Light TN CPTs that carry shared template ACF fields.
-    return ['service', 'location', 'service-location'];
+    return ['services', 'locations', 'service-location'];
 }
 
 function atomic_design_get_allowed_template_acf_fields()

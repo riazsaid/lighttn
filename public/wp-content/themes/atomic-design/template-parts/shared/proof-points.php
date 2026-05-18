@@ -6,7 +6,7 @@
  * - section_heading (string) Required.
  * - intro_title (string) Optional.
  * - intro_copy (string) Optional HTML.
- * - items (array) Required repeater rows: title, description, image.
+ * - items (array) Required repeater rows: title, timeline, description, image.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
  * - class_name (string) Optional extra class names.
  */
@@ -24,10 +24,11 @@ $class_name      = isset($args['class_name']) ? (string) $args['class_name'] : '
 
 $items = array_values(array_filter($items, static function ($item) {
     $title       = isset($item['title']) ? trim((string) $item['title']) : '';
+    $timeline    = isset($item['timeline']) ? trim((string) $item['timeline']) : '';
     $description = isset($item['description']) ? trim(wp_strip_all_tags((string) $item['description'])) : '';
     $image       = isset($item['image']) && is_array($item['image']) ? $item['image'] : [];
 
-    return $title !== '' || $description !== '' || !empty($image['url']);
+    return $title !== '' || $timeline !== '' || $description !== '' || !empty($image['url']);
 }));
 
 if ($section_heading === '' || empty($items)) {
@@ -58,6 +59,7 @@ $section_class = trim('proof-points align' . $align . ' ' . $class_name);
 
             <?php foreach ($items as $index => $item) :
                 $title       = isset($item['title']) ? trim((string) $item['title']) : '';
+                $timeline    = isset($item['timeline']) ? trim((string) $item['timeline']) : '';
                 $description = isset($item['description']) ? trim((string) $item['description']) : '';
                 $image       = isset($item['image']) && is_array($item['image']) ? $item['image'] : [];
                 $delay       = 120 + ((int) $index * 70);
@@ -76,6 +78,10 @@ $section_class = trim('proof-points align' . $align . ' ' . $class_name);
 
                     <?php if ($title !== '') : ?>
                         <h3 class="proof-points__card-title"><?php echo esc_html($title); ?></h3>
+                    <?php endif; ?>
+
+                    <?php if ($timeline !== '') : ?>
+                        <div class="proof-points__timeline"><?php echo esc_html($timeline); ?></div>
                     <?php endif; ?>
 
                     <?php if (trim(wp_strip_all_tags($description)) !== '') : ?>
