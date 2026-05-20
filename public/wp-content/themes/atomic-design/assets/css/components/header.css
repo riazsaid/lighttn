@@ -246,18 +246,25 @@
     line-height: 1;
     text-decoration: none;
     box-shadow: 0 10px 24px rgba(41, 181, 232, 0.22);
+    overflow: hidden;
     transition:
-        background var(--dur-fast) var(--ease),
-        transform var(--dur-fast) var(--ease);
+        background 0.35s ease,
+        transform 0.35s ease,
+        min-width 0.35s ease,
+        gap 0.35s ease;
 }
 
-.site-header__contact .span {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.site-header__contact:hover,
+.site-header__contact:focus-visible {
+    background: var(--cyan-hover);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-3px);
+    gap: 20px;
 }
 
-.site-header__contact .span::before {
+
+.site-header__contact::before {
     content: "";
     width: 10px;
     height: 10px;
@@ -267,18 +274,6 @@
     flex-shrink: 0;
 }
 
-
-.site-header__contact:hover>.span {
-    padding-right: 3px;
-}
-
-.site-header__contact:hover,
-.site-header__contact:focus-visible {
-    background: var(--cyan-hover);
-    color: #fff;
-    text-decoration: none;
-    transform: translateY(-1px);
-}
 
 .site-header__contact-icon {
     position: relative;
@@ -290,9 +285,6 @@
     justify-content: center;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.68);
-    color: var(--cyan);
-    font-size: 14px;
-    line-height: 1;
 }
 
 /* BOTH ICONS */
@@ -300,31 +292,31 @@
 .site-header__contact-icon::after {
     content: "↗";
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-60%);
     font-size: 14px;
     line-height: 1;
     color: var(--cyan);
     transition: transform 0.35s ease;
 }
 
-/* CURRENT ICON */
+/* Current visible arrow */
 .site-header__contact-icon::before {
-    top: 4px;
+    transform: translate(-50%, -50%);
 }
 
-/* NEW ICON */
+/* Hidden arrow below */
 .site-header__contact-icon::after {
-    top: 100%;
+    transform: translate(-140%, 100%);
 }
 
-/* HOVER ANIMATION */
+/* Hover animation */
 .site-header__contact:hover .site-header__contact-icon::before {
-    transform: translate(-50%, -22px);
+    transform: translate(60%, -180%);
 }
 
 .site-header__contact:hover .site-header__contact-icon::after {
-    transform: translate(-50%, -18px);
+    transform: translate(-50%, -50%);
 }
 
 .site-header__toggle {
