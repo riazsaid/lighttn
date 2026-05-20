@@ -139,3 +139,12 @@
 
     document.addEventListener('content-loaded', init);
 })();
+
+
+document.querySelectorAll('.site-nav .menu li a').forEach(link => {
+    const text = link.textContent.trim();
+
+    link.setAttribute('data-text', text);
+
+    link.innerHTML = `<span>${text}</span>`;
+});
