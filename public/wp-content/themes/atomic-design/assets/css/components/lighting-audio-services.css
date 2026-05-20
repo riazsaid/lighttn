@@ -24,6 +24,9 @@
 
 .lighting-audio-services-block__item {
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .lighting-audio-services-block__media {
@@ -54,6 +57,7 @@
     font-weight: 400;
     line-height: 1.55;
     color: #262626;
+    padding-bottom: 18px;
 }
 
 .lighting-audio-services-block__description p {
@@ -68,7 +72,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-top: 22px;
+    /* margin-top: 22px; */
     color: #111;
     font-family: var(--font-body);
     font-size: 15px;
@@ -78,6 +82,7 @@
     transition:
         color var(--dur-fast) var(--ease),
         transform var(--dur-fast) var(--ease);
+        margin-top: auto;
 }
 
 .lighting-audio-services-block__link:hover,
