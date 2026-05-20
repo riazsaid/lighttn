@@ -6,7 +6,7 @@
 
 .hero__shell {
     position: relative;
-    max-width: 1150px;
+    width: 100%;
 }
 
 .hero__panel {

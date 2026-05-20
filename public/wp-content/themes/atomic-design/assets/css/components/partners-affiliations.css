@@ -4,11 +4,7 @@
     color: #000;
 }
 
-.partners-affiliations-block__inner {
-    max-width: 1020px;
-}
-
-.partners-affiliations-block__group + .partners-affiliations-block__group {
+.partners-affiliations-block__group+.partners-affiliations-block__group {
     margin-top: 18px;
 }
 

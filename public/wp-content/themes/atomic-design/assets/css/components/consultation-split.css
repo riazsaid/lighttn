@@ -4,10 +4,6 @@
     color: #fff;
 }
 
-.consultation-split__inner {
-    max-width: 1160px;
-}
-
 .consultation-split__header {
     display: grid;
     grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
@@ -156,6 +152,7 @@
 }
 
 @media (max-width: 860px) {
+
     .consultation-split__header,
     .consultation-split__grid {
         grid-template-columns: 1fr;
