@@ -9,9 +9,12 @@
     border-top: 1px solid rgba(41, 181, 232, 0.5);
     font-family: var(--font-body);
 }
-
+.site-footer .site-footer__contact{
+    background-color: unset !important;
+    padding: 0 !important;
+}
 .site-footer__inner {
-    padding-block: 28px 26px;
+    padding-block: var(--gap-xl);
 }
 
 .site-footer__brand-row {
@@ -21,7 +24,7 @@
 .site-footer__brand-link {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
+    gap: var(--gap-xs);
     color: #fff;
     text-decoration: none;
 }
@@ -43,7 +46,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 72px;
+    width: 56px;
     height: 2px;
     background: var(--light-blue);
     border-radius: var(--radius-pill);
@@ -68,7 +71,7 @@
 
 .site-footer__wordmark {
     font-family: var(--font-display);
-    font-size: clamp(36px, 5vw, 54px);
+    font-size: clamp(36px, 5vw, 26px);
     font-weight: 400;
     line-height: 1;
     letter-spacing: 0.13em;
@@ -84,9 +87,9 @@
 }
 
 .site-footer__heading {
-    margin: 0 0 4px;
+    margin: 0 0 24px;
     font-family: var(--font-body);
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: 0;
@@ -98,19 +101,21 @@
 .site-footer__list a,
 .site-footer__bbb-meta,
 .site-footer__bottom {
-    font-size: 12px;
+    font-size: 18px;
     line-height: 1.35;
     color: rgba(255, 255, 255, 0.86);
 }
 
 .site-footer__address {
-    margin: 0 0 18px;
+    margin: 0 0 16px;
     font-style: normal;
+  
 }
 
 .site-footer__link {
     display: block;
     text-decoration: none;
+    margin: 0 0 16px;
 }
 
 .site-footer__link:hover,
@@ -129,9 +134,12 @@
     padding: 0;
 }
 
+
 .site-footer__list a {
     display: inline-flex;
     text-decoration: none;
+    color: #c7c7c7;
+    
 }
 
 .site-footer__area-list {
@@ -242,10 +250,13 @@
 }
 
 .site-footer__bottom {
-    display: grid;
+    /* display: grid;
     grid-template-columns: minmax(150px, 1.05fr) minmax(150px, 1fr) minmax(280px, 1.95fr) minmax(220px, 1.35fr);
     gap: clamp(34px, 5vw, 78px);
-    align-items: end;
+    align-items: end; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 44px;
 }
 
