@@ -4,10 +4,6 @@
     color: #000;
 }
 
-.why-choose-light-tn__inner {
-    max-width: 1140px;
-}
-
 .why-choose-light-tn__header {
     max-width: 830px;
     margin-bottom: clamp(58px, 7vw, 88px);

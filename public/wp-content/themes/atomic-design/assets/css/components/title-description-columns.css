@@ -4,10 +4,6 @@
     color: #000;
 }
 
-.title-description-columns__inner {
-    max-width: 1120px;
-}
-
 .title-description-columns__heading {
     max-width: 430px;
     margin: 0 0 clamp(54px, 7vw, 72px);

@@ -4,10 +4,6 @@
     color: #000;
 }
 
-.proof-points__inner {
-    max-width: 1180px;
-}
-
 .proof-points__header {
     margin-bottom: clamp(40px, 5vw, 56px);
     text-align: center;
