@@ -4,10 +4,6 @@
     color: #000;
 }
 
-.lighting-audio-services-block__inner {
-    max-width: 1160px;
-}
-
 .lighting-audio-services-block__heading {
     margin: 0 0 clamp(40px, 5vw, 56px);
     font-family: var(--font-body);

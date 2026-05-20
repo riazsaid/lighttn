@@ -4,10 +4,6 @@
     color: #000;
 }
 
-.insight-columns__inner {
-    max-width: 1100px;
-}
-
 .insight-columns__header {
     max-width: 920px;
     margin: 0 auto clamp(54px, 7vw, 74px);

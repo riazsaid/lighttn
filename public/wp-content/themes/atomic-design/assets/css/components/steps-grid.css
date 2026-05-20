@@ -4,9 +4,7 @@
     color: #000;
 }
 
-.steps-grid__inner {
-    max-width: 1180px;
-}
+
 
 .steps-grid__header {
     margin-bottom: clamp(34px, 4vw, 50px);

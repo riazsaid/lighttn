@@ -4,10 +4,6 @@
     color: #000;
 }
 
-.design-process__inner {
-    max-width: 1240px;
-}
-
 .design-process__header {
     margin-bottom: clamp(38px, 5vw, 58px);
     text-align: center;
