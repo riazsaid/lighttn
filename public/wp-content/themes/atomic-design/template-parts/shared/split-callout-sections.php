@@ -30,6 +30,8 @@ if ($section_index > 0) {
 foreach ($sections as $section) {
     $section_heading = isset($section['split_callout_heading']) ? (string) $section['split_callout_heading'] : '';
     $intro           = isset($section['split_callout_intro']) ? (string) $section['split_callout_intro'] : '';
+    $left_secondary_title = isset($section['split_callout_left_secondary_title']) ? (string) $section['split_callout_left_secondary_title'] : '';
+    $left_secondary_copy  = isset($section['split_callout_left_secondary_copy']) ? (string) $section['split_callout_left_secondary_copy'] : '';
     $investment_ranges_content = isset($section['split_callout_investment_ranges_content'])
         ? (string) $section['split_callout_investment_ranges_content']
         : '';
@@ -47,6 +49,8 @@ foreach ($sections as $section) {
         [
             'section_heading' => $section_heading,
             'intro'           => $intro,
+            'left_secondary_title' => $left_secondary_title,
+            'left_secondary_copy'  => $left_secondary_copy,
             'investment_ranges_content' => $investment_ranges_content,
             'cards'           => $cards,
         ]

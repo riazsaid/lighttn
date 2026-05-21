@@ -69,6 +69,50 @@
                     "parent_repeater": "field_atomic_split_callout_sections"
                 },
                 {
+                    "key": "field_atomic_split_callout_left_secondary_title",
+                    "label": "Left Secondary Title",
+                    "name": "split_callout_left_secondary_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Optional title shown below Intro Copy on the left (e.g. Key Cost Factors).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Key Cost Factors",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_split_callout_sections"
+                },
+                {
+                    "key": "field_atomic_split_callout_left_secondary_copy",
+                    "label": "Left Secondary Copy",
+                    "name": "split_callout_left_secondary_copy",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Optional copy shown below the Left Secondary Title.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_split_callout_sections"
+                },
+                {
                     "key": "field_atomic_split_callout_investment_ranges_content",
                     "label": "Investment Ranges Content",
                     "name": "split_callout_investment_ranges_content",
