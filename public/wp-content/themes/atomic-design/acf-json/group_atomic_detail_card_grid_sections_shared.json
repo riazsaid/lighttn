@@ -115,6 +115,28 @@
                     ]
                 },
                 {
+                    "key": "field_atomic_detail_card_grid_ideal_title",
+                    "label": "Ideal Items Title",
+                    "name": "detail_card_grid_ideal_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Heading shown above the ideal items list. Falls back to: This service is ideal for:",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "This service is ideal for:",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_detail_card_grid_sections"
+                },
+                {
                     "key": "field_atomic_detail_card_grid_included_description",
                     "label": "What's Included Description",
                     "name": "detail_card_grid_included_description",
@@ -134,6 +156,28 @@
                     "media_upload": 0,
                     "delay": 0,
                     "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_detail_card_grid_sections"
+                },
+                {
+                    "key": "field_atomic_detail_card_grid_included_title",
+                    "label": "What's Included Title",
+                    "name": "detail_card_grid_included_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Heading shown above the included description. Falls back to: What's Included",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "What's Included",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
                     "parent_repeater": "field_atomic_detail_card_grid_sections"
                 },
                 {
@@ -239,5 +283,5 @@
     "description": "Repeatable Detail Card Grid sections for CPT templates.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1778843303
+    "modified": 1779407300
 }

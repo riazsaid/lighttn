@@ -1,0 +1,118 @@
+{
+    "key": "group_atomic_property_types_grid_block",
+    "title": "Property Types Grid Block",
+    "fields": [
+        {
+            "key": "field_atomic_block_property_types_grid_heading",
+            "label": "Section Title",
+            "name": "property_types_grid_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Visible section heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Ideal Properties for Landscape Lighting",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_block_property_types_grid_items",
+            "label": "Property Cards",
+            "name": "property_types_grid_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add one property type per row.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_atomic_block_property_types_grid_item_label",
+            "button_label": "Add property type",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_block_property_types_grid_item_image",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "allow_in_bindings": 0,
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_atomic_block_property_types_grid_items"
+                },
+                {
+                    "key": "field_atomic_block_property_types_grid_item_label",
+                    "label": "Label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Historic homes",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_block_property_types_grid_items"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/property-types-grid"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the Property Types Grid ACF block.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1779406200
+}

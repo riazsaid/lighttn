@@ -30,6 +30,7 @@ if ($section_index > 0) {
 foreach ($sections as $section) {
     $section_heading   = isset($section['steps_grid_heading']) ? (string) $section['steps_grid_heading'] : '';
     $heading_alignment = isset($section['steps_grid_heading_alignment']) ? (string) $section['steps_grid_heading_alignment'] : 'center';
+    $cta               = isset($section['steps_grid_cta']) ? $section['steps_grid_cta'] : null;
     $items             = isset($section['steps_grid_items']) && is_array($section['steps_grid_items'])
         ? $section['steps_grid_items']
         : [];
@@ -44,6 +45,7 @@ foreach ($sections as $section) {
         [
             'section_heading'   => $section_heading,
             'heading_alignment' => $heading_alignment,
+            'cta'               => $cta,
             'items'             => $items,
         ]
     );
