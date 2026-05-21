@@ -8,7 +8,6 @@
  * → Steps Grid (row 1)
  * → Trust Bar
  * → Proof Points (row 1)
- * → Content Columns (row 1)
  * → Spotlight Cards (row 1)
  * → Testimonials
  * → About Light TN
@@ -46,10 +45,6 @@ get_header();
         ]);
         get_template_part('template-parts/shared/trust-bar');
         get_template_part('template-parts/shared/proof-points-sections', null, [
-            'post_id' => $post_id,
-            'section_index' => 1,
-        ]);
-        get_template_part('template-parts/shared/insight-columns-sections', null, [
             'post_id' => $post_id,
             'section_index' => 1,
         ]);

@@ -14,6 +14,7 @@ if (!function_exists('get_field')) {
 
 $section_heading   = get_field('steps_grid_heading') ?: '';
 $heading_alignment = get_field('steps_grid_heading_alignment') ?: 'center';
+$portfolio_link    = get_field('steps_grid_portfolio_link') ?: [];
 $items             = get_field('steps_grid_items') ?: [];
 $cta               = get_field('steps_grid_cta');
 
@@ -34,6 +35,7 @@ get_template_part(
     [
         'section_heading'   => $section_heading,
         'heading_alignment' => $heading_alignment,
+        'portfolio_link'    => is_array($portfolio_link) ? $portfolio_link : [],
         'items'             => $items,
         'cta'               => $cta,
         'align'             => !empty($block['align']) ? $block['align'] : 'full',

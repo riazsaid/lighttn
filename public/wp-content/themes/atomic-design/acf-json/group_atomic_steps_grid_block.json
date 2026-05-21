@@ -51,12 +51,12 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_atomic_block_steps_grid_cta",
-            "label": "Portfolio Button",
-            "name": "steps_grid_cta",
+            "key": "field_atomic_block_steps_grid_portfolio_link",
+            "label": "Portfolio Button Link",
+            "name": "steps_grid_portfolio_link",
             "aria-label": "",
             "type": "link",
-            "instructions": "Optional button shown beside the section title, for example: View Our Portfolio.",
+            "instructions": "Optional. If empty, button defaults to /gallery/.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {

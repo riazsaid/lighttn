@@ -7,6 +7,7 @@
  * - heading_alignment (string) Optional. center|left.
  * - cta (array|string) Optional link field for the section button.
  * - items (array) Required repeater rows: image, title, timeline, description.
+ * - portfolio_link (array) Optional ACF link array. Falls back to /gallery/.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
  * - class_name (string) Optional extra class names.
  */
@@ -18,7 +19,7 @@ if (!defined('ABSPATH')) {
 $section_heading   = isset($args['section_heading']) ? trim((string) $args['section_heading']) : '';
 $heading_alignment = isset($args['heading_alignment']) ? trim((string) $args['heading_alignment']) : 'center';
 $items             = isset($args['items']) && is_array($args['items']) ? $args['items'] : [];
-$cta               = array_key_exists('cta', $args) ? $args['cta'] : null;
+$portfolio_link    = isset($args['portfolio_link']) && is_array($args['portfolio_link']) ? $args['portfolio_link'] : [];
 $align             = !empty($args['align']) ? (string) $args['align'] : 'full';
 $class_name        = isset($args['class_name']) ? (string) $args['class_name'] : '';
 
@@ -37,25 +38,11 @@ if ($section_heading === '' || empty($items)) {
     return;
 }
 
-$cta_title = '';
-$cta_url = '';
-$cta_target = '';
+$section_class = trim('steps-grid align' . $align . ' steps-grid--heading-' . $heading_alignment . ' ' . $class_name);
 
-if (is_array($cta)) {
-    $cta_title = isset($cta['title']) ? trim((string) $cta['title']) : '';
-    $cta_url = isset($cta['url']) ? trim((string) $cta['url']) : '';
-    $cta_target = isset($cta['target']) ? trim((string) $cta['target']) : '';
-} elseif (is_string($cta)) {
-    $cta_url = trim($cta);
-}
-
-if ($cta_title === '' && $cta_url !== '') {
-    $cta_title = __('View Our Portfolio', 'atomic-design');
-}
-
-$has_cta = $cta_title !== '' && $cta_url !== '';
-$cta_rel = $cta_target === '_blank' ? 'noopener' : '';
-$section_class = trim('steps-grid align' . $align . ' steps-grid--heading-' . $heading_alignment . ($has_cta ? ' has-cta' : '') . ' ' . $class_name);
+$portfolio_url = !empty($portfolio_link['url']) ? (string) $portfolio_link['url'] : home_url('/gallery/');
+$portfolio_title = !empty($portfolio_link['title']) ? (string) $portfolio_link['title'] : __('View Portfolio', 'atomic-design');
+$portfolio_target = !empty($portfolio_link['target']) ? (string) $portfolio_link['target'] : '_self';
 ?>
 
 <section class="<?php echo esc_attr($section_class); ?>">
@@ -111,6 +98,14 @@ $section_class = trim('steps-grid align' . $align . ' steps-grid--heading-' . $h
                     <?php endif; ?>
                 </article>
             <?php endforeach; ?>
+        </div>
+
+        <div class="steps-grid__actions scroll-reveal" style="--reveal-delay: 240ms;">
+            <a class="btn btn-primary steps-grid__cta"
+               href="<?php echo esc_url($portfolio_url); ?>"
+               target="<?php echo esc_attr($portfolio_target); ?>">
+                <?php echo esc_html($portfolio_title); ?>
+            </a>
         </div>
     </div>
 </section>
