@@ -27,6 +27,11 @@ if (empty($section_heading) || trim(wp_strip_all_tags((string) $description)) ==
     return;
 }
 
+$class_name = '';
+if (is_singular('service-location')) {
+    $class_name = 'title-description-columns--service-location-areas';
+}
+
 get_template_part(
     'template-parts/shared/title-description-columns',
     null,
@@ -34,5 +39,6 @@ get_template_part(
         'section_heading' => $section_heading,
         'description'     => $description,
         'cta'             => $cta,
+        'class_name'      => $class_name,
     ]
 );
