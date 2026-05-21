@@ -39,13 +39,27 @@
                 <div class="site-branding">
                     <a class="site-branding__link" href="<?php echo esc_url(home_url('/')); ?>"
                         aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
-                        <span class="site-brand-mark" aria-hidden="true">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                        <span class="site-branding__wordmark"><?php esc_html_e('LIGHT TN', 'atomic-design'); ?></span>
+                        <?php
+                        $header_logo_id = function_exists('atomic_design_get_brand_logo_id')
+                            ? atomic_design_get_brand_logo_id('header')
+                            : 0;
+                        ?>
+                        <?php if ($header_logo_id > 0) : ?>
+                            <?php echo wp_get_attachment_image($header_logo_id, 'full', false, [
+                                'class'   => 'site-logo',
+                                'loading' => 'eager',
+                                'decoding' => 'async',
+                                'alt'     => get_bloginfo('name'),
+                            ]); ?>
+                        <?php else : ?>
+                            <span class="site-brand-mark" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <span class="site-branding__wordmark"><?php esc_html_e('LIGHT TN', 'atomic-design'); ?></span>
+                        <?php endif; ?>
                     </a>
                 </div>
 
