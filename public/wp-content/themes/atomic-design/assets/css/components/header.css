@@ -237,12 +237,12 @@
 
 /* Visible Arrow */
 .site-header__contact-icon::before {
-    transform: translate(-50%, -50%);
+    transform: translate(-44%, -50%);
 }
 
 /* Hidden Arrow */
 .site-header__contact-icon::after {
-    transform: translate(-160%, 60%);
+    transform: translate(-160%, 80%);
 }
 
 /* Hover Animation */
