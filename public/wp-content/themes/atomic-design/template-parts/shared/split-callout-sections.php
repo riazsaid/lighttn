@@ -30,11 +30,12 @@ if ($section_index > 0) {
 foreach ($sections as $section) {
     $section_heading = isset($section['split_callout_heading']) ? (string) $section['split_callout_heading'] : '';
     $intro           = isset($section['split_callout_intro']) ? (string) $section['split_callout_intro'] : '';
-    $callout_link    = isset($section['split_callout_link']) && is_array($section['split_callout_link'])
-        ? $section['split_callout_link']
+    $investment_ranges_content = isset($section['split_callout_investment_ranges_content'])
+        ? (string) $section['split_callout_investment_ranges_content']
+        : '';
+    $cards           = isset($section['split_callout_cards']) && is_array($section['split_callout_cards'])
+        ? $section['split_callout_cards']
         : [];
-    $panel_title     = isset($section['split_callout_panel_title']) ? (string) $section['split_callout_panel_title'] : '';
-    $panel_copy      = isset($section['split_callout_panel_copy']) ? (string) $section['split_callout_panel_copy'] : '';
 
     if (trim($section_heading) === '' || trim(wp_strip_all_tags($intro)) === '') {
         continue;
@@ -46,9 +47,8 @@ foreach ($sections as $section) {
         [
             'section_heading' => $section_heading,
             'intro'           => $intro,
-            'callout_link'    => $callout_link,
-            'panel_title'     => $panel_title,
-            'panel_copy'      => $panel_copy,
+            'investment_ranges_content' => $investment_ranges_content,
+            'cards'           => $cards,
         ]
     );
 }

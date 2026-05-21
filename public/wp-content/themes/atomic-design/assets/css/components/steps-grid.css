@@ -130,8 +130,7 @@
 }
 
 .steps-grid__actions {
-    margin-top: clamp(28px, 3vw, 40px);
-    text-align: center;
+    justify-self: end;
 }
 
 @media (max-width: 980px) {
@@ -143,6 +142,10 @@
 @media (max-width: 680px) {
     .steps-grid.has-cta .steps-grid__header {
         grid-template-columns: 1fr;
+    }
+
+    .steps-grid__actions {
+        justify-self: start;
     }
 
     .steps-grid__cta {

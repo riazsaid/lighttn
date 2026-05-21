@@ -6,6 +6,7 @@
  * Hero
  * → Detail Card Grid (row 1)
  * → Steps Grid (row 1)
+ * → Property Types Grid (row 1)
  * → Trust Bar
  * → Proof Points (row 1)
  * → Spotlight Cards (row 1)
@@ -40,6 +41,10 @@ get_header();
             'section_index' => 1,
         ]);
         get_template_part('template-parts/shared/steps-grid-sections', null, [
+            'post_id' => $post_id,
+            'section_index' => 1,
+        ]);
+        get_template_part('template-parts/shared/property-types-grid-sections', null, [
             'post_id' => $post_id,
             'section_index' => 1,
         ]);

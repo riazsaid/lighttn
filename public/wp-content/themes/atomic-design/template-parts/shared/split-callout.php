@@ -5,9 +5,8 @@
  * Args:
  * - section_heading (string) Required.
  * - intro (string) Optional HTML.
- * - callout_link (array) Optional ACF link array.
- * - panel_title (string) Optional.
- * - panel_copy (string) Optional HTML.
+ * - investment_ranges_content (string) Optional HTML in top right card.
+ * - cards (array) Optional repeater rows: title, copy.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
  * - class_name (string) Optional extra class names.
  */
@@ -18,21 +17,22 @@ if (!defined('ABSPATH')) {
 
 $section_heading = isset($args['section_heading']) ? trim((string) $args['section_heading']) : '';
 $intro           = isset($args['intro']) ? trim((string) $args['intro']) : '';
-$callout_link    = isset($args['callout_link']) && is_array($args['callout_link']) ? $args['callout_link'] : [];
-$panel_title     = isset($args['panel_title']) ? trim((string) $args['panel_title']) : '';
-$panel_copy      = isset($args['panel_copy']) ? trim((string) $args['panel_copy']) : '';
+$investment_ranges_content = isset($args['investment_ranges_content']) ? trim((string) $args['investment_ranges_content']) : '';
+$cards           = isset($args['cards']) && is_array($args['cards']) ? $args['cards'] : [];
 $align           = !empty($args['align']) ? (string) $args['align'] : 'full';
 $class_name      = isset($args['class_name']) ? (string) $args['class_name'] : '';
 
-$link_url    = !empty($callout_link['url']) ? (string) $callout_link['url'] : '';
-$link_title  = !empty($callout_link['title']) ? (string) $callout_link['title'] : '';
-$link_target = !empty($callout_link['target']) ? (string) $callout_link['target'] : '_self';
+$cards = array_values(array_filter($cards, static function ($card) {
+    $title = isset($card['title']) ? trim((string) $card['title']) : '';
+    $copy  = isset($card['copy']) ? trim(wp_strip_all_tags((string) $card['copy'])) : '';
+    return $title !== '' || $copy !== '';
+}));
 
 $has_intro = trim(wp_strip_all_tags($intro)) !== '';
-$has_link  = $link_url !== '' && $link_title !== '';
-$has_panel = $panel_title !== '' || trim(wp_strip_all_tags($panel_copy)) !== '';
+$has_ranges = trim(wp_strip_all_tags($investment_ranges_content)) !== '';
+$has_cards = !empty($cards);
 
-if ($section_heading === '' || !$has_intro || (!$has_link && !$has_panel)) {
+if ($section_heading === '' || !$has_intro || (!$has_ranges && !$has_cards)) {
     return;
 }
 
@@ -51,30 +51,34 @@ $section_class = trim('split-callout align' . $align . ' ' . $class_name);
             </div>
 
             <div class="split-callout__aside">
-                <?php if ($has_link) : ?>
-                    <a
-                        class="split-callout__link scroll-reveal"
-                        style="--reveal-delay: 120ms;"
-                        href="<?php echo esc_url($link_url); ?>"
-                        target="<?php echo esc_attr($link_target); ?>"
-                    >
-                        <span><?php echo esc_html($link_title); ?></span>
-                        <span aria-hidden="true">→</span>
-                    </a>
+                <?php if ($has_ranges) : ?>
+                    <article class="split-callout__ranges-card scroll-reveal" style="--reveal-delay: 120ms;">
+                        <h3 class="split-callout__ranges-title"><?php esc_html_e('Project Investment Ranges', 'atomic-design'); ?></h3>
+                        <div class="split-callout__ranges-copy">
+                            <?php echo wp_kses_post($investment_ranges_content); ?>
+                        </div>
+                    </article>
                 <?php endif; ?>
 
-                <?php if ($has_panel) : ?>
-                    <article class="split-callout__panel scroll-reveal" style="--reveal-delay: 170ms;">
-                        <?php if ($panel_title !== '') : ?>
-                            <h3 class="split-callout__panel-title"><?php echo esc_html($panel_title); ?></h3>
-                        <?php endif; ?>
-
-                        <?php if (trim(wp_strip_all_tags($panel_copy)) !== '') : ?>
-                            <div class="split-callout__panel-copy">
-                                <?php echo wp_kses_post(wpautop($panel_copy)); ?>
-                            </div>
-                        <?php endif; ?>
-                    </article>
+                <?php if ($has_cards) : ?>
+                    <div class="split-callout__cards">
+                        <?php foreach ($cards as $index => $card) :
+                            $card_title = isset($card['title']) ? trim((string) $card['title']) : '';
+                            $card_copy  = isset($card['copy']) ? trim((string) $card['copy']) : '';
+                            $delay = 170 + ((int) $index * 60);
+                            ?>
+                            <article class="split-callout__card scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
+                                <?php if ($card_title !== '') : ?>
+                                    <h4 class="split-callout__card-title"><?php echo esc_html($card_title); ?></h4>
+                                <?php endif; ?>
+                                <?php if (trim(wp_strip_all_tags($card_copy)) !== '') : ?>
+                                    <div class="split-callout__card-copy">
+                                        <?php echo wp_kses_post(wpautop($card_copy)); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </article>
+                        <?php endforeach; ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
