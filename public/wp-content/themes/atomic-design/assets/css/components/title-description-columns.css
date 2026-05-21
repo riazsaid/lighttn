@@ -91,6 +91,28 @@
     text-decoration: none;
 }
 
+.title-description-columns--service-location-areas .title-description-columns__heading {
+    max-width: none;
+    text-align: center;
+    margin-bottom: clamp(28px, 4vw, 42px);
+}
+
+.title-description-columns--service-location-areas .title-description-columns__content {
+    max-width: 1120px;
+    margin: 0 auto;
+    column-count: 2;
+    column-gap: clamp(28px, 4vw, 64px);
+    text-align: center;
+}
+
+.title-description-columns--service-location-areas .title-description-columns__content > * {
+    break-inside: avoid;
+}
+
+.title-description-columns--service-location-areas .title-description-columns__actions {
+    justify-content: center;
+}
+
 @media (max-width: 640px) {
     .title-description-columns {
         padding: 46px 0 60px;
@@ -103,5 +125,10 @@
 
     .title-description-columns__content {
         font-size: 15px;
+    }
+
+    .title-description-columns--service-location-areas .title-description-columns__content {
+        column-count: 1;
+        text-align: left;
     }
 }
