@@ -5,6 +5,7 @@
  * Args:
  * - section_heading (string) Required.
  * - heading_alignment (string) Optional. center|left.
+ * - cta (array|string) Optional link field for the section button.
  * - items (array) Required repeater rows: image, title, timeline, description.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
  * - class_name (string) Optional extra class names.
@@ -17,6 +18,7 @@ if (!defined('ABSPATH')) {
 $section_heading   = isset($args['section_heading']) ? trim((string) $args['section_heading']) : '';
 $heading_alignment = isset($args['heading_alignment']) ? trim((string) $args['heading_alignment']) : 'center';
 $items             = isset($args['items']) && is_array($args['items']) ? $args['items'] : [];
+$cta               = array_key_exists('cta', $args) ? $args['cta'] : null;
 $align             = !empty($args['align']) ? (string) $args['align'] : 'full';
 $class_name        = isset($args['class_name']) ? (string) $args['class_name'] : '';
 
@@ -35,13 +37,43 @@ if ($section_heading === '' || empty($items)) {
     return;
 }
 
-$section_class = trim('steps-grid align' . $align . ' steps-grid--heading-' . $heading_alignment . ' ' . $class_name);
+$cta_title = '';
+$cta_url = '';
+$cta_target = '';
+
+if (is_array($cta)) {
+    $cta_title = isset($cta['title']) ? trim((string) $cta['title']) : '';
+    $cta_url = isset($cta['url']) ? trim((string) $cta['url']) : '';
+    $cta_target = isset($cta['target']) ? trim((string) $cta['target']) : '';
+} elseif (is_string($cta)) {
+    $cta_url = trim($cta);
+}
+
+if ($cta_title === '' && $cta_url !== '') {
+    $cta_title = __('View Our Portfolio', 'atomic-design');
+}
+
+$has_cta = $cta_title !== '' && $cta_url !== '';
+$cta_rel = $cta_target === '_blank' ? 'noopener' : '';
+$section_class = trim('steps-grid align' . $align . ' steps-grid--heading-' . $heading_alignment . ($has_cta ? ' has-cta' : '') . ' ' . $class_name);
 ?>
 
 <section class="<?php echo esc_attr($section_class); ?>">
     <div class="container steps-grid__inner">
         <header class="steps-grid__header scroll-reveal">
             <h2 class="steps-grid__heading"><?php echo esc_html($section_heading); ?></h2>
+
+            <?php if ($has_cta) : ?>
+                <a
+                    class="steps-grid__cta"
+                    href="<?php echo esc_url($cta_url); ?>"
+                    <?php echo $cta_target !== '' ? 'target="' . esc_attr($cta_target) . '"' : ''; ?>
+                    <?php echo $cta_rel !== '' ? 'rel="' . esc_attr($cta_rel) . '"' : ''; ?>
+                >
+                    <span><?php echo esc_html($cta_title); ?></span>
+                    <span class="steps-grid__cta-arrow" aria-hidden="true">&rsaquo;</span>
+                </a>
+            <?php endif; ?>
         </header>
 
         <div class="steps-grid__items">

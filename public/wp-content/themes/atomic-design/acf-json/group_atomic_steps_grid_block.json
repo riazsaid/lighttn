@@ -51,6 +51,23 @@
             "allow_in_bindings": 0
         },
         {
+            "key": "field_atomic_block_steps_grid_cta",
+            "label": "Portfolio Button",
+            "name": "steps_grid_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Optional button shown beside the section title, for example: View Our Portfolio.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_atomic_block_steps_grid_items",
             "label": "Step Cards",
             "name": "steps_grid_items",
@@ -184,5 +201,5 @@
     "description": "Fields for the Steps Grid ACF block.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1777421700
+    "modified": 1779405000
 }
