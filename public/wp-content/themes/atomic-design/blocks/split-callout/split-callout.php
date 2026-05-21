@@ -14,21 +14,20 @@ if (!function_exists('get_field')) {
 
 $section_heading = get_field('split_callout_heading') ?: '';
 $intro           = get_field('split_callout_intro') ?: '';
-$callout_link    = get_field('split_callout_link') ?: [];
-$panel_title     = get_field('split_callout_panel_title') ?: '';
-$panel_copy      = get_field('split_callout_panel_copy') ?: '';
+$investment_ranges_content = get_field('split_callout_investment_ranges_content') ?: '';
+$cards           = get_field('split_callout_cards') ?: [];
 
-$has_link  = is_array($callout_link) && !empty($callout_link['url']) && !empty($callout_link['title']);
-$has_panel = trim((string) $panel_title) !== '' || trim(wp_strip_all_tags((string) $panel_copy)) !== '';
+$has_ranges = trim(wp_strip_all_tags((string) $investment_ranges_content)) !== '';
+$has_cards = is_array($cards) && !empty($cards);
 
-if ($is_preview && (empty($section_heading) || trim(wp_strip_all_tags((string) $intro)) === '' || (!$has_link && !$has_panel))) {
+if ($is_preview && (empty($section_heading) || trim(wp_strip_all_tags((string) $intro)) === '' || (!$has_ranges && !$has_cards))) {
     echo '<div style="padding:2rem;border:2px dashed #ccc;text-align:center;color:#888;">';
-    echo '<strong>Split Callout</strong><br>Add the heading, intro copy, and right-side callout content in the block sidebar.';
+    echo '<strong>Split Callout</strong><br>Add heading/intro, investment ranges content, and cards in the block sidebar.';
     echo '</div>';
     return;
 }
 
-if (empty($section_heading) || trim(wp_strip_all_tags((string) $intro)) === '' || (!$has_link && !$has_panel)) {
+if (empty($section_heading) || trim(wp_strip_all_tags((string) $intro)) === '' || (!$has_ranges && !$has_cards)) {
     return;
 }
 
@@ -38,9 +37,8 @@ get_template_part(
     [
         'section_heading' => $section_heading,
         'intro'           => $intro,
-        'callout_link'    => $callout_link,
-        'panel_title'     => $panel_title,
-        'panel_copy'      => $panel_copy,
+        'investment_ranges_content' => (string) $investment_ranges_content,
+        'cards'           => is_array($cards) ? $cards : [],
         'align'           => !empty($block['align']) ? $block['align'] : 'full',
         'class_name'      => !empty($block['className']) ? $block['className'] : '',
     ]

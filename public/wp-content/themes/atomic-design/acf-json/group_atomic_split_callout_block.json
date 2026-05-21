@@ -45,50 +45,12 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_atomic_block_split_callout_link",
-            "label": "Top Callout Link",
-            "name": "split_callout_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "Optional pill-shaped link shown at the top of the right column.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_atomic_block_split_callout_panel_title",
-            "label": "Panel Title",
-            "name": "split_callout_panel_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Optional bold title inside the lower panel.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "Payment Terms:",
-            "prepend": "",
-            "append": "",
-            "allow_in_bindings": 0,
-            "maxlength": ""
-        },
-        {
-            "key": "field_atomic_block_split_callout_panel_copy",
-            "label": "Panel Copy",
-            "name": "split_callout_panel_copy",
+            "key": "field_atomic_block_split_callout_investment_ranges_content",
+            "label": "Investment Ranges Content",
+            "name": "split_callout_investment_ranges_content",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "Copy shown inside the lower gray panel.",
+            "instructions": "Content shown under the static title: Project Investment Ranges.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -102,6 +64,72 @@
             "media_upload": 0,
             "delay": 0,
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_block_split_callout_cards",
+            "label": "Cards",
+            "name": "split_callout_cards",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Cards shown below the Project Investment Ranges card.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_atomic_block_split_callout_card_title",
+            "button_label": "Add card",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_block_split_callout_card_title",
+                    "label": "Card Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "What's Included",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_block_split_callout_cards"
+                },
+                {
+                    "key": "field_atomic_block_split_callout_card_copy",
+                    "label": "Card Copy",
+                    "name": "copy",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_block_split_callout_cards"
+                }
+            ]
         }
     ],
     "location": [

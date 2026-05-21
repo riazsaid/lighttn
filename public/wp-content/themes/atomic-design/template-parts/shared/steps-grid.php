@@ -38,7 +38,7 @@ if ($section_heading === '' || empty($items)) {
     return;
 }
 
-$section_class = trim('steps-grid align' . $align . ' steps-grid--heading-' . $heading_alignment . ' ' . $class_name);
+$section_class = trim('steps-grid has-cta align' . $align . ' steps-grid--heading-' . $heading_alignment . ' ' . $class_name);
 
 $portfolio_url = !empty($portfolio_link['url']) ? (string) $portfolio_link['url'] : home_url('/gallery/');
 $portfolio_title = !empty($portfolio_link['title']) ? (string) $portfolio_link['title'] : __('View Portfolio', 'atomic-design');
@@ -49,18 +49,14 @@ $portfolio_target = !empty($portfolio_link['target']) ? (string) $portfolio_link
     <div class="container steps-grid__inner">
         <header class="steps-grid__header scroll-reveal">
             <h2 class="steps-grid__heading"><?php echo esc_html($section_heading); ?></h2>
-
-            <?php if ($has_cta) : ?>
-                <a
-                    class="steps-grid__cta"
-                    href="<?php echo esc_url($cta_url); ?>"
-                    <?php echo $cta_target !== '' ? 'target="' . esc_attr($cta_target) . '"' : ''; ?>
-                    <?php echo $cta_rel !== '' ? 'rel="' . esc_attr($cta_rel) . '"' : ''; ?>
-                >
-                    <span><?php echo esc_html($cta_title); ?></span>
+            <div class="steps-grid__actions">
+                <a class="steps-grid__cta"
+                   href="<?php echo esc_url($portfolio_url); ?>"
+                   target="<?php echo esc_attr($portfolio_target); ?>">
+                    <span><?php echo esc_html($portfolio_title); ?></span>
                     <span class="steps-grid__cta-arrow" aria-hidden="true">&rsaquo;</span>
                 </a>
-            <?php endif; ?>
+            </div>
         </header>
 
         <div class="steps-grid__items">
@@ -100,12 +96,5 @@ $portfolio_target = !empty($portfolio_link['target']) ? (string) $portfolio_link
             <?php endforeach; ?>
         </div>
 
-        <div class="steps-grid__actions scroll-reveal" style="--reveal-delay: 240ms;">
-            <a class="btn btn-primary steps-grid__cta"
-               href="<?php echo esc_url($portfolio_url); ?>"
-               target="<?php echo esc_attr($portfolio_target); ?>">
-                <?php echo esc_html($portfolio_title); ?>
-            </a>
-        </div>
     </div>
 </section>
