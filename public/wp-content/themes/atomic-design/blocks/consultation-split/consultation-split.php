@@ -16,15 +16,17 @@ $section_heading = get_field('consultation_split_heading') ?: '';
 $intro           = get_field('consultation_split_intro') ?: '';
 $form_id         = (int) (get_field('consultation_split_form_id') ?: 147);
 $image           = get_field('consultation_split_image') ?: [];
+$has_image       = is_array($image) && (!empty($image['ID']) || !empty($image['url']));
+$has_content     = ($section_heading !== '') || (trim(wp_strip_all_tags((string) $intro)) !== '') || ($form_id > 0) || $has_image;
 
-if ($is_preview && empty($section_heading)) {
+if ($is_preview && !$has_content) {
     echo '<div style="padding:2rem;border:2px dashed #ccc;text-align:center;color:#888;">';
     echo '<strong>Consultation Split</strong><br>Add a heading, intro, image, and form id in the block sidebar.';
     echo '</div>';
     return;
 }
 
-if (empty($section_heading)) {
+if (!$has_content) {
     return;
 }
 
