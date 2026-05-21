@@ -14,7 +14,9 @@ if (!function_exists('get_field')) {
 
 $section_heading = get_field('detail_card_grid_heading') ?: '';
 $content         = get_field('detail_card_grid_content') ?: '';
+$ideal_title     = get_field('detail_card_grid_ideal_title') ?: '';
 $ideal_items     = get_field('detail_card_grid_ideal_items') ?: [];
+$included_title  = get_field('detail_card_grid_included_title') ?: '';
 $included_description = get_field('detail_card_grid_included_description') ?: '';
 $items           = get_field('detail_card_grid_items') ?: [];
 $has_content     = trim(wp_strip_all_tags((string) $content)) !== ''
@@ -38,7 +40,9 @@ get_template_part(
     [
         'section_heading' => $section_heading,
         'content'         => $content,
+        'ideal_title'     => $ideal_title,
         'ideal_items'     => is_array($ideal_items) ? $ideal_items : [],
+        'included_title'  => $included_title,
         'included_description' => $included_description,
         'items'           => $items,
         'align'           => !empty($block['align']) ? $block['align'] : 'full',
