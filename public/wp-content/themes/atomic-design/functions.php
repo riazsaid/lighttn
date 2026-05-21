@@ -19,6 +19,12 @@ function atomic_design_setup()
     add_theme_support('align-wide');
     add_theme_support('responsive-embeds');
     add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style']);
+    add_theme_support('custom-logo', [
+        'height'      => 120,
+        'width'       => 420,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ]);
 
     register_nav_menus(
         [
@@ -28,6 +34,114 @@ function atomic_design_setup()
     );
 }
 add_action('after_setup_theme', 'atomic_design_setup');
+
+/**
+ * Customizer controls for header/footer logos.
+ */
+function atomic_design_customize_register($wp_customize)
+{
+    $wp_customize->add_section('atomic_design_branding', [
+        'title'       => __('Branding', 'atomic-design'),
+        'priority'    => 35,
+        'description' => __('Set different logos for header and footer. Footer logo falls back to header logo if empty.', 'atomic-design'),
+    ]);
+
+    $wp_customize->add_setting('atomic_header_logo', [
+        'type'              => 'theme_mod',
+        'sanitize_callback' => 'absint',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Media_Control(
+        $wp_customize,
+        'atomic_header_logo_control',
+        [
+            'label'       => __('Header Logo', 'atomic-design'),
+            'section'     => 'atomic_design_branding',
+            'settings'    => 'atomic_header_logo',
+            'mime_type'   => 'image',
+            'description' => __('Used in the site header. Supports PNG/JPG/WebP/SVG.', 'atomic-design'),
+        ]
+    ));
+
+    $wp_customize->add_setting('atomic_footer_logo', [
+        'type'              => 'theme_mod',
+        'sanitize_callback' => 'absint',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Media_Control(
+        $wp_customize,
+        'atomic_footer_logo_control',
+        [
+            'label'       => __('Footer Logo', 'atomic-design'),
+            'section'     => 'atomic_design_branding',
+            'settings'    => 'atomic_footer_logo',
+            'mime_type'   => 'image',
+            'description' => __('Optional. If empty, header logo is used in footer automatically.', 'atomic-design'),
+        ]
+    ));
+}
+add_action('customize_register', 'atomic_design_customize_register');
+
+/**
+ * Return the brand logo attachment ID for a location, with fallbacks:
+ * 1) Header/Footer customizer logo.
+ * 2) Footer falls back to header logo.
+ * 3) Site Identity custom logo (single logo used in both).
+ */
+function atomic_design_get_brand_logo_id($location = 'header')
+{
+    $header_logo_id = (int) get_theme_mod('atomic_header_logo', 0);
+    $footer_logo_id = (int) get_theme_mod('atomic_footer_logo', 0);
+    $site_logo_id   = (int) get_theme_mod('custom_logo', 0);
+
+    if ($location === 'footer') {
+        if ($footer_logo_id > 0) {
+            return $footer_logo_id;
+        }
+
+        if ($header_logo_id > 0) {
+            return $header_logo_id;
+        }
+
+        return $site_logo_id;
+    }
+
+    if ($header_logo_id > 0) {
+        return $header_logo_id;
+    }
+
+    return $site_logo_id;
+}
+
+/**
+ * Allow SVG uploads for logo management via Media Library.
+ *
+ * For stricter security, pair this with a sanitizer plugin such as Safe SVG.
+ */
+function atomic_design_upload_mimes($mimes)
+{
+    $mimes['svg']  = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+
+    return $mimes;
+}
+add_filter('upload_mimes', 'atomic_design_upload_mimes');
+
+/**
+ * Ensure SVG files pass WordPress filetype/ext validation.
+ */
+function atomic_design_fix_svg_mime_type($data, $file, $filename, $mimes, $real_mime = '')
+{
+    $ext = isset($data['ext']) ? $data['ext'] : '';
+
+    if ($ext === 'svg' || $ext === 'svgz') {
+        $data['ext']  = $ext;
+        $data['type'] = 'image/svg+xml';
+    }
+
+    return $data;
+}
+add_filter('wp_check_filetype_and_ext', 'atomic_design_fix_svg_mime_type', 10, 5);
 
 /**
  * Enqueue scripts and styles

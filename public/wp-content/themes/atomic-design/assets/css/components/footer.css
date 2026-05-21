@@ -79,6 +79,13 @@
     white-space: nowrap;
 }
 
+.site-footer__logo {
+    display: block;
+    width: auto;
+    max-width: min(300px, 100%);
+    height: auto;
+}
+
 .site-footer__content {
     display: grid;
     grid-template-columns: minmax(150px, 1.05fr) minmax(150px, 1fr) minmax(280px, 1.95fr) minmax(220px, 1.35fr);
