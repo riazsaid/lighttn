@@ -1549,6 +1549,29 @@ function atomic_design_register_acf_blocks()
     );
 
     // ----------------------------------------------------------
+    // Property Types Grid block
+    // Reusable image strip for ideal property/category cards.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'property-types-grid',
+            'title'           => __('Property Types Grid', 'atomic-design'),
+            'description'     => __('Reusable heading with image-led property type cards.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/property-types-grid/property-types-grid.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'grid-view',
+            'keywords'        => ['properties', 'property types', 'ideal properties', 'grid', 'cards'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
     // Split Callout block
     // Left intro content with right-side CTA and info panel.
     // ----------------------------------------------------------

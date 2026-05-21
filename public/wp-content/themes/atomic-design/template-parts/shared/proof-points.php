@@ -57,40 +57,42 @@ $section_class = trim('proof-points align' . $align . ' ' . $class_name);
                 <?php endif; ?>
             </div>
 
-            <?php foreach ($items as $index => $item) :
-                $title       = isset($item['title']) ? trim((string) $item['title']) : '';
-                $timeline    = isset($item['timeline']) ? trim((string) $item['timeline']) : '';
-                $description = isset($item['description']) ? trim((string) $item['description']) : '';
-                $image       = isset($item['image']) && is_array($item['image']) ? $item['image'] : [];
-                $delay       = 120 + ((int) $index * 70);
-                ?>
-                <article class="proof-points__card scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
-                    <?php if (!empty($image['url'])) : ?>
-                        <div class="proof-points__image-wrap">
-                            <img
-                                class="proof-points__image"
-                                src="<?php echo esc_url($image['url']); ?>"
-                                alt="<?php echo esc_attr($image['alt'] ?? $title); ?>"
-                                loading="lazy"
-                            >
-                        </div>
-                    <?php endif; ?>
+            <div class="proof-points__cards">
+                <?php foreach ($items as $index => $item) :
+                    $title       = isset($item['title']) ? trim((string) $item['title']) : '';
+                    $timeline    = isset($item['timeline']) ? trim((string) $item['timeline']) : '';
+                    $description = isset($item['description']) ? trim((string) $item['description']) : '';
+                    $image       = isset($item['image']) && is_array($item['image']) ? $item['image'] : [];
+                    $delay       = 120 + ((int) $index * 70);
+                    ?>
+                    <article class="proof-points__card scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
+                        <?php if (!empty($image['url'])) : ?>
+                            <div class="proof-points__image-wrap">
+                                <img
+                                    class="proof-points__image"
+                                    src="<?php echo esc_url($image['url']); ?>"
+                                    alt="<?php echo esc_attr($image['alt'] ?? $title); ?>"
+                                    loading="lazy"
+                                >
+                            </div>
+                        <?php endif; ?>
 
-                    <?php if ($title !== '') : ?>
-                        <h3 class="proof-points__card-title"><?php echo esc_html($title); ?></h3>
-                    <?php endif; ?>
+                        <?php if ($title !== '') : ?>
+                            <h3 class="proof-points__card-title"><?php echo esc_html($title); ?></h3>
+                        <?php endif; ?>
 
-                    <?php if ($timeline !== '') : ?>
-                        <div class="proof-points__timeline"><?php echo esc_html($timeline); ?></div>
-                    <?php endif; ?>
+                        <?php if ($timeline !== '') : ?>
+                            <div class="proof-points__timeline"><?php echo esc_html($timeline); ?></div>
+                        <?php endif; ?>
 
-                    <?php if (trim(wp_strip_all_tags($description)) !== '') : ?>
-                        <div class="proof-points__card-description">
-                            <?php echo wp_kses_post(wpautop($description)); ?>
-                        </div>
-                    <?php endif; ?>
-                </article>
-            <?php endforeach; ?>
+                        <?php if (trim(wp_strip_all_tags($description)) !== '') : ?>
+                            <div class="proof-points__card-description">
+                                <?php echo wp_kses_post(wpautop($description)); ?>
+                            </div>
+                        <?php endif; ?>
+                    </article>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </section>

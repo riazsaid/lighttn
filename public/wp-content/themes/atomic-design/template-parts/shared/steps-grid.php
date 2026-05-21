@@ -5,6 +5,7 @@
  * Args:
  * - section_heading (string) Required.
  * - heading_alignment (string) Optional. center|left.
+ * - cta (array|string) Optional link field for the section button.
  * - items (array) Required repeater rows: image, title, timeline, description.
  * - portfolio_link (array) Optional ACF link array. Falls back to /gallery/.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
@@ -48,6 +49,18 @@ $portfolio_target = !empty($portfolio_link['target']) ? (string) $portfolio_link
     <div class="container steps-grid__inner">
         <header class="steps-grid__header scroll-reveal">
             <h2 class="steps-grid__heading"><?php echo esc_html($section_heading); ?></h2>
+
+            <?php if ($has_cta) : ?>
+                <a
+                    class="steps-grid__cta"
+                    href="<?php echo esc_url($cta_url); ?>"
+                    <?php echo $cta_target !== '' ? 'target="' . esc_attr($cta_target) . '"' : ''; ?>
+                    <?php echo $cta_rel !== '' ? 'rel="' . esc_attr($cta_rel) . '"' : ''; ?>
+                >
+                    <span><?php echo esc_html($cta_title); ?></span>
+                    <span class="steps-grid__cta-arrow" aria-hidden="true">&rsaquo;</span>
+                </a>
+            <?php endif; ?>
         </header>
 
         <div class="steps-grid__items">

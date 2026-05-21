@@ -16,6 +16,7 @@ $section_heading   = get_field('steps_grid_heading') ?: '';
 $heading_alignment = get_field('steps_grid_heading_alignment') ?: 'center';
 $portfolio_link    = get_field('steps_grid_portfolio_link') ?: [];
 $items             = get_field('steps_grid_items') ?: [];
+$cta               = get_field('steps_grid_cta');
 
 if ($is_preview && (empty($section_heading) || empty($items) || !is_array($items))) {
     echo '<div style="padding:2rem;border:2px dashed #ccc;text-align:center;color:#888;">';
@@ -36,6 +37,7 @@ get_template_part(
         'heading_alignment' => $heading_alignment,
         'portfolio_link'    => is_array($portfolio_link) ? $portfolio_link : [],
         'items'             => $items,
+        'cta'               => $cta,
         'align'             => !empty($block['align']) ? $block['align'] : 'full',
         'class_name'        => !empty($block['className']) ? $block['className'] : '',
     ]

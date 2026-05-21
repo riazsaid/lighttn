@@ -5,7 +5,9 @@
  * Args:
  * - section_heading (string) Required.
  * - content (string) Optional HTML.
+ * - ideal_title (string) Optional.
  * - ideal_items (array) Optional repeater rows: item.
+ * - included_title (string) Optional.
  * - included_description (string) Optional HTML.
  * - items (array) Required repeater rows: title, description.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
@@ -18,7 +20,9 @@ if (!defined('ABSPATH')) {
 
 $section_heading = isset($args['section_heading']) ? trim((string) $args['section_heading']) : '';
 $content         = isset($args['content']) ? trim((string) $args['content']) : '';
+$ideal_title     = isset($args['ideal_title']) ? trim((string) $args['ideal_title']) : '';
 $ideal_items     = isset($args['ideal_items']) && is_array($args['ideal_items']) ? $args['ideal_items'] : [];
+$included_title  = isset($args['included_title']) ? trim((string) $args['included_title']) : '';
 $included_description = isset($args['included_description']) ? trim((string) $args['included_description']) : '';
 $items           = isset($args['items']) && is_array($args['items']) ? $args['items'] : [];
 $align           = !empty($args['align']) ? (string) $args['align'] : 'full';
@@ -42,6 +46,8 @@ if ($section_heading === '' || !$has_content || empty($items)) {
     return;
 }
 
+$ideal_title = $ideal_title !== '' ? $ideal_title : __('This service is ideal for:', 'atomic-design');
+$included_title = $included_title !== '' ? $included_title : __("What's Included", 'atomic-design');
 $section_class = trim('detail-card-grid align' . $align . ' ' . $class_name);
 ?>
 
@@ -61,7 +67,7 @@ $section_class = trim('detail-card-grid align' . $align . ' ' . $class_name);
             <div class="detail-card-grid__support scroll-reveal" style="--reveal-delay: 100ms;">
                 <?php if (!empty($ideal_items)) : ?>
                     <div class="detail-card-grid__support-group detail-card-grid__ideal">
-                        <h3 class="detail-card-grid__support-title"><?php esc_html_e('This service is ideal for:', 'atomic-design'); ?></h3>
+                        <h3 class="detail-card-grid__support-title"><?php echo esc_html($ideal_title); ?></h3>
                         <ul class="detail-card-grid__ideal-list">
                             <?php foreach ($ideal_items as $ideal_item) :
                                 $ideal_text = isset($ideal_item['item']) ? trim((string) $ideal_item['item']) : '';
@@ -77,7 +83,7 @@ $section_class = trim('detail-card-grid align' . $align . ' ' . $class_name);
 
                 <?php if (trim(wp_strip_all_tags($included_description)) !== '') : ?>
                     <div class="detail-card-grid__support-group detail-card-grid__included">
-                        <h3 class="detail-card-grid__support-title"><?php esc_html_e("What's Included", 'atomic-design'); ?></h3>
+                        <h3 class="detail-card-grid__support-title"><?php echo esc_html($included_title); ?></h3>
                         <div class="detail-card-grid__included-description">
                             <?php echo wp_kses_post(wpautop($included_description)); ?>
                         </div>

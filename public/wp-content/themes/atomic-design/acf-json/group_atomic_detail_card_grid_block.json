@@ -90,6 +90,27 @@
             ]
         },
         {
+            "key": "field_atomic_block_detail_card_grid_ideal_title",
+            "label": "Ideal Items Title",
+            "name": "detail_card_grid_ideal_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Heading shown above the ideal items list. Falls back to: This service is ideal for:",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "This service is ideal for:",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
             "key": "field_atomic_block_detail_card_grid_included_description",
             "label": "What's Included Description",
             "name": "detail_card_grid_included_description",
@@ -109,6 +130,27 @@
             "media_upload": 0,
             "delay": 0,
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_block_detail_card_grid_included_title",
+            "label": "What's Included Title",
+            "name": "detail_card_grid_included_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Heading shown above the included description. Falls back to: What's Included",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "What's Included",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
         },
         {
             "key": "field_atomic_block_detail_card_grid_items",
@@ -196,5 +238,5 @@
     "description": "Fields for the Detail Card Grid ACF block.",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1778193600
+    "modified": 1779407300
 }
