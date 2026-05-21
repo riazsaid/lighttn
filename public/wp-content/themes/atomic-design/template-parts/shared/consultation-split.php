@@ -25,20 +25,22 @@ $class_name      = isset($args['class_name']) ? (string) $args['class_name'] : '
 $image_id  = !empty($image['ID']) ? (int) $image['ID'] : 0;
 $image_url = !empty($image['url']) ? (string) $image['url'] : '';
 $image_alt = !empty($image['alt']) ? (string) $image['alt'] : '';
+$has_image = $image_id > 0 || $image_url !== '';
 
-if ($section_heading === '') {
+if ($section_heading === '' && trim(wp_strip_all_tags($intro)) === '' && $form_id <= 0 && !$has_image) {
     return;
 }
 
 $section_class = trim('consultation-split align' . $align . ' ' . $class_name);
 $has_form      = $form_id > 0;
-$has_image     = $image_id > 0 || $image_url !== '';
 ?>
 
 <section class="<?php echo esc_attr($section_class); ?>">
     <div class="container consultation-split__inner">
         <div class="consultation-split__header">
-            <h2 class="consultation-split__heading"><?php echo esc_html($section_heading); ?></h2>
+            <?php if ($section_heading !== '') : ?>
+                <h2 class="consultation-split__heading"><?php echo esc_html($section_heading); ?></h2>
+            <?php endif; ?>
 
             <?php if (trim(wp_strip_all_tags($intro)) !== '') : ?>
                 <div class="consultation-split__intro">
