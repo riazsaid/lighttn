@@ -65,12 +65,26 @@ if ($faq_layout === 'two-column') {
                         $default_open = !empty($faq['default_open']);
                         $faq_id       = $section_id . '-faq-' . $global_index;
                         $delay        = 110 + ((int) $global_index * 70);
+                        $question_markup = wp_kses((string) $question, [
+                            'strong' => [],
+                            'b'      => [],
+                            'em'     => [],
+                            'i'      => [],
+                            'u'      => [],
+                            'br'     => [],
+                            'span'   => ['class' => []],
+                            'a'      => [
+                                'href'   => [],
+                                'target' => [],
+                                'rel'    => [],
+                            ],
+                        ]);
                         ?>
                         <div class="faq-item scroll-reveal <?php echo $default_open ? 'active' : ''; ?>" data-faq-item style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
                             <button class="faq-question"
                                 aria-expanded="<?php echo $default_open ? 'true' : 'false'; ?>"
                                 aria-controls="<?php echo esc_attr($faq_id); ?>">
-                                <span class="question-text"><?php echo esc_html($question); ?></span>
+                                <span class="question-text"><?php echo $question_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
                                 <span class="faq-icon" aria-hidden="true">
                                     <svg class="icon-plus" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
