@@ -31,6 +31,7 @@ if ($section_index > 0) {
 
 foreach ($sections as $section) {
     $section_heading = isset($section['title_description_heading']) ? (string) $section['title_description_heading'] : '';
+    $heading_alignment = isset($section['title_description_heading_alignment']) ? (string) $section['title_description_heading_alignment'] : 'left';
     $description     = isset($section['title_description_content']) ? (string) $section['title_description_content'] : '';
     $cta             = isset($section['title_description_cta']) && is_array($section['title_description_cta'])
         ? $section['title_description_cta']
@@ -45,6 +46,7 @@ foreach ($sections as $section) {
         null,
         [
             'section_heading' => $section_heading,
+            'heading_alignment' => $heading_alignment,
             'description'     => $description,
             'cta'             => $cta,
             'class_name'      => $class_name,

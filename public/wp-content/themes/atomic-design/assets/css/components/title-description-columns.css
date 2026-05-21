@@ -17,6 +17,12 @@
     color: #000;
 }
 
+.title-description-columns--heading-center .title-description-columns__heading {
+    max-width: none;
+    margin-inline: auto;
+    text-align: center;
+}
+
 .title-description-columns__content {
     max-width: 1040px;
     font-family: var(--font-body);

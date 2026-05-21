@@ -13,6 +13,7 @@ if (!function_exists('get_field')) {
 }
 
 $section_heading = get_field('title_description_heading') ?: '';
+$heading_alignment = get_field('title_description_heading_alignment') ?: 'left';
 $description     = get_field('title_description_content') ?: '';
 $cta             = get_field('title_description_cta');
 
@@ -37,6 +38,7 @@ get_template_part(
     null,
     [
         'section_heading' => $section_heading,
+        'heading_alignment' => $heading_alignment,
         'description'     => $description,
         'cta'             => $cta,
         'class_name'      => $class_name,
