@@ -115,7 +115,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 6px 9px 6px 24px;
+    padding: 8px 5px 8px 24px;
     border-radius: 999px;
     background: var(--cyan);
     color: #fff;
@@ -127,20 +127,13 @@
     overflow: hidden;
     box-shadow: 0 14px 34px rgba(20, 16, 12, 0.2);
     transition:
-        background-color var(--dur-fast) var(--ease),
-        transform var(--dur-fast) var(--ease),
-        box-shadow var(--dur-fast) var(--ease);
+        background 0.35s ease,
+        transform 0.35s ease,
+        min-width 0.35s ease,
+        gap 0.35s ease;
 }
 
-.hero__link-fill {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -370px;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.26);
-    transition: left 320ms cubic-bezier(0.22, 1, 0.36, 1);
-}
+
 
 .hero__link-label,
 .hero__link-icon {
@@ -150,11 +143,10 @@
 
 .hero__link--primary:hover,
 .hero__link--primary:focus-visible {
-    background: #42c3ef;
     color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 18px 42px rgba(20, 16, 12, 0.24);
     text-decoration: none;
+    transform: translateY(-3px);
+    gap: 20px;
 }
 
 .hero__link--primary:hover .hero__link-fill,

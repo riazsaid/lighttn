@@ -34,7 +34,7 @@
 .site-branding__link {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
+    gap: 8px;
     color: #000;
     text-decoration: none;
 }
@@ -47,8 +47,6 @@
 
 .site-brand-mark {
     position: relative;
-    width: 56px;
-    height: 56px;
     flex: 0 0 56px;
 }
 
@@ -149,64 +147,6 @@
     transform: translateY(-100%);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .site-nav {
-    display: flex;
-    align-items: center;
-}
-
-.site-nav .menu,
-.site-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: clamp(22px, 2.6vw, 36px);
-}
-
-.site-nav ul li a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: #767676 !important;
-    text-decoration: none;
-    transition: color var(--dur-fast) var(--ease);
-}
-
-.site-nav a:hover,
-.site-nav a:focus-visible,
-.site-nav .current-menu-item>a,
-.site-nav .current-page-ancestor>a {
-    color: var(--charcoal);
-    text-decoration: none;
-} */
-
 .site-header__actions {
     align-self: stretch;
     display: flex;
@@ -236,8 +176,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    min-height: 38px;
-    padding: 8px 10px 8px 22px;
+    padding: 8px 5px 8px 16px;
     border-radius: var(--radius-pill);
     background: var(--cyan);
     color: #fff;
@@ -256,7 +195,6 @@
 
 .site-header__contact:hover,
 .site-header__contact:focus-visible {
-    background: var(--cyan-hover);
     color: #fff;
     text-decoration: none;
     transform: translateY(-3px);
@@ -266,8 +204,8 @@
 
 .site-header__contact::before {
     content: "";
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: #63F36B;
     display: inline-block;
@@ -277,8 +215,8 @@
 
 .site-header__contact-icon {
     position: relative;
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
     overflow: hidden;
     display: inline-flex;
     align-items: center;
