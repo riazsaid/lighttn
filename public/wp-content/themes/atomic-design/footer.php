@@ -46,13 +46,27 @@ $footer_social_links = [
         <div class="site-footer__brand-row">
             <a class="site-footer__brand-link" href="<?php echo esc_url(home_url('/')); ?>"
                 aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
-                <span class="site-footer__brand-mark" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-                <span class="site-footer__wordmark"><?php esc_html_e('LIGHT TN', 'atomic-design'); ?></span>
+                <?php
+                $footer_logo_id = function_exists('atomic_design_get_brand_logo_id')
+                    ? atomic_design_get_brand_logo_id('footer')
+                    : 0;
+                ?>
+                <?php if ($footer_logo_id > 0) : ?>
+                    <?php echo wp_get_attachment_image($footer_logo_id, 'full', false, [
+                        'class'   => 'site-footer__logo',
+                        'loading' => 'lazy',
+                        'decoding' => 'async',
+                        'alt'     => get_bloginfo('name'),
+                    ]); ?>
+                <?php else : ?>
+                    <span class="site-footer__brand-mark" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="site-footer__wordmark"><?php esc_html_e('LIGHT TN', 'atomic-design'); ?></span>
+                <?php endif; ?>
             </a>
         </div>
 
