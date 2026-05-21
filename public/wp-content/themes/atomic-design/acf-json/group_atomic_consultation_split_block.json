@@ -46,11 +46,11 @@
         },
         {
             "key": "field_atomic_block_consultation_split_form_id",
-            "label": "WPForms Form ID",
+            "label": "Forminator Form ID",
             "name": "consultation_split_form_id",
             "aria-label": "",
             "type": "number",
-            "instructions": "WPForms form ID. Default for Light TN is 147.",
+            "instructions": "Forminator form ID. Example: 386.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
