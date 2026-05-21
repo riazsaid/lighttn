@@ -128,6 +128,13 @@
                 "operator": "==",
                 "value": "services"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service-location"
+            }
         ]
     ],
     "menu_order": 44,
@@ -142,4 +149,3 @@
     "display_title": "",
     "modified": 1779406201
 }
-

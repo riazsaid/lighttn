@@ -373,6 +373,17 @@ function atomic_design_register_acf_options_pages()
             'capability'  => 'manage_options',
         ]
     );
+
+    // Consultation CTA Bar — constant phone/consultation prompt used between sections.
+    acf_add_options_sub_page(
+        [
+            'page_title'  => 'Consultation CTA Bar',
+            'menu_title'  => 'Consultation CTA Bar',
+            'menu_slug'   => 'atomic-design-consultation-cta-bar',
+            'parent_slug' => 'atomic-design-synced-components',
+            'capability'  => 'manage_options',
+        ]
+    );
 }
 add_action('acf/init', 'atomic_design_register_acf_options_pages');
 
@@ -903,6 +914,46 @@ function atomic_design_register_acf_fields()
                     'param'    => 'options_page',
                     'operator' => '==',
                     'value'    => 'atomic-design-about-light-tn',
+                ],
+            ],
+        ],
+        'menu_order'            => 0,
+        'position'              => 'normal',
+        'style'                 => 'default',
+        'label_placement'       => 'top',
+        'instruction_placement' => 'label',
+        'active'                => true,
+        'show_in_rest'          => 1,
+    ]);
+
+    acf_add_local_field_group([
+        'key'    => 'group_atomic_consultation_cta_bar',
+        'title'  => 'Consultation CTA Bar',
+        'fields' => [
+            [
+                'key'           => 'field_atomic_consultation_cta_bar_text',
+                'label'         => 'CTA Text',
+                'name'          => 'consultation_cta_bar_text',
+                'type'          => 'text',
+                'instructions'  => 'Single-line CTA text shown in the center of the bar.',
+                'default_value' => 'Call (615) 808-8882 OR Request Your FREE Consultation',
+                'placeholder'   => 'Call (615) 808-8882 OR Request Your FREE Consultation',
+            ],
+            [
+                'key'           => 'field_atomic_consultation_cta_bar_link',
+                'label'         => 'CTA Link',
+                'name'          => 'consultation_cta_bar_link',
+                'type'          => 'link',
+                'instructions'  => 'Link used when user clicks the CTA bar. Leave empty to fallback to the default phone link.',
+                'return_format' => 'array',
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'options_page',
+                    'operator' => '==',
+                    'value'    => 'atomic-design-consultation-cta-bar',
                 ],
             ],
         ],

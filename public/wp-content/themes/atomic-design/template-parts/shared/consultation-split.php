@@ -6,6 +6,7 @@
  * - section_heading (string) Required.
  * - intro (string) Optional HTML.
  * - form_id (int) Optional. Defaults to 147.
+ * - booking_embed_html (string) Optional booking widget/script HTML shown on the right.
  * - image (array) Optional ACF image array.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
  * - class_name (string) Optional extra class names.
@@ -18,6 +19,7 @@ if (!defined('ABSPATH')) {
 $section_heading = isset($args['section_heading']) ? trim((string) $args['section_heading']) : '';
 $intro           = isset($args['intro']) ? trim((string) $args['intro']) : '';
 $form_id         = isset($args['form_id']) ? (int) $args['form_id'] : 147;
+$booking_embed_html = isset($args['booking_embed_html']) ? (string) $args['booking_embed_html'] : '';
 $image           = isset($args['image']) && is_array($args['image']) ? $args['image'] : [];
 $align           = !empty($args['align']) ? (string) $args['align'] : 'full';
 $class_name      = isset($args['class_name']) ? (string) $args['class_name'] : '';
@@ -26,8 +28,9 @@ $image_id  = !empty($image['ID']) ? (int) $image['ID'] : 0;
 $image_url = !empty($image['url']) ? (string) $image['url'] : '';
 $image_alt = !empty($image['alt']) ? (string) $image['alt'] : '';
 $has_image = $image_id > 0 || $image_url !== '';
+$has_booking_embed = trim(wp_strip_all_tags($booking_embed_html)) !== '';
 
-if ($section_heading === '' && trim(wp_strip_all_tags($intro)) === '' && $form_id <= 0 && !$has_image) {
+if ($section_heading === '' && trim(wp_strip_all_tags($intro)) === '' && $form_id <= 0 && !$has_image && !$has_booking_embed) {
     return;
 }
 
@@ -61,7 +64,11 @@ $has_form      = $form_id > 0;
             </div>
 
             <div class="consultation-split__card consultation-split__card--visual">
-                <?php if ($image_id) : ?>
+                <?php if ($has_booking_embed) : ?>
+                    <div class="consultation-split__booking-embed">
+                        <?php echo $booking_embed_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                    </div>
+                <?php elseif ($image_id) : ?>
                     <?php echo wp_get_attachment_image($image_id, 'large', false, [
                         'class' => 'consultation-split__image',
                         'alt'   => $image_alt,
