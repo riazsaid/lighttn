@@ -52,10 +52,10 @@ $has_form      = $form_id > 0;
         <div class="consultation-split__grid">
             <div class="consultation-split__card consultation-split__card--form">
                 <?php if ($has_form) : ?>
-                    <?php echo do_shortcode('[wpforms id="' . absint($form_id) . '" title="false" description="false"]'); ?>
+                    <?php echo do_shortcode('[forminator_form id="' . absint($form_id) . '"]'); ?>
                 <?php else : ?>
                     <div class="consultation-split__placeholder">
-                        <?php esc_html_e('Select a form for this section.', 'atomic-design'); ?>
+                        <?php esc_html_e('Select a Forminator form for this section.', 'atomic-design'); ?>
                     </div>
                 <?php endif; ?>
             </div>

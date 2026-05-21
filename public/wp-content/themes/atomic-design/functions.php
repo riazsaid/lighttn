@@ -1625,11 +1625,11 @@ function atomic_design_register_acf_blocks()
         [
             'name'            => 'consultation-split',
             'title'           => __('Consultation Split', 'atomic-design'),
-            'description'     => __('Consultation form section with WPForms on the left and an image on the right.', 'atomic-design'),
+            'description'     => __('Consultation form section with Forminator on the left and an image on the right.', 'atomic-design'),
             'render_template' => get_template_directory() . '/blocks/consultation-split/consultation-split.php',
             'category'        => 'atomic-blocks',
             'icon'            => 'feedback',
-            'keywords'        => ['consultation', 'form', 'wpforms', 'contact', 'split'],
+            'keywords'        => ['consultation', 'form', 'forminator', 'contact', 'split'],
             'mode'            => 'edit',
             'supports'        => [
                 'align'           => ['wide', 'full'],
