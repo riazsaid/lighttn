@@ -5,6 +5,8 @@
  * Args:
  * - section_heading (string) Required.
  * - intro (string) Optional HTML.
+ * - left_secondary_title (string) Optional title shown below intro on left.
+ * - left_secondary_copy (string) Optional HTML shown below secondary title.
  * - investment_ranges_content (string) Optional HTML in top right card.
  * - cards (array) Optional repeater rows: title, copy.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
@@ -17,6 +19,8 @@ if (!defined('ABSPATH')) {
 
 $section_heading = isset($args['section_heading']) ? trim((string) $args['section_heading']) : '';
 $intro           = isset($args['intro']) ? trim((string) $args['intro']) : '';
+$left_secondary_title = isset($args['left_secondary_title']) ? trim((string) $args['left_secondary_title']) : '';
+$left_secondary_copy  = isset($args['left_secondary_copy']) ? trim((string) $args['left_secondary_copy']) : '';
 $investment_ranges_content = isset($args['investment_ranges_content']) ? trim((string) $args['investment_ranges_content']) : '';
 $cards           = isset($args['cards']) && is_array($args['cards']) ? $args['cards'] : [];
 $align           = !empty($args['align']) ? (string) $args['align'] : 'full';
@@ -48,6 +52,19 @@ $section_class = trim('split-callout align' . $align . ' ' . $class_name);
                 <div class="split-callout__intro-copy">
                     <?php echo wp_kses_post(wpautop($intro)); ?>
                 </div>
+
+                <?php if ($left_secondary_title !== '' || trim(wp_strip_all_tags($left_secondary_copy)) !== '') : ?>
+                    <div class="split-callout__intro-secondary">
+                        <?php if ($left_secondary_title !== '') : ?>
+                            <h3 class="split-callout__intro-secondary-title"><?php echo esc_html($left_secondary_title); ?></h3>
+                        <?php endif; ?>
+                        <?php if (trim(wp_strip_all_tags($left_secondary_copy)) !== '') : ?>
+                            <div class="split-callout__intro-secondary-copy">
+                                <?php echo wp_kses_post(wpautop($left_secondary_copy)); ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <div class="split-callout__aside">

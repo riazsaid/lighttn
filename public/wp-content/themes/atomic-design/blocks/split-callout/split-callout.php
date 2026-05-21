@@ -14,6 +14,8 @@ if (!function_exists('get_field')) {
 
 $section_heading = get_field('split_callout_heading') ?: '';
 $intro           = get_field('split_callout_intro') ?: '';
+$left_secondary_title = get_field('split_callout_left_secondary_title') ?: '';
+$left_secondary_copy  = get_field('split_callout_left_secondary_copy') ?: '';
 $investment_ranges_content = get_field('split_callout_investment_ranges_content') ?: '';
 $cards           = get_field('split_callout_cards') ?: [];
 
@@ -37,6 +39,8 @@ get_template_part(
     [
         'section_heading' => $section_heading,
         'intro'           => $intro,
+        'left_secondary_title' => (string) $left_secondary_title,
+        'left_secondary_copy'  => (string) $left_secondary_copy,
         'investment_ranges_content' => (string) $investment_ranges_content,
         'cards'           => is_array($cards) ? $cards : [],
         'align'           => !empty($block['align']) ? $block['align'] : 'full',
