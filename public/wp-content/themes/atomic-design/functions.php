@@ -1093,6 +1093,7 @@ function atomic_design_get_allowed_template_acf_fields()
         'insight_columns_sections',
         'proof_points_sections',
         'steps_grid_sections',
+        'property_types_grid_sections',
         'split_callout_sections',
         'detail_card_grid_sections',
         'spotlight_cards_sections',
