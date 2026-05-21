@@ -50,6 +50,7 @@ get_header();
         get_template_part('template-parts/shared/title-description-sections', null, [
             'post_id' => $post_id,
             'section_index' => 1,
+            'class_name' => 'title-description-columns--service-location-areas',
         ]);
         get_template_part('template-parts/shared/property-types-grid-sections', null, [
             'post_id' => $post_id,

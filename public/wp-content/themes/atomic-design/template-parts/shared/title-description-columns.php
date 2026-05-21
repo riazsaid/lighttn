@@ -15,15 +15,17 @@ if (!defined('ABSPATH')) {
 $section_heading = isset($args['section_heading']) ? trim((string) $args['section_heading']) : '';
 $description     = isset($args['description']) ? trim((string) $args['description']) : '';
 $cta             = isset($args['cta']) && is_array($args['cta']) ? $args['cta'] : [];
+$class_name      = isset($args['class_name']) ? trim((string) $args['class_name']) : '';
 
 if ($section_heading === '' || $description === '') {
     return;
 }
 
 $description = wpautop($description);
+$section_class = trim('title-description-columns scroll-reveal ' . $class_name);
 ?>
 
-<section class="title-description-columns scroll-reveal">
+<section class="<?php echo esc_attr($section_class); ?>">
     <div class="container">
         <div class="title-description-columns__inner">
             <h2 class="title-description-columns__heading scroll-reveal" style="--reveal-delay: 80ms;"><?php echo esc_html($section_heading); ?></h2>
