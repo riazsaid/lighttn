@@ -12,6 +12,7 @@
  * → Spotlight Cards (row 1)
  * → Testimonials
  * → About Light TN
+ * → Split Callout Sections
  * → Detail Card Grid (row 2)
  * → FAQs
  * → Partners & Affiliations
@@ -59,6 +60,9 @@ get_header();
         ]);
         get_template_part('template-parts/shared/testimonials');
         get_template_part('template-parts/shared/about-light-tn');
+        get_template_part('template-parts/shared/split-callout-sections', null, [
+            'post_id' => $post_id,
+        ]);
         get_template_part('template-parts/shared/detail-card-grid-sections', null, [
             'post_id' => $post_id,
             'section_index' => 2,
