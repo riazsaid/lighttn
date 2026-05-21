@@ -14,6 +14,7 @@ if (!function_exists('get_field')) {
 
 $section_heading   = get_field('steps_grid_heading') ?: '';
 $heading_alignment = get_field('steps_grid_heading_alignment') ?: 'center';
+$portfolio_link    = get_field('steps_grid_portfolio_link') ?: [];
 $items             = get_field('steps_grid_items') ?: [];
 
 if ($is_preview && (empty($section_heading) || empty($items) || !is_array($items))) {
@@ -33,6 +34,7 @@ get_template_part(
     [
         'section_heading'   => $section_heading,
         'heading_alignment' => $heading_alignment,
+        'portfolio_link'    => is_array($portfolio_link) ? $portfolio_link : [],
         'items'             => $items,
         'align'             => !empty($block['align']) ? $block['align'] : 'full',
         'class_name'        => !empty($block['className']) ? $block['className'] : '',

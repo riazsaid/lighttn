@@ -3,7 +3,8 @@
  * Trust Bar (shared partial)
  *
  * Pulls from Synced Components → Trust Bar.
- * Icon + single text per item. Wraps by column width.
+ * Card layout: icon + title + description.
+ * Backward compatible with legacy single text field.
  */
 if (!defined('ABSPATH')) {
     exit;
@@ -21,10 +22,19 @@ if (empty($items) || !is_array($items)) {
         <div class="trust-bar-block__grid">
             <?php foreach ($items as $index => $item) :
                 $icon = $item['item_icon'] ?? null;
-                $text = $item['item_text'] ?? '';
                 $icon_url = is_array($icon) && !empty($icon['url']) ? $icon['url'] : '';
+                $icon_alt = is_array($icon) && !empty($icon['alt']) ? (string) $icon['alt'] : '';
+                $title = isset($item['item_title']) ? trim((string) $item['item_title']) : '';
+                $description = isset($item['item_description']) ? trim((string) $item['item_description']) : '';
+                $legacy_text = isset($item['item_text']) ? trim((string) $item['item_text']) : '';
+
+                // Fallback for existing rows that only have legacy single text.
+                if ($title === '' && $legacy_text !== '') {
+                    $title = $legacy_text;
+                }
+
                 $delay = 80 + ((int) $index * 70);
-                if (empty($text) && empty($icon_url)) {
+                if ($title === '' && $description === '' && empty($icon_url)) {
                     continue;
                 }
             ?>
@@ -32,13 +42,16 @@ if (empty($items) || !is_array($items)) {
                     <?php if ($icon_url) : ?>
                         <div class="trust-bar-block__icon">
                             <img src="<?php echo esc_url($icon_url); ?>"
-                                 alt=""
+                                 alt="<?php echo esc_attr($icon_alt); ?>"
                                  width="56" height="56"
                                  loading="lazy">
                         </div>
                     <?php endif; ?>
-                    <?php if ($text) : ?>
-                        <div class="trust-bar-block__text"><?php echo esc_html($text); ?></div>
+                    <?php if ($title !== '') : ?>
+                        <h3 class="trust-bar-block__title"><?php echo esc_html($title); ?></h3>
+                    <?php endif; ?>
+                    <?php if ($description !== '') : ?>
+                        <div class="trust-bar-block__description"><?php echo esc_html($description); ?></div>
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>

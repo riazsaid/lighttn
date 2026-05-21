@@ -51,6 +51,23 @@
             "allow_in_bindings": 0
         },
         {
+            "key": "field_atomic_block_steps_grid_portfolio_link",
+            "label": "Portfolio Button Link",
+            "name": "steps_grid_portfolio_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Optional. If empty, button defaults to /gallery/.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_atomic_block_steps_grid_items",
             "label": "Step Cards",
             "name": "steps_grid_items",
