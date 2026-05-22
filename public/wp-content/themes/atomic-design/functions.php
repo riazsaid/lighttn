@@ -1794,6 +1794,29 @@ function atomic_design_register_acf_blocks()
     );
 
     // ----------------------------------------------------------
+    // Contact Consultation block
+    // Contact-page layout using global form and scheduler options.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'contact-consultation',
+            'title'           => __('Contact Consultation', 'atomic-design'),
+            'description'     => __('Contact page layout using the global Forminator form and Zoom scheduler.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/contact-consultation/contact-consultation.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'email-alt2',
+            'keywords'        => ['contact', 'consultation', 'form', 'booking', 'scheduler'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
     // Design Process block
     // Interactive process section with step details and imagery.
     // ----------------------------------------------------------
