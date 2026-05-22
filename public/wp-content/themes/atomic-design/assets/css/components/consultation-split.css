@@ -131,8 +131,13 @@
 .consultation-split .wpforms-container textarea,
 .consultation-split .frm_forms textarea,
 .consultation-split .forminator-ui textarea {
-    min-height: 54px;
+    height: 60px !important;
     resize: vertical;
+    min-height: unset !important;
+}
+
+.forminator-description {
+    color: #111;
 }
 
 .consultation-split .wpforms-container .wpforms-submit-container,
