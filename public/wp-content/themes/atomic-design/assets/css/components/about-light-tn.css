@@ -1,5 +1,5 @@
 .about-light-tn {
-    padding: clamp(66px, 8vw, 98px) 0;
+    padding-bottom: 10rem;
     background: #fff;
     color: #000;
 }
@@ -26,9 +26,10 @@
 }
 
 .about-light-tn__heading {
-    font-size: clamp(28px, 3vw, 42px);
-    line-height: 1.02;
-    margin-bottom: 24px;
+    font-size: clamp(1.375rem, 2vw + 1rem, 2.25rem);
+    line-height: 1.2;
+    font-weight: 700;
+    padding-bottom: 3rem;
 }
 
 .about-light-tn__intro-copy,
@@ -74,16 +75,17 @@
 }
 
 .about-light-tn__bottom {
-    margin-top: clamp(28px, 4vw, 40px);
+    padding-top: 3rem;
 }
 
 .about-light-tn__secondary-header {
-    margin-bottom: 18px;
+    padding-bottom: 3rem;
 }
 
 .about-light-tn__secondary-heading {
-    font-size: clamp(26px, 2.8vw, 38px);
-    line-height: 1.03;
+    font-size: clamp(1.375rem, 2vw + 1rem, 2.25rem);
+    line-height: 1.2;
+    font-weight: 700;
 }
 
 .about-light-tn__columns {

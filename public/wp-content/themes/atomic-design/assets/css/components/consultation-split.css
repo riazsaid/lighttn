@@ -1,24 +1,21 @@
 .consultation-split {
-    padding: clamp(70px, 8vw, 96px) 0;
+    padding-bottom: 10rem;
     background: #72c8e7;
     color: #fff;
 }
 
 .consultation-split__header {
-    display: grid;
-    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
-    gap: clamp(28px, 5vw, 46px);
-    align-items: start;
-    margin-bottom: clamp(28px, 4vw, 40px);
+    padding-block: 3rem;
+
 }
 
 .consultation-split__heading {
-    max-width: 430px;
+    text-align: center;
     margin: 0;
     font-family: var(--font-body);
-    font-size: clamp(32px, 4vw, 46px);
+    font-size: clamp(1.375rem, 2vw + 1rem, 2.25rem);
+    line-height: 1.2;
     font-weight: 700;
-    line-height: 1.05;
     letter-spacing: 0;
     text-transform: uppercase;
     color: #fff;

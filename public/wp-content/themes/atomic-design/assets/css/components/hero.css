@@ -1,5 +1,6 @@
 .hero {
-    padding: 26px 0 92px;
+    padding-bottom: 10rem;
+
     background: #fff;
     color: #fff;
 }
@@ -243,8 +244,8 @@
 
 .hero__reviews {
     position: absolute;
-    right: 0;
-    bottom: -72px;
+    right: 79px;
+    bottom: -3px;
     width: min(100%, 390px);
     min-height: 132px;
     display: grid;
@@ -288,7 +289,7 @@
     display: block;
     margin-bottom: 10px;
     font-family: var(--font-body);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.1;
     color: #000;

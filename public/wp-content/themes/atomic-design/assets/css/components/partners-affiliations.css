@@ -1,5 +1,5 @@
 .partners-affiliations-block {
-    padding: 72px 0;
+    padding-bottom: 10rem;
     background: #fff;
     color: #000;
 }
@@ -9,11 +9,11 @@
 }
 
 .partners-affiliations-block__heading {
-    margin: 0 0 14px;
+    padding-bottom: 3rem;
     font-family: var(--font-body);
-    font-size: clamp(22px, 3vw, 28px);
+    font-size: clamp(1.375rem, 2vw + 1rem, 2.25rem);
+    line-height: 1.2;
     font-weight: 700;
-    line-height: 1.1;
     letter-spacing: 0;
     text-transform: uppercase;
     color: #000;
