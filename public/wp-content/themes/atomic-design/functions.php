@@ -384,6 +384,17 @@ function atomic_design_register_acf_options_pages()
             'capability'  => 'manage_options',
         ]
     );
+
+    // Consultation Split — global form + booking scheduler section used across templates.
+    acf_add_options_sub_page(
+        [
+            'page_title'  => 'Consultation Split',
+            'menu_title'  => 'Consultation Split',
+            'menu_slug'   => 'atomic-design-consultation-split',
+            'parent_slug' => 'atomic-design-synced-components',
+            'capability'  => 'manage_options',
+        ]
+    );
 }
 add_action('acf/init', 'atomic_design_register_acf_options_pages');
 
@@ -966,6 +977,73 @@ function atomic_design_register_acf_fields()
         'show_in_rest'          => 1,
     ]);
 
+    acf_add_local_field_group([
+        'key'    => 'group_atomic_consultation_split_global',
+        'title'  => 'Consultation Split',
+        'fields' => [
+            [
+                'key'           => 'field_atomic_consultation_split_global_heading',
+                'label'         => 'Section Title',
+                'name'          => 'consultation_split_heading',
+                'type'          => 'text',
+                'instructions'  => 'Visible heading above the global consultation split section.',
+                'default_value' => 'Schedule Your On-Site Design Consultation',
+                'placeholder'   => 'Schedule Your On-Site Design Consultation',
+            ],
+            [
+                'key'           => 'field_atomic_consultation_split_global_intro',
+                'label'         => 'Intro Copy',
+                'name'          => 'consultation_split_intro',
+                'type'          => 'wysiwyg',
+                'instructions'  => 'Optional copy shown beside the heading.',
+                'tabs'          => 'all',
+                'toolbar'       => 'basic',
+                'media_upload'  => 0,
+            ],
+            [
+                'key'           => 'field_atomic_consultation_split_global_form_id',
+                'label'         => 'Forminator Form ID',
+                'name'          => 'consultation_split_form_id',
+                'type'          => 'number',
+                'instructions'  => 'Forminator form ID shown on the left side. Default is 386.',
+                'default_value' => 386,
+                'min'           => 1,
+                'step'          => 1,
+                'wrapper'       => [
+                    'width' => '35',
+                ],
+            ],
+            [
+                'key'           => 'field_atomic_consultation_split_global_booking_embed_url',
+                'label'         => 'Booking Embed URL',
+                'name'          => 'consultation_split_booking_embed_url',
+                'type'          => 'url',
+                'instructions'  => 'Zoom scheduler embed URL shown on the right side.',
+                'default_value' => 'https://scheduler.zoom.us/lighttn/initial_consult?embedStyle=%7B%22buttonColor%22%3A%22%23ff9257%22%7D&embed=true',
+                'placeholder'   => 'https://scheduler.zoom.us/lighttn/initial_consult?embed=true',
+                'wrapper'       => [
+                    'width' => '65',
+                ],
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'options_page',
+                    'operator' => '==',
+                    'value'    => 'atomic-design-consultation-split',
+                ],
+            ],
+        ],
+        'menu_order'            => 0,
+        'position'              => 'normal',
+        'style'                 => 'default',
+        'label_placement'       => 'top',
+        'instruction_placement' => 'label',
+        'active'                => true,
+        'show_in_rest'          => 1,
+    ]);
+
     // FAQ field group is defined in acf-json/group_atomic_faq_shared.json
     // so it appears as a real editable group in ACF > Field Groups admin.
 }
@@ -1141,6 +1219,7 @@ function atomic_design_get_allowed_template_acf_fields()
         'faq_layout',
         'faq_items',
         'title_description_sections',
+        'lighting_audio_services_sections',
         'insight_columns_sections',
         'proof_points_sections',
         'steps_grid_sections',
@@ -1148,7 +1227,6 @@ function atomic_design_get_allowed_template_acf_fields()
         'split_callout_sections',
         'detail_card_grid_sections',
         'spotlight_cards_sections',
-        'consultation_split_sections',
         'design_process_sections',
         '_permalink_uri',
     ];
@@ -1705,6 +1783,29 @@ function atomic_design_register_acf_blocks()
             'category'        => 'atomic-blocks',
             'icon'            => 'feedback',
             'keywords'        => ['consultation', 'form', 'forminator', 'contact', 'split'],
+            'mode'            => 'edit',
+            'supports'        => [
+                'align'           => ['wide', 'full'],
+                'mode'            => false,
+                'jsx'             => true,
+                'customClassName' => true,
+            ],
+        ]
+    );
+
+    // ----------------------------------------------------------
+    // Contact Consultation block
+    // Contact-page layout using global form and scheduler options.
+    // ----------------------------------------------------------
+    acf_register_block_type(
+        [
+            'name'            => 'contact-consultation',
+            'title'           => __('Contact Consultation', 'atomic-design'),
+            'description'     => __('Contact page layout using the global Forminator form and Zoom scheduler.', 'atomic-design'),
+            'render_template' => get_template_directory() . '/blocks/contact-consultation/contact-consultation.php',
+            'category'        => 'atomic-blocks',
+            'icon'            => 'email-alt2',
+            'keywords'        => ['contact', 'consultation', 'form', 'booking', 'scheduler'],
             'mode'            => 'edit',
             'supports'        => [
                 'align'           => ['wide', 'full'],

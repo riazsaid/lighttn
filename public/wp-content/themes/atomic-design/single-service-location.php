@@ -5,9 +5,9 @@
  * e.g. /locations/{city-slug}/{service-slug}/
  * Structure:
  * Hero
- * → Detail Card Grid (row 1)
- * → Insight Columns (row 1)
  * → Title Description (row 1)
+ * → Insight Columns (row 1)
+ * → Title Description (row 2)
  * → Property Types Grid (row 1)
  * → Proof Points (row 1)
  * → Consultation CTA Bar (constant)
@@ -39,7 +39,7 @@ get_header();
     if (function_exists('get_field')) {
         $post_id = get_queried_object_id();
 
-        get_template_part('template-parts/shared/detail-card-grid-sections', null, [
+        get_template_part('template-parts/shared/title-description-sections', null, [
             'post_id' => $post_id,
             'section_index' => 1,
         ]);
@@ -49,7 +49,7 @@ get_header();
         ]);
         get_template_part('template-parts/shared/title-description-sections', null, [
             'post_id' => $post_id,
-            'section_index' => 1,
+            'section_index' => 2,
             'class_name' => 'title-description-columns--service-location-areas',
         ]);
         get_template_part('template-parts/shared/property-types-grid-sections', null, [
@@ -70,14 +70,11 @@ get_header();
         get_template_part('template-parts/shared/about-light-tn');
         get_template_part('template-parts/shared/split-callout-sections', null, [
             'post_id' => $post_id,
-            'section_index' => 2,
+            'section_index' => 1,
         ]);
         get_template_part('template-parts/shared/faqs', null, ['post_id' => $post_id]);
         get_template_part('template-parts/shared/partners-affiliations');
-        get_template_part('template-parts/shared/consultation-split-sections', null, [
-            'post_id' => $post_id,
-            'section_index' => 1,
-        ]);
+        get_template_part('template-parts/shared/consultation-split');
     }
     ?>
 </main>

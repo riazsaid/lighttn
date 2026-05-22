@@ -1,0 +1,199 @@
+{
+    "key": "group_atomic_contact_consultation_block",
+    "title": "Contact Consultation Block",
+    "fields": [
+        {
+            "key": "field_atomic_contact_consultation_heading",
+            "label": "Page Heading",
+            "name": "contact_consultation_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Heading shown at the top of the contact layout.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "WE\u2019RE READY TO EXCEED YOUR EXPECTATIONS",
+            "placeholder": "WE\u2019RE READY TO EXCEED YOUR EXPECTATIONS",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_contact_consultation_subheading",
+            "label": "Subheading",
+            "name": "contact_consultation_subheading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Short bold line below the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Your partner for professional outdoor lighting design, installation, and long-term performance",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_contact_consultation_form_heading",
+            "label": "Form Heading",
+            "name": "contact_consultation_form_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Small heading above the global Forminator form.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "What to expect",
+            "placeholder": "What to expect",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_contact_consultation_form_intro",
+            "label": "Form Intro",
+            "name": "contact_consultation_form_intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Short intro copy above the global Forminator form.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Fill out the form or give us a call. A fast, transparent quote is just around the corner.",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_contact_consultation_booking_heading",
+            "label": "Booking Heading",
+            "name": "contact_consultation_booking_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Heading beside the global Zoom scheduler.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "START WITH A ZOOM CONSULTATION",
+            "placeholder": "START WITH A ZOOM CONSULTATION",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_contact_consultation_booking_subheading",
+            "label": "Booking Subheading",
+            "name": "contact_consultation_booking_subheading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Short bold line below the booking heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Book Your Call Now",
+            "placeholder": "Book Your Call Now",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_contact_consultation_booking_points",
+            "label": "Booking Copy / Points",
+            "name": "contact_consultation_booking_points",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Optional copy shown beside the scheduler. Use short paragraphs or bullets.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_contact_consultation_map_image",
+            "label": "Map Image",
+            "name": "contact_consultation_map_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Upload the map image shown below the scheduler section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": "",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/contact-consultation"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Contact-page layout reusing the global form and booking scheduler options.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1779500000
+}

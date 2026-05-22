@@ -71,6 +71,7 @@
                         'theme_location' => 'primary',
                         'container' => false,
                         'menu_class' => 'menu',
+                        'submenu_class' => 'sub-menu',
                         'fallback_cb' => false,
                     ]);
                     ?>

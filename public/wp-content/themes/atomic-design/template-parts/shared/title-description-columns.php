@@ -4,6 +4,7 @@
  *
  * Args:
  * - section_heading (string) Required.
+ * - heading_alignment (string) Optional. left|center.
  * - description (string) Required HTML from WYSIWYG.
  * - cta (array) Optional ACF link array.
  */
@@ -13,6 +14,7 @@ if (!defined('ABSPATH')) {
 }
 
 $section_heading = isset($args['section_heading']) ? trim((string) $args['section_heading']) : '';
+$heading_alignment = isset($args['heading_alignment']) ? trim((string) $args['heading_alignment']) : 'left';
 $description     = isset($args['description']) ? trim((string) $args['description']) : '';
 $cta             = isset($args['cta']) && is_array($args['cta']) ? $args['cta'] : [];
 $class_name      = isset($args['class_name']) ? trim((string) $args['class_name']) : '';
@@ -21,8 +23,9 @@ if ($section_heading === '' || $description === '') {
     return;
 }
 
+$heading_alignment = $heading_alignment === 'center' ? 'center' : 'left';
 $description = wpautop($description);
-$section_class = trim('title-description-columns scroll-reveal ' . $class_name);
+$section_class = trim('title-description-columns title-description-columns--heading-' . $heading_alignment . ' scroll-reveal ' . $class_name);
 ?>
 
 <section class="<?php echo esc_attr($section_class); ?>">

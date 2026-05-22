@@ -1,0 +1,211 @@
+{
+    "key": "group_atomic_lighting_audio_services_sections_shared",
+    "title": "Lighting & Audio Services Sections",
+    "fields": [
+        {
+            "key": "field_atomic_lighting_audio_services_sections",
+            "label": "Lighting & Audio Services Sections",
+            "name": "lighting_audio_services_sections",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add one services section per row. Locations use these rows instead of the synced option page services.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_atomic_lighting_audio_services_section_heading",
+            "button_label": "Add services section",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_lighting_audio_services_section_heading",
+                    "label": "Section Heading",
+                    "name": "lighting_audio_services_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Visible heading for this services grid.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Lighting & Audio Services",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_lighting_audio_services_sections"
+                },
+                {
+                    "key": "field_atomic_lighting_audio_services_section_heading_alignment",
+                    "label": "Heading Alignment",
+                    "name": "lighting_audio_services_heading_alignment",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Choose whether the main heading is centered or left-aligned.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "center": "Center",
+                        "left": "Left"
+                    },
+                    "default_value": "center",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "parent_repeater": "field_atomic_lighting_audio_services_sections"
+                },
+                {
+                    "key": "field_atomic_lighting_audio_services_section_items",
+                    "label": "Service Cards",
+                    "name": "lighting_audio_services_items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Add one service card per row.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "field_atomic_lighting_audio_services_section_item_title",
+                    "button_label": "Add service card",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_atomic_lighting_audio_services_sections",
+                    "sub_fields": [
+                        {
+                            "key": "field_atomic_lighting_audio_services_section_item_image",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "32",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": 0,
+                            "min_height": 0,
+                            "min_size": 0,
+                            "max_width": 0,
+                            "max_height": 0,
+                            "max_size": 0,
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_atomic_lighting_audio_services_section_items"
+                        },
+                        {
+                            "key": "field_atomic_lighting_audio_services_section_item_title",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "28",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Landscape Lighting",
+                            "prepend": "",
+                            "append": "",
+                            "allow_in_bindings": 0,
+                            "maxlength": "",
+                            "parent_repeater": "field_atomic_lighting_audio_services_section_items"
+                        },
+                        {
+                            "key": "field_atomic_lighting_audio_services_section_item_link",
+                            "label": "Link",
+                            "name": "link",
+                            "aria-label": "",
+                            "type": "link",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_atomic_lighting_audio_services_section_items"
+                        },
+                        {
+                            "key": "field_atomic_lighting_audio_services_section_item_description",
+                            "label": "Description",
+                            "name": "description",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": 6,
+                            "placeholder": "",
+                            "new_lines": "",
+                            "allow_in_bindings": 0,
+                            "parent_repeater": "field_atomic_lighting_audio_services_section_items"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "locations"
+            }
+        ]
+    ],
+    "menu_order": 15,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Repeatable Lighting & Audio Services sections for Location templates.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1779498000
+}

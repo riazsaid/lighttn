@@ -50,7 +50,7 @@ $portfolio_target = !empty($portfolio_link['target']) ? (string) $portfolio_link
         <header class="steps-grid__header scroll-reveal">
             <h2 class="steps-grid__heading"><?php echo esc_html($section_heading); ?></h2>
             <div class="steps-grid__actions">
-                <a class="steps-grid__cta"
+                <a class="btn btn-primary steps-grid__cta"
                    href="<?php echo esc_url($portfolio_url); ?>"
                    target="<?php echo esc_attr($portfolio_target); ?>">
                     <span><?php echo esc_html($portfolio_title); ?></span>

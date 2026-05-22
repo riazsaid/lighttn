@@ -45,6 +45,33 @@
             "allow_in_bindings": 0
         },
         {
+            "key": "field_atomic_block_title_description_heading_alignment",
+            "label": "Heading Alignment",
+            "name": "title_description_heading_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Choose whether the section title is left-aligned or centered.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "center": "Center"
+            },
+            "default_value": "left",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_atomic_block_title_description_cta",
             "label": "CTA Link",
             "name": "title_description_cta",
@@ -81,5 +108,5 @@
     "description": "Fields for the Title + Description ACF block (acf/title-description-columns).",
     "show_in_rest": 1,
     "display_title": "",
-    "modified": 1775178000
+    "modified": 1779494400
 }
