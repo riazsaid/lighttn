@@ -24,12 +24,23 @@
 }
 
 .title-description-columns__content {
-    max-width: 1040px;
+    width: 100%;
+    column-count: 2;
+    column-gap: clamp(36px, 7vw, 96px);
     font-family: var(--font-body);
     font-size: clamp(14px, 1.2vw, 16px);
     font-weight: 400;
     line-height: 1.42;
     color: #242424;
+}
+
+.title-description-columns__content ul,
+.title-description-columns__content ol,
+.title-description-columns__content blockquote,
+.title-description-columns__content h2,
+.title-description-columns__content h3,
+.title-description-columns__content h4 {
+    break-inside: avoid;
 }
 
 .title-description-columns__content p,
@@ -106,13 +117,8 @@
 .title-description-columns--service-location-areas .title-description-columns__content {
     max-width: 1120px;
     margin: 0 auto;
-    column-count: 2;
     column-gap: clamp(28px, 4vw, 64px);
     text-align: center;
-}
-
-.title-description-columns--service-location-areas .title-description-columns__content > * {
-    break-inside: avoid;
 }
 
 .title-description-columns--service-location-areas .title-description-columns__actions {
@@ -130,6 +136,7 @@
     }
 
     .title-description-columns__content {
+        column-count: 1;
         font-size: 15px;
     }
 
