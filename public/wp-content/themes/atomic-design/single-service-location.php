@@ -70,7 +70,7 @@ get_header();
         get_template_part('template-parts/shared/about-light-tn');
         get_template_part('template-parts/shared/split-callout-sections', null, [
             'post_id' => $post_id,
-            'section_index' => 2,
+            'section_index' => 1,
         ]);
         get_template_part('template-parts/shared/faqs', null, ['post_id' => $post_id]);
         get_template_part('template-parts/shared/partners-affiliations');
