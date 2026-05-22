@@ -97,12 +97,14 @@
 }
 
 .consultation-split .wpforms-container,
-.consultation-split .frm_forms {
+.consultation-split .frm_forms,
+.consultation-split .forminator-ui {
     margin: 0;
 }
 
 .consultation-split .wpforms-container .wpforms-field,
-.consultation-split .frm_form_field {
+.consultation-split .frm_form_field,
+.consultation-split .forminator-row {
     padding: 0;
     margin: 0 0 20px;
 }
@@ -112,7 +114,10 @@
 .consultation-split .wpforms-container select,
 .consultation-split .frm_forms input,
 .consultation-split .frm_forms textarea,
-.consultation-split .frm_forms select {
+.consultation-split .frm_forms select,
+.consultation-split .forminator-ui input,
+.consultation-split .forminator-ui textarea,
+.consultation-split .forminator-ui select {
     width: 100%;
     padding: 12px 0 13px;
     border: 0;
@@ -130,25 +135,30 @@
 .consultation-split .wpforms-container input::placeholder,
 .consultation-split .wpforms-container textarea::placeholder,
 .consultation-split .frm_forms input::placeholder,
-.consultation-split .frm_forms textarea::placeholder {
+.consultation-split .frm_forms textarea::placeholder,
+.consultation-split .forminator-ui input::placeholder,
+.consultation-split .forminator-ui textarea::placeholder {
     color: #c3c3c3;
 }
 
 .consultation-split .wpforms-container textarea,
-.consultation-split .frm_forms textarea {
+.consultation-split .frm_forms textarea,
+.consultation-split .forminator-ui textarea {
     min-height: 54px;
     resize: vertical;
 }
 
 .consultation-split .wpforms-container .wpforms-submit-container,
-.consultation-split .frm_submit {
+.consultation-split .frm_submit,
+.consultation-split .forminator-row-last {
     padding: 0;
     margin-top: 10px;
     text-align: right;
 }
 
 .consultation-split .wpforms-container .wpforms-submit,
-.consultation-split .frm_button_submit {
+.consultation-split .frm_button_submit,
+.consultation-split .forminator-button-submit {
     min-width: 144px;
     min-height: 48px;
     display: inline-flex;
@@ -171,7 +181,9 @@
 .consultation-split .wpforms-container .wpforms-submit:hover,
 .consultation-split .wpforms-container .wpforms-submit:focus-visible,
 .consultation-split .frm_button_submit:hover,
-.consultation-split .frm_button_submit:focus-visible {
+.consultation-split .frm_button_submit:focus-visible,
+.consultation-split .forminator-button-submit:hover,
+.consultation-split .forminator-button-submit:focus-visible {
     background: #111;
     transform: translateY(-1px);
 }
@@ -207,12 +219,14 @@
     }
 
     .consultation-split .wpforms-container .wpforms-submit-container,
-    .consultation-split .frm_submit {
+    .consultation-split .frm_submit,
+    .consultation-split .forminator-row-last {
         text-align: center;
     }
 
     .consultation-split .wpforms-container .wpforms-submit,
-    .consultation-split .frm_button_submit {
+    .consultation-split .frm_button_submit,
+    .consultation-split .forminator-button-submit {
         width: 100%;
     }
 }
