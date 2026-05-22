@@ -12,13 +12,19 @@ if (!defined('ABSPATH')) {
 
 $args = isset($args) && is_array($args) ? $args : [];
 
-$heading = isset($args['heading']) ? trim((string) $args['heading']) : __('WE’RE READY TO EXCEED YOUR EXPECTATIONS', 'atomic-design');
-$subheading = isset($args['subheading']) ? trim((string) $args['subheading']) : __('Your partner for professional outdoor lighting design, installation, and long-term performance', 'atomic-design');
-$form_heading = isset($args['form_heading']) ? trim((string) $args['form_heading']) : __('What to expect', 'atomic-design');
-$form_intro = isset($args['form_intro']) ? trim((string) $args['form_intro']) : __('Fill out the form or give us a call. A fast, transparent quote is just around the corner.', 'atomic-design');
-$booking_heading = isset($args['booking_heading']) ? trim((string) $args['booking_heading']) : __('START WITH A ZOOM CONSULTATION', 'atomic-design');
-$booking_subheading = isset($args['booking_subheading']) ? trim((string) $args['booking_subheading']) : __('Book Your Call Now', 'atomic-design');
+$contact_consultation_arg = static function (array $args, string $key, string $fallback): string {
+    $value = isset($args[$key]) ? trim((string) $args[$key]) : '';
+    return $value !== '' ? $value : $fallback;
+};
+
+$heading = $contact_consultation_arg($args, 'heading', __('WE’RE READY TO EXCEED YOUR EXPECTATIONS', 'atomic-design'));
+$subheading = $contact_consultation_arg($args, 'subheading', __('Your partner for professional outdoor lighting design, installation, and long-term performance', 'atomic-design'));
+$form_heading = $contact_consultation_arg($args, 'form_heading', __('What to expect', 'atomic-design'));
+$form_intro = $contact_consultation_arg($args, 'form_intro', __('Fill out the form or give us a call. A fast, transparent quote is just around the corner.', 'atomic-design'));
+$booking_heading = $contact_consultation_arg($args, 'booking_heading', __('START WITH A ZOOM CONSULTATION', 'atomic-design'));
+$booking_subheading = $contact_consultation_arg($args, 'booking_subheading', __('Book Your Call Now', 'atomic-design'));
 $booking_points = isset($args['booking_points']) ? trim((string) $args['booking_points']) : '';
+$map_image = isset($args['map_image']) && is_array($args['map_image']) ? $args['map_image'] : [];
 $map_embed_url = isset($args['map_embed_url']) ? trim((string) $args['map_embed_url']) : '';
 $align = !empty($args['align']) ? (string) $args['align'] : 'full';
 $class_name = isset($args['class_name']) ? (string) $args['class_name'] : '';
@@ -30,6 +36,9 @@ $phone_number = trim((string) (function_exists('get_field') ? (get_field('phone_
 $email_address = trim((string) (function_exists('get_field') ? (get_field('email_address', 'option') ?: '') : ''));
 $business_address = trim((string) (function_exists('get_field') ? (get_field('business_address', 'option') ?: "1802 Spencer Mill Rd\nBurns, TN 37029") : "1802 Spencer Mill Rd\nBurns, TN 37029"));
 $phone_tel = preg_replace('/[^+\d]/', '', $phone_number);
+$map_image_id = !empty($map_image['ID']) ? (int) $map_image['ID'] : 0;
+$map_image_url = !empty($map_image['url']) ? (string) $map_image['url'] : '';
+$map_image_alt = !empty($map_image['alt']) ? (string) $map_image['alt'] : __('Map to Light TN', 'atomic-design');
 $section_class = trim('contact-consultation align' . $align . ' ' . $class_name);
 ?>
 
@@ -116,14 +125,28 @@ $section_class = trim('contact-consultation align' . $align . ' ' . $class_name)
             <?php endif; ?>
         </div>
 
-        <?php if ($map_embed_url !== '') : ?>
+        <?php if ($map_image_id || $map_image_url !== '' || $map_embed_url !== '') : ?>
             <div class="contact-consultation__map">
-                <iframe
-                    class="contact-consultation__map-frame"
-                    src="<?php echo esc_url($map_embed_url); ?>"
-                    title="<?php echo esc_attr__('Map to Light TN', 'atomic-design'); ?>"
-                    loading="lazy"
-                ></iframe>
+                <?php if ($map_image_id) : ?>
+                    <?php echo wp_get_attachment_image($map_image_id, 'large', false, [
+                        'class' => 'contact-consultation__map-image',
+                        'alt'   => $map_image_alt,
+                    ]); ?>
+                <?php elseif ($map_image_url !== '') : ?>
+                    <img
+                        class="contact-consultation__map-image"
+                        src="<?php echo esc_url($map_image_url); ?>"
+                        alt="<?php echo esc_attr($map_image_alt); ?>"
+                        loading="lazy"
+                    />
+                <?php else : ?>
+                    <iframe
+                        class="contact-consultation__map-frame"
+                        src="<?php echo esc_url($map_embed_url); ?>"
+                        title="<?php echo esc_attr__('Map to Light TN', 'atomic-design'); ?>"
+                        loading="lazy"
+                    ></iframe>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
     </div>
