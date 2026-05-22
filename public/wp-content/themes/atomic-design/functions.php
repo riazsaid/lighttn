@@ -1002,10 +1002,10 @@ function atomic_design_register_acf_fields()
             ],
             [
                 'key'           => 'field_atomic_consultation_split_global_form_id',
-                'label'         => 'Formidable Form ID',
+                'label'         => 'Forminator Form ID',
                 'name'          => 'consultation_split_form_id',
                 'type'          => 'number',
-                'instructions'  => 'Formidable form ID shown on the left side. Default is 386.',
+                'instructions'  => 'Forminator form ID shown on the left side. Default is 386.',
                 'default_value' => 386,
                 'min'           => 1,
                 'step'          => 1,
