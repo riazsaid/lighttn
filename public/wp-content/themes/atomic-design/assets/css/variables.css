@@ -61,7 +61,6 @@
 
    --p: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
 
-
    /* Fluid type scale */
    --body: clamp(0.875rem, 0.5vw + 0.8rem, 1rem);
    /* 16px */
