@@ -56,7 +56,7 @@
    ============================================================ */
 
 section {
-    padding: 100px 0;
+    /* padding-bottom: 10rem; */
     background: var(--bg-page);
 }
 
@@ -79,14 +79,6 @@ section.section--tight {
 
 section.section--flush {
     padding: 0;
-}
-
-@media (max-width: 48rem) {
-
-    section,
-    section.section--dark {
-        padding: 64px 0;
-    }
 }
 
 /* ============================================================

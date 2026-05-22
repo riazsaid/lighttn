@@ -4,7 +4,7 @@
    ============================================================ */
 
 .faq-accordion-block {
-    padding: 82px 0;
+    padding-bottom: 10rem;
     background: #fff;
     color: #000;
 }
@@ -19,13 +19,6 @@
 .faq-heading {
     margin: 0;
     max-width: 280px;
-    font-family: var(--font-body);
-    font-size: clamp(26px, 3vw, 32px);
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    color: #000;
 }
 
 .faq-grid {
@@ -138,7 +131,7 @@
 
 @media (max-width: 680px) {
     .faq-accordion-block {
-        padding: 58px 0;
+        padding-bottom: 5rem;
     }
 
     .faq-grid {

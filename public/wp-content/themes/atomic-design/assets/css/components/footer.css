@@ -9,12 +9,14 @@
     border-top: 1px solid rgba(41, 181, 232, 0.5);
     font-family: var(--font-body);
 }
-.site-footer .site-footer__contact{
+
+.site-footer .site-footer__contact {
     background-color: unset !important;
     padding: 0 !important;
 }
+
 .site-footer__inner {
-    padding-block: var(--gap-xl);
+    padding-block: 3rem;
 }
 
 .site-footer__brand-row {
@@ -116,7 +118,7 @@
 .site-footer__address {
     margin: 0 0 16px;
     font-style: normal;
-  
+
 }
 
 .site-footer__link {
@@ -146,7 +148,7 @@
     display: inline-flex;
     text-decoration: none;
     color: #c7c7c7;
-    
+
 }
 
 .site-footer__area-list {
@@ -289,6 +291,7 @@
 }
 
 @media (max-width: 68rem) {
+
     .site-footer__content,
     .site-footer__bottom {
         grid-template-columns: repeat(2, minmax(0, 1fr));

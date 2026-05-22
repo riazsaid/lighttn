@@ -1,20 +1,13 @@
 .title-description-columns {
-    padding: clamp(52px, 7vw, 76px) 0 clamp(64px, 8vw, 92px);
+    padding-bottom: 10rem;
     background: #fff;
     color: #000;
 }
 
 .title-description-columns__heading {
     max-width: 430px;
-    margin: 0 0 clamp(54px, 7vw, 72px);
-    font-family: var(--font-body);
-    font-size: clamp(26px, 3.1vw, 34px);
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: 0;
+    padding-bottom: 3rem;
     text-align: left;
-    text-transform: uppercase;
-    color: #000;
 }
 
 .title-description-columns--heading-center .title-description-columns__heading {
@@ -127,17 +120,15 @@
 
 @media (max-width: 640px) {
     .title-description-columns {
-        padding: 46px 0 60px;
+        padding-bottom: 5rem;
     }
 
     .title-description-columns__heading {
-        margin-bottom: 36px;
-        font-size: clamp(24px, 8vw, 30px);
+        padding-bottom: 2rem;
     }
 
     .title-description-columns__content {
         column-count: 1;
-        font-size: 15px;
     }
 
     .title-description-columns--service-location-areas .title-description-columns__content {

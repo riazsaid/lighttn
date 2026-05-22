@@ -1,5 +1,5 @@
 .about-light-tn {
-    padding: clamp(66px, 8vw, 98px) 0;
+    padding-bottom: 10rem;
     background: #fff;
     color: #000;
 }
@@ -15,20 +15,10 @@
     min-width: 0;
 }
 
-.about-light-tn__heading,
-.about-light-tn__secondary-heading {
-    margin: 0;
-    font-family: var(--font-body);
-    font-weight: 700;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    color: #000;
-}
+
 
 .about-light-tn__heading {
-    font-size: clamp(28px, 3vw, 42px);
-    line-height: 1.02;
-    margin-bottom: 24px;
+    padding-bottom: 3rem;
 }
 
 .about-light-tn__intro-copy,
@@ -74,17 +64,13 @@
 }
 
 .about-light-tn__bottom {
-    margin-top: clamp(28px, 4vw, 40px);
+    padding-top: 3rem;
 }
 
 .about-light-tn__secondary-header {
-    margin-bottom: 18px;
+    padding-bottom: 3rem;
 }
 
-.about-light-tn__secondary-heading {
-    font-size: clamp(26px, 2.8vw, 38px);
-    line-height: 1.03;
-}
 
 .about-light-tn__columns {
     display: grid;
@@ -97,6 +83,17 @@
 }
 
 @media (max-width: 980px) {
+    .about-light-tn {
+        padding-bottom: 5rem;
+    }
+
+    .about-light-tn__heading {
+        padding-bottom: 2rem;
+    }
+
+    .about-light-tn__secondary-header {
+        padding-bottom: 2rem;
+    }
 
     .about-light-tn__top,
     .about-light-tn__columns {

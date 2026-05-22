@@ -1,19 +1,11 @@
 .lighting-audio-services-block {
-    padding: clamp(74px, 8vw, 100px) 0;
+    padding-bottom: 10rem;
     background: #fff;
     color: #000;
 }
 
 .lighting-audio-services-block__heading {
-    margin: 0 0 clamp(40px, 5vw, 56px);
-    font-family: var(--font-body);
-    font-size: clamp(30px, 3.7vw, 46px);
-    font-weight: 700;
-    line-height: 1.04;
-    letter-spacing: 0;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000;
+    padding-bottom: 3rem;
 }
 
 .lighting-audio-services-block--heading-left .lighting-audio-services-block__heading {
@@ -34,7 +26,7 @@
 }
 
 .lighting-audio-services-block__media {
-    margin-bottom: 22px;
+    padding-bottom: 1rem;
     border-radius: 28px;
     overflow: hidden;
 }
@@ -47,7 +39,7 @@
 }
 
 .lighting-audio-services-block__title {
-    margin: 0 0 18px;
+    padding-bottom: 1rem;
     font-family: var(--font-body);
     font-size: clamp(18px, 1.9vw, 22px);
     font-weight: 700;
@@ -61,7 +53,7 @@
     font-weight: 400;
     line-height: 1.55;
     color: #262626;
-    padding-bottom: 18px;
+    padding-bottom: 1rem;
 }
 
 .lighting-audio-services-block__description p {
@@ -86,7 +78,7 @@
     transition:
         color var(--dur-fast) var(--ease),
         transform var(--dur-fast) var(--ease);
-        margin-top: auto;
+    margin-top: auto;
 }
 
 .lighting-audio-services-block__link:hover,
@@ -104,7 +96,7 @@
 
 @media (max-width: 640px) {
     .lighting-audio-services-block {
-        padding: 56px 0;
+        padding-bottom: 5rem;
     }
 
     .lighting-audio-services-block__grid {
