@@ -59,37 +59,13 @@
    --font-heading: var(--font-display);
 
 
+   --p: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
+
+
    /* Fluid type scale */
-   --h1: clamp(40px, 6vw, 72px);
-   /* 60px */
-   /* max = 3rem */
-
-   --h2: clamp(28px, 3.5vw, 48px);
-   /* 50px */
-   /* max = 2.5rem */
-
-   --h3: clamp(1.2rem, 2vw, 1.5rem);
-   /* 30px */
-   /* max = 1.5rem */
-
-   --h4: clamp(1rem, 1.6vw, 1.2rem);
-   /* 24px */
-   /* max = 1.2rem */
-
-   --h5: clamp(0.9rem, 1.4vw, 1.1rem);
-   /* 22px */
-   /* max = 1.05rem */
-
-   --h6: clamp(0.8rem, 1.2vw, 0.9rem);
-   /* 18px */
-   /* max = 0.9rem */
-
-   --body-lg: 16px;
+   --body: clamp(0.875rem, 0.5vw + 0.8rem, 1rem);
    /* 16px */
-   --body-sm: 13px;
-   /* 12px */
-   --small: 13px;
-   --tiny: 11px;
+
 
 
    /* ----------------------------------------------------------

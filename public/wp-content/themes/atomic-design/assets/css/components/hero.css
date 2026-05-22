@@ -1,6 +1,5 @@
 .hero {
     padding-bottom: 10rem;
-
     background: #fff;
     color: #fff;
 }
@@ -46,28 +45,19 @@
 
 .hero__title {
     max-width: 640px;
-    margin-bottom: 32px;
-    font-family: var(--font-body);
+    padding-bottom: 2rem;
     font-size: clamp(40px, 5.3vw, 58px);
     font-weight: 700;
     line-height: 1.12;
     letter-spacing: 0;
-    text-transform: uppercase;
     color: #fff;
 }
 
-.hero__title p {
-    margin: 0;
-}
 
 .hero__subtitle {
     max-width: 720px;
-    margin-bottom: 32px;
+    padding-bottom: 2rem;
     color: #fff;
-}
-
-.hero__subtitle p {
-    margin: 0 0 1em;
 }
 
 .hero__subtitle p:last-child {
@@ -102,7 +92,7 @@
 .hero__actions {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 8px;
 }
 
 .hero__link {
@@ -375,7 +365,7 @@
 
 @media (max-width: 960px) {
     .hero {
-        padding-bottom: 72px;
+        padding-bottom: 5rem;
     }
 
     .hero__panel {
@@ -399,10 +389,6 @@
 }
 
 @media (max-width: 640px) {
-    .hero {
-        padding: 16px 0 56px;
-    }
-
     .hero__panel {
         min-height: 520px;
         padding: 34px 22px 30px;

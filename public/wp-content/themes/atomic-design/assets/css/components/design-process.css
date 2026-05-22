@@ -10,14 +10,6 @@
 
 .design-process__heading {
     padding-bottom: 3rem;
-    font-family: var(--font-body);
-    font-size: clamp(1.375rem, 2vw + 1rem, 2.25rem);
-    line-height: 1.2;
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    color: #000;
 }
 
 .design-process__body {
@@ -180,6 +172,10 @@
 }
 
 @media (max-width: 1024px) {
+    .design-process {
+        padding-bottom: 5rem;
+    }
+
     .design-process__body {
         grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
         gap: 22px;
@@ -217,6 +213,7 @@
 }
 
 @media (max-width: 767px) {
+
     .design-process__body {
         grid-template-columns: 1fr;
         gap: 24px;

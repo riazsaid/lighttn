@@ -81,14 +81,6 @@ section.section--flush {
     padding: 0;
 }
 
-@media (max-width: 48rem) {
-
-    section,
-    section.section--dark {
-        padding: 64px 0;
-    }
-}
-
 /* ============================================================
    GUTENBERG GROUP SPACING PRESETS (core/group)
    These map to our section spacing tokens so editors can control

@@ -10,13 +10,6 @@
 
 .partners-affiliations-block__heading {
     padding-bottom: 3rem;
-    font-family: var(--font-body);
-    font-size: clamp(1.375rem, 2vw + 1rem, 2.25rem);
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    color: #000;
 }
 
 .partners-affiliations-block__grid {
@@ -120,12 +113,16 @@ a.partners-affiliations-block__card:focus-visible {
 
 @media (max-width: 760px) {
     .partners-affiliations-block {
-        padding: 56px 0;
+        padding-bottom: 5rem;
     }
 
     .partners-affiliations-block__grid {
         grid-template-columns: 1fr;
         gap: 16px;
+    }
+
+    .partners-affiliations-block__heading {
+        padding-bottom: 2rem;
     }
 
     .partners-affiliations-block__carousel {

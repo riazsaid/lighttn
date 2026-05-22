@@ -15,20 +15,9 @@
     min-width: 0;
 }
 
-.about-light-tn__heading,
-.about-light-tn__secondary-heading {
-    margin: 0;
-    font-family: var(--font-body);
-    font-weight: 700;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    color: #000;
-}
+
 
 .about-light-tn__heading {
-    font-size: clamp(1.375rem, 2vw + 1rem, 2.25rem);
-    line-height: 1.2;
-    font-weight: 700;
     padding-bottom: 3rem;
 }
 
@@ -82,11 +71,6 @@
     padding-bottom: 3rem;
 }
 
-.about-light-tn__secondary-heading {
-    font-size: clamp(1.375rem, 2vw + 1rem, 2.25rem);
-    line-height: 1.2;
-    font-weight: 700;
-}
 
 .about-light-tn__columns {
     display: grid;
@@ -99,6 +83,17 @@
 }
 
 @media (max-width: 980px) {
+    .about-light-tn {
+        padding-bottom: 5rem;
+    }
+
+    .about-light-tn__heading {
+        padding-bottom: 2rem;
+    }
+
+    .about-light-tn__secondary-header {
+        padding-bottom: 2rem;
+    }
 
     .about-light-tn__top,
     .about-light-tn__columns {
