@@ -18,7 +18,15 @@ if (!defined('ABSPATH')) {
 }
 
 $args = isset($args) && is_array($args) ? $args : [];
-$has_explicit_args = !empty($args);
+$content_arg_keys = [
+    'section_heading',
+    'intro',
+    'form_id',
+    'booking_embed_url',
+    'booking_embed_html',
+    'image',
+];
+$has_explicit_content_args = !empty(array_intersect($content_arg_keys, array_keys($args)));
 $default_booking_embed_url = 'https://scheduler.zoom.us/lighttn/initial_consult?embedStyle=%7B%22buttonColor%22%3A%22%23ff9257%22%7D&embed=true';
 
 $section_heading = array_key_exists('section_heading', $args)
@@ -32,7 +40,7 @@ $form_id = array_key_exists('form_id', $args)
     : (int) (function_exists('get_field') ? (get_field('consultation_split_form_id', 'option') ?: 386) : 386);
 $booking_embed_url = array_key_exists('booking_embed_url', $args)
     ? trim((string) $args['booking_embed_url'])
-    : ($has_explicit_args ? '' : trim((string) (function_exists('get_field') ? (get_field('consultation_split_booking_embed_url', 'option') ?: $default_booking_embed_url) : $default_booking_embed_url)));
+    : ($has_explicit_content_args ? '' : trim((string) (function_exists('get_field') ? (get_field('consultation_split_booking_embed_url', 'option') ?: $default_booking_embed_url) : $default_booking_embed_url)));
 $booking_embed_html = isset($args['booking_embed_html']) ? (string) $args['booking_embed_html'] : '';
 $image           = isset($args['image']) && is_array($args['image']) ? $args['image'] : [];
 $align           = !empty($args['align']) ? (string) $args['align'] : 'full';

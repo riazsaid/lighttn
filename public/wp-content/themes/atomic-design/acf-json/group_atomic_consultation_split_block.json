@@ -3,12 +3,12 @@
     "title": "Consultation Split Block",
     "fields": [
         {
-            "key": "field_atomic_block_consultation_split_heading",
-            "label": "Section Title",
-            "name": "consultation_split_heading",
+            "key": "field_atomic_block_consultation_split_synced_notice",
+            "label": "Synced Component",
+            "name": "",
             "aria-label": "",
-            "type": "text",
-            "instructions": "Visible heading above the split layout.",
+            "type": "message",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,79 +16,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "Ready to light your property the right way?",
-            "prepend": "",
-            "append": "",
-            "allow_in_bindings": 0,
-            "maxlength": ""
-        },
-        {
-            "key": "field_atomic_block_consultation_split_intro",
-            "label": "Intro Copy",
-            "name": "consultation_split_intro",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "Optional copy shown to the right of the heading.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0,
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_atomic_block_consultation_split_form_id",
-            "label": "Forminator Form ID",
-            "name": "consultation_split_form_id",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "Forminator form ID. Example: 386.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "30",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 147,
-            "min": 1,
-            "max": 0,
-            "step": 1,
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_atomic_block_consultation_split_image",
-            "label": "Right Side Image",
-            "name": "consultation_split_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Temporary right-side image. This can be swapped later if the design changes.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "70",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "allow_in_bindings": 0,
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
-            "mime_types": ""
+            "message": "This block uses the global Consultation Split settings from Synced Components \u2192 Consultation Split.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -107,7 +37,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Fields for the Consultation Split ACF block.",
+    "description": "Synced Consultation Split block that renders the global option-page component.",
     "show_in_rest": 1,
     "display_title": "",
     "modified": 1775430000
