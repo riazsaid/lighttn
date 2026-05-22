@@ -69,10 +69,7 @@ get_header();
         ]);
         get_template_part('template-parts/shared/faqs', null, ['post_id' => $post_id]);
         get_template_part('template-parts/shared/partners-affiliations');
-        get_template_part('template-parts/shared/consultation-split-sections', null, [
-            'post_id' => $post_id,
-            'section_index' => 1,
-        ]);
+        get_template_part('template-parts/shared/consultation-split');
     }
     ?>
 </main>

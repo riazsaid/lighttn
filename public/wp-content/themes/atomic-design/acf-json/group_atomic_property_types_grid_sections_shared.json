@@ -133,6 +133,13 @@
             {
                 "param": "post_type",
                 "operator": "==",
+                "value": "locations"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
                 "value": "service-location"
             }
         ]

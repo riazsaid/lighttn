@@ -2,7 +2,7 @@
 /**
  * Lighting & Audio Services shared partial.
  *
- * Pulls from Synced Components -> Lighting & Audio Services.
+ * Pulls from passed args, or falls back to Synced Components -> Lighting & Audio Services.
  */
 if (!defined('ABSPATH')) {
     exit;
@@ -12,8 +12,21 @@ if (!function_exists('get_field')) {
     return;
 }
 
-$heading = get_field('lighting_audio_services_heading', 'option') ?: __('Outdoor Lighting & Audio Services', 'atomic-design');
-$items   = get_field('lighting_audio_services_items', 'option') ?: [];
+$heading = isset($args['heading'])
+    ? trim((string) $args['heading'])
+    : (get_field('lighting_audio_services_heading', 'option') ?: __('Outdoor Lighting & Audio Services', 'atomic-design'));
+
+$items = isset($args['items']) && is_array($args['items'])
+    ? $args['items']
+    : (get_field('lighting_audio_services_items', 'option') ?: []);
+
+$heading_alignment = isset($args['heading_alignment']) ? (string) $args['heading_alignment'] : 'center';
+$heading_alignment = in_array($heading_alignment, ['left', 'center'], true) ? $heading_alignment : 'center';
+$section_classes = [
+    'lighting-audio-services-block',
+    'scroll-reveal',
+    'lighting-audio-services-block--heading-' . $heading_alignment,
+];
 
 $items = is_array($items) ? array_values(array_filter($items, static function ($item) {
     $title       = isset($item['title']) ? trim((string) $item['title']) : '';
@@ -30,7 +43,7 @@ if ($heading === '' || empty($items)) {
     return;
 }
 ?>
-<section class="lighting-audio-services-block scroll-reveal">
+<section class="<?php echo esc_attr(implode(' ', $section_classes)); ?>">
     <div class="container lighting-audio-services-block__inner">
         <h2 class="lighting-audio-services-block__heading scroll-reveal" style="--reveal-delay: 60ms;"><?php echo esc_html($heading); ?></h2>
 

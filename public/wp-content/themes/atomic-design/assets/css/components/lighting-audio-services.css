@@ -16,6 +16,10 @@
     color: #000;
 }
 
+.lighting-audio-services-block--heading-left .lighting-audio-services-block__heading {
+    text-align: left;
+}
+
 .lighting-audio-services-block__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

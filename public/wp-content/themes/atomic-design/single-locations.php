@@ -39,7 +39,10 @@ get_header();
             'section_index' => 1,
         ]);
         get_template_part('template-parts/shared/trust-bar');
-        get_template_part('template-parts/shared/lighting-audio-services');
+        get_template_part('template-parts/shared/lighting-audio-services-sections', null, [
+            'post_id' => $post_id,
+            'section_index' => 1,
+        ]);
         get_template_part('template-parts/shared/steps-grid-sections', null, [
             'post_id' => $post_id,
             'section_index' => 1,
@@ -58,10 +61,7 @@ get_header();
         ]);
         get_template_part('template-parts/shared/testimonials');
         get_template_part('template-parts/shared/faqs', null, ['post_id' => $post_id]);
-        get_template_part('template-parts/shared/consultation-split-sections', null, [
-            'post_id' => $post_id,
-            'section_index' => 1,
-        ]);
+        get_template_part('template-parts/shared/consultation-split');
     }
     ?>
 </main>
