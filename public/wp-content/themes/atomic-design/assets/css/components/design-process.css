@@ -32,13 +32,11 @@
     position: relative;
 }
 
-.design-process__summary,
-.design-process__visual {
+.design-process__summary {
     display: none;
 }
 
-.design-process__summary.is-active,
-.design-process__visual.is-active {
+.design-process__summary.is-active {
     display: block;
 }
 
@@ -87,13 +85,46 @@
     overflow: visible;
 }
 
+.design-process__visual-stack {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    min-height: clamp(320px, 34vw, 460px);
+}
+
+.design-process__visual {
+    position: relative;
+    display: block;
+    flex: 0 0 96px;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 28px;
+    transition: flex-basis 0.45s ease, transform 0.45s ease, opacity 0.35s ease;
+    opacity: 0.92;
+}
+
+.design-process__visual.is-active {
+    flex-basis: 100%;
+    opacity: 1;
+}
+
+.design-process__visual .design-process__image-wrap {
+    height: 100%;
+}
+
 .design-process__image {
     display: block;
     width: 100%;
-    aspect-ratio: 1.46 / 1;
+    height: 100%;
     border-radius: 28px;
     object-fit: cover;
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.08);
+    transform: scale(1.02);
+    transition: transform 0.45s ease;
+}
+
+.design-process__visual.is-active .design-process__image {
+    transform: scale(1);
 }
 
 .design-process__badge {
@@ -108,6 +139,15 @@
     border-radius: 20px;
     background: #fff;
     box-shadow: 0 16px 38px rgba(0, 0, 0, 0.09);
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+    transform-origin: bottom right;
+    transition: opacity 0.28s ease, transform 0.36s ease;
+}
+
+.design-process__visual.is-active .design-process__badge {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .design-process__badge-number {
@@ -214,6 +254,15 @@
     .design-process__rail-number {
         font-size: 22px;
     }
+
+    .design-process__visual-stack {
+        min-height: clamp(280px, 42vw, 420px);
+        gap: 10px;
+    }
+
+    .design-process__visual {
+        flex: 0 0 72px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -233,6 +282,13 @@
 
     .design-process__visual {
         order: 2;
+        flex-basis: 100%;
+        opacity: 1;
+    }
+
+    .design-process__visual-stack {
+        display: block;
+        min-height: 0;
     }
 
     .design-process__badge {
@@ -240,6 +296,8 @@
         bottom: 16px;
         min-width: 136px;
         padding: 10px 14px;
+        opacity: 1;
+        transform: none;
     }
 
     .design-process__badge-number {
