@@ -158,6 +158,7 @@
 
     function initDesignProcessSections() {
         const sections = document.querySelectorAll('[data-design-process]');
+        const desktopMedia = window.matchMedia('(min-width: 1025px)');
 
         sections.forEach(section => {
             if (section.dataset.designProcessReady === 'true') {
@@ -167,9 +168,14 @@
             const buttons = Array.from(section.querySelectorAll('[data-step-button]'));
             const summaries = Array.from(section.querySelectorAll('[data-step-summary]'));
             const visuals = Array.from(section.querySelectorAll('[data-step-visual]'));
+            const visualStack = section.querySelector('.design-process__visual-stack');
 
             if (!buttons.length || !summaries.length || !visuals.length) {
                 return;
+            }
+
+            if (visualStack) {
+                visualStack.style.setProperty('--design-process-count', String(visuals.length));
             }
 
             const activateStep = index => {
@@ -188,12 +194,30 @@
                 visuals.forEach((visual, visualIndex) => {
                     const isActive = visualIndex === index;
                     visual.classList.toggle('is-active', isActive);
-                    visual.hidden = !isActive;
+                    if (!desktopMedia.matches) {
+                        visual.hidden = !isActive;
+                    } else {
+                        visual.hidden = false;
+                    }
                 });
             };
 
             buttons.forEach((button, index) => {
                 button.addEventListener('click', () => activateStep(index));
+                button.addEventListener('focus', () => activateStep(index));
+                button.addEventListener('mouseenter', () => {
+                    if (desktopMedia.matches) {
+                        activateStep(index);
+                    }
+                });
+            });
+
+            visuals.forEach((visual, index) => {
+                visual.addEventListener('mouseenter', () => {
+                    if (desktopMedia.matches) {
+                        activateStep(index);
+                    }
+                });
             });
 
             section.dataset.designProcessReady = 'true';
