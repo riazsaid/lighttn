@@ -168,9 +168,14 @@
             const buttons = Array.from(section.querySelectorAll('[data-step-button]'));
             const summaries = Array.from(section.querySelectorAll('[data-step-summary]'));
             const visuals = Array.from(section.querySelectorAll('[data-step-visual]'));
+            const visualStack = section.querySelector('.design-process__visual-stack');
 
             if (!buttons.length || !summaries.length || !visuals.length) {
                 return;
+            }
+
+            if (visualStack) {
+                visualStack.style.setProperty('--design-process-count', String(visuals.length));
             }
 
             const activateStep = index => {
