@@ -150,12 +150,12 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_atomic_contact_consultation_map_embed_url",
-            "label": "Map Embed URL",
-            "name": "contact_consultation_map_embed_url",
+            "key": "field_atomic_contact_consultation_map_image",
+            "label": "Map Image",
+            "name": "contact_consultation_map_image",
             "aria-label": "",
-            "type": "url",
-            "instructions": "Optional map iframe URL shown below the scheduler section.",
+            "type": "image",
+            "instructions": "Upload the map image shown below the scheduler section.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -163,8 +163,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "https://www.google.com/maps/embed?pb=...",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": "",
             "allow_in_bindings": 0
         }
     ],

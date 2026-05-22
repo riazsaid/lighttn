@@ -3,6 +3,34 @@
     "title": "Consultation Split Block",
     "fields": [
         {
+            "key": "field_atomic_block_consultation_split_layout",
+            "label": "Layout Style",
+            "name": "consultation_split_layout",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Choose the visual layout for this synced consultation section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default Split",
+                "contact": "Contact Page Layout"
+            },
+            "default_value": "default",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": ""
+        },
+        {
             "key": "field_atomic_block_consultation_split_synced_notice",
             "label": "Synced Component",
             "name": "",
