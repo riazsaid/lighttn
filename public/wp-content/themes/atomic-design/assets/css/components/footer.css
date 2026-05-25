@@ -113,7 +113,7 @@
 .site-footer__list a,
 .site-footer__bbb-meta,
 .site-footer__bottom {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.35;
     color: var(--raw-rgba-255-255-255-086);
 }
