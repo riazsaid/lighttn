@@ -1,7 +1,7 @@
 .hero {
     padding-bottom: var(--section-space-xlg);
-    background: #fff;
-    color: #fff;
+    background: var(--bg-surface);
+    color: var(--bg-surface);
 }
 
 .hero__shell {
@@ -17,7 +17,7 @@
     justify-content: space-between;
     padding: clamp(48px, 6vw, 100px) clamp(32px, 5vw, 58px) 56px;
     border-radius: 26px;
-    background: #020617;
+    background: var(--raw-020617);
     overflow: hidden;
 }
 
@@ -26,8 +26,8 @@
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.54) 44%, rgba(0, 0, 0, 0.12) 100%),
-        var(--hero-bg-image, radial-gradient(circle at top left, #0b0c10 0, #020617 55%, #000 100%));
+        linear-gradient(90deg, var(--raw-rgba-0-0-0-072) 0%, var(--raw-rgba-0-0-0-054) 44%, var(--raw-rgba-0-0-0-012) 100%),
+        var(--hero-bg-image, radial-gradient(circle at top left, var(--raw-0b0c10) 0, var(--raw-020617) 55%, var(--bg-darkest) 100%));
     background-size: cover;
     background-position: center right;
     transform-origin: center center;
@@ -46,18 +46,18 @@
 .hero__title {
     max-width: 640px;
     padding-bottom: 2rem;
-    font-size: clamp(40px, 5.3vw, 58px);
+    font-size: var(--display-lg);
     font-weight: 700;
     line-height: 1.12;
     letter-spacing: 0;
-    color: #fff;
+    color: var(--bg-surface);
 }
 
 
 .hero__subtitle {
     max-width: 720px;
     padding-bottom: 2rem;
-    color: #fff;
+    color: var(--bg-surface);
 }
 
 .hero__subtitle p:last-child {
@@ -109,14 +109,14 @@
     padding: 8px 5px 8px 24px;
     border-radius: 999px;
     background: var(--cyan);
-    color: #fff;
+    color: var(--bg-surface);
     font-family: var(--font-body);
-    font-size: clamp(16px, 1.8vw, 20px);
+    font-size: var(--body-lg);
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
     overflow: hidden;
-    box-shadow: 0 14px 34px rgba(20, 16, 12, 0.2);
+    box-shadow: 0 14px 34px var(--raw-rgba-20-16-12-02);
     transition:
         background 0.35s ease,
         transform 0.35s ease,
@@ -134,7 +134,7 @@
 
 .hero__link--primary:hover,
 .hero__link--primary:focus-visible {
-    color: #fff;
+    color: var(--bg-surface);
     text-decoration: none;
     transform: translateY(-3px);
     gap: 20px;
@@ -152,9 +152,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #fff;
+    background: var(--bg-surface);
     color: var(--cyan);
-    font-size: 15px;
+    font-size: var(--body);
     line-height: 1;
     overflow: hidden;
 }
@@ -204,7 +204,7 @@
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    color: #fff;
+    color: var(--bg-surface);
 }
 
 .hero__actions.hero__reveal {
@@ -226,10 +226,10 @@
     display: block;
     max-width: 120px;
     font-family: var(--font-body);
-    font-size: 15px;
+    font-size: var(--body);
     font-weight: 700;
     line-height: 0.98;
-    color: #fff;
+    color: var(--bg-surface);
 }
 
 .hero__reviews {
@@ -245,8 +245,8 @@
     align-items: center;
     padding: 18px 0 0 16px;
     border-top-left-radius: 28px;
-    background: #fff;
-    color: #000;
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .hero__review-initials {
@@ -255,18 +255,18 @@
 }
 
 .hero__review-initial {
-    --hero-initial-bg: #6ba8df;
+    --hero-initial-bg: var(--raw-6ba8df);
     width: 54px;
     height: 54px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #fff;
+    border: 2px solid var(--bg-surface);
     border-radius: 50%;
     background: var(--hero-initial-bg);
-    color: #fff;
+    color: var(--bg-surface);
     font-family: var(--font-body);
-    font-size: 31px;
+    font-size: var(--display-sm);
     font-weight: 500;
     line-height: 1;
 }
@@ -279,17 +279,17 @@
     display: block;
     margin-bottom: 10px;
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: var(--body);
     font-weight: 700;
     line-height: 1.1;
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .hero__stars {
     display: flex;
     gap: 3px;
-    color: #ffba00;
-    font-size: 27px;
+    color: var(--raw-ffba00);
+    font-size: var(--title-md);
     line-height: 1;
 }
 
@@ -311,10 +311,10 @@
 .hero__bbb-text {
     display: block;
     font-family: var(--font-body);
-    font-size: 24px;
+    font-size: var(--title-md);
     font-weight: 700;
     line-height: 1;
-    color: #0d7890;
+    color: var(--raw-0d7890);
 }
 
 @keyframes hero-vistahaven-enter {
@@ -384,7 +384,7 @@
         margin-top: 18px;
         padding: 18px;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 10px 30px var(--raw-rgba-0-0-0-008);
     }
 }
 
@@ -397,11 +397,11 @@
     }
 
     .hero__title {
-        font-size: clamp(32px, 10vw, 42px);
+        font-size: var(--display-sm);
     }
 
     .hero__subtitle {
-        font-size: 16px;
+        font-size: var(--body);
     }
 
     .hero__actions,

@@ -1,6 +1,6 @@
 .consultation-cta-bar {
     padding: clamp(24px, 3vw, 40px) 0;
-    background: #f2f2f3;
+    background: var(--bg-page);
 }
 
 .consultation-cta-bar__link {
@@ -13,15 +13,15 @@
     margin: 0 auto;
     padding: clamp(18px, 2vw, 26px) clamp(22px, 2.8vw, 40px);
     border-radius: 24px;
-    background: #66c8e8;
-    color: #fff;
+    background: var(--raw-66c8e8);
+    color: var(--bg-surface);
     text-decoration: none;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px var(--raw-rgba-0-0-0-008);
 }
 
 .consultation-cta-bar__text {
     font-family: var(--font-body);
-    font-size: clamp(22px, 2vw, 34px);
+    font-size: var(--title-lg);
     font-weight: 500;
     line-height: 1.15;
     text-align: center;
@@ -32,19 +32,19 @@
     width: clamp(44px, 4vw, 58px);
     height: clamp(44px, 4vw, 58px);
     border-radius: 999px;
-    background: #e8f7fd;
-    color: #5eb5d2;
+    background: var(--raw-e8f7fd);
+    color: var(--raw-5eb5d2);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(24px, 2vw, 30px);
+    font-size: var(--title-lg);
     font-weight: 700;
     flex-shrink: 0;
 }
 
 .consultation-cta-bar__link:hover,
 .consultation-cta-bar__link:focus-visible {
-    color: #fff;
+    color: var(--bg-surface);
     text-decoration: none;
     transform: translateY(-1px);
 }
@@ -55,7 +55,7 @@
     }
 
     .consultation-cta-bar__text {
-        font-size: clamp(18px, 5vw, 24px);
+        font-size: var(--title-md);
         text-align: left;
     }
 }
