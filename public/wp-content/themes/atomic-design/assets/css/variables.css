@@ -23,7 +23,6 @@
    --accent-hover: var(--cyan-hover);
    --text: var(--charcoal);
    --text-soft: var(--text-muted);
-   --shadow: 0 20px 60px rgba(46, 63, 79, 0.12);
    --panel: rgba(41, 181, 232, 0.08);
    --border-strong: rgba(41, 181, 232, 0.32);
 
@@ -49,7 +48,7 @@
    --font-heading: var(--font-display);
 
 
-   --p: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
+   --body: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
 
    /* Fluid type scale */
 
@@ -97,8 +96,6 @@
    /* Section-to-section spacing */
    --grid-gap: clamp(24px, 4vw, 48px);
    /* Section-to-section spacing */
-   --section-space-sm: var(--space-sm);
-   /* 40 */
    --section-space-md: var(--space-xl);
    /* 80 */
    --section-space-lg: 10rem;
@@ -117,6 +114,12 @@
    /* 24 */
    --section-space-xs: var(--space-xs);
    --section-space: var(--section-space-md);
+   --design-process-gap: 14px;
+   --design-process-collapsed: 96px;
+   --design-process-count: 3;
+   --partners-carousel-gap: clamp(var(--space-2xs), 3vw, var(--space-sm));
+   --hero-bg-image: radial-gradient(circle at top left, var(--raw-0b0c10) 0, var(--raw-020617) 55%, var(--bg-darkest) 100%);
+   --hero-initial-bg: var(--raw-6ba8df);
    /* 16px */
 
    /* ----------------------------------------------------------
