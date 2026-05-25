@@ -1,5 +1,5 @@
 .hero {
-    padding-bottom: var(--section-space-xlg);
+    padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-surface);
 }
@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: clamp(48px, 6vw, 100px) clamp(32px, 5vw, 58px) 56px;
+    padding: clamp(var(--space-md), 6vw, 100px) clamp(var(--space-xs), 5vw, 58px) 56px;
     border-radius: 26px;
     background: var(--raw-020617);
     overflow: hidden;
@@ -92,7 +92,7 @@
 .hero__actions {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--gap-xs);
 }
 
 .hero__link {
@@ -106,7 +106,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 8px 5px 8px 24px;
+    padding: var(--gap-xs) 5px var(--gap-xs) var(--space-2xs);
     border-radius: 999px;
     background: var(--cyan);
     color: var(--bg-surface);
@@ -137,7 +137,7 @@
     color: var(--bg-surface);
     text-decoration: none;
     transform: translateY(-3px);
-    gap: 20px;
+    gap: var(--gutter-mobile);
 }
 
 .hero__link--primary:hover .hero__link-fill,
@@ -365,7 +365,7 @@
 
 @media (max-width: 960px) {
     .hero {
-        padding-bottom: var(--section-space-lg);
+        padding-bottom: var(--section-space-md);
     }
 
     .hero__panel {

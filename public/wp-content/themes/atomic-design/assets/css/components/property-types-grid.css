@@ -23,7 +23,7 @@
 .property-types-grid__items {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: clamp(16px, 2vw, 20px);
+    gap: clamp(16px, 2vw, var(--gutter-mobile));
 }
 
 .property-types-grid__item {

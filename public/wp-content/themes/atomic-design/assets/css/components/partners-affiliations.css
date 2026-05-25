@@ -1,5 +1,5 @@
 .partners-affiliations-block {
-    padding-bottom: var(--section-space-xlg);
+    padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
 }
@@ -15,11 +15,11 @@
 .partners-affiliations-block__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(24px, 3vw, 40px);
+    gap: clamp(var(--space-2xs), 3vw, var(--space-sm));
 }
 
 .partners-affiliations-block__carousel {
-    --partners-carousel-gap: clamp(24px, 3vw, 40px);
+    --partners-carousel-gap: clamp(var(--space-2xs), 3vw, var(--space-sm));
 }
 
 .partners-affiliations-block__viewport {
@@ -113,7 +113,7 @@ a.partners-affiliations-block__card:focus-visible {
 
 @media (max-width: 760px) {
     .partners-affiliations-block {
-        padding-bottom: var(--section-space-lg);
+        padding-bottom: var(--section-space-md);
     }
 
     .partners-affiliations-block__grid {
@@ -139,6 +139,6 @@ a.partners-affiliations-block__card:focus-visible {
 
     .partners-affiliations-block__card {
         min-height: 112px;
-        padding: 24px;
+        padding: var(--space-2xs);
     }
 }

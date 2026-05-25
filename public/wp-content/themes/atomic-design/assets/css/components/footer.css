@@ -96,7 +96,7 @@
 }
 
 .site-footer__heading {
-    margin: 0 0 24px;
+    margin: 0 0 var(--space-2xs);
     font-family: var(--font-body);
     font-size: var(--title-sm);
     font-weight: 700;
@@ -153,7 +153,7 @@
 
 .site-footer__area-list {
     columns: 2;
-    column-gap: clamp(40px, 6vw, 76px);
+    column-gap: clamp(var(--space-sm), 6vw, 76px);
 }
 
 .site-footer__area-list li {
@@ -224,8 +224,8 @@
     display: grid;
     grid-template-columns: 34px 1fr;
     align-items: center;
-    gap: 8px;
-    padding: 6px 8px;
+    gap: var(--gap-xs);
+    padding: 6px var(--gap-xs);
     background: var(--bg-surface);
     color: var(--raw-006d9f);
     text-transform: uppercase;
