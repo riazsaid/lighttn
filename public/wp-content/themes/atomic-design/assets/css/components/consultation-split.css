@@ -111,7 +111,7 @@
     border-radius: 0;
     background: transparent;
     box-shadow: none;
-    font-size: var(--p) !important;
+    font-size: var(--body) !important;
     font-weight: 700;
     border-width: 0 0 2px 0 !important;
     border-style: none none solid none;
@@ -160,7 +160,7 @@
     background: var(--raw-050505);
     color: var(--bg-surface);
     font-family: var(--font-body);
-    font-size: var(--p) !important;
+    font-size: var(--body) !important;
     font-weight: 700;
     line-height: 1;
     transition:
