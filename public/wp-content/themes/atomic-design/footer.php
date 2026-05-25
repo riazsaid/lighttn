@@ -114,7 +114,7 @@ $footer_social_links = [
             </nav>
 
             <div class="site-footer__social-column">
-                <nav class="site-footer__group site-footer__popular" aria-labelledby="footer-popular-heading">
+                <!-- <nav class="site-footer__group site-footer__popular" aria-labelledby="footer-popular-heading">
                     <h2 id="footer-popular-heading" class="site-footer__heading">
                         <?php esc_html_e('Popular Links', 'atomic-design'); ?></h2>
                     <ul class="site-footer__list">
@@ -126,7 +126,7 @@ $footer_social_links = [
                             </li>
                         <?php endforeach; ?>
                     </ul>
-                </nav>
+                </nav> -->
 
                 <ul class="site-footer__social-icons"
                     aria-label="<?php esc_attr_e('Social links', 'atomic-design'); ?>">
