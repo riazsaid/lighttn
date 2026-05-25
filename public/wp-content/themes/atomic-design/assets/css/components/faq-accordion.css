@@ -4,7 +4,7 @@
    ============================================================ */
 
 .faq-accordion-block {
-    padding-bottom: var(--section-space-xlg);
+    padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
 }
@@ -12,7 +12,7 @@
 .faq-container {
     display: grid;
     grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
-    gap: clamp(48px, 7vw, 88px);
+    gap: clamp(var(--space-md), 7vw, 88px);
     align-items: start;
 }
 
@@ -131,7 +131,7 @@
 
 @media (max-width: 680px) {
     .faq-accordion-block {
-        padding-bottom: var(--section-space-lg);
+        padding-bottom: var(--section-space-md);
     }
 
     .faq-grid {

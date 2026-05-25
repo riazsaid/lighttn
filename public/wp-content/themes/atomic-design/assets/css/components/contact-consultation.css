@@ -1,5 +1,5 @@
 .contact-consultation {
-    padding: clamp(64px, 7vw, 92px) 0;
+    padding: clamp(var(--space-lg), 7vw, 92px) 0;
     background: var(--bg-surface);
     color: var(--bg-darkest);
 }
@@ -33,7 +33,7 @@
 .contact-consultation__top {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(210px, 285px);
-    gap: clamp(28px, 5vw, 64px);
+    gap: clamp(28px, 5vw, var(--space-lg));
     align-items: start;
     margin-bottom: 30px;
 }
@@ -46,7 +46,7 @@
 }
 
 .contact-consultation__panel--form {
-    padding: clamp(24px, 3vw, 34px);
+    padding: clamp(var(--space-2xs), 3vw, 34px);
 }
 
 .contact-consultation__panel-title,
@@ -124,9 +124,9 @@
 .contact-consultation__booking {
     display: grid;
     grid-template-columns: minmax(255px, 0.72fr) minmax(0, 1.28fr);
-    gap: clamp(24px, 4vw, 46px);
+    gap: clamp(var(--space-2xs), 4vw, 46px);
     align-items: stretch;
-    padding: clamp(26px, 4vw, 40px);
+    padding: clamp(26px, 4vw, var(--space-sm));
     margin-bottom: clamp(34px, 5vw, 46px);
 }
 
@@ -234,7 +234,7 @@
 
 .contact-consultation .forminator-error-message {
     margin-top: 4px !important;
-    padding: 4px 8px !important;
+    padding: 4px var(--gap-xs) !important;
     border-radius: 6px !important;
     font-size: var(--text-micro) !important;
     line-height: 1.25 !important;
@@ -248,7 +248,7 @@
 .contact-consultation .forminator-button-submit {
     min-width: 132px !important;
     min-height: 32px !important;
-    padding: 0 24px !important;
+    padding: 0 var(--space-2xs) !important;
     border: 0 !important;
     border-radius: 999px !important;
     background: var(--cyan) !important;

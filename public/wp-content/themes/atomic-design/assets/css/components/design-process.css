@@ -1,5 +1,5 @@
 .design-process {
-    padding-bottom: var(--section-space-xlg);
+    padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
     overflow-x: clip;
@@ -284,7 +284,7 @@
 
 @media (max-width: 1024px) {
     .design-process {
-        padding-bottom: var(--section-space-lg);
+        padding-bottom: var(--section-space-md);
     }
 
     .design-process__body {

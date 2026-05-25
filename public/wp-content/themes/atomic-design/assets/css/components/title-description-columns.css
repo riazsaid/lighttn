@@ -1,5 +1,5 @@
 .title-description-columns {
-    padding-bottom: var(--section-space-xlg);
+    padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
 }
@@ -43,7 +43,7 @@
 .title-description-columns__content h2,
 .title-description-columns__content h3,
 .title-description-columns__content h4 {
-    margin: 0 0 24px;
+    margin: 0 0 var(--space-2xs);
 }
 
 .title-description-columns__content p:last-child,
@@ -78,7 +78,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 22px;
+    padding: var(--gap-xs) 22px;
     border-radius: 999px;
     background: var(--cyan);
     color: var(--bg-surface);
@@ -110,7 +110,7 @@
 .title-description-columns--service-location-areas .title-description-columns__content {
     max-width: 1120px;
     margin: 0 auto;
-    column-gap: clamp(28px, 4vw, 64px);
+    column-gap: clamp(28px, 4vw, var(--space-lg));
     text-align: center;
 }
 
@@ -120,7 +120,7 @@
 
 @media (max-width: 640px) {
     .title-description-columns {
-        padding-bottom: var(--section-space-lg);
+        padding-bottom: var(--section-space-md);
     }
 
     .title-description-columns__heading {

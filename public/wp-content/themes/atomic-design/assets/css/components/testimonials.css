@@ -4,7 +4,7 @@
    ============================================================ */
 
 .testimonials-block {
-    padding-bottom: var(--section-space-xlg);
+    padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
 }
@@ -12,7 +12,7 @@
 .testimonials-block__inner {
     display: grid;
     grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
-    gap: clamp(48px, 7vw, 86px);
+    gap: clamp(var(--space-md), 7vw, 86px);
     align-items: start;
 }
 
@@ -103,7 +103,7 @@
 
 @media (max-width: 680px) {
     .testimonials-block {
-        padding-bottom: var(--section-space-lg);
+        padding-bottom: var(--section-space-md);
     }
 
     .testimonials-grid {
@@ -113,7 +113,7 @@
 
     .testimonial-card {
         min-height: 0;
-        padding: 24px;
+        padding: var(--space-2xs);
         border-radius: 22px;
     }
 }

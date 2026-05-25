@@ -97,17 +97,26 @@
    /* Section-to-section spacing */
    --grid-gap: clamp(24px, 4vw, 48px);
    /* Section-to-section spacing */
-   --section-space-xlg: 10rem;
-   /* 160 */
-   --section-space-lg: 5rem;
+   --section-space-sm: var(--space-sm);
+   /* 40 */
+   --section-space-md: var(--space-xl);
    /* 80 */
+   --section-space-lg: 10rem;
+   /* 160 */
    --space-md: 3rem;
    /* 48px */
+   --space-sm: 2.5rem;
    /* 40px */
+   --space-lg: 4rem;
+   /* 64px */
+   --space-xl: 5rem;
+   /* 80px */
    --space-xs: 2rem;
    /* 32px */
    --space-2xs: 1.5rem;
    /* 24 */
+   --section-space-xs: var(--space-xs);
+   --section-space: var(--section-space-md);
    /* 16px */
 
    /* ----------------------------------------------------------

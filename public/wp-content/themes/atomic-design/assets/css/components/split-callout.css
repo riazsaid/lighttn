@@ -101,7 +101,7 @@
 }
 
 .split-callout__ranges-card {
-    padding: clamp(24px, 2.6vw, 34px);
+    padding: clamp(var(--space-2xs), 2.6vw, 34px);
     border: 1px solid var(--raw-rgba-17-17-17-008);
     border-radius: 28px;
     background: var(--bg-page);
