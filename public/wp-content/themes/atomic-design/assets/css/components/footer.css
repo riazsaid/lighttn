@@ -96,11 +96,7 @@
 }
 
 .site-footer__heading {
-<<<<<<< HEAD
-    /* margin: 0 0 24px; */
-=======
     margin: 0 0 var(--space-2xs);
->>>>>>> main
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 700;
@@ -234,17 +230,10 @@
     /* display: grid;
     grid-template-columns: 34px 1fr; */
     align-items: center;
-<<<<<<< HEAD
-    gap: 8px;
-    padding: 6px 8px;
-    /* background: #fff; */
-    color: #006d9f;
-=======
     gap: var(--gap-xs);
     padding: 6px var(--gap-xs);
     background: var(--bg-surface);
     color: var(--raw-006d9f);
->>>>>>> main
     text-transform: uppercase;
     font-size: var(--text-micro);
     font-weight: 800;
