@@ -145,15 +145,16 @@ $footer_social_links = [
                 <div class="site-footer__bbb"
                     aria-label="<?php esc_attr_e('BBB accreditation information', 'atomic-design'); ?>">
                     <div class="site-footer__bbb-badge">
-                        <span class="site-footer__bbb-logo"><?php esc_html_e('BBB', 'atomic-design'); ?></span>
-                        <span><?php esc_html_e('Accredited Business', 'atomic-design'); ?></span>
+                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bbb-logo.png" alt="bbb logo" loading="lazy" decoding="async">
                     </div>
-                    <div class="site-footer__bbb-meta">
+                    <!-- <div class="site-footer__bbb-meta">
                         <strong><?php esc_html_e('BBB Rating: A+', 'atomic-design'); ?></strong>
                         <span><?php esc_html_e('As of 2/7/2024', 'atomic-design'); ?></span>
                         <a
                             href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Click for Profile', 'atomic-design'); ?></a>
-                    </div>
+                            
+                    </div> -->
+                    
                 </div>
             </div>
         </div>
