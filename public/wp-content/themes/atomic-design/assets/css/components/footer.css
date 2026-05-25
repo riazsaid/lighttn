@@ -96,7 +96,7 @@
 }
 
 .site-footer__heading {
-    margin: 0 0 var(--space-2xs);
+    /* margin: 0 0 var(--space-2xs); */
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 700;
@@ -232,7 +232,7 @@
     align-items: center;
     gap: var(--gap-xs);
     padding: 6px var(--gap-xs);
-    background: var(--bg-surface);
+    /* background: var(--bg-surface); */
     color: var(--raw-006d9f);
     text-transform: uppercase;
     font-size: var(--text-micro);
