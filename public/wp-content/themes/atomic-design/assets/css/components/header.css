@@ -110,7 +110,7 @@
 .site-nav .menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: var(--section-space-xs);
 }
 
 .site-nav .menu>li {

@@ -5,7 +5,7 @@
    ============================================================ */
 
 .trust-bar-block {
-    padding-bottom: var(--section-space-210);
+    padding-bottom: var(--section-space-xlg);
 }
 
 .trust-bar-block__inner {
@@ -69,6 +69,7 @@
     .trust-bar-block__grid {
         grid-template-columns: 1fr;
     }
+
     .trust-bar-block__item {
         padding: 1rem;
     }

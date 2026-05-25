@@ -4,9 +4,9 @@
    ============================================================ */
 
 .testimonials-block {
-    padding-bottom: 10rem;
-    background: #fff;
-    color: #000;
+    padding-bottom: var(--section-space-xlg);
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .testimonials-block__inner {
@@ -21,7 +21,7 @@
 }
 
 .testimonials-heading {
-    padding-bottom: 3rem;
+    padding-bottom: var(--section-space-md);
 }
 
 .testimonials-grid {
@@ -103,7 +103,7 @@
 
 @media (max-width: 680px) {
     .testimonials-block {
-        padding-bottom: 5rem;
+        padding-bottom: var(--section-space-lg);
     }
 
     .testimonials-grid {

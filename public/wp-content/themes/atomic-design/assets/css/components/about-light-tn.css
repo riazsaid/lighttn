@@ -1,5 +1,5 @@
 .about-light-tn {
-    padding-bottom: 10rem;
+    padding-bottom: var(--section-space-xlg);
     background: #fff;
     color: #000;
 }
@@ -18,7 +18,7 @@
 
 
 .about-light-tn__heading {
-    padding-bottom: 3rem;
+    padding-bottom: var(--section-space-md);
 }
 
 .about-light-tn__intro-copy,
@@ -64,11 +64,11 @@
 }
 
 .about-light-tn__bottom {
-    padding-top: 3rem;
+    padding-top: var(--section-space-md);
 }
 
 .about-light-tn__secondary-header {
-    padding-bottom: 3rem;
+    padding-bottom: var(--section-space-md);
 }
 
 
@@ -84,15 +84,15 @@
 
 @media (max-width: 980px) {
     .about-light-tn {
-        padding-bottom: 5rem;
+        padding-bottom: var(--section-space-lg);
     }
 
     .about-light-tn__heading {
-        padding-bottom: 2rem;
+        padding-bottom: var(--section-space-xs);
     }
 
     .about-light-tn__secondary-header {
-        padding-bottom: 2rem;
+        padding-bottom: var(--section-space-xs);
     }
 
     .about-light-tn__top,
