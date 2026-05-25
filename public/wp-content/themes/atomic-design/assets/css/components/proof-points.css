@@ -11,14 +11,9 @@
 
 .proof-points__heading {
     margin: 0;
-    font-family: var(--font-body);
     font-size: var(--display-sm);
-    font-weight: 700;
-    line-height: 1.04;
     letter-spacing: 0;
-    text-transform: uppercase;
-    color: var(--bg-darkest);
-}
+    text-transform: uppercase;}
 
 .proof-points__grid {
     display: grid;
@@ -33,14 +28,9 @@
 
 .proof-points__intro-title {
     margin: 0 0 28px;
-    font-family: var(--font-body);
     font-size: var(--title-md);
-    font-weight: 700;
-    line-height: 1.08;
     letter-spacing: 0;
-    text-transform: uppercase;
-    color: var(--bg-darkest);
-}
+    text-transform: uppercase;}
 
 .proof-points__intro-copy,
 .proof-points__card-description {
@@ -87,13 +77,8 @@
 
 .proof-points__card-title {
     margin: 0;
-    font-family: var(--font-body);
     font-size: var(--title-md);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: 0;
-    color: var(--bg-darkest);
-}
+    letter-spacing: 0;}
 
 .proof-points__timeline {
     margin-top: -8px;

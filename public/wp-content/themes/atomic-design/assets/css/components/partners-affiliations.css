@@ -9,8 +9,7 @@
 }
 
 .partners-affiliations-block__heading {
-    padding-bottom: var(--space-md);
-}
+    padding-bottom: var(--space-md);}
 
 .partners-affiliations-block__grid {
     display: grid;

@@ -223,3 +223,42 @@ p {
         scroll-behavior: auto !important;
     }
 }
+
+/* ============================================================
+   FOUNDATION UTILITIES
+   ============================================================ */
+
+.section-surface {
+    background: var(--bg-surface);
+    color: var(--text);
+}
+
+.text-body {
+    font-family: var(--font-body);
+    font-size: var(--body);
+    line-height: var(--lh-body);
+    color: var(--text);
+}
+
+.heading-section {
+    font-family: var(--font-body);
+    font-size: var(--title-lg);
+    line-height: var(--lh-heading);
+    font-weight: 700;
+    color: var(--text);
+}
+
+.heading-card {
+    font-family: var(--font-body);
+    font-size: var(--title-md);
+    line-height: var(--lh-heading);
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* Attribute-based fallback so existing component markup inherits base heading style */
+[class*="__heading"],
+[class*="__title"] {
+    font-family: var(--font-body);
+    color: var(--text);
+}

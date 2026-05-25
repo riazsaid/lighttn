@@ -47,22 +47,18 @@
     max-width: 640px;
     padding-bottom: 2rem;
     font-size: var(--display-lg);
-    font-weight: 700;
     line-height: 1.12;
     letter-spacing: 0;
-    color: var(--bg-surface);
-}
+    color: var(--bg-surface);}
 
 
 .hero__subtitle {
     max-width: 720px;
     padding-bottom: 2rem;
-    color: var(--bg-surface);
-}
+    color: var(--bg-surface);}
 
 .hero__subtitle p:last-child {
-    margin-bottom: 0;
-}
+    margin-bottom: 0;}
 
 .hero__reveal {
     opacity: 0;
@@ -72,12 +68,10 @@
 }
 
 .hero__title.hero__reveal {
-    animation-delay: 0.5s;
-}
+    animation-delay: 0.5s;}
 
 .hero__subtitle.hero__reveal {
-    animation-delay: 0.74s;
-}
+    animation-delay: 0.74s;}
 
 .hero__lower {
     position: relative;
@@ -401,7 +395,6 @@
     }
 
     .hero__subtitle {
-        font-size: var(--body);
     }
 
     .hero__actions,

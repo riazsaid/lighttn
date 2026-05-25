@@ -10,9 +10,7 @@
 }
 
 .why-choose-light-tn__heading {
-    padding-bottom: var(--space-md);
-    color: var(--bg-darkest);
-}
+    padding-bottom: var(--space-md);}
 
 .why-choose-light-tn__intro {
     max-width: 760px;
@@ -61,8 +59,7 @@
 }
 
 .why-choose-light-tn__card-title {
-    padding-bottom: 1rem;
-}
+    padding-bottom: 1rem;}
 
 .why-choose-light-tn__card-description {
     font-size: var(--body) !important;
