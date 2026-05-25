@@ -22,7 +22,7 @@
 .split-callout__heading {
     margin: 0 0 28px;
     font-family: var(--font-body);
-    font-size: clamp(28px, 3vw, 42px);
+    font-size: var(--display-sm);
     font-weight: 700;
     line-height: 1.02;
     letter-spacing: 0;
@@ -34,7 +34,7 @@
 .split-callout__ranges-copy,
 .split-callout__card-copy {
     font-family: var(--font-body);
-    font-size: clamp(14px, 1.1vw, 16px);
+    font-size: var(--body);
     font-weight: 400;
     line-height: 1.58;
     color: var(--raw-2a2a2a);
@@ -59,7 +59,7 @@
 .split-callout__intro-secondary-title {
     margin: 0 0 0.65rem;
     font-family: var(--font-body);
-    font-size: clamp(24px, 1.85vw, 32px);
+    font-size: var(--title-lg);
     font-weight: 700;
     line-height: 1.15;
     color: var(--bg-darkest);
@@ -67,7 +67,7 @@
 
 .split-callout__intro-secondary-copy {
     font-family: var(--font-body);
-    font-size: clamp(14px, 1.1vw, 16px);
+    font-size: var(--body);
     font-weight: 400;
     line-height: 1.58;
     color: var(--raw-2a2a2a);
@@ -80,7 +80,7 @@
 .split-callout__intro-copy h6 {
     margin: 1.1em 0 0.45em;
     font-family: var(--font-body);
-    font-size: clamp(24px, 1.85vw, 32px);
+    font-size: var(--title-lg);
     font-weight: 700;
     line-height: 1.15;
     color: var(--bg-darkest);
@@ -111,7 +111,7 @@
 .split-callout__ranges-title {
     margin: 0 0 14px;
     font-family: var(--font-body);
-    font-size: clamp(20px, 1.5vw, 24px);
+    font-size: var(--title-md);
     font-weight: 700;
     line-height: 1.15;
     color: var(--bg-darkest);
@@ -152,7 +152,7 @@
 .split-callout__card-title {
     margin: 0 0 16px;
     font-family: var(--font-body);
-    font-size: clamp(22px, 1.9vw, 28px);
+    font-size: var(--title-md);
     font-weight: 700;
     line-height: 1.1;
     color: var(--bg-darkest);

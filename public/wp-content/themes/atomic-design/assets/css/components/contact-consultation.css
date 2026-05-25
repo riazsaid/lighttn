@@ -16,7 +16,7 @@
 .contact-consultation__heading {
     margin: 0 0 12px;
     font-family: var(--font-body);
-    font-size: clamp(26px, 3vw, 36px);
+    font-size: var(--title-lg);
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: 0;
@@ -25,7 +25,7 @@
 
 .contact-consultation__subheading {
     margin: 0;
-    font-size: clamp(14px, 1.15vw, 16px);
+    font-size: var(--body);
     font-weight: 700;
     line-height: 1.35;
 }
@@ -60,14 +60,14 @@
 
 .contact-consultation__panel-title {
     margin-bottom: 14px;
-    font-size: 18px;
+    font-size: var(--body-lg);
 }
 
 .contact-consultation__panel-copy {
     max-width: 610px;
     margin: 0 0 18px;
     color: var(--raw-333333);
-    font-size: 13px;
+    font-size: var(--small);
     line-height: 1.45;
 }
 
@@ -77,7 +77,7 @@
 
 .contact-consultation__details-title {
     margin-bottom: 18px;
-    font-size: 15px;
+    font-size: var(--body);
     text-transform: uppercase;
 }
 
@@ -85,7 +85,7 @@
     display: block;
     margin: 0 0 16px;
     color: var(--raw-222222);
-    font-size: 14px;
+    font-size: var(--body-sm);
     line-height: 1.45;
     text-decoration: none;
 }
@@ -133,19 +133,19 @@
 .contact-consultation__booking-title {
     max-width: 360px;
     margin-bottom: 16px;
-    font-size: clamp(25px, 2.8vw, 34px);
+    font-size: var(--title-lg);
     text-transform: uppercase;
 }
 
 .contact-consultation__booking-subtitle {
     margin: 0 0 22px;
-    font-size: 17px;
+    font-size: var(--body-lg);
     font-weight: 700;
 }
 
 .contact-consultation__booking-points {
     color: var(--raw-222222);
-    font-size: 14px;
+    font-size: var(--body-sm);
     line-height: 1.45;
 }
 
@@ -222,7 +222,7 @@
     border-radius: 999px !important;
     background: var(--bg-surface) !important;
     color: var(--bg-darkest) !important;
-    font-size: 13px !important;
+    font-size: var(--small) !important;
     line-height: 1.2 !important;
 }
 
@@ -236,7 +236,7 @@
     margin-top: 4px !important;
     padding: 4px 8px !important;
     border-radius: 6px !important;
-    font-size: 10px !important;
+    font-size: var(--text-micro) !important;
     line-height: 1.25 !important;
 }
 
@@ -253,12 +253,13 @@
     border-radius: 999px !important;
     background: var(--cyan) !important;
     color: var(--bg-surface) !important;
-    font-size: 13px !important;
+    font-size: var(--small) !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
 }
 
 @media (max-width: 860px) {
+
     .contact-consultation__top,
     .contact-consultation__booking {
         grid-template-columns: 1fr;

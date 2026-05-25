@@ -46,7 +46,7 @@
 .hero__title {
     max-width: 640px;
     padding-bottom: 2rem;
-    font-size: clamp(40px, 5.3vw, 58px);
+    font-size: var(--display-lg);
     font-weight: 700;
     line-height: 1.12;
     letter-spacing: 0;
@@ -111,7 +111,7 @@
     background: var(--cyan);
     color: var(--bg-surface);
     font-family: var(--font-body);
-    font-size: clamp(16px, 1.8vw, 20px);
+    font-size: var(--body-lg);
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
@@ -154,7 +154,7 @@
     border-radius: 50%;
     background: var(--bg-surface);
     color: var(--cyan);
-    font-size: 15px;
+    font-size: var(--body);
     line-height: 1;
     overflow: hidden;
 }
@@ -226,7 +226,7 @@
     display: block;
     max-width: 120px;
     font-family: var(--font-body);
-    font-size: 15px;
+    font-size: var(--body);
     font-weight: 700;
     line-height: 0.98;
     color: var(--bg-surface);
@@ -266,7 +266,7 @@
     background: var(--hero-initial-bg);
     color: var(--bg-surface);
     font-family: var(--font-body);
-    font-size: 31px;
+    font-size: var(--display-sm);
     font-weight: 500;
     line-height: 1;
 }
@@ -279,7 +279,7 @@
     display: block;
     margin-bottom: 10px;
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: var(--body);
     font-weight: 700;
     line-height: 1.1;
     color: var(--bg-darkest);
@@ -289,7 +289,7 @@
     display: flex;
     gap: 3px;
     color: var(--raw-ffba00);
-    font-size: 27px;
+    font-size: var(--title-md);
     line-height: 1;
 }
 
@@ -311,7 +311,7 @@
 .hero__bbb-text {
     display: block;
     font-family: var(--font-body);
-    font-size: 24px;
+    font-size: var(--title-md);
     font-weight: 700;
     line-height: 1;
     color: var(--raw-0d7890);
@@ -397,11 +397,11 @@
     }
 
     .hero__title {
-        font-size: clamp(32px, 10vw, 42px);
+        font-size: var(--display-sm);
     }
 
     .hero__subtitle {
-        font-size: 16px;
+        font-size: var(--body);
     }
 
     .hero__actions,

@@ -45,7 +45,7 @@
 
 .trust-bar-block__title {
     margin: 0;
-    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    font-size: var(--lead);
     font-weight: 700;
     color: var(--text);
     line-height: 1.25;

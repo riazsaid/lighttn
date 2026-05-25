@@ -17,7 +17,7 @@
 .why-choose-light-tn__intro {
     max-width: 760px;
     font-family: var(--font-body);
-    font-size: clamp(15px, 1.35vw, 17px);
+    font-size: var(--body);
     line-height: 1.45;
     color: var(--bg-darkest);
 }

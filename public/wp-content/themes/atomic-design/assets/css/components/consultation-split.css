@@ -20,7 +20,7 @@
 .consultation-split__intro {
     max-width: 680px;
     font-family: var(--font-body);
-    font-size: clamp(15px, 1.25vw, 18px);
+    font-size: var(--body-lg);
     font-weight: 400;
     line-height: 1.46;
     color: var(--bg-surface);
@@ -83,7 +83,7 @@
     justify-content: center;
     padding: var(--section-space-2xs);
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: var(--body);
     line-height: 1.4;
     text-align: center;
     color: var(--raw-65727b);

@@ -20,7 +20,7 @@
 .detail-card-grid__heading {
     margin: 0 0 32px;
     font-family: var(--font-body);
-    font-size: clamp(28px, 3vw, 42px);
+    font-size: var(--display-sm);
     font-weight: 700;
     line-height: 1.02;
     letter-spacing: 0;
@@ -31,7 +31,7 @@
 .detail-card-grid__content,
 .detail-card-grid__card-description {
     font-family: var(--font-body);
-    font-size: clamp(14px, 1.1vw, 16px);
+    font-size: var(--body);
     font-weight: 400;
     line-height: 1.6;
     color: var(--raw-2a2a2a);
@@ -63,7 +63,7 @@
 .detail-card-grid__support-title {
     margin: 0 0 8px;
     font-family: var(--font-body);
-    font-size: clamp(15px, 1.15vw, 17px);
+    font-size: var(--body);
     font-weight: 700;
     line-height: 1.35;
     color: var(--bg-darkest);
@@ -72,7 +72,7 @@
 .detail-card-grid__ideal-list,
 .detail-card-grid__included-description {
     font-family: var(--font-body);
-    font-size: clamp(14px, 1.1vw, 16px);
+    font-size: var(--body);
     font-weight: 400;
     line-height: 1.6;
     color: var(--raw-2a2a2a);
@@ -114,7 +114,7 @@
 .detail-card-grid__card-title {
     margin: 0 0 10px;
     font-family: var(--font-body);
-    font-size: clamp(18px, 1.5vw, 21px);
+    font-size: var(--title-sm);
     font-weight: 700;
     line-height: 1.2;
     color: var(--bg-darkest);
