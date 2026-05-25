@@ -23,7 +23,7 @@
 ---------------------------------------------------------- */
 /*
 .page-slug-home .hero__title {
-    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    font-size: var(--promo-display);
 }
 */
 
@@ -47,7 +47,7 @@
 
 .single-industry .industry-static-image {
     padding: 0 0 4rem;
-    background: #000;
+    background: var(--bg-darkest);
 }
 
 .single-industry .industry-static-image__media {
@@ -59,7 +59,7 @@
     display: block;
     width: 100%;
     height: auto;
-    border: 2px solid #1993ff;
+    border: 2px solid var(--raw-1993ff);
 }
 
 @media (max-width: 767px) {

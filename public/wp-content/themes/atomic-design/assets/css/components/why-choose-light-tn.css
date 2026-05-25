@@ -6,20 +6,20 @@
 
 .why-choose-light-tn__header {
     max-width: 830px;
-    padding-bottom: var(--section-space-md);
+    padding-bottom: var(--space-md);
 }
 
 .why-choose-light-tn__heading {
-    padding-bottom: var(--section-space-md);
-    color: #000;
+    padding-bottom: var(--space-md);
+    color: var(--bg-darkest);
 }
 
 .why-choose-light-tn__intro {
     max-width: 760px;
     font-family: var(--font-body);
-    font-size: clamp(15px, 1.35vw, 17px);
+    font-size: var(--body);
     line-height: 1.45;
-    color: #111;
+    color: var(--bg-darkest);
 }
 
 
@@ -36,10 +36,10 @@
 .why-choose-light-tn__card {
     min-height: 214px;
     padding: 40px 32px;
-    border: 1px solid rgba(46, 63, 79, 0.13);
+    border: 1px solid var(--raw-rgba-46-63-79-013);
     border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+    background: var(--bg-surface);
+    box-shadow: 0 4px 18px var(--raw-rgba-0-0-0-016);
 }
 
 .why-choose-light-tn__icon {
@@ -48,7 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-bottom: var(--section-space-xs);
+    padding-bottom: var(--space-xs);
 }
 
 .why-choose-light-tn__icon-image {
@@ -80,7 +80,7 @@
     }
 
     .why-choose-light-tn__header {
-        padding-bottom: var(--section-space-xs);
+        padding-bottom: var(--space-xs);
     }
 
     .why-choose-light-tn__grid {
