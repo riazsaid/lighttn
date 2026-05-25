@@ -114,7 +114,7 @@ $footer_social_links = [
             </nav>
 
             <div class="site-footer__social-column">
-                <nav class="site-footer__group site-footer__popular" aria-labelledby="footer-popular-heading">
+                <!-- <nav class="site-footer__group site-footer__popular" aria-labelledby="footer-popular-heading">
                     <h2 id="footer-popular-heading" class="site-footer__heading">
                         <?php esc_html_e('Popular Links', 'atomic-design'); ?></h2>
                     <ul class="site-footer__list">
@@ -126,7 +126,7 @@ $footer_social_links = [
                             </li>
                         <?php endforeach; ?>
                     </ul>
-                </nav>
+                </nav> -->
 
                 <ul class="site-footer__social-icons"
                     aria-label="<?php esc_attr_e('Social links', 'atomic-design'); ?>">
@@ -145,15 +145,16 @@ $footer_social_links = [
                 <div class="site-footer__bbb"
                     aria-label="<?php esc_attr_e('BBB accreditation information', 'atomic-design'); ?>">
                     <div class="site-footer__bbb-badge">
-                        <span class="site-footer__bbb-logo"><?php esc_html_e('BBB', 'atomic-design'); ?></span>
-                        <span><?php esc_html_e('Accredited Business', 'atomic-design'); ?></span>
+                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bbb-logo.png" alt="bbb logo" loading="lazy" decoding="async">
                     </div>
-                    <div class="site-footer__bbb-meta">
+                    <!-- <div class="site-footer__bbb-meta">
                         <strong><?php esc_html_e('BBB Rating: A+', 'atomic-design'); ?></strong>
                         <span><?php esc_html_e('As of 2/7/2024', 'atomic-design'); ?></span>
                         <a
                             href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Click for Profile', 'atomic-design'); ?></a>
-                    </div>
+                            
+                    </div> -->
+                    
                 </div>
             </div>
         </div>
