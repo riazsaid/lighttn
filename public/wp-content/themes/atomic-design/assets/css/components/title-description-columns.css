@@ -6,7 +6,7 @@
 
 .title-description-columns__heading {
     max-width: 430px;
-    padding-bottom: var(--section-space-md);
+    padding-bottom: var(--space-md);
     text-align: left;
 }
 
@@ -124,7 +124,7 @@
     }
 
     .title-description-columns__heading {
-        padding-bottom: var(--section-space-xs);
+        padding-bottom: var(--space-xs);
     }
 
     .title-description-columns__content {
