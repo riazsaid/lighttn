@@ -1,7 +1,7 @@
 .about-light-tn {
     padding-bottom: var(--section-space-xlg);
-    background: #fff;
-    color: #000;
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .about-light-tn__top {
@@ -27,7 +27,7 @@
     font-size: clamp(14px, 1.1vw, 16px);
     font-weight: 400;
     line-height: 1.58;
-    color: #2a2a2a;
+    color: var(--raw-2a2a2a);
 }
 
 .about-light-tn__intro-copy p,

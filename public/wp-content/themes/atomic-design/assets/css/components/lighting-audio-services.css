@@ -44,7 +44,7 @@
     font-size: clamp(18px, 1.9vw, 22px);
     font-weight: 700;
     line-height: 1.08;
-    color: #111;
+    color: var(--bg-darkest);
 }
 
 .lighting-audio-services-block__description {
@@ -52,7 +52,7 @@
     font-size: clamp(14px, 1.15vw, 16px);
     font-weight: 400;
     line-height: 1.55;
-    color: #262626;
+    color: var(--raw-222222);
     padding-bottom: 1rem;
 }
 
@@ -69,7 +69,7 @@
     align-items: center;
     gap: 10px;
     /* margin-top: 22px; */
-    color: #111;
+    color: var(--bg-darkest);
     font-family: var(--font-body);
     font-size: 15px;
     font-weight: 700;

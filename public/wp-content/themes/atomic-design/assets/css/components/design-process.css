@@ -1,7 +1,7 @@
 .design-process {
     padding-bottom: var(--section-space-xlg);
-    background: #fff;
-    color: #000;
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
     overflow-x: clip;
 }
 
@@ -54,7 +54,7 @@
     font-size: clamp(22px, 2vw, 26px);
     font-weight: 700;
     line-height: 1.1;
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .design-process__step-description {
@@ -62,7 +62,7 @@
     font-size: clamp(14px, 1.1vw, 16px);
     font-weight: 400;
     line-height: 1.58;
-    color: #3d3d3d;
+    color: var(--raw-3d3d3d);
 }
 
 .design-process__step-description p {
@@ -127,7 +127,7 @@
     gap: 10px;
     transform: translate(-50%, -50%) rotate(-90deg);
     transform-origin: center;
-    color: #c4c4c4;
+    color: var(--raw-c3c3c3);
     white-space: nowrap;
     opacity: 1;
     transition: opacity 0.2s ease;
@@ -161,7 +161,7 @@
     height: 100%;
     border-radius: 28px;
     object-fit: cover;
-    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 42px var(--raw-rgba-0-0-0-008);
     transform: none;
     transition: none;
 }
@@ -178,8 +178,8 @@
     min-width: 154px;
     padding: 12px 18px 10px;
     border-radius: 20px;
-    background: #fff;
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.09);
+    background: var(--bg-surface);
+    box-shadow: 0 16px 38px var(--raw-rgba-0-0-0-009);
     opacity: 0;
     transform: none;
     transition: opacity 0.2s ease;
@@ -194,7 +194,7 @@
     font-size: clamp(46px, 5vw, 56px);
     font-weight: 300;
     line-height: 0.9;
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .design-process__badge-title {
@@ -202,7 +202,7 @@
     font-size: clamp(15px, 1.25vw, 18px);
     font-weight: 600;
     line-height: 1.08;
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .design-process__rail {
@@ -227,23 +227,23 @@
     gap: 18px;
     padding: 0;
     border: 0;
-    border-left: 1px solid #dedede;
+    border-left: 1px solid var(--raw-d9d9d9);
     background: transparent;
-    color: #c4c4c4;
+    color: var(--raw-c3c3c3);
     cursor: pointer;
     transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
 .design-process__rail-button:hover,
 .design-process__rail-button:focus-visible {
-    color: #878787;
-    border-color: #c7c7c7;
+    color: var(--raw-878787);
+    border-color: var(--raw-c3c3c3);
     outline: none;
 }
 
 .design-process__rail-button.is-active {
-    color: #b4b4b4;
-    border-color: #d9d9d9;
+    color: var(--raw-b4b4b4);
+    border-color: var(--raw-d9d9d9);
 }
 
 .design-process__rail-number {
@@ -308,7 +308,7 @@
         gap: 10px;
         padding: 12px 14px;
         border-left: 0;
-        border-bottom: 1px solid #dedede;
+        border-bottom: 1px solid var(--raw-d9d9d9);
         text-align: left;
     }
 

@@ -24,7 +24,7 @@
     font-size: clamp(14px, 1.2vw, 16px);
     font-weight: 400;
     line-height: 1.42;
-    color: #242424;
+    color: var(--raw-222222);
 }
 
 .title-description-columns__content ul,
@@ -81,7 +81,7 @@
     padding: 8px 22px;
     border-radius: 999px;
     background: var(--cyan);
-    color: #fff;
+    color: var(--bg-surface);
     font-family: var(--font-body);
     font-size: 16px;
     font-weight: 500;
@@ -96,7 +96,7 @@
 .title-description-columns__cta:hover,
 .title-description-columns__cta:focus-visible {
     background: var(--cyan-hover);
-    color: #fff;
+    color: var(--bg-surface);
     transform: translateY(-1px);
     text-decoration: none;
 }

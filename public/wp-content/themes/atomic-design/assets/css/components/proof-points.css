@@ -1,7 +1,7 @@
 .proof-points {
     padding: clamp(68px, 8vw, 102px) 0;
-    background: #fff;
-    color: #000;
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .proof-points__header {
@@ -17,7 +17,7 @@
     line-height: 1.04;
     letter-spacing: 0;
     text-transform: uppercase;
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .proof-points__grid {
@@ -39,7 +39,7 @@
     line-height: 1.08;
     letter-spacing: 0;
     text-transform: uppercase;
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .proof-points__intro-copy,
@@ -48,7 +48,7 @@
     font-size: clamp(14px, 1.1vw, 16px);
     font-weight: 400;
     line-height: 1.55;
-    color: #2b2b2b;
+    color: var(--raw-2a2a2a);
 }
 
 .proof-points__intro-copy p,
@@ -92,7 +92,7 @@
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: 0;
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .proof-points__timeline {
@@ -102,7 +102,7 @@
     font-size: clamp(13px, 1vw, 15px);
     font-weight: 700;
     line-height: 1.35;
-    color: #111;
+    color: var(--bg-darkest);
 }
 
 @media (max-width: 1024px) {

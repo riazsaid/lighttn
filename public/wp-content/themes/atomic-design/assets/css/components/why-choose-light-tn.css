@@ -11,7 +11,7 @@
 
 .why-choose-light-tn__heading {
     padding-bottom: var(--section-space-md);
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .why-choose-light-tn__intro {
@@ -19,7 +19,7 @@
     font-family: var(--font-body);
     font-size: clamp(15px, 1.35vw, 17px);
     line-height: 1.45;
-    color: #111;
+    color: var(--bg-darkest);
 }
 
 
@@ -36,10 +36,10 @@
 .why-choose-light-tn__card {
     min-height: 214px;
     padding: 40px 32px;
-    border: 1px solid rgba(46, 63, 79, 0.13);
+    border: 1px solid var(--raw-rgba-46-63-79-013);
     border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+    background: var(--bg-surface);
+    box-shadow: 0 4px 18px var(--raw-rgba-0-0-0-016);
 }
 
 .why-choose-light-tn__icon {

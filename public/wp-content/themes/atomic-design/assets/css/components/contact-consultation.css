@@ -1,7 +1,7 @@
 .contact-consultation {
     padding: clamp(64px, 7vw, 92px) 0;
-    background: #fff;
-    color: #111;
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .contact-consultation__inner {
@@ -39,10 +39,10 @@
 }
 
 .contact-consultation__panel {
-    border: 1px solid rgba(21, 31, 42, 0.08);
+    border: 1px solid var(--raw-rgba-21-31-42-008);
     border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 3px 16px rgba(31, 49, 66, 0.12);
+    background: var(--bg-surface);
+    box-shadow: 0 3px 16px var(--raw-rgba-31-49-66-012);
 }
 
 .contact-consultation__panel--form {
@@ -66,7 +66,7 @@
 .contact-consultation__panel-copy {
     max-width: 610px;
     margin: 0 0 18px;
-    color: #333;
+    color: var(--raw-333333);
     font-size: 13px;
     line-height: 1.45;
 }
@@ -84,7 +84,7 @@
 .contact-consultation__detail {
     display: block;
     margin: 0 0 16px;
-    color: #222;
+    color: var(--raw-222222);
     font-size: 14px;
     line-height: 1.45;
     text-decoration: none;
@@ -144,7 +144,7 @@
 }
 
 .contact-consultation__booking-points {
-    color: #222;
+    color: var(--raw-222222);
     font-size: 14px;
     line-height: 1.45;
 }
@@ -163,7 +163,7 @@
     width: 100%;
     min-height: 500px;
     border: 0;
-    background: #fff;
+    background: var(--bg-surface);
 }
 
 .contact-consultation__map {
@@ -218,10 +218,10 @@
     width: 100% !important;
     min-height: 30px !important;
     padding: 6px 14px !important;
-    border: 1px solid rgba(18, 18, 18, 0.14) !important;
+    border: 1px solid var(--raw-rgba-18-18-18-014) !important;
     border-radius: 999px !important;
-    background: #fff !important;
-    color: #111 !important;
+    background: var(--bg-surface) !important;
+    color: var(--bg-darkest) !important;
     font-size: 13px !important;
     line-height: 1.2 !important;
 }
@@ -252,7 +252,7 @@
     border: 0 !important;
     border-radius: 999px !important;
     background: var(--cyan) !important;
-    color: #fff !important;
+    color: var(--bg-surface) !important;
     font-size: 13px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;

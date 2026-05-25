@@ -202,7 +202,7 @@
     line-height: var(--btn-height);
     font-size: var(--btn-font-size);
     font-weight: 600;
-    color: #fff;
+    color: var(--bg-surface);
     background: var(--accent);
     border: 0;
     border-radius: var(--btn-radius);

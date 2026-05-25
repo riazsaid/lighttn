@@ -25,10 +25,10 @@
     align-items: flex-start;
     min-height: 100%;
     padding: 1.25rem 1rem;
-    border: 1px solid #d9d9dd;
+    border: 1px solid var(--raw-d9d9d9);
     border-radius: 1rem;
-    background: #f7f7f8;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    background: var(--bg-page);
+    box-shadow: 0 1px 3px var(--raw-rgba-0-0-0-008);
 }
 
 .trust-bar-block__icon {
@@ -55,7 +55,7 @@
     margin-top: 0.7rem;
     font-size: var(--small);
     font-weight: 400;
-    color: #3f3f46;
+    color: var(--raw-3f3f46);
     line-height: 1.5;
 }
 
