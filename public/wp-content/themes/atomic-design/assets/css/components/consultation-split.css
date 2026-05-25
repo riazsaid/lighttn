@@ -81,7 +81,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--section-space-2xs);
+    padding: var(--space-2xs);
     font-family: var(--font-body);
     font-size: var(--body);
     line-height: 1.4;

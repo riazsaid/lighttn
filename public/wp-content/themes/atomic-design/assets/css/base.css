@@ -75,7 +75,7 @@ h3 {
 }
 
 p {
-    font-size: var(--body);
+    font-size: var(--p);
     line-height: 1.5;
     font-weight: 300;
 }

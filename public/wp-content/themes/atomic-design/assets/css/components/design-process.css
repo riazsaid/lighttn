@@ -10,7 +10,7 @@
 }
 
 .design-process__heading {
-    padding-bottom: var(--section-space-md);
+    padding-bottom: var(--space-md);
 }
 
 .design-process__body {
@@ -38,7 +38,7 @@
 }
 
 .design-process__icon-wrap {
-    padding-bottom: var(--section-space-md);
+    padding-bottom: var(--space-md);
 }
 
 .design-process__icon {
@@ -49,7 +49,7 @@
 }
 
 .design-process__step-title {
-    padding-bottom: var(--section-space-md);
+    padding-bottom: var(--space-md);
     font-family: var(--font-body);
     font-size: var(--title-md);
     font-weight: 700;
@@ -336,7 +336,7 @@
 
     .design-process__body {
         grid-template-columns: 1fr;
-        gap: var(--section-space-2xs);
+        gap: var(--space-2xs);
     }
 
     .design-process__summary {

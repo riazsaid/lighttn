@@ -121,7 +121,7 @@
 @media (max-width: 920px) {
     .faq-container {
         grid-template-columns: 1fr;
-        gap: var(--section-space-xs);
+        gap: var(--space-xs);
     }
 
     .faq-heading {

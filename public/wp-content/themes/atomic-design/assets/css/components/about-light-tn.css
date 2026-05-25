@@ -18,7 +18,7 @@
 
 
 .about-light-tn__heading {
-    padding-bottom: var(--section-space-md);
+    padding-bottom: var(--space-md);
 }
 
 .about-light-tn__intro-copy,
@@ -64,11 +64,11 @@
 }
 
 .about-light-tn__bottom {
-    padding-top: var(--section-space-md);
+    padding-top: var(--space-md);
 }
 
 .about-light-tn__secondary-header {
-    padding-bottom: var(--section-space-md);
+    padding-bottom: var(--space-md);
 }
 
 
