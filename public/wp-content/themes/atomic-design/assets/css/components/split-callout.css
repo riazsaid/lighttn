@@ -21,14 +21,10 @@
 
 .split-callout__heading {
     margin: 0 0 28px;
-    font-family: var(--font-body);
     font-size: var(--display-sm);
-    font-weight: 700;
     line-height: 1.02;
     letter-spacing: 0;
-    text-transform: uppercase;
-    color: var(--bg-darkest);
-}
+    text-transform: uppercase;}
 
 .split-callout__intro-copy,
 .split-callout__ranges-copy,
@@ -58,12 +54,7 @@
 
 .split-callout__intro-secondary-title {
     margin: 0 0 0.65rem;
-    font-family: var(--font-body);
-    font-size: var(--title-lg);
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--bg-darkest);
-}
+    font-size: var(--title-lg);}
 
 .split-callout__intro-secondary-copy {
     font-family: var(--font-body);
@@ -79,20 +70,14 @@
 .split-callout__intro-copy h5,
 .split-callout__intro-copy h6 {
     margin: 1.1em 0 0.45em;
-    font-family: var(--font-body);
-    font-size: var(--title-lg);
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--bg-darkest);
-}
+    font-size: var(--title-lg);}
 
 .split-callout__intro-copy h2:first-child,
 .split-callout__intro-copy h3:first-child,
 .split-callout__intro-copy h4:first-child,
 .split-callout__intro-copy h5:first-child,
 .split-callout__intro-copy h6:first-child {
-    margin-top: 0;
-}
+    margin-top: 0;}
 
 .split-callout__aside {
     display: grid;
@@ -110,12 +95,7 @@
 
 .split-callout__ranges-title {
     margin: 0 0 14px;
-    font-family: var(--font-body);
-    font-size: var(--title-md);
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--bg-darkest);
-}
+    font-size: var(--title-md);}
 
 .split-callout__ranges-copy ul,
 .split-callout__ranges-copy ol {
@@ -151,12 +131,7 @@
 
 .split-callout__card-title {
     margin: 0 0 16px;
-    font-family: var(--font-body);
-    font-size: var(--title-md);
-    font-weight: 700;
-    line-height: 1.1;
-    color: var(--bg-darkest);
-}
+    font-size: var(--title-md);}
 
 @media (max-width: 900px) {
     .split-callout__grid {

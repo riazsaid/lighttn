@@ -14,8 +14,7 @@
 }
 
 .consultation-split__heading {
-    color: var(--bg-surface);
-}
+    color: var(--bg-surface);}
 
 .consultation-split__intro {
     max-width: 680px;

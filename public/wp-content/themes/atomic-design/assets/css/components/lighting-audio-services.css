@@ -5,12 +5,10 @@
 }
 
 .lighting-audio-services-block__heading {
-    padding-bottom: var(--space-md);
-}
+    padding-bottom: var(--space-md);}
 
 .lighting-audio-services-block--heading-left .lighting-audio-services-block__heading {
-    text-align: left;
-}
+    text-align: left;}
 
 .lighting-audio-services-block__grid {
     display: grid;
@@ -40,12 +38,7 @@
 
 .lighting-audio-services-block__title {
     padding-bottom: 1rem;
-    font-family: var(--font-body);
-    font-size: var(--title-sm);
-    font-weight: 700;
-    line-height: 1.08;
-    color: var(--bg-darkest);
-}
+    font-size: var(--title-sm);}
 
 .lighting-audio-services-block__description {
     font-family: var(--font-body);

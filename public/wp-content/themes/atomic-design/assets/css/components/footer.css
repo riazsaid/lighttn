@@ -96,16 +96,15 @@
 }
 
 .site-footer__heading {
-    /* margin: 0 0 var(--space-2xs); */
-    font-family: var(--font-body);
+    margin: 0 0 var(--space-2xs);
     font-size: 1rem;
-    font-weight: 700;
     line-height: 1.25;
     letter-spacing: 0;
     color: var(--bg-surface);
 }
- h2.site-footer__heading{
-   text-transform: none !important;
+
+h2.site-footer__heading {
+    text-transform: none !important;
 }
 
 .site-footer__address,

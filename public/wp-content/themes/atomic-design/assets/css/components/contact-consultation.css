@@ -15,20 +15,13 @@
 
 .contact-consultation__heading {
     margin: 0 0 12px;
-    font-family: var(--font-body);
     font-size: var(--title-lg);
-    font-weight: 700;
-    line-height: 1.05;
     letter-spacing: 0;
-    text-transform: uppercase;
-}
+    text-transform: uppercase;}
 
 .contact-consultation__subheading {
     margin: 0;
-    font-size: var(--body);
-    font-weight: 700;
-    line-height: 1.35;
-}
+    line-height: 1.35;}
 
 .contact-consultation__top {
     display: grid;
@@ -52,16 +45,11 @@
 .contact-consultation__panel-title,
 .contact-consultation__details-title,
 .contact-consultation__booking-title {
-    margin: 0;
-    font-family: var(--font-body);
-    font-weight: 700;
-    line-height: 1.08;
-}
+    margin: 0;}
 
 .contact-consultation__panel-title {
     margin-bottom: 14px;
-    font-size: var(--body-lg);
-}
+    font-size: var(--body-lg);}
 
 .contact-consultation__panel-copy {
     max-width: 610px;
@@ -77,9 +65,7 @@
 
 .contact-consultation__details-title {
     margin-bottom: 18px;
-    font-size: var(--body);
-    text-transform: uppercase;
-}
+    text-transform: uppercase;}
 
 .contact-consultation__detail {
     display: block;
@@ -134,14 +120,11 @@
     max-width: 360px;
     margin-bottom: 16px;
     font-size: var(--title-lg);
-    text-transform: uppercase;
-}
+    text-transform: uppercase;}
 
 .contact-consultation__booking-subtitle {
     margin: 0 0 22px;
-    font-size: var(--body-lg);
-    font-weight: 700;
-}
+    font-size: var(--body-lg);}
 
 .contact-consultation__booking-points {
     color: var(--raw-222222);
