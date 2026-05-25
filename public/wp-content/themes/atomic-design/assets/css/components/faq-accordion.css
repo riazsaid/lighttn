@@ -4,7 +4,7 @@
    ============================================================ */
 
 .faq-accordion-block {
-    padding-bottom: 10rem;
+    padding-bottom: var(--section-space-xlg);
     background: #fff;
     color: #000;
 }
@@ -121,7 +121,7 @@
 @media (max-width: 920px) {
     .faq-container {
         grid-template-columns: 1fr;
-        gap: 34px;
+        gap: var(--section-space-xs);
     }
 
     .faq-heading {
@@ -131,7 +131,7 @@
 
 @media (max-width: 680px) {
     .faq-accordion-block {
-        padding-bottom: 5rem;
+        padding-bottom: var(--section-space-lg);
     }
 
     .faq-grid {

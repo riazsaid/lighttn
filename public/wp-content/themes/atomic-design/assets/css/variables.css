@@ -20,7 +20,6 @@
    --text-muted: #7A8FA0;
    --text-inverse: #FFFFFF;
    --border: rgba(41, 181, 232, 0.18);
-
    --bg: var(--bg-page);
    --bg-soft: var(--bg-surface);
    --accent: var(--cyan);
@@ -116,28 +115,22 @@
    --gap-xl: 80px;
    --gap-2xl: 120px;
    /* Section-to-section spacing */
-   --section-space-210: 100px;
-   /* 210px */
-   --section-space-142: 64px;
-   /* 142px */
-   /* Default section spacing (most sections) */
-   --section-space: var(--section-space-210);
    --grid-gap: clamp(24px, 4vw, 48px);
-
-   /* Explicit named spacing steps */
-   --space-lg: 3.8rem;
-   /* 76px */
-   --space-md: 2rem;
+   /* Section-to-section spacing */
+   --section-space-xlg: 10rem;
+   /* 160 */
+   --section-space-lg: 5rem;
+   /* 80 */
+   --section-space-md: 3rem;
+   /* 48px */
+   --section-space-sm: 2.5rem;
    /* 40px */
-   --space-xmd: 1.5rem;
-   /* 30px */
-   --space-sm: 1.6rem;
+   --section-space-xs: 2rem;
    /* 32px */
-   --space-xs: 1.4rem;
-   /* 28px */
-   --space-xsm: 0.6rem;
-   /* 12px */
-   /* --space-xl: 4rem; */
+   --section-space-2xs: 1.5rem;
+   /* 24 */
+   --section-space-3xs: 1rem;
+   /* 16px */
 
    /* ----------------------------------------------------------
        BREAKPOINTS

@@ -1,11 +1,11 @@
 .lighting-audio-services-block {
-    padding-bottom: 10rem;
-    background: #fff;
-    color: #000;
+    padding-bottom: var(--section-space-xlg);
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .lighting-audio-services-block__heading {
-    padding-bottom: 3rem;
+    padding-bottom: var(--section-space-md);
 }
 
 .lighting-audio-services-block--heading-left .lighting-audio-services-block__heading {
@@ -96,7 +96,7 @@
 
 @media (max-width: 640px) {
     .lighting-audio-services-block {
-        padding-bottom: 5rem;
+        padding-bottom: var(--section-space-lg);
     }
 
     .lighting-audio-services-block__grid {

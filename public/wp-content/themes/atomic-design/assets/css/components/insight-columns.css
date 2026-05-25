@@ -1,7 +1,7 @@
 .insight-columns {
-    padding: clamp(68px, 8vw, 92px) 0 clamp(76px, 9vw, 108px);
-    background: #fff;
-    color: #000;
+    padding-bottom: var(--section-space-xlg);
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .insight-columns__header {
@@ -18,7 +18,7 @@
     line-height: 1.08;
     letter-spacing: 0;
     text-transform: uppercase;
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .insight-columns__intro {
@@ -49,7 +49,7 @@
     font-size: clamp(18px, 1.8vw, 22px);
     font-weight: 700;
     line-height: 1.08;
-    color: #000;
+    color: var(--bg-darkest);
 }
 
 .insight-columns__item-description {
