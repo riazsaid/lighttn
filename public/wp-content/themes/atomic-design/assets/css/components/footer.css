@@ -96,7 +96,7 @@
 }
 
 .site-footer__heading {
-    margin: 0 0 var(--space-2xs);
+    /* margin: 0 0 var(--space-2xs); */
     font-size: 1rem;
     line-height: 1.25;
     letter-spacing: 0;
@@ -104,7 +104,7 @@
 }
 
 h2.site-footer__heading {
-    text-transform: none !important;
+    text-transform: none;
 }
 
 .site-footer__address,
@@ -117,7 +117,7 @@ h2.site-footer__heading {
     color: var(--raw-rgba-255-255-255-086);
 }
 .site-footer__list li{
-    line-height: 1.2 !important;
+    line-height: 1.2;
 }
 
 .site-footer__address {
