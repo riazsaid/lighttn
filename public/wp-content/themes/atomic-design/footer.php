@@ -145,7 +145,7 @@ $footer_social_links = [
                 <div class="site-footer__bbb"
                     aria-label="<?php esc_attr_e('BBB accreditation information', 'atomic-design'); ?>">
                     <div class="site-footer__bbb-badge">
-                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bbb-logo.png" alt="bbb logo" loading="lazy" decoding="async">
+               <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bbb-logo.png" alt="bbb logo" loading="lazy" decoding="async"></a>
                     </div>
                     <!-- <div class="site-footer__bbb-meta">
                         <strong><?php esc_html_e('BBB Rating: A+', 'atomic-design'); ?></strong>

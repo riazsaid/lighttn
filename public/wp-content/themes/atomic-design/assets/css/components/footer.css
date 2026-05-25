@@ -118,18 +118,20 @@
     color: var(--raw-rgba-255-255-255-086);
 }
 .site-footer__list li{
-    line-height: 1.4 !important;
+    line-height: 1.2 !important;
 }
 
 .site-footer__address {
     margin: 0 0 16px;
     font-style: normal;
+    font-weight: 500;
 
 }
 
 .site-footer__link {
     display: block;
     text-decoration: none;
+    font-weight: 500;
     /* margin: 0 0 16px; */
 }
 
@@ -154,6 +156,7 @@
     display: inline-flex;
     text-decoration: none;
     color: var(--raw-c3c3c3);
+    font-weight: 500;
 
 }
 
@@ -305,10 +308,12 @@
     .site-footer__content,
     .site-footer__bottom {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        flex-direction: column;
     }
 
     .site-footer__credit {
         grid-column: auto;
+        text-align: center;
     }
 }
 
