@@ -59,8 +59,7 @@
 
    --h1: clamp(2rem, 4vw, 3.25rem);
    --h2: clamp(1.375rem, 2vw + 1rem, 2.25rem);
-   --h3: clamp(1.125rem, 1vw + 1.500rem, 1.625rem);
-
+   --h3: clamp(1.125rem, 0.8vw + 1rem, 1.625rem);
    --lh-heading: 1.2;
    --lh-body: 1.5;
    /* 16px */

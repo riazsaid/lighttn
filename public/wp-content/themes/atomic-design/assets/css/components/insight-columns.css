@@ -5,13 +5,11 @@
 }
 
 .insight-columns__header {
-    max-width: 920px;
-    margin: 0 auto clamp(54px, 7vw, 74px);
     text-align: center;
 }
 
-.insight-columns__heading {
-    margin: 0 0 28px;
+h2.insight-columns__heading {
+    padding-bottom: var(--space-md);
     font-family: var(--font-body);
     font-size: var(--title-lg);
     font-weight: 700;
