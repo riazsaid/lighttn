@@ -10,8 +10,7 @@
 }
 
 .design-process__heading {
-    padding-bottom: var(--space-md);
-}
+    padding-bottom: var(--space-md);}
 
 .design-process__body {
     display: grid;
@@ -50,12 +49,7 @@
 
 .design-process__step-title {
     padding-bottom: var(--space-md);
-    font-family: var(--font-body);
-    font-size: var(--title-md);
-    font-weight: 700;
-    line-height: 1.1;
-    color: var(--bg-darkest);
-}
+    font-size: var(--title-md);}
 
 .design-process__step-description {
     font-family: var(--font-body);
@@ -198,12 +192,8 @@
 }
 
 .design-process__badge-title {
-    font-family: var(--font-body);
     font-size: var(--body-lg);
-    font-weight: 600;
-    line-height: 1.08;
-    color: var(--bg-darkest);
-}
+    font-weight: 600;}
 
 .design-process__rail {
     display: flex;
@@ -383,7 +373,6 @@
     }
 
     .design-process__badge-title {
-        font-size: var(--body);
     }
 
     .design-process__rail {

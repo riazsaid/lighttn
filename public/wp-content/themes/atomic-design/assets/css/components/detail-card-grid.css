@@ -19,14 +19,10 @@
 
 .detail-card-grid__heading {
     margin: 0 0 var(--space-xs);
-    font-family: var(--font-body);
     font-size: var(--display-sm);
-    font-weight: 700;
     line-height: 1.02;
     letter-spacing: 0;
-    text-transform: uppercase;
-    color: var(--bg-darkest);
-}
+    text-transform: uppercase;}
 
 .detail-card-grid__content,
 .detail-card-grid__card-description {
@@ -62,12 +58,7 @@
 
 .detail-card-grid__support-title {
     margin: 0 0 var(--gap-xs);
-    font-family: var(--font-body);
-    font-size: var(--body);
-    font-weight: 700;
-    line-height: 1.35;
-    color: var(--bg-darkest);
-}
+    line-height: 1.35;}
 
 .detail-card-grid__ideal-list,
 .detail-card-grid__included-description {
@@ -113,12 +104,8 @@
 
 .detail-card-grid__card-title {
     margin: 0 0 10px;
-    font-family: var(--font-body);
     font-size: var(--title-sm);
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--bg-darkest);
-}
+    line-height: 1.2;}
 
 @media (max-width: 980px) {
     .detail-card-grid__layout {

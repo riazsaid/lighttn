@@ -5,8 +5,7 @@
    ============================================================ */
 
 .trust-bar-block {
-    padding-bottom: var(--section-space-lg);
-}
+    padding-bottom: var(--section-space-lg);}
 
 .trust-bar-block__inner {
     overflow: visible;
@@ -46,10 +45,7 @@
 .trust-bar-block__title {
     margin: 0;
     font-size: var(--lead);
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.25;
-}
+    line-height: 1.25;}
 
 .trust-bar-block__description {
     margin-top: 0.7rem;
