@@ -1,5 +1,5 @@
 .consultation-split {
-    padding-bottom: 10rem;
+    padding-bottom: var(--section-space-xlg);
     background: #72c8e7;
     color: #fff;
 }
@@ -81,7 +81,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: var(--section-space-2xs);
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.4;
@@ -192,7 +192,7 @@
 
 @media (max-width: 640px) {
     .consultation-split {
-        padding-bottom: 5rem;
+        padding-bottom: var(--section-space-lg);
     }
 
 

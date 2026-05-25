@@ -1,5 +1,5 @@
 .hero {
-    padding-bottom: 10rem;
+    padding-bottom: var(--section-space-xlg);
     background: #fff;
     color: #fff;
 }
@@ -365,7 +365,7 @@
 
 @media (max-width: 960px) {
     .hero {
-        padding-bottom: 5rem;
+        padding-bottom: var(--section-space-lg);
     }
 
     .hero__panel {

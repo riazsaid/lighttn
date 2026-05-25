@@ -1,16 +1,16 @@
 .why-choose-light-tn {
-    padding-bottom: 10rem;
-    background: #fff;
-    color: #000;
+    padding-bottom: var(--section-space-xlg);
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .why-choose-light-tn__header {
     max-width: 830px;
-    padding-bottom: 3rem;
+    padding-bottom: var(--section-space-md);
 }
 
 .why-choose-light-tn__heading {
-    padding-bottom: 3rem;
+    padding-bottom: var(--section-space-md);
     color: #000;
 }
 
@@ -48,7 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-bottom: 2rem;
+    padding-bottom: var(--section-space-xs);
 }
 
 .why-choose-light-tn__icon-image {
@@ -76,11 +76,11 @@
 
 @media (max-width: 640px) {
     .why-choose-light-tn {
-        padding-bottom: 5rem;
+        padding-bottom: var(--section-space-lg);
     }
 
     .why-choose-light-tn__header {
-        padding-bottom: 2rem;
+        padding-bottom: var(--section-space-xs);
     }
 
     .why-choose-light-tn__grid {

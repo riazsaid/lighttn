@@ -1,7 +1,7 @@
 .partners-affiliations-block {
-    padding-bottom: 10rem;
-    background: #fff;
-    color: #000;
+    padding-bottom: var(--section-space-xlg);
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .partners-affiliations-block__group+.partners-affiliations-block__group {
@@ -9,7 +9,7 @@
 }
 
 .partners-affiliations-block__heading {
-    padding-bottom: 3rem;
+    padding-bottom: var(--section-space-md);
 }
 
 .partners-affiliations-block__grid {
@@ -113,7 +113,7 @@ a.partners-affiliations-block__card:focus-visible {
 
 @media (max-width: 760px) {
     .partners-affiliations-block {
-        padding-bottom: 5rem;
+        padding-bottom: var(--section-space-lg);
     }
 
     .partners-affiliations-block__grid {
@@ -122,7 +122,7 @@ a.partners-affiliations-block__card:focus-visible {
     }
 
     .partners-affiliations-block__heading {
-        padding-bottom: 2rem;
+        padding-bottom: var(--section-space-xs);
     }
 
     .partners-affiliations-block__carousel {

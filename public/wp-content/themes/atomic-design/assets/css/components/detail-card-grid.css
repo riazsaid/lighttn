@@ -1,5 +1,5 @@
 .detail-card-grid {
-    padding: clamp(70px, 8vw, 106px) 0;
+    padding-bottom: var(--section-space-xlg);
     background: #fff;
     color: #000;
 }
