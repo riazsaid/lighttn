@@ -13,7 +13,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: var(--body);
+    font-size: 16px;
 }
 
 body {
