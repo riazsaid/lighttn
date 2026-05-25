@@ -34,7 +34,7 @@
 .site-branding__link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--gap-xs);
     color: var(--bg-darkest);
     text-decoration: none;
 }
@@ -275,7 +275,7 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    padding: 8px 5px 8px 16px;
+    padding: var(--gap-xs) 5px var(--gap-xs) 16px;
     border-radius: var(--radius-pill);
     background: var(--cyan);
     color: var(--bg-surface);
@@ -295,7 +295,7 @@
     color: var(--bg-surface);
     text-decoration: none;
     transform: translateY(-3px);
-    gap: 20px;
+    gap: var(--gutter-mobile);
 }
 
 /* Green Dot */
@@ -534,7 +534,7 @@
 
     .site-nav .sub-menu li a {
         min-height: 38px;
-        padding: 8px 12px;
+        padding: var(--gap-xs) 12px;
         border-radius: 10px;
         color: var(--raw-65727b);
         font-size: var(--body);

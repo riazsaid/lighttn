@@ -1,5 +1,5 @@
 .lighting-audio-services-block {
-    padding-bottom: var(--section-space-xlg);
+    padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
 }
@@ -96,7 +96,7 @@
 
 @media (max-width: 640px) {
     .lighting-audio-services-block {
-        padding-bottom: var(--section-space-lg);
+        padding-bottom: var(--section-space-md);
     }
 
     .lighting-audio-services-block__grid {

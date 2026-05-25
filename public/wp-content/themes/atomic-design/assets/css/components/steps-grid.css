@@ -13,7 +13,7 @@
 .steps-grid.has-cta .steps-grid__header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: clamp(22px, 4vw, 48px);
+    gap: clamp(22px, 4vw, var(--space-md));
     align-items: start;
     text-align: left;
 }
@@ -82,7 +82,7 @@
 }
 
 .steps-grid__timeline {
-    margin: 0 0 8px;
+    margin: 0 0 var(--gap-xs);
     font-family: var(--font-body);
     font-size: var(--body);
     font-weight: 700;

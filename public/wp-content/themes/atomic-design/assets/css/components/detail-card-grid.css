@@ -1,5 +1,5 @@
 .detail-card-grid {
-    padding-bottom: var(--section-space-xlg);
+    padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
 }
@@ -18,7 +18,7 @@
 }
 
 .detail-card-grid__heading {
-    margin: 0 0 32px;
+    margin: 0 0 var(--space-xs);
     font-family: var(--font-body);
     font-size: var(--display-sm);
     font-weight: 700;
@@ -61,7 +61,7 @@
 }
 
 .detail-card-grid__support-title {
-    margin: 0 0 8px;
+    margin: 0 0 var(--gap-xs);
     font-family: var(--font-body);
     font-size: var(--body);
     font-weight: 700;

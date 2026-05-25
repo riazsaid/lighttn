@@ -88,11 +88,11 @@ section.section--flush {
    ============================================================ */
 
 .wp-block-group.is-style-section-210 {
-    padding-bottom: var(--section-space-210);
+    padding-bottom: var(--section-space-lg);
 }
 
 .wp-block-group.is-style-section-142 {
-    padding-bottom: var(--section-space-142);
+    padding-bottom: var(--section-space-md);
 }
 
 .wp-block-group.is-style-section-flush {
