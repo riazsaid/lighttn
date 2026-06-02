@@ -126,18 +126,11 @@
 }
 
 .design-process__visual-tab-number {
-    font-family: var(--font-body);
-    font-size: var(--display-md);
-    font-weight: 300;
-    line-height: 1;
+    font-size: var(--h3);
 }
 
 .design-process__visual-tab-label {
-    font-size: var(--h3);
-    font-weight: 600;
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
+    font-size: var(--p);
 }
 
 .design-process__visual.is-active .design-process__visual-tab {
@@ -180,10 +173,7 @@
 }
 
 .design-process__badge-number {
-    font-family: var(--font-body);
-    font-size: var(--display-xl);
-    font-weight: 300;
-    line-height: 0.9;
+    font-size: var(--h3);
     color: var(--bg-darkest);
 }
 
@@ -234,20 +224,12 @@
 }
 
 .design-process__rail-number {
-    font-family: var(--font-body);
-    font-size: var(--display-md);
-    font-weight: 300;
-    line-height: 1;
+    font-size: var(--h3);
     transition: opacity 0.28s ease, transform 0.35s ease;
 }
 
 .design-process__rail-label {
-    font-family: var(--font-body);
-    font-size: var(--small);
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: 0;
-    text-transform: uppercase;
+    font-size: var(--h3);
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     transition: opacity 0.3s ease, transform 0.4s ease, letter-spacing 0.3s ease;
@@ -305,10 +287,6 @@
         white-space: nowrap;
     }
 
-    .design-process__rail-number {
-        font-size: var(--title-md);
-    }
-
     .design-process__visual-stack {
         --design-process-gap: 10px;
         min-height: clamp(280px, 42vw, 420px);
@@ -364,12 +342,6 @@
         opacity: 1;
         transform: none;
     }
-
-    .design-process__badge-number {
-        font-size: var(--display-md);
-    }
-
-    .design-process__badge-title {}
 
     .design-process__rail {
         order: 3;

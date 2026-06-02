@@ -107,7 +107,7 @@
     background: var(--cyan);
     color: var(--bg-surface);
     font-family: var(--font-body);
-    font-size: var(--body-lg);
+    font-size: var(--body);
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;

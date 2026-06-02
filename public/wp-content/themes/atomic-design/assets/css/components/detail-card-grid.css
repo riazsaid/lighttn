@@ -101,9 +101,8 @@
 }
 
 .detail-card-grid__card-title {
-    margin: 0 0 10px;
-    font-size: var(--title-sm);
-    line-height: 1.2;
+    margin: 0 0 1rem;
+    font-size: var(--h3);
 }
 
 @media (max-width: 980px) {
