@@ -1,19 +1,17 @@
 .proof-points {
-    padding: clamp(68px, 8vw, 102px) 0;
+    padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
 }
 
 .proof-points__header {
-    margin-bottom: clamp(40px, 5vw, 56px);
+    padding-bottom: var(--space-md);
     text-align: center;
 }
 
 .proof-points__heading {
     margin: 0;
-    font-size: var(--display-sm);
-    letter-spacing: 0;
-    text-transform: uppercase;}
+}
 
 .proof-points__grid {
     display: grid;
@@ -27,10 +25,9 @@
 }
 
 .proof-points__intro-title {
-    margin: 0 0 28px;
-    font-size: var(--title-md);
-    letter-spacing: 0;
-    text-transform: uppercase;}
+    padding-bottom: var(--space-md);
+    text-transform: uppercase;
+}
 
 .proof-points__intro-copy,
 .proof-points__card-description {
@@ -60,7 +57,7 @@
 .proof-points__card {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 1rem;
 }
 
 .proof-points__image-wrap {
@@ -77,16 +74,11 @@
 
 .proof-points__card-title {
     margin: 0;
-    font-size: var(--title-md);
-    letter-spacing: 0;}
+}
 
 .proof-points__timeline {
     margin-top: -8px;
     margin-bottom: -10px;
-    font-family: var(--font-body);
-    font-size: var(--body-sm);
-    font-weight: 700;
-    line-height: 1.35;
     color: var(--bg-darkest);
 }
 
@@ -102,6 +94,7 @@
 }
 
 @media (max-width: 680px) {
+
     .proof-points__grid,
     .proof-points__cards {
         grid-template-columns: 1fr;

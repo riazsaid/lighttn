@@ -1,12 +1,9 @@
 .split-callout {
-    padding: clamp(70px, 8vw, 104px) 0;
-    background: var(--bg-page);
+    padding-bottom: var(--section-space-lg);
+    background: var(--bg-surface);
     color: var(--bg-darkest);
 }
 
-.split-callout__inner {
-    max-width: 1180px;
-}
 
 .split-callout__grid {
     display: grid;
@@ -20,11 +17,8 @@
 }
 
 .split-callout__heading {
-    margin: 0 0 28px;
-    font-size: var(--display-sm);
-    line-height: 1.02;
-    letter-spacing: 0;
-    text-transform: uppercase;}
+    padding-bottom: var(--space-md);
+}
 
 .split-callout__intro-copy,
 .split-callout__ranges-copy,
@@ -54,7 +48,8 @@
 
 .split-callout__intro-secondary-title {
     margin: 0 0 0.65rem;
-    font-size: var(--title-lg);}
+    font-size: var(--title-lg);
+}
 
 .split-callout__intro-secondary-copy {
     font-family: var(--font-body);
@@ -70,14 +65,16 @@
 .split-callout__intro-copy h5,
 .split-callout__intro-copy h6 {
     margin: 1.1em 0 0.45em;
-    font-size: var(--title-lg);}
+    font-size: var(--title-lg);
+}
 
 .split-callout__intro-copy h2:first-child,
 .split-callout__intro-copy h3:first-child,
 .split-callout__intro-copy h4:first-child,
 .split-callout__intro-copy h5:first-child,
 .split-callout__intro-copy h6:first-child {
-    margin-top: 0;}
+    margin-top: 0;
+}
 
 .split-callout__aside {
     display: grid;
@@ -94,8 +91,8 @@
 }
 
 .split-callout__ranges-title {
-    margin: 0 0 14px;
-    font-size: var(--title-md);}
+    padding-bottom: 1rem;
+}
 
 .split-callout__ranges-copy ul,
 .split-callout__ranges-copy ol {
@@ -130,8 +127,9 @@
 }
 
 .split-callout__card-title {
-    margin: 0 0 16px;
-    font-size: var(--title-md);}
+    padding-bottom: 1rem;
+    font-size: var(--h3);
+}
 
 @media (max-width: 900px) {
     .split-callout__grid {

@@ -21,7 +21,8 @@
 }
 
 .testimonials-heading {
-    padding-bottom: var(--space-md);}
+    padding-bottom: var(--space-md);
+}
 
 .testimonials-grid {
     display: grid;
@@ -62,7 +63,6 @@
 
 .testimonial-text p {
     margin: 0;
-    font-size: var(--body) !important;
 }
 
 .testimonial-author {
@@ -103,6 +103,10 @@
 @media (max-width: 680px) {
     .testimonials-block {
         padding-bottom: var(--section-space-md);
+    }
+
+    .testimonials-heading {
+        padding-bottom: var(--space-sm);
     }
 
     .testimonials-grid {

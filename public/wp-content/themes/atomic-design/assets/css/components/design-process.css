@@ -10,7 +10,8 @@
 }
 
 .design-process__heading {
-    padding-bottom: var(--space-md);}
+    padding-bottom: var(--space-md);
+}
 
 .design-process__body {
     display: grid;
@@ -49,13 +50,9 @@
 
 .design-process__step-title {
     padding-bottom: var(--space-md);
-    font-size: var(--title-md);}
+}
 
 .design-process__step-description {
-    font-family: var(--font-body);
-    font-size: var(--body);
-    font-weight: 400;
-    line-height: 1.58;
     color: var(--raw-3d3d3d);
 }
 
@@ -136,8 +133,7 @@
 }
 
 .design-process__visual-tab-label {
-    font-family: var(--font-body);
-    font-size: var(--small);
+    font-size: var(--h3);
     font-weight: 600;
     line-height: 1;
     text-transform: uppercase;
@@ -192,8 +188,9 @@
 }
 
 .design-process__badge-title {
-    font-size: var(--body-lg);
-    font-weight: 600;}
+    font-size: var(--p);
+    font-weight: 600;
+}
 
 .design-process__rail {
     display: flex;
@@ -372,8 +369,7 @@
         font-size: var(--display-md);
     }
 
-    .design-process__badge-title {
-    }
+    .design-process__badge-title {}
 
     .design-process__rail {
         order: 3;

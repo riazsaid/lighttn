@@ -18,8 +18,6 @@ html {
 
 body {
     font-family: var(--font-body);
-    font-size: var(--body);
-    line-height: 1.7;
     color: var(--charcoal);
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
@@ -50,6 +48,8 @@ a:focus-visible {
 
 h1,
 h2,
+h3,
+p,
 .display {
     font-family: var(--font-body);
     letter-spacing: 0;
@@ -57,11 +57,12 @@ h2,
 }
 
 h1 {
+    font-size: var(--h1);
+    line-height: 1.12;
     text-transform: uppercase;
 }
 
 h2 {
-
     font-size: var(--h2);
     line-height: 1.2;
     font-weight: 700;
@@ -75,7 +76,7 @@ h3 {
 }
 
 p {
-    font-size: var(--body);
+    font-size: var(--p);
     line-height: 1.5;
     font-weight: 300;
 }
