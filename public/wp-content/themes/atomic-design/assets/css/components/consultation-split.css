@@ -75,6 +75,13 @@
     background: var(--bg-surface);
 }
 
+.consultation-split__card--visual .consultation-split__booking-frame {
+    width: calc(100% + 32px);
+    height: calc(100% + 112px);
+    min-height: 542px;
+    margin: -20px -16px -92px;
+}
+
 .consultation-split__placeholder {
     min-height: 220px;
     display: flex;
@@ -186,6 +193,10 @@
 
     .consultation-split__card--visual {
         min-height: 320px;
+    }
+
+    .consultation-split__card--visual .consultation-split__booking-frame {
+        min-height: 432px;
     }
 }
 
