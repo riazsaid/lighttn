@@ -48,7 +48,7 @@
 }
 
 .star {
-    font-size: var(--h3);
+    font-size: var(--p);
     font-weight: 700;
     line-height: 1.3;
 }

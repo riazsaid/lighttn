@@ -9,7 +9,8 @@
 }
 
 .partners-affiliations-block__heading {
-    padding-bottom: var(--space-md);}
+    padding-bottom: var(--space-md);
+}
 
 .partners-affiliations-block__grid {
     display: grid;
@@ -56,7 +57,7 @@ a.partners-affiliations-block__card:hover,
 a.partners-affiliations-block__card:focus-visible {
     border-color: var(--cyan);
     box-shadow: 0 18px 38px var(--raw-rgba-46-63-79-01);
-    transform: translateY(-2px);
+    transform: translateY(0px);
     text-decoration: none;
 }
 
@@ -103,9 +104,7 @@ a.partners-affiliations-block__card:focus-visible {
 }
 
 .partners-affiliations-block__fallback {
-    font-family: var(--font-display);
-    font-size: var(--title-md);
-    line-height: 1.1;
+    font-size: var(--p);
     color: var(--charcoal);
     text-align: center;
 }

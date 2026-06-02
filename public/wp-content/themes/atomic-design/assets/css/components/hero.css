@@ -282,8 +282,7 @@
     display: flex;
     gap: 3px;
     color: var(--raw-ffba00);
-    font-size: var(--title-md);
-    line-height: 1;
+    font-size: var(--p);
 }
 
 .hero__bbb {
@@ -303,10 +302,7 @@
 
 .hero__bbb-text {
     display: block;
-    font-family: var(--font-body);
-    font-size: var(--title-md);
-    font-weight: 700;
-    line-height: 1;
+    font-size: var(--p);
     color: var(--raw-0d7890);
 }
 
@@ -388,12 +384,6 @@
         border-radius: 18px;
         background-position: 62% center;
     }
-
-    .hero__title {
-        font-size: var(--display-sm);
-    }
-
-    .hero__subtitle {}
 
     .hero__actions,
     .hero__link--primary {
