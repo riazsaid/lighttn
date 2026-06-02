@@ -5,10 +5,12 @@
 }
 
 .lighting-audio-services-block__heading {
-    padding-bottom: var(--space-md);}
+    padding-bottom: var(--space-md);
+}
 
 .lighting-audio-services-block--heading-left .lighting-audio-services-block__heading {
-    text-align: left;}
+    text-align: left;
+}
 
 .lighting-audio-services-block__grid {
     display: grid;
@@ -38,7 +40,7 @@
 
 .lighting-audio-services-block__title {
     padding-bottom: 1rem;
-    font-size: var(--title-sm);}
+}
 
 .lighting-audio-services-block__description {
     font-family: var(--font-body);

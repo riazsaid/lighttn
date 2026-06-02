@@ -40,25 +40,25 @@
 .hero__content {
     position: relative;
     z-index: 1;
-    width: min(100%, 650px);
+    width: min(100%, 696px);
 }
 
 .hero__title {
-    max-width: 640px;
-    padding-bottom: 2rem;
-    font-size: var(--display-lg);
-    line-height: 1.12;
-    letter-spacing: 0;
-    color: var(--bg-surface);}
+    padding-bottom: var(--space-xs);
+    max-width: 696px;
+    color: var(--bg-surface);
+}
 
 
 .hero__subtitle {
     max-width: 720px;
-    padding-bottom: 2rem;
-    color: var(--bg-surface);}
+    padding-bottom: var(--space-xs);
+    color: var(--bg-surface);
+}
 
 .hero__subtitle p:last-child {
-    margin-bottom: 0;}
+    margin-bottom: 0;
+}
 
 .hero__reveal {
     opacity: 0;
@@ -68,10 +68,12 @@
 }
 
 .hero__title.hero__reveal {
-    animation-delay: 0.5s;}
+    animation-delay: 0.5s;
+}
 
 .hero__subtitle.hero__reveal {
-    animation-delay: 0.74s;}
+    animation-delay: 0.74s;
+}
 
 .hero__lower {
     position: relative;
@@ -105,7 +107,7 @@
     background: var(--cyan);
     color: var(--bg-surface);
     font-family: var(--font-body);
-    font-size: var(--body-lg);
+    font-size: var(--body);
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
@@ -259,10 +261,7 @@
     border-radius: 50%;
     background: var(--hero-initial-bg);
     color: var(--bg-surface);
-    font-family: var(--font-body);
-    font-size: var(--display-sm);
-    font-weight: 500;
-    line-height: 1;
+    font-size: var(--body);
 }
 
 .hero__review-initial+.hero__review-initial {
@@ -394,8 +393,7 @@
         font-size: var(--display-sm);
     }
 
-    .hero__subtitle {
-    }
+    .hero__subtitle {}
 
     .hero__actions,
     .hero__link--primary {

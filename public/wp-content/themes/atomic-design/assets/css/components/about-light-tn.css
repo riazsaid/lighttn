@@ -15,17 +15,12 @@
     min-width: 0;
 }
 
-
-
 .about-light-tn__heading {
-    padding-bottom: var(--space-md);}
+    padding-bottom: var(--space-md);
+}
 
 .about-light-tn__intro-copy,
 .about-light-tn__column-copy {
-    font-family: var(--font-body);
-    font-size: var(--body);
-    font-weight: 400;
-    line-height: 1.58;
     color: var(--raw-2a2a2a);
 }
 
@@ -55,11 +50,8 @@
 .about-light-tn__caption {
     margin-top: 12px;
     text-align: right;
-    font-family: var(--font-body);
-    font-size: var(--body-sm);
-    font-weight: 400;
-    line-height: 1.4;
     color: var(--cyan);
+    font-size: var(--p);
 }
 
 .about-light-tn__bottom {
@@ -83,15 +75,15 @@
 
 @media (max-width: 980px) {
     .about-light-tn {
-        padding-bottom: var(--section-space-md);
+        padding-bottom: var(--section-space-lg);
     }
 
     .about-light-tn__heading {
-        padding-bottom: var(--section-space-xs);
+        padding-bottom: var(--space-xs);
     }
 
     .about-light-tn__secondary-header {
-        padding-bottom: var(--section-space-xs);
+        padding-bottom: var(--space-xs);
     }
 
     .about-light-tn__top,

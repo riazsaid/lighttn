@@ -25,12 +25,12 @@
 .container {
     max-width: var(--container);
     margin: 0 auto;
-    padding-inline: 80px;
+    padding-inline: var(--gutter);
 }
 
 @media (max-width: 48rem) {
     .container {
-        padding: 0 var(--gutter-mobile);
+        padding-inline: var(--gutter-mobile);
     }
 }
 
@@ -107,6 +107,15 @@ section.section--flush {
     margin-inline: auto;
 }
 
+@media (max-width: 48rem) {
+    .alignwide,
+    .wp-block-group.is-style-section-210>.wp-block-group__inner-container,
+    .wp-block-group.is-style-section-142>.wp-block-group__inner-container,
+    .wp-block-group.is-style-section-flush>.wp-block-group__inner-container {
+        width: min(100% - (var(--gutter-mobile) * 2), var(--container));
+    }
+}
+
 /* Section heading block (eyebrow + title + subtitle) */
 .section__head {
     display: grid;
@@ -116,7 +125,7 @@ section.section--flush {
 
 /* ============================================================
    GRIDS
-   Mobile-first: stack by default, expand at --bp-tablet
+   Mobile-first: stack by default, expand at 48rem tablet / 64rem desktop.
    ============================================================ */
 
 .grid-2 {
@@ -139,7 +148,7 @@ section.section--flush {
 
 @media (min-width: 48rem) {
 
-    /* --bp-tablet */
+    /* 48rem = tablet */
     .grid-2 {
         grid-template-columns: 1fr 1fr;
     }
@@ -155,7 +164,7 @@ section.section--flush {
 
 @media (min-width: 64rem) {
 
-    /* --bp-desktop */
+    /* 64rem = desktop */
     .grid-4 {
         grid-template-columns: repeat(4, 1fr);
     }

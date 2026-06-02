@@ -48,18 +48,15 @@
    --font-heading: var(--font-display);
 
 
-   --body: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
+   /* my css foundation  */
 
+   --h1: clamp(40px, 5.3vw, 58px);
+   --h2: clamp(1.375rem, 2vw + 1rem, 2.25rem);
+   --h3: clamp(1.125rem, 0.8vw + 1rem, 1.625rem);
+   --p: clamp(1rem, 0.5vw + 0.7rem, 1.125rem);
+   --body: clamp(0.875rem, 0.75rem + 0.5vw, 1rem);
    /* Fluid type scale */
 
-   --body-lg: clamp(1rem, 0.7vw + 0.9rem, 1.125rem);
-   --body-sm: clamp(0.8125rem, 0.3vw + 0.75rem, 0.875rem);
-   --small: 0.8125rem;
-   --tiny: 0.6875rem;
-
-   --h1: clamp(2rem, 4vw, 3.25rem);
-   --h2: clamp(1.375rem, 2vw + 1rem, 2.25rem);
-   --h3: clamp(1.125rem, 1vw + 1.500rem, 1.625rem);
 
    --lh-heading: 1.2;
    --lh-body: 1.5;
@@ -90,24 +87,22 @@
        LAYOUT & SPACING
     ---------------------------------------------------------- */
    --container: 1420px;
-   --gutter: 48px;
+   --gutter: 80px;
    --gutter-mobile: 20px;
    --gap-xs: 8px;
    /* Section-to-section spacing */
    --grid-gap: clamp(24px, 4vw, 48px);
    /* Section-to-section spacing */
-   --section-space-md: var(--space-xl);
-   /* 80 */
    --section-space-lg: 10rem;
    /* 160 */
+   --section-space-md: 5rem;
+   /* 80 */
    --space-md: 3rem;
    /* 48px */
    --space-sm: 2.5rem;
    /* 40px */
    --space-lg: 4rem;
    /* 64px */
-   --space-xl: 5rem;
-   /* 80px */
    --space-xs: 2rem;
    /* 32px */
    --space-2xs: 1.5rem;
@@ -123,13 +118,11 @@
    /* 16px */
 
    /* ----------------------------------------------------------
-       BREAKPOINTS
-       Use with: @media (min-width: var(--bp-tablet)) {}
+       BREAKPOINT REFERENCE
+       Use hard-coded values in media queries:
+       48rem = tablet
+       64rem = desktop
     ---------------------------------------------------------- */
-   --bp-tablet: 48rem;
-   /* 768px  */
-   /* 1024px */
-   /* 1280px */
 
    /* ----------------------------------------------------------
        BUTTONS
@@ -210,20 +203,4 @@
    --raw-rgba-46-63-79-022: rgba(46, 63, 79, 0.22);
    --raw-rgba-46-63-79-024: rgba(46, 63, 79, 0.24);
    --raw-rgba-46-63-79-042: rgba(46, 63, 79, 0.42);
-
-   /* Auto-generated component font-size tokens */
-
-   /* Semantic font-size scale */
-   --text-micro: 10px;
-   --text-xs: 12px;
-   --lead: clamp(1.05rem, 1.8vw, 1.25rem);
-   --title-sm: clamp(18px, 1.8vw, 22px);
-   --title-md: clamp(22px, 2vw, 28px);
-   --title-lg: clamp(26px, 3vw, 36px);
-   --display-sm: clamp(28px, 3vw, 42px);
-   --display-md: clamp(34px, 4.2vw, 52px);
-   --display-lg: clamp(40px, 5.3vw, 58px);
-   --display-xl: clamp(46px, 5vw, 56px);
-   --promo-display: clamp(2.25rem, 4vw, 3.5rem);
-   --display-legacy: clamp(36px, 5vw, 26px);
 }

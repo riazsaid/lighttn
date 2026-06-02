@@ -18,7 +18,8 @@
 
 .faq-heading {
     margin: 0;
-    max-width: 280px;}
+    max-width: 280px;
+}
 
 .faq-grid {
     display: grid;
@@ -51,10 +52,7 @@
 
 .question-text {
     max-width: 34ch;
-    font-family: var(--font-body);
-    font-size: var(--body);
-    font-weight: 700;
-    line-height: 1.13;
+    font-size: var(--h3);
     color: var(--bg-darkest);
 }
 
@@ -103,8 +101,6 @@
 
 .faq-answer-content p {
     margin: 0 0 10px;
-    font-size: var(--body-sm);
-    line-height: 1.45;
     color: var(--raw-rgba-0-0-0-072);
 }
 

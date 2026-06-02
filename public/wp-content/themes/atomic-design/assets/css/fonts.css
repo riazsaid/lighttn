@@ -1,6 +1,5 @@
 /* ============================================================
-   FONT FACES
-   Local theme font assets
+   FONT LOADING
+   Google Fonts are enqueued in functions.php.
+   Keep this file for future local @font-face declarations.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
