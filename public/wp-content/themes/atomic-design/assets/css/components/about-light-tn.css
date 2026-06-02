@@ -91,10 +91,6 @@
         grid-template-columns: 1fr;
     }
 
-    .about-light-tn__figure {
-        max-width: 840px;
-    }
-
     .about-light-tn__caption {
         text-align: left;
     }

@@ -43,9 +43,7 @@
 }
 
 .lighting-audio-services-block__description {
-    font-family: var(--font-body);
     font-size: var(--body);
-    font-weight: 400;
     line-height: 1.55;
     color: var(--raw-222222);
     padding-bottom: 1rem;

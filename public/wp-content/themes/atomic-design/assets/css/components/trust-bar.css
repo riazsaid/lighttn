@@ -6,6 +6,7 @@
 
 .trust-bar-block {
     padding-bottom: var(--section-space-lg);
+    background: var(--bg-surface);
 }
 
 .trust-bar-block__inner {
