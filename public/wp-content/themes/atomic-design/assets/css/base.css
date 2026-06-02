@@ -120,8 +120,8 @@ p {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    height: var(--btn-height);
-    padding: 0 var(--btn-pad-x);
+    min-height: var(--btn-height);
+    padding: 0.7rem var(--btn-pad-x);
     border-radius: var(--btn-radius);
     font-size: var(--p);
     font-weight: 500;
@@ -131,7 +131,6 @@ p {
     cursor: pointer;
     white-space: nowrap;
     transition: background var(--dur-fast) var(--ease);
-    padding: 0.8rem 1.1rem;
 }
 
 .btn-primary {

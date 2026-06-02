@@ -87,7 +87,7 @@
        LAYOUT & SPACING
     ---------------------------------------------------------- */
    --container: 1420px;
-   --gutter: 48px;
+   --gutter: 80px;
    --gutter-mobile: 20px;
    --gap-xs: 8px;
    /* Section-to-section spacing */
@@ -118,13 +118,11 @@
    /* 16px */
 
    /* ----------------------------------------------------------
-       BREAKPOINTS
-       Use with: @media (min-width: var(--bp-tablet)) {}
+       BREAKPOINT REFERENCE
+       Use hard-coded values in media queries:
+       48rem = tablet
+       64rem = desktop
     ---------------------------------------------------------- */
-   --bp-tablet: 48rem;
-   /* 768px  */
-   /* 1024px */
-   /* 1280px */
 
    /* ----------------------------------------------------------
        BUTTONS
