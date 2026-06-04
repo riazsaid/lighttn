@@ -40,7 +40,6 @@
     font-size: 1.1em;
     line-height: 1;
 }
-
 .steps-grid__items {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -49,11 +48,14 @@
 
 .steps-grid__item {
     min-width: 0;
+    cursor: default;
 }
-
+.location-wrapper .steps-grid__item {
+     position: relative;
+}
 .steps-grid__image-wrap {
     margin-bottom: 1rem;
-    overflow: hidden;
+    overflow: hidden; 
     border-radius: 28px;
 }
 
@@ -62,11 +64,16 @@
     width: 100%;
     aspect-ratio: 1.52 / 1;
     object-fit: cover;
+    transition: transform 0.4s ease; 
 }
-
-.steps-grid__title {
-    padding-bottom: 1rem;
-    letter-spacing: 0;
+.steps-grid__item:hover .steps-grid__image {
+    transform: scale(1.3);
+}
+.location-wrapper .steps-grid__title {
+    position: absolute;
+    bottom: 10%;
+    left: 6%;
+    color: var(--bg-surface);
 }
 
 .steps-grid__timeline {
