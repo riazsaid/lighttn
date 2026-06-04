@@ -189,3 +189,53 @@
 .who-we-work-with .title-description-columns {
      padding: 0;
 }
+
+
+.what-design-wrapper{
+    background: var(--bg-surface);
+    padding-bottom: var(--section-space-lg);
+}
+.what-design-wrapper .title-description-columns__content{
+    column-count: 1;
+}
+.what-design-wrapper .container{
+    padding: 0;
+    margin: 0;
+}
+.what-design-wrapper .wp-block-column{
+    flex: 1 !important;
+}
+.what-design-wrapper .we-design-image{
+    flex: 2 !important;
+}
+.what-design-wrapper .we-design-image img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.what-design-wrapper .title-description-columns{
+    padding: 0;
+}
+
+.meet-team{
+    background: var(--bg-surface);
+    padding-bottom: var(--section-space-lg);
+}
+.meet-team .wp-block-image{
+    width: 100%;
+}
+.meet-team .wp-block-image img{
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    object-position: 50% 15%;
+}
+.meet-team .wp-block-image{
+    margin-bottom: var(--space-sm);
+}
+.meet-team p strong{
+    font-weight: bold;
+    display: block;
+}
