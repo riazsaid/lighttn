@@ -43,6 +43,106 @@
         onScroll();
     }
 
+    function initConsultationModals() {
+        const openButtons = Array.from(document.querySelectorAll('[data-consultation-modal-open]'));
+
+        if (!openButtons.length) {
+            return;
+        }
+
+        const focusableSelector = [
+            'a[href]',
+            'button:not([disabled])',
+            'input:not([disabled])',
+            'select:not([disabled])',
+            'textarea:not([disabled])',
+            '[tabindex]:not([tabindex="-1"])'
+        ].join(',');
+        let activeModal = null;
+        let activeTrigger = null;
+
+        const getFocusable = modal => Array.from(modal.querySelectorAll(focusableSelector))
+            .filter(element => element.offsetParent !== null || element === document.activeElement);
+
+        const closeModal = () => {
+            if (!activeModal) {
+                return;
+            }
+
+            activeModal.hidden = true;
+            document.body.classList.remove('consultation-modal-open');
+
+            if (activeTrigger) {
+                activeTrigger.focus();
+            }
+
+            activeModal = null;
+            activeTrigger = null;
+        };
+
+        const openModal = button => {
+            const modalId = button.getAttribute('aria-controls');
+            const modal = modalId ? document.getElementById(modalId) : null;
+
+            if (!modal) {
+                return;
+            }
+
+            activeModal = modal;
+            activeTrigger = button;
+            modal.hidden = false;
+            document.body.classList.add('consultation-modal-open');
+
+            const focusable = getFocusable(modal);
+            const firstFocusable = focusable[0] || modal;
+            window.setTimeout(() => firstFocusable.focus(), 0);
+        };
+
+        openButtons.forEach(button => {
+            button.addEventListener('click', () => openModal(button));
+        });
+
+        document.addEventListener('click', event => {
+            if (event.target.closest('[data-consultation-modal-close]')) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (!activeModal) {
+                return;
+            }
+
+            if (event.key === 'Escape') {
+                closeModal();
+                return;
+            }
+
+            if (event.key !== 'Tab') {
+                return;
+            }
+
+            const focusable = getFocusable(activeModal);
+
+            if (!focusable.length) {
+                event.preventDefault();
+                activeModal.focus();
+                return;
+            }
+
+            const firstFocusable = focusable[0];
+            const lastFocusable = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === firstFocusable) {
+                event.preventDefault();
+                lastFocusable.focus();
+            } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+                event.preventDefault();
+                firstFocusable.focus();
+            }
+        });
+    }
+
     function initScrollReveal() {
         const nodes = Array.from(document.querySelectorAll('.scroll-reveal'));
 
@@ -228,6 +328,7 @@
     window.addEventListener('load', initPartnersAffiliationsCarousels);
     initPartnersAffiliationsCarousels();
     initDesignProcessSections();
+    initConsultationModals();
     initScrollReveal();
 
 })();

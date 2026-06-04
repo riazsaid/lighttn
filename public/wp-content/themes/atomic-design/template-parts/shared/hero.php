@@ -22,6 +22,10 @@ $subtitle = isset($args['subtitle'])
 
 $cta_link = function_exists('get_field') ? (get_field('hero_global_primary_link', 'option') ?: []) : [];
 $cta_icon = function_exists('get_field') ? (get_field('hero_global_cta_icon', 'option') ?: []) : [];
+$cta_title = is_array($cta_link) && !empty($cta_link['title']) ? (string) $cta_link['title'] : __('Request Your FREE Consultation', 'atomic-design');
+$form_id = (int) (function_exists('get_field') ? (get_field('consultation_split_form_id', 'option') ?: 386) : 386);
+$modal_id = 'hero-consultation-modal-' . wp_unique_id();
+$modal_title_id = $modal_id . '-title';
 
 $bg_url = isset($args['bg_url']) ? (string) $args['bg_url'] : '';
 if ($bg_url === '' && function_exists('get_field')) {
@@ -59,7 +63,7 @@ if ($bg_url !== '') {
 }
 
 $section_class = trim('hero align' . $align . ' ' . $class_name);
-$has_actions = !empty($cta_link['url']) && !empty($cta_link['title']);
+$has_actions = trim($cta_title) !== '';
 $has_cert = !empty($cert_icon['ID']) || !empty($cert_icon['url']) || $cert_text !== '';
 $has_reviews = !empty($review_initials) || $review_label !== '' || $review_rating > 0 || !empty($bbb_logo['ID']) || !empty($bbb_logo['url']) || $bbb_text !== '';
 ?>
@@ -81,9 +85,14 @@ $has_reviews = !empty($review_initials) || $review_label !== '' || $review_ratin
                 <div class="hero__lower">
                     <?php if ($has_actions): ?>
                         <div class="hero__actions hero__reveal">
-                            <a class="hero__link hero__link--primary" href="<?php echo esc_url($cta_link['url']); ?>"
-                                target="<?php echo esc_attr($cta_link['target'] ?? '_self'); ?>">
-                                <span class="hero__link-label"><?php echo esc_html($cta_link['title']); ?></span>
+                            <button
+                                class="hero__link hero__link--primary"
+                                type="button"
+                                data-consultation-modal-open
+                                aria-haspopup="dialog"
+                                aria-controls="<?php echo esc_attr($modal_id); ?>"
+                            >
+                                <span class="hero__link-label"><?php echo esc_html($cta_title); ?></span>
                                 <span class="hero__link-icon" aria-hidden="true">
                                     <?php if (!empty($cta_icon['ID'])): ?>
                                         <?php echo wp_get_attachment_image($cta_icon['ID'], 'thumbnail', false, [
@@ -98,7 +107,7 @@ $has_reviews = !empty($review_initials) || $review_label !== '' || $review_ratin
                                         <span class="hero__link-arrow hero__link-arrow--secondary"></span>
                                     <?php endif; ?>
                                 </span>
-                            </a>
+                            </button>
                         </div>
                     <?php endif; ?>
 
@@ -175,4 +184,44 @@ $has_reviews = !empty($review_initials) || $review_label !== '' || $review_ratin
             </aside>
         <?php endif; ?>
     </div>
+
+    <?php if ($has_actions): ?>
+        <div
+            class="consultation-cta-modal"
+            id="<?php echo esc_attr($modal_id); ?>"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="<?php echo esc_attr($modal_title_id); ?>"
+            hidden
+            data-consultation-modal
+        >
+            <div class="consultation-cta-modal__overlay" data-consultation-modal-close></div>
+            <div class="consultation-cta-modal__panel" role="document">
+                <button
+                    class="consultation-cta-modal__close"
+                    type="button"
+                    aria-label="<?php esc_attr_e('Close consultation form', 'atomic-design'); ?>"
+                    data-consultation-modal-close
+                >
+                    <span aria-hidden="true">×</span>
+                </button>
+
+                <div class="consultation-cta-modal__header">
+                    <h2 class="consultation-cta-modal__title" id="<?php echo esc_attr($modal_title_id); ?>">
+                        <?php esc_html_e('Request Your FREE Consultation', 'atomic-design'); ?>
+                    </h2>
+                </div>
+
+                <div class="consultation-cta-modal__form">
+                    <?php if ($form_id > 0) : ?>
+                        <?php echo do_shortcode('[forminator_form id="' . absint($form_id) . '"]'); ?>
+                    <?php else : ?>
+                        <div class="consultation-cta-modal__placeholder">
+                            <?php esc_html_e('Select a Forminator form for this consultation popup.', 'atomic-design'); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 </section>
