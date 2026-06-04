@@ -103,6 +103,7 @@
     justify-content: center;
     gap: 10px;
     padding: var(--gap-xs) 5px var(--gap-xs) var(--space-2xs);
+    border: 0;
     border-radius: 999px;
     background: var(--cyan);
     color: var(--bg-surface);
@@ -112,6 +113,7 @@
     line-height: 1;
     white-space: nowrap;
     overflow: hidden;
+    cursor: pointer;
     box-shadow: 0 14px 34px var(--raw-rgba-20-16-12-02);
     transition:
         background 0.35s ease,
