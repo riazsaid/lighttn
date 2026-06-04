@@ -128,6 +128,10 @@
         text-align: left;
     }
 }
+
+
+
+
 .three-column-layout{
     background: var(--bg-surface);
     padding-bottom: var(--section-space-lg);
@@ -152,4 +156,36 @@
 .three-column-layout .title-description-columns__content h4,
 .three-column-layout .title-description-columns__content p{
     display: inline;
+}
+
+
+.who-we-work-with{
+        background: var(--bg-surface);
+        padding-bottom: var(--section-space-lg);
+}
+.who-we-work-with .container{
+    padding: 0;
+    margin: 0;
+}
+.who-we-work-with img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.who-we-work-with .title-description-columns__content p strong{
+    font-weight: bold;
+}
+.who-we-work-with .wp-block-column {
+    flex: 1 !important;
+    
+}
+.who-we-work-with .left-image {
+    flex: 2 !important;
+}
+.who-we-work-with .title-description-columns__content p{
+    font-size: var(--body);
+}
+.who-we-work-with .title-description-columns {
+     padding: 0;
 }
