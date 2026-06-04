@@ -214,6 +214,7 @@
 
     .consultation-split__card {
         border-radius: 22px;
+        padding-top: 1rem;
     }
 
     .consultation-split__card--form {
