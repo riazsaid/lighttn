@@ -19,7 +19,7 @@
     grid-template-columns: minmax(0, 1fr) minmax(210px, 285px);
     gap: clamp(28px, 5vw, var(--space-lg));
     align-items: start;
-    margin-bottom: 30px;
+    margin-bottom: var(--space-md);
 }
 
 .contact-consultation__panel {
@@ -140,7 +140,8 @@
 }
 
 .contact-consultation__map {
-    max-width: 880px;
+    padding-top: var(--space-md);
+    max-width: 1140px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -154,7 +155,7 @@
 }
 
 .contact-consultation__map-image {
-    height: auto;
+    height: 50vh;
     min-height: 0;
     object-fit: cover;
 }
@@ -246,6 +247,10 @@
 @media (max-width: 640px) {
     .contact-consultation {
         padding-bottom: var(--section-space-md);
+    }
+
+    .contact-consultation__top {
+        margin-bottom: var(--space-sm);
     }
 
     .contact-consultation__panel,

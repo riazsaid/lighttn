@@ -150,6 +150,27 @@
             return;
         }
 
+        const staggerGroups = [
+            '.lighting-audio-services-block__grid',
+            '.steps-grid__items',
+            '.property-types-grid__items',
+            '.why-choose-light-tn__grid',
+            '.detail-card-grid__cards',
+            '.spotlight-cards__grid',
+            '.proof-points__cards',
+            '.split-callout__cards',
+            '.partners-affiliations-block__track',
+            '.testimonials-block__track'
+        ];
+
+        staggerGroups.forEach(selector => {
+            document.querySelectorAll(selector).forEach(group => {
+                Array.from(group.querySelectorAll(':scope > .scroll-reveal')).forEach((item, index) => {
+                    item.style.setProperty('--reveal-delay', String(70 + (index * 85)) + 'ms');
+                });
+            });
+        });
+
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         if (reduceMotion || !('IntersectionObserver' in window)) {
