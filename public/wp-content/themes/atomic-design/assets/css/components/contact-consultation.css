@@ -188,7 +188,7 @@ a.contact-consultation__detail--email:hover {
 }
 
 .contact-consultation__map-image {
-    height: auto;
+    height: 50vh;
     min-height: 0;
     object-fit: cover;
 }
