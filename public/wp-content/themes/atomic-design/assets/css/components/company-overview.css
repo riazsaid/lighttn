@@ -1,0 +1,30 @@
+.company-overview {
+    padding-bottom: var(--section-space-lg);
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
+}
+
+.company-overview h2 {
+    padding-bottom: var(--space-md);
+}
+
+.company-overview .wp-block-column-is-layout-flow img {
+    height: 265px;
+    border-radius: var(--space-xs);
+}
+
+.company-overview .wp-block-column-is-layout-flow p {
+    background-color: #f2f2f2;
+    padding: var(--space-2xs) var(--space-xs);
+    border-radius: var(--space-xs);
+}
+
+@media (max-width: 720px) {
+    .company-overview {
+        padding-bottom: var(--section-space-md);
+    }
+
+    .company-overview h2 {
+        padding-bottom: var(--space-xs);
+    }
+}
