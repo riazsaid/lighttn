@@ -155,7 +155,7 @@
 }
 
 .contact-consultation__map-image {
-    height: 50vh;
+    height: auto;
     min-height: 0;
     object-fit: cover;
 }
