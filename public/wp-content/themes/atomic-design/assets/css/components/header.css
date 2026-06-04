@@ -248,7 +248,6 @@
 .site-header__contact:focus-visible {
     color: var(--bg-surface);
     text-decoration: none;
-    transform: translateY(-3px);
     gap: var(--gutter-mobile);
 }
 
