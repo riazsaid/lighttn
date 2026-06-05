@@ -35,9 +35,11 @@ $footer_popular_links = [
 ];
 
 $footer_social_links = [
-    ['label' => 'Facebook', 'url' => 'https://www.facebook.com/', 'icon' => 'facebook'],
-    ['label' => 'Instagram', 'url' => 'https://www.instagram.com/', 'icon' => 'instagram'],
-    ['label' => 'YouTube', 'url' => 'https://www.youtube.com/', 'icon' => 'youtube'],
+    
+    ['label' => 'Facebook', 'url' => 'https://www.facebook.com/LightTennessee', 'icon' => 'facebook'],
+    ['label' => 'Instagram', 'url' => 'https://www.instagram.com/lighttennessee/', 'icon' => 'instagram'],
+    ['label' => 'YouTube', 'url' => 'https://www.youtube.com/watch?v=RWnPUwd_d6E', 'icon' => 'youtube'],
+
 ];
 
 $footer_phone = function_exists('atomic_design_get_contact_phone') ? atomic_design_get_contact_phone() : '(615) 808-8882';
