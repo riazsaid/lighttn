@@ -60,6 +60,9 @@ get_header();
             'section_index' => 3,
         ]);
         get_template_part('template-parts/shared/testimonials');
+        get_template_part('template-parts/shared/about-light-tn', null, [
+            'variant' => 'template',
+        ]);
         get_template_part('template-parts/shared/faqs', null, ['post_id' => $post_id]);
         get_template_part('template-parts/shared/consultation-split');
     }
