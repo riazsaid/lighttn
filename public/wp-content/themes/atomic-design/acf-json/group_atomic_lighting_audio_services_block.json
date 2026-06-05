@@ -1,0 +1,275 @@
+{
+    "key": "group_atomic_lighting_audio_services_block",
+    "title": "Lighting & Audio Services Block",
+    "fields": [
+        {
+            "key": "field_atomic_block_lighting_audio_services_source",
+            "label": "Source",
+            "name": "lighting_audio_services_source",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Use the synced option-page services, or create custom cards for this page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "synced": "Synced Options",
+                "custom": "Custom Cards"
+            },
+            "default_value": "synced",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_block_lighting_audio_services_max_items",
+            "label": "Max Items",
+            "name": "lighting_audio_services_max_items",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Optional. Set 3 for homepage previews, or leave empty/0 to show all.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 0,
+            "step": 1,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_block_lighting_audio_services_show_numbers",
+            "label": "Show Numbers",
+            "name": "lighting_audio_services_show_numbers",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Show 01, 02, 03 before card titles.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_block_lighting_audio_services_custom_heading",
+            "label": "Custom Heading",
+            "name": "lighting_audio_services_custom_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Only used when Source is Custom Cards.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_atomic_block_lighting_audio_services_source",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Outdoor Lighting & Audio Services",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0,
+            "maxlength": ""
+        },
+        {
+            "key": "field_atomic_block_lighting_audio_services_custom_heading_alignment",
+            "label": "Custom Heading Alignment",
+            "name": "lighting_audio_services_custom_heading_alignment",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Only used when Source is Custom Cards.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_atomic_block_lighting_audio_services_source",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "center": "Center",
+                "left": "Left"
+            },
+            "default_value": "center",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_atomic_block_lighting_audio_services_custom_items",
+            "label": "Custom Cards",
+            "name": "lighting_audio_services_custom_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Only used when Source is Custom Cards.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_atomic_block_lighting_audio_services_source",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_atomic_block_lighting_audio_services_custom_item_title",
+            "button_label": "Add service card",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_atomic_block_lighting_audio_services_custom_item_image",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_block_lighting_audio_services_custom_items"
+                },
+                {
+                    "key": "field_atomic_block_lighting_audio_services_custom_item_title",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Landscape Lighting",
+                    "prepend": "",
+                    "append": "",
+                    "allow_in_bindings": 0,
+                    "maxlength": "",
+                    "parent_repeater": "field_atomic_block_lighting_audio_services_custom_items"
+                },
+                {
+                    "key": "field_atomic_block_lighting_audio_services_custom_item_link",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_block_lighting_audio_services_custom_items"
+                },
+                {
+                    "key": "field_atomic_block_lighting_audio_services_custom_item_description",
+                    "label": "Description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 6,
+                    "placeholder": "",
+                    "new_lines": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_block_lighting_audio_services_custom_items"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/lighting-audio-services"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Flexible controls for the Lighting & Audio Services ACF block.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1780680000
+}

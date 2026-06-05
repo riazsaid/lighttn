@@ -20,6 +20,8 @@ $items = isset($args['items']) && is_array($args['items'])
     ? $args['items']
     : (get_field('lighting_audio_services_items', 'option') ?: []);
 
+$max_items = isset($args['max_items']) ? (int) $args['max_items'] : 0;
+$show_numbers = !empty($args['show_numbers']);
 $heading_alignment = isset($args['heading_alignment']) ? (string) $args['heading_alignment'] : 'center';
 $heading_alignment = in_array($heading_alignment, ['left', 'center'], true) ? $heading_alignment : 'center';
 $section_classes = [
@@ -27,6 +29,10 @@ $section_classes = [
     'scroll-reveal',
     'lighting-audio-services-block--heading-' . $heading_alignment,
 ];
+
+if ($show_numbers) {
+    $section_classes[] = 'lighting-audio-services-block--numbered';
+}
 
 $items = is_array($items) ? array_values(array_filter($items, static function ($item) {
     $title = isset($item['title']) ? trim((string) $item['title']) : '';
@@ -38,6 +44,10 @@ $items = is_array($items) ? array_values(array_filter($items, static function ($
 
     return $title !== '' || $description !== '' || !empty($link['url']) || $image_id > 0 || $image_url !== '';
 })) : [];
+
+if ($max_items > 0) {
+    $items = array_slice($items, 0, $max_items);
+}
 
 if ($heading === '' || empty($items)) {
     return;
@@ -82,8 +92,13 @@ if ($heading === '' || empty($items)) {
                         </div>
                     <?php endif; ?>
 
-                    <?php if ($title !== ''): ?>
-                        <h3 class="lighting-audio-services-block__title"><?php echo esc_html($title); ?></h3>
+                    <?php if ($title !== '') : ?>
+                        <h3 class="lighting-audio-services-block__title">
+                            <?php if ($show_numbers) : ?>
+                                <span class="lighting-audio-services-block__number"><?php echo esc_html(str_pad((string) ($item_index + 1), 2, '0', STR_PAD_LEFT)); ?></span>
+                            <?php endif; ?>
+                            <span><?php echo esc_html($title); ?></span>
+                        </h3>
                     <?php endif; ?>
 
                     <?php if ($description !== ''): ?>

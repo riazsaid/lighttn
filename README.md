@@ -8,7 +8,7 @@ It includes:
 - The shared `atomic-design` custom theme as the starter theme base
 - A DDEV config at `.ddev/config.yaml`
 
-### Local Development
+### Local Development 
 
 Run the project with DDEV:
 
