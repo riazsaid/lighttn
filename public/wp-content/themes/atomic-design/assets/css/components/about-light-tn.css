@@ -146,3 +146,31 @@
         border-radius: 22px;
     }
 }
+.about-light-tn--template{
+    padding-block: 0  var(--section-space-lg);
+}
+
+.about-light-tn--template .about-light-tn__image{
+    height:300px;
+}
+
+
+.about-light-tn--template .about-light-tn__template-card p {
+  max-height: 14.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px;
+}
+
+.about-light-tn--template .about-light-tn__template-card p::-webkit-scrollbar {
+    width: 5px;
+}
+
+.about-light-tn--template .about-light-tn__template-card p::-webkit-scrollbar-track {
+    background: var(--charcoal);
+}
+
+.about-light-tn--template .about-light-tn__template-card p::-webkit-scrollbar-thumb {
+    background: var(--cyan);
+    border-radius: 10px;
+}
