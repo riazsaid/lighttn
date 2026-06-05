@@ -32,10 +32,10 @@ $class_name = isset($args['class_name']) ? (string) $args['class_name'] : '';
 $default_booking_embed_url = 'https://scheduler.zoom.us/lighttn/initial_consult?embedStyle=%7B%22buttonColor%22%3A%22%23ff9257%22%7D&embed=true';
 $form_id = (int) (function_exists('get_field') ? (get_field('consultation_split_form_id', 'option') ?: 386) : 386);
 $booking_embed_url = trim((string) (function_exists('get_field') ? (get_field('consultation_split_booking_embed_url', 'option') ?: $default_booking_embed_url) : $default_booking_embed_url));
-$phone_number = trim((string) (function_exists('get_field') ? (get_field('phone_number', 'option') ?: '(615) 808-8882') : '(615) 808-8882'));
-$email_address = trim((string) (function_exists('get_field') ? (get_field('email_address', 'option') ?: '') : ''));
-$business_address = trim((string) (function_exists('get_field') ? (get_field('business_address', 'option') ?: "1982 Spencer Mill Rd\nBurns, TN 37029") : "1982 Spencer Mill Rd\nBurns, TN 37029"));
-$phone_tel = preg_replace('/[^+\d]/', '', $phone_number);
+$phone_number = function_exists('atomic_design_get_contact_phone') ? atomic_design_get_contact_phone() : '(615) 808-8882';
+$email_address = function_exists('atomic_design_get_contact_email') ? atomic_design_get_contact_email() : '';
+$business_address = function_exists('atomic_design_get_contact_address') ? atomic_design_get_contact_address() : "1982 Spencer Mill Rd\nBurns, TN 37029";
+$phone_tel = function_exists('atomic_design_get_contact_phone_tel') ? atomic_design_get_contact_phone_tel() : preg_replace('/[^+\d]/', '', $phone_number);
 $map_image_id = !empty($map_image['ID']) ? (int) $map_image['ID'] : 0;
 $map_image_url = !empty($map_image['url']) ? (string) $map_image['url'] : '';
 $map_image_alt = !empty($map_image['alt']) ? (string) $map_image['alt'] : __('Map to Light TN', 'atomic-design');
@@ -46,7 +46,7 @@ $section_class = trim('contact-consultation align' . $align . ' ' . $class_name)
     <div class="container contact-consultation__inner">
         <header class="contact-consultation__header">
             <?php if ($heading !== '') : ?>
-                <h2 class="contact-consultation__heading"><?php echo esc_html($heading); ?></h2>
+                <h1 class="contact-consultation__heading"><?php echo esc_html($heading); ?></h1>
             <?php endif; ?>
 
             <?php if ($subheading !== '') : ?>
