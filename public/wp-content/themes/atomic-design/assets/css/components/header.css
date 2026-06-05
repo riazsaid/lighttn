@@ -499,6 +499,10 @@
         background: var(--cyan);
         flex: 0 0 6px;
     }
+    .site-nav .menu>.menu-item-has-children:hover>.sub-menu,
+.site-nav .menu>.menu-item-has-children:focus-within>.sub-menu {
+    transform: unset;
+}
 }
 
 @media (max-width: 420px) {
