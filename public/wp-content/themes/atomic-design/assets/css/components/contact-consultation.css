@@ -10,6 +10,10 @@
     text-align: center;
 }
 
+.contact-consultation__inner {
+    max-width: 1280px;
+}
+
 .contact-consultation__heading {
     padding-bottom: var(--space-xs);
 }
@@ -136,10 +140,11 @@ a.contact-consultation__detail--email:hover {
 
 .contact-consultation__booking {
     display: grid;
-    grid-template-columns: minmax(255px, 0.72fr) minmax(0, 1.28fr);
-    gap: clamp(var(--space-2xs), 4vw, 46px);
-    align-items: stretch;
+    grid-template-columns: minmax(250px, 330px) minmax(680px, 1fr);
+    gap: clamp(var(--space-2xs), 3vw, 40px);
+    align-items: start;
     padding: clamp(26px, 4vw, var(--space-sm));
+    overflow: hidden;
 }
 
 .contact-consultation__booking-title {
@@ -167,7 +172,7 @@ a.contact-consultation__detail--email:hover {
 .contact-consultation__booking-frame {
     display: block;
     width: 100%;
-    min-height: 500px;
+    min-height: 760px;
     border: 0;
     background: var(--bg-surface);
 }
@@ -265,15 +270,24 @@ a.contact-consultation__detail--email:hover {
     text-transform: uppercase !important;
 }
 
-@media (max-width: 860px) {
-
-    .contact-consultation__top,
+@media (max-width: 1180px) {
     .contact-consultation__booking {
         grid-template-columns: 1fr;
     }
 
     .contact-consultation__booking-frame {
-        min-height: 540px;
+        min-height: 780px;
+    }
+}
+
+@media (max-width: 860px) {
+
+    .contact-consultation__top {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-consultation__booking-frame {
+        min-height: 720px;
     }
 }
 

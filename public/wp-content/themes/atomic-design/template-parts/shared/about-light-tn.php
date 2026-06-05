@@ -42,7 +42,62 @@ if (
 
 $align      = !empty($args['align']) ? (string) $args['align'] : 'full';
 $class_name = !empty($args['class_name']) ? (string) $args['class_name'] : '';
-$classes    = trim('about-light-tn align' . $align . ' ' . $class_name);
+$variant    = !empty($args['variant']) ? (string) $args['variant'] : 'default';
+$variant    = $variant === 'template' ? 'template' : 'default';
+$classes    = trim('about-light-tn about-light-tn--' . $variant . ' align' . $align . ' ' . $class_name);
+
+if ($variant === 'template') {
+    $template_cards = [];
+
+    if (trim(wp_strip_all_tags($intro_copy)) !== '') {
+        $template_cards[] = $intro_copy;
+    }
+
+    foreach ($columns as $column) {
+        if (count($template_cards) >= 2) {
+            break;
+        }
+
+        $copy = isset($column['copy']) ? trim((string) $column['copy']) : '';
+
+        if (trim(wp_strip_all_tags($copy)) !== '') {
+            $template_cards[] = $copy;
+        }
+    }
+    ?>
+
+    <section class="<?php echo esc_attr($classes); ?> scroll-reveal">
+        <div class="container about-light-tn__inner">
+            <h2 class="about-light-tn__heading scroll-reveal" style="--reveal-delay: 60ms;"><?php echo esc_html($heading); ?></h2>
+
+            <div class="about-light-tn__template-grid">
+                <figure class="about-light-tn__figure scroll-reveal" style="--reveal-delay: 100ms;">
+                    <?php if ($image_id) : ?>
+                        <?php echo wp_get_attachment_image($image_id, 'large', false, [
+                            'class' => 'about-light-tn__image',
+                            'alt'   => $image_alt,
+                        ]); ?>
+                    <?php else : ?>
+                        <img class="about-light-tn__image"
+                             src="<?php echo esc_url($image_url); ?>"
+                             alt="<?php echo esc_attr($image_alt); ?>"
+                             loading="lazy" />
+                    <?php endif; ?>
+                </figure>
+
+                <?php foreach ($template_cards as $index => $copy) :
+                    $delay = 140 + ((int) $index * 70);
+                    ?>
+                    <article class="about-light-tn__template-card scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
+                        <?php echo wp_kses_post(wpautop($copy)); ?>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <?php
+    return;
+}
 ?>
 
 <section class="<?php echo esc_attr($classes); ?> scroll-reveal">
