@@ -59,7 +59,9 @@ get_header();
             'section_index' => 1,
         ]);
         get_template_part('template-parts/shared/testimonials');
-        get_template_part('template-parts/shared/about-light-tn');
+        get_template_part('template-parts/shared/about-light-tn', null, [
+            'variant' => 'template',
+        ]);
         get_template_part('template-parts/shared/split-callout-sections', null, [
             'post_id' => $post_id,
         ]);
