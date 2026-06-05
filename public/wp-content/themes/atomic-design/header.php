@@ -18,19 +18,12 @@
         <header class="site-header" role="banner">
 
             <?php
-            // Phone number — set once in WP Admin → Site Settings → Phone Number.
-            // Change it there and it updates across the whole site.
-            $phone_number = function_exists('get_field')
-                ? get_field('phone_number', 'option')
-                : '';
-            if (empty($phone_number)) {
-                $phone_number = get_option('atomic_phone_number', '');
-            }
-            // Hard fallback so the header always renders during development.
-            if (empty($phone_number)) {
-                $phone_number = '(615) 808-8882';
-            }
-            $phone_tel = preg_replace('/[^+\d]/', '', $phone_number);
+            $phone_number = function_exists('atomic_design_get_contact_phone')
+                ? atomic_design_get_contact_phone()
+                : '(615) 808-8882';
+            $phone_tel = function_exists('atomic_design_get_contact_phone_tel')
+                ? atomic_design_get_contact_phone_tel()
+                : preg_replace('/[^+\d]/', '', $phone_number);
             ?>
 
             <div class="container site-header__inner">

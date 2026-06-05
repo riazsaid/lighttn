@@ -1049,6 +1049,130 @@ function atomic_design_register_acf_fields()
 }
 add_action('acf/init', 'atomic_design_register_acf_fields');
 
+function atomic_design_get_contact_detail($field)
+{
+    $fallbacks = [
+        'phone_number'     => '(615) 808-8882',
+        'email_address'    => '',
+        'business_address' => "1982 Spencer Mill Rd\nBurns, TN 37029",
+    ];
+
+    $value = '';
+
+    if (function_exists('get_field')) {
+        $value = (string) (get_field($field, 'option') ?: '');
+    }
+
+    if ($value === '' && $field === 'phone_number') {
+        $value = (string) get_option('atomic_phone_number', '');
+    }
+
+    if ($value === '' && array_key_exists($field, $fallbacks)) {
+        $value = $fallbacks[$field];
+    }
+
+    return trim($value);
+}
+
+function atomic_design_get_contact_phone()
+{
+    return atomic_design_get_contact_detail('phone_number');
+}
+
+function atomic_design_get_contact_phone_tel()
+{
+    return preg_replace('/[^+\d]/', '', atomic_design_get_contact_phone());
+}
+
+function atomic_design_get_contact_email()
+{
+    return atomic_design_get_contact_detail('email_address');
+}
+
+function atomic_design_get_contact_address()
+{
+    return atomic_design_get_contact_detail('business_address');
+}
+
+function atomic_design_contact_phone_shortcode($atts = [])
+{
+    $atts = shortcode_atts(
+        [
+            'link' => 'false',
+        ],
+        $atts,
+        'phone'
+    );
+    $phone = atomic_design_get_contact_phone();
+
+    if ($phone === '') {
+        return '';
+    }
+
+    if (filter_var($atts['link'], FILTER_VALIDATE_BOOLEAN)) {
+        return sprintf(
+            '<a href="%s">%s</a>',
+            esc_url('tel:' . atomic_design_get_contact_phone_tel()),
+            esc_html($phone)
+        );
+    }
+
+    return esc_html($phone);
+}
+add_shortcode('phone', 'atomic_design_contact_phone_shortcode');
+
+function atomic_design_contact_email_shortcode($atts = [])
+{
+    $atts = shortcode_atts(
+        [
+            'link' => 'false',
+            'text' => '',
+        ],
+        $atts,
+        'email'
+    );
+    $email = atomic_design_get_contact_email();
+
+    if ($email === '') {
+        return '';
+    }
+
+    if (filter_var($atts['link'], FILTER_VALIDATE_BOOLEAN)) {
+        $text = trim((string) $atts['text']);
+        return sprintf(
+            '<a href="%s">%s</a>',
+            esc_url('mailto:' . $email),
+            esc_html($text !== '' ? $text : $email)
+        );
+    }
+
+    return esc_html($email);
+}
+add_shortcode('email', 'atomic_design_contact_email_shortcode');
+
+function atomic_design_contact_address_shortcode($atts = [])
+{
+    $atts = shortcode_atts(
+        [
+            'breaks' => 'true',
+        ],
+        $atts,
+        'address'
+    );
+    $address = atomic_design_get_contact_address();
+
+    if ($address === '') {
+        return '';
+    }
+
+    if (filter_var($atts['breaks'], FILTER_VALIDATE_BOOLEAN)) {
+        return nl2br(esc_html($address));
+    }
+
+    return esc_html(preg_replace('/\s+/', ' ', $address));
+}
+add_shortcode('address', 'atomic_design_contact_address_shortcode');
+
 /**
  * Store ACF JSON in the theme for version control
  */
