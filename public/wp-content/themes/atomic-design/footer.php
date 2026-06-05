@@ -35,9 +35,9 @@ $footer_popular_links = [
 ];
 
 $footer_social_links = [
-    ['label' => 'Facebook', 'url' => 'https://www.facebook.com/', 'icon' => 'f'],
-    ['label' => 'Instagram', 'url' => 'https://www.instagram.com/', 'icon' => 'ig'],
-    ['label' => 'Youtube', 'url' => 'https://www.youtube.com/', 'icon' => 'play'],
+    ['label' => 'Facebook', 'url' => 'https://www.facebook.com/LightTennessee', 'icon' => 'f'],
+    ['label' => 'Instagram', 'url' => 'https://www.instagram.com/lighttennessee/', 'icon' => 'ig'],
+    ['label' => 'Youtube', 'url' => 'https://www.youtube.com/watch?v=RWnPUwd_d6E', 'icon' => 'play'],
 ];
 ?>
 
