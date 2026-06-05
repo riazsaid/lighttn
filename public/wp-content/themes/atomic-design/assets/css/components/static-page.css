@@ -2,13 +2,16 @@
     padding-top: var(--space-md);
     padding-bottom: var(--section-space-lg);
 }
-
+.text-content h1{
+    text-align: center;
+}
 .text-content h2 {
     padding-block: var(--space-xs);
 }
 
 .location-heading {
-    padding-bottom: var(--space-md);
+    text-align: center;
+    padding-block: var(--space-md);
 }
 
 @media (max-width: 48rem) {
@@ -17,6 +20,6 @@
     }
 
     .location-heading {
-        padding-bottom: var(--space-xs);
+        padding-block: var(--space-xs);
     }
 }
