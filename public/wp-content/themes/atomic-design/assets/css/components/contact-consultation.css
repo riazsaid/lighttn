@@ -1,73 +1,51 @@
 .contact-consultation {
-    padding: clamp(64px, 7vw, 92px) 0;
-    background: #fff;
-    color: #111;
-}
-
-.contact-consultation__inner {
-    max-width: 1050px;
+    padding-bottom: var(--section-space-lg);
+    padding-top: var(--section-space-md);
+    background: var(--bg-surface);
+    color: var(--bg-darkest);
 }
 
 .contact-consultation__header {
-    margin: 0 auto clamp(30px, 4vw, 44px);
+    padding-bottom: var(--space-md);
     text-align: center;
 }
 
 .contact-consultation__heading {
-    margin: 0 0 12px;
-    font-family: var(--font-body);
-    font-size: clamp(26px, 3vw, 36px);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: 0;
-    text-transform: uppercase;
-}
-
-.contact-consultation__subheading {
-    margin: 0;
-    font-size: clamp(14px, 1.15vw, 16px);
-    font-weight: 700;
-    line-height: 1.35;
+    padding-bottom: var(--space-xs);
 }
 
 .contact-consultation__top {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(210px, 285px);
-    gap: clamp(28px, 5vw, 64px);
+    gap: clamp(28px, 5vw, var(--space-lg));
     align-items: start;
-    margin-bottom: 30px;
+    margin-bottom: var(--space-md);
 }
 
 .contact-consultation__panel {
-    border: 1px solid rgba(21, 31, 42, 0.08);
+    border: 1px solid var(--raw-rgba-21-31-42-008);
     border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 3px 16px rgba(31, 49, 66, 0.12);
+    background: var(--bg-surface);
+    box-shadow: 0 3px 16px var(--raw-rgba-31-49-66-012);
 }
 
 .contact-consultation__panel--form {
-    padding: clamp(24px, 3vw, 34px);
+    padding: clamp(var(--space-2xs), 3vw, 34px);
 }
 
 .contact-consultation__panel-title,
 .contact-consultation__details-title,
 .contact-consultation__booking-title {
     margin: 0;
-    font-family: var(--font-body);
-    font-weight: 700;
-    line-height: 1.08;
 }
 
 .contact-consultation__panel-title {
-    margin-bottom: 14px;
-    font-size: 18px;
+    margin-bottom: 1rem;
 }
 
 .contact-consultation__panel-copy {
-    max-width: 610px;
-    margin: 0 0 18px;
-    color: #333;
-    font-size: 13px;
+    padding-bottom: 1rem;
+    color: var(--raw-333333);
     line-height: 1.45;
 }
 
@@ -76,18 +54,20 @@
 }
 
 .contact-consultation__details-title {
-    margin-bottom: 18px;
-    font-size: 15px;
+    margin-bottom: 1.125rem;
     text-transform: uppercase;
 }
 
 .contact-consultation__detail {
     display: block;
-    margin: 0 0 16px;
-    color: #222;
-    font-size: 14px;
-    line-height: 1.45;
+    margin: 0 0 1rem;
+    color: var(--raw-222222);
+    font-size: var(--p);
     text-decoration: none;
+}
+
+.forminator-col {
+    padding: 0 !important;
 }
 
 .contact-consultation__detail strong,
@@ -99,7 +79,7 @@
 .contact-consultation__detail--email,
 .contact-consultation__detail--hours {
     position: relative;
-    padding-left: 30px;
+    padding-left: 46px;
 }
 
 .contact-consultation__detail--phone::before,
@@ -108,15 +88,48 @@
     content: "";
     position: absolute;
     left: 0;
-    top: 2px;
-    width: 18px;
-    height: 18px;
+    top: 0;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: var(--cyan);
 }
 
+.contact-consultation__detail--phone::after,
+.contact-consultation__detail--email::after,
+.contact-consultation__detail--hours::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 14px;
+    height: 14px;
+    background: var(--bg-surface);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+}
+
+.contact-consultation__detail--phone::after {
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E");
+}
+
+.contact-consultation__detail--email::after {
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
+}
+
+.contact-consultation__detail--hours::after {
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 10.4 3.5 2.1-.9 1.48L11 13.25V7h2v5.4z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 10.4 3.5 2.1-.9 1.48L11 13.25V7h2v5.4z'/%3E%3C/svg%3E");
+}
+
 .contact-consultation__detail--phone:hover,
-.contact-consultation__detail--email:hover {
+a.contact-consultation__detail--email:hover {
     color: var(--cyan-hover);
     text-decoration: none;
 }
@@ -124,28 +137,21 @@
 .contact-consultation__booking {
     display: grid;
     grid-template-columns: minmax(255px, 0.72fr) minmax(0, 1.28fr);
-    gap: clamp(24px, 4vw, 46px);
+    gap: clamp(var(--space-2xs), 4vw, 46px);
     align-items: stretch;
-    padding: clamp(26px, 4vw, 40px);
-    margin-bottom: clamp(34px, 5vw, 46px);
+    padding: clamp(26px, 4vw, var(--space-sm));
 }
 
 .contact-consultation__booking-title {
     max-width: 360px;
     margin-bottom: 16px;
-    font-size: clamp(25px, 2.8vw, 34px);
     text-transform: uppercase;
 }
 
-.contact-consultation__booking-subtitle {
-    margin: 0 0 22px;
-    font-size: 17px;
-    font-weight: 700;
-}
 
 .contact-consultation__booking-points {
-    color: #222;
-    font-size: 14px;
+    color: var(--raw-222222);
+    font-size: var(--body);
     line-height: 1.45;
 }
 
@@ -163,11 +169,12 @@
     width: 100%;
     min-height: 500px;
     border: 0;
-    background: #fff;
+    background: var(--bg-surface);
 }
 
 .contact-consultation__map {
-    max-width: 880px;
+    padding-top: var(--space-md);
+    max-width: 1140px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -217,12 +224,12 @@
 .contact-consultation .forminator-ui select {
     width: 100% !important;
     min-height: 30px !important;
-    padding: 6px 14px !important;
-    border: 1px solid rgba(18, 18, 18, 0.14) !important;
+    padding: 10px 14px !important;
+    border: 1px solid var(--raw-rgba-18-18-18-014) !important;
     border-radius: 999px !important;
-    background: #fff !important;
-    color: #111 !important;
-    font-size: 13px !important;
+    background: var(--bg-surface) !important;
+    color: var(--bg-darkest) !important;
+    font-size: var(--p) !important;
     line-height: 1.2 !important;
 }
 
@@ -234,9 +241,9 @@
 
 .contact-consultation .forminator-error-message {
     margin-top: 4px !important;
-    padding: 4px 8px !important;
+    padding: 4px var(--gap-xs) !important;
     border-radius: 6px !important;
-    font-size: 10px !important;
+    font-size: var(--p) !important;
     line-height: 1.25 !important;
 }
 
@@ -248,17 +255,18 @@
 .contact-consultation .forminator-button-submit {
     min-width: 132px !important;
     min-height: 32px !important;
-    padding: 0 24px !important;
+    padding: 0 var(--space-2xs) !important;
     border: 0 !important;
     border-radius: 999px !important;
     background: var(--cyan) !important;
-    color: #fff !important;
-    font-size: 13px !important;
+    color: var(--bg-surface) !important;
+    font-size: var(--p) !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
 }
 
 @media (max-width: 860px) {
+
     .contact-consultation__top,
     .contact-consultation__booking {
         grid-template-columns: 1fr;
@@ -271,7 +279,11 @@
 
 @media (max-width: 640px) {
     .contact-consultation {
-        padding: 54px 0;
+        padding-bottom: var(--section-space-md);
+    }
+
+    .contact-consultation__top {
+        margin-bottom: var(--space-sm);
     }
 
     .contact-consultation__panel,

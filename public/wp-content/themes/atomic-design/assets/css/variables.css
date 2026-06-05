@@ -16,33 +16,15 @@
    --bg-dark: #181818;
    --bg-darkest: #111111;
    --bg-surface: #FFFFFF;
-   --text-primary: #2E3F4F;
    --text-muted: #7A8FA0;
-   --text-inverse: #FFFFFF;
    --border: rgba(41, 181, 232, 0.18);
-
    --bg: var(--bg-page);
-   --bg-soft: var(--bg-surface);
    --accent: var(--cyan);
    --accent-hover: var(--cyan-hover);
-   --text: var(--text-primary);
+   --text: var(--charcoal);
    --text-soft: var(--text-muted);
-   --accent-soft: var(--light-blue);
-   --shadow: 0 20px 60px rgba(46, 63, 79, 0.12);
    --panel: rgba(41, 181, 232, 0.08);
-   --panel-strong: rgba(41, 181, 232, 0.14);
    --border-strong: rgba(41, 181, 232, 0.32);
-   --color-brand: var(--cyan);
-   --color-brand-dark: var(--cyan-hover);
-   --color-accent: var(--light-blue);
-   --color-text-primary: var(--text-primary);
-
-
-   /* --panel:         rgba(255, 255, 255, 0.05);
-    --panel-strong:  rgba(255, 255, 255, 0.08); */
-   /* --border:        rgba(255, 255, 255, 0.10);
-    --border-strong: rgba(255, 255, 255, 0.18); */
-   /* --text-muted:    rgba(148, 163, 184, 0.90); */
 
 
 
@@ -59,121 +41,81 @@
    --font-heading: var(--font-display);
 
 
+   /* my css foundation  */
+
+   --h1: clamp(40px, 5.3vw, 58px);
+   --h2: clamp(1.375rem, 2vw + 1rem, 2.25rem);
+   --h3: clamp(1.125rem, 0.8vw + 1rem, 1.625rem);
+   --p: clamp(1rem, 0.5vw + 0.7rem, 1.125rem);
+   --body: clamp(0.875rem, 0.75rem + 0.5vw, 1rem);
    /* Fluid type scale */
-   --h1: clamp(40px, 6vw, 72px);
-   /* 60px */
-   /* max = 3rem */
 
-   --h2: clamp(28px, 3.5vw, 48px);
-   /* 50px */
-   /* max = 2.5rem */
 
-   --h3: clamp(1.2rem, 2vw, 1.5rem);
-   /* 30px */
-   /* max = 1.5rem */
-
-   --h4: clamp(1rem, 1.6vw, 1.2rem);
-   /* 24px */
-   /* max = 1.2rem */
-
-   --h5: clamp(0.9rem, 1.4vw, 1.1rem);
-   /* 22px */
-   /* max = 1.05rem */
-
-   --h6: clamp(0.8rem, 1.2vw, 0.9rem);
-   /* 18px */
-   /* max = 0.9rem */
-
-   --body-lg: 16px;
+   --lh-heading: 1.2;
+   --lh-body: 1.5;
    /* 16px */
-   --body-sm: 13px;
-   /* 12px */
-   --small: 13px;
-   --tiny: 11px;
-
 
    /* ----------------------------------------------------------
        LEGACY / COMPONENT FALLBACKS
        Some component CSS uses these older token names.
     ---------------------------------------------------------- */
-   --font-size-sm: var(--small);
-   --cpl-text-muted: var(--text-muted);
-   --color-border-subtle: var(--border);
-   --shadow-soft: var(--shadow);
 
    /* Line heights */
-   --lh-xxl: 3.6rem;
    /* 72px */
-   --lh-xl: 3rem;
    /* 60px */
-   --lh-lg: 1.8rem;
    /* 36px */
-   --lh-md: 1.5rem;
    /* 28px */
-   --lh-sm: 1.4rem;
    /* 30px */
-   --lh-xs: 1.35rem;
    /* 27px */
-   --lh-2xs: 0.95rem;
    /* 19px */
-   --lh-3xs: 0.9rem;
    /* 18px */
 
    /* ----------------------------------------------------------
        BORDER RADIUS
     ---------------------------------------------------------- */
-   --radius-sm: 6px;
-   --radius-md: 12px;
    --radius-lg: 20px;
-   --radius-xl: 32px;
    --radius-pill: 100px;
 
    /* ----------------------------------------------------------
        LAYOUT & SPACING
     ---------------------------------------------------------- */
    --container: 1420px;
-   --gutter: 48px;
+   --gutter: 80px;
    --gutter-mobile: 20px;
    --gap-xs: 8px;
-   --gap-sm: 16px;
-   --gap-md: 24px;
-   --gap-lg: 48px;
-   --gap-xl: 80px;
-   --gap-2xl: 120px;
    /* Section-to-section spacing */
-   --section-space-210: 100px;
-   /* 210px */
-   --section-space-142: 64px;
-   /* 142px */
-   /* Default section spacing (most sections) */
-   --section-space: var(--section-space-210);
    --grid-gap: clamp(24px, 4vw, 48px);
-
-   /* Explicit named spacing steps */
-   --space-lg: 3.8rem;
-   /* 76px */
-   --space-md: 2rem;
+   /* Section-to-section spacing */
+   --section-space-lg: 10rem;
+   /* 160 */
+   --section-space-md: 5rem;
+   /* 80 */
+   --space-md: 3rem;
+   /* 48px */
+   --space-sm: 2.5rem;
    /* 40px */
-   --space-xmd: 1.5rem;
-   /* 30px */
-   --space-sm: 1.6rem;
+   --space-lg: 4rem;
+   /* 64px */
+   --space-xs: 2rem;
    /* 32px */
-   --space-xs: 1.4rem;
-   /* 28px */
-   --space-xsm: 0.6rem;
-   /* 12px */
-   /* --space-xl: 4rem; */
+   --space-2xs: 1.5rem;
+   /* 24 */
+   --section-space-xs: var(--space-xs);
+   --section-space: var(--section-space-md);
+   --design-process-gap: 14px;
+   --design-process-collapsed: 96px;
+   --design-process-count: 3;
+   --partners-carousel-gap: clamp(var(--space-2xs), 3vw, var(--space-sm));
+   --hero-bg-image: radial-gradient(circle at top left, var(--raw-0b0c10) 0, var(--raw-020617) 55%, var(--bg-darkest) 100%);
+   --hero-initial-bg: var(--raw-6ba8df);
+   /* 16px */
 
    /* ----------------------------------------------------------
-       BREAKPOINTS
-       Use with: @media (min-width: var(--bp-tablet)) {}
+       BREAKPOINT REFERENCE
+       Use hard-coded values in media queries:
+       48rem = tablet
+       64rem = desktop
     ---------------------------------------------------------- */
-   --bp-tablet: 48rem;
-   /* 768px  */
-   --bp-desktop: 64rem;
-   /* 1024px */
-   --bp-wide: 80rem;
-   /* 1280px */
 
    /* ----------------------------------------------------------
        BUTTONS
@@ -190,5 +132,68 @@
    --ease: cubic-bezier(0.22, 1, 0.36, 1);
    --dur-fast: 0.20s;
    --dur-med: 0.40s;
-   --dur-slow: 0.70s;
+   --dur-base: var(--dur-med);
+
+   /* Auto-generated component color tokens */
+   --raw-006d9f: #006d9f;
+   --raw-020617: #020617;
+   --raw-050505: #050505;
+   --raw-0b0c10: #0b0c10;
+   --raw-0d7890: #0d7890;
+   --raw-1993ff: #1993ff;
+   --raw-222222: #222;
+   --raw-2a2a2a: #2a2a2a;
+   --raw-333333: #333;
+   --raw-3d3d3d: #3d3d3d;
+   --raw-3f3f46: #3f3f46;
+   --raw-505050: #505050;
+   --raw-5eb5d2: #5eb5d2;
+   --raw-63f36b: #63F36B;
+   --raw-65727b: #65727b;
+   --raw-66c8e8: #66c8e8;
+   --raw-6ba8df: #6ba8df;
+   --raw-72c8e7: #72c8e7;
+   --raw-767676: #767676;
+   --raw-878787: #878787;
+   --raw-b4b4b4: #b4b4b4;
+   --raw-c3c3c3: #c3c3c3;
+   --raw-d2d2d2: #d2d2d2;
+   --raw-d9d9d9: #d9d9d9;
+   --raw-e8f7fd: #e8f7fd;
+   --raw-e9e9ea: #e9e9ea;
+   --raw-ffba00: #ffba00;
+   --raw-rgba-0-0-0-006: rgba(0, 0, 0, 0.06);
+   --raw-rgba-0-0-0-008: rgba(0, 0, 0, 0.08);
+   --raw-rgba-0-0-0-009: rgba(0, 0, 0, 0.09);
+   --raw-rgba-0-0-0-012: rgba(0, 0, 0, 0.12);
+   --raw-rgba-0-0-0-016: rgba(0, 0, 0, 0.16);
+   --raw-rgba-0-0-0-054: rgba(0, 0, 0, 0.54);
+   --raw-rgba-0-0-0-072: rgba(0, 0, 0, 0.72);
+   --raw-rgba-17-17-17-008: rgba(17, 17, 17, 0.08);
+   --raw-rgba-17-17-17-01: rgba(17, 17, 17, 0.1);
+   --raw-rgba-18-18-18-014: rgba(18, 18, 18, 0.14);
+   --raw-rgba-20-16-12-02: rgba(20, 16, 12, 0.2);
+   --raw-rgba-21-31-42-008: rgba(21, 31, 42, 0.08);
+   --raw-rgba-24-24-24-018: rgba(24, 24, 24, 0.18);
+   --raw-rgba-255-255-255-022: rgba(255, 255, 255, 0.22);
+   --raw-rgba-255-255-255-068: rgba(255, 255, 255, 0.68);
+   --raw-rgba-255-255-255-075: rgba(255, 255, 255, 0.75);
+   --raw-rgba-255-255-255-086: rgba(255, 255, 255, 0.86);
+   --raw-rgba-255-255-255-09: rgba(255, 255, 255, 0.9);
+   --raw-rgba-255-255-255-096: rgba(255, 255, 255, 0.96);
+   --raw-rgba-255-255-255-098: rgba(255, 255, 255, 0.98);
+   --raw-rgba-31-49-66-012: rgba(31, 49, 66, 0.12);
+   --raw-rgba-31-49-66-014: rgba(31, 49, 66, 0.14);
+   --raw-rgba-41-181-232-0: rgba(41, 181, 232, 0);
+   --raw-rgba-41-181-232-01: rgba(41, 181, 232, 0.1);
+   --raw-rgba-41-181-232-016: rgba(41, 181, 232, 0.16);
+   --raw-rgba-41-181-232-022: rgba(41, 181, 232, 0.22);
+   --raw-rgba-41-181-232-05: rgba(41, 181, 232, 0.5);
+   --raw-rgba-46-63-79-008: rgba(46, 63, 79, 0.08);
+   --raw-rgba-46-63-79-01: rgba(46, 63, 79, 0.1);
+   --raw-rgba-46-63-79-013: rgba(46, 63, 79, 0.13);
+   --raw-rgba-46-63-79-014: rgba(46, 63, 79, 0.14);
+   --raw-rgba-46-63-79-022: rgba(46, 63, 79, 0.22);
+   --raw-rgba-46-63-79-024: rgba(46, 63, 79, 0.24);
+   --raw-rgba-46-63-79-042: rgba(46, 63, 79, 0.42);
 }

@@ -43,12 +43,133 @@
         onScroll();
     }
 
+    function initConsultationModals() {
+        const openButtons = Array.from(document.querySelectorAll('[data-consultation-modal-open]'));
+
+        if (!openButtons.length) {
+            return;
+        }
+
+        const focusableSelector = [
+            'a[href]',
+            'button:not([disabled])',
+            'input:not([disabled])',
+            'select:not([disabled])',
+            'textarea:not([disabled])',
+            '[tabindex]:not([tabindex="-1"])'
+        ].join(',');
+        let activeModal = null;
+        let activeTrigger = null;
+
+        const getFocusable = modal => Array.from(modal.querySelectorAll(focusableSelector))
+            .filter(element => element.offsetParent !== null || element === document.activeElement);
+
+        const closeModal = () => {
+            if (!activeModal) {
+                return;
+            }
+
+            activeModal.hidden = true;
+            document.body.classList.remove('consultation-modal-open');
+
+            if (activeTrigger) {
+                activeTrigger.focus();
+            }
+
+            activeModal = null;
+            activeTrigger = null;
+        };
+
+        const openModal = button => {
+            const modalId = button.getAttribute('aria-controls');
+            const modal = modalId ? document.getElementById(modalId) : null;
+
+            if (!modal) {
+                return;
+            }
+
+            activeModal = modal;
+            activeTrigger = button;
+            modal.hidden = false;
+            document.body.classList.add('consultation-modal-open');
+
+            const focusable = getFocusable(modal);
+            const firstFocusable = focusable[0] || modal;
+            window.setTimeout(() => firstFocusable.focus(), 0);
+        };
+
+        openButtons.forEach(button => {
+            button.addEventListener('click', () => openModal(button));
+        });
+
+        document.addEventListener('click', event => {
+            if (event.target.closest('[data-consultation-modal-close]')) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (!activeModal) {
+                return;
+            }
+
+            if (event.key === 'Escape') {
+                closeModal();
+                return;
+            }
+
+            if (event.key !== 'Tab') {
+                return;
+            }
+
+            const focusable = getFocusable(activeModal);
+
+            if (!focusable.length) {
+                event.preventDefault();
+                activeModal.focus();
+                return;
+            }
+
+            const firstFocusable = focusable[0];
+            const lastFocusable = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === firstFocusable) {
+                event.preventDefault();
+                lastFocusable.focus();
+            } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+                event.preventDefault();
+                firstFocusable.focus();
+            }
+        });
+    }
+
     function initScrollReveal() {
         const nodes = Array.from(document.querySelectorAll('.scroll-reveal'));
 
         if (!nodes.length) {
             return;
         }
+
+        const staggerGroups = [
+            '.lighting-audio-services-block__grid',
+            '.steps-grid__items',
+            '.property-types-grid__items',
+            '.why-choose-light-tn__grid',
+            '.detail-card-grid__cards',
+            '.spotlight-cards__grid',
+            '.proof-points__cards',
+            '.split-callout__cards',
+            '.partners-affiliations-block__track',
+            '.testimonials-block__track'
+        ];
+
+        staggerGroups.forEach(selector => {
+            document.querySelectorAll(selector).forEach(group => {
+                Array.from(group.querySelectorAll(':scope > .scroll-reveal')).forEach((item, index) => {
+                    item.style.setProperty('--reveal-delay', String(70 + (index * 85)) + 'ms');
+                });
+            });
+        });
 
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -158,6 +279,7 @@
 
     function initDesignProcessSections() {
         const sections = document.querySelectorAll('[data-design-process]');
+        const desktopMedia = window.matchMedia('(min-width: 1025px)');
 
         sections.forEach(section => {
             if (section.dataset.designProcessReady === 'true') {
@@ -167,9 +289,14 @@
             const buttons = Array.from(section.querySelectorAll('[data-step-button]'));
             const summaries = Array.from(section.querySelectorAll('[data-step-summary]'));
             const visuals = Array.from(section.querySelectorAll('[data-step-visual]'));
+            const visualStack = section.querySelector('.design-process__visual-stack');
 
             if (!buttons.length || !summaries.length || !visuals.length) {
                 return;
+            }
+
+            if (visualStack) {
+                visualStack.style.setProperty('--design-process-count', String(visuals.length));
             }
 
             const activateStep = index => {
@@ -188,12 +315,30 @@
                 visuals.forEach((visual, visualIndex) => {
                     const isActive = visualIndex === index;
                     visual.classList.toggle('is-active', isActive);
-                    visual.hidden = !isActive;
+                    if (!desktopMedia.matches) {
+                        visual.hidden = !isActive;
+                    } else {
+                        visual.hidden = false;
+                    }
                 });
             };
 
             buttons.forEach((button, index) => {
                 button.addEventListener('click', () => activateStep(index));
+                button.addEventListener('focus', () => activateStep(index));
+                button.addEventListener('mouseenter', () => {
+                    if (desktopMedia.matches) {
+                        activateStep(index);
+                    }
+                });
+            });
+
+            visuals.forEach((visual, index) => {
+                visual.addEventListener('mouseenter', () => {
+                    if (desktopMedia.matches) {
+                        activateStep(index);
+                    }
+                });
             });
 
             section.dataset.designProcessReady = 'true';
@@ -204,6 +349,7 @@
     window.addEventListener('load', initPartnersAffiliationsCarousels);
     initPartnersAffiliationsCarousels();
     initDesignProcessSections();
+    initConsultationModals();
     initScrollReveal();
 
 })();

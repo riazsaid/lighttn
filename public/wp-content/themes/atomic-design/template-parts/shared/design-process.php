@@ -85,16 +85,24 @@ $section_class = trim('design-process align' . $align . ' ' . $class_name);
                     $step_number = sprintf('%02d', $index + 1);
                     $image       = isset($step['step_image']) && is_array($step['step_image']) ? $step['step_image'] : [];
                     $badge_title = isset($step['step_badge_title']) ? trim((string) $step['step_badge_title']) : '';
+                    $nav_label   = isset($step['step_nav_label']) ? trim((string) $step['step_nav_label']) : '';
                     $title       = isset($step['step_title']) ? trim((string) $step['step_title']) : '';
                     $badge_title = $badge_title !== '' ? $badge_title : $title;
+                    $tab_label   = $nav_label !== '' ? $nav_label : $title;
                     $is_active   = $index === 0;
                     ?>
                     <div
                         class="design-process__visual<?php echo $is_active ? ' is-active' : ''; ?>"
                         id="<?php echo esc_attr($instance_id . '-visual-' . $index); ?>"
                         data-step-visual
-                        <?php echo $is_active ? '' : 'hidden'; ?>
                     >
+                        <div class="design-process__visual-tab" aria-hidden="true">
+                            <span class="design-process__visual-tab-number"><?php echo esc_html($step_number); ?></span>
+                            <?php if ($tab_label !== '') : ?>
+                                <span class="design-process__visual-tab-label"><?php echo esc_html($tab_label); ?></span>
+                            <?php endif; ?>
+                        </div>
+
                         <?php if (!empty($image['url'])) : ?>
                             <div class="design-process__image-wrap">
                                 <img

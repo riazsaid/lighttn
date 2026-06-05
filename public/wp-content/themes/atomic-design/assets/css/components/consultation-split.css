@@ -1,7 +1,7 @@
 .consultation-split {
-    padding: clamp(70px, 8vw, 96px) 0;
-    background: #72c8e7;
-    color: #fff;
+    padding-bottom: var(--section-space-lg);
+    background: var(--raw-72c8e7);
+    color: var(--bg-surface);
 }
 
 .consultation-split__header {
@@ -9,28 +9,21 @@
     grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
     gap: clamp(28px, 5vw, 46px);
     align-items: start;
-    margin-bottom: clamp(28px, 4vw, 40px);
+    padding-block: 3rem;
+
 }
 
 .consultation-split__heading {
-    max-width: 430px;
-    margin: 0;
-    font-family: var(--font-body);
-    font-size: clamp(32px, 4vw, 46px);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    color: #fff;
+    color: var(--bg-surface);
 }
 
 .consultation-split__intro {
     max-width: 680px;
     font-family: var(--font-body);
-    font-size: clamp(15px, 1.25vw, 18px);
+    font-size: var(--body-lg);
     font-weight: 400;
     line-height: 1.46;
-    color: #fff;
+    color: var(--bg-surface);
 }
 
 .consultation-split__intro p {
@@ -51,12 +44,12 @@
 .consultation-split__card {
     min-width: 0;
     border-radius: 28px;
-    background: #fff;
+    background: var(--bg-surface);
     overflow: hidden;
 }
 
 .consultation-split__card--form {
-    padding: 30px 26px 24px;
+    padding: 30px 26px var(--space-2xs);
 }
 
 .consultation-split__card--visual {
@@ -80,7 +73,14 @@
 
 .consultation-split__booking-frame {
     border: 0;
-    background: #fff;
+    background: var(--bg-surface);
+}
+
+.consultation-split__card--visual .consultation-split__booking-frame {
+    width: calc(100% + 32px);
+    height: calc(100% + 112px);
+    min-height: 542px;
+    margin: -20px -16px -92px;
 }
 
 .consultation-split__placeholder {
@@ -88,12 +88,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
+    padding: var(--space-2xs);
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: var(--body);
     line-height: 1.4;
     text-align: center;
-    color: #65727b;
+    color: var(--raw-65727b);
 }
 
 .consultation-split .wpforms-container,
@@ -102,12 +102,6 @@
     margin: 0;
 }
 
-.consultation-split .wpforms-container .wpforms-field,
-.consultation-split .frm_form_field,
-.consultation-split .forminator-row {
-    padding: 0;
-    margin: 0 0 20px;
-}
 
 .consultation-split .wpforms-container input,
 .consultation-split .wpforms-container textarea,
@@ -121,15 +115,15 @@
     width: 100%;
     padding: 12px 0 13px;
     border: 0;
-    border-bottom: 1px solid rgba(24, 24, 24, 0.18);
     border-radius: 0;
     background: transparent;
     box-shadow: none;
-    font-family: var(--font-body);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: #121212;
+    font-size: var(--body) !important;
+    font-weight: 700;
+    border-width: 0 0 2px 0 !important;
+    border-style: none none solid none;
+    border-color: transparent transparent var(--raw-rgba-24-24-24-018) transparent;
+    color: var(--bg-darkest);
 }
 
 .consultation-split .wpforms-container input::placeholder,
@@ -138,21 +132,24 @@
 .consultation-split .frm_forms textarea::placeholder,
 .consultation-split .forminator-ui input::placeholder,
 .consultation-split .forminator-ui textarea::placeholder {
-    color: #c3c3c3;
+    color: var(--raw-c3c3c3);
 }
 
 .consultation-split .wpforms-container textarea,
 .consultation-split .frm_forms textarea,
 .consultation-split .forminator-ui textarea {
-    min-height: 54px;
+    height: 60px !important;
     resize: vertical;
+    min-height: unset !important;
+}
+
+.forminator-description {
+    color: var(--bg-darkest);
 }
 
 .consultation-split .wpforms-container .wpforms-submit-container,
 .consultation-split .frm_submit,
 .consultation-split .forminator-row-last {
-    padding: 0;
-    margin-top: 10px;
     text-align: right;
 }
 
@@ -164,14 +161,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 28px;
+    padding: var(--gap-xs) var(--space-xs) !important;
     border: 0;
-    border-radius: 999px;
-    background: #050505;
-    color: #fff;
+    border-radius: 999px !important;
+    background: var(--raw-050505);
+    color: var(--bg-surface);
     font-family: var(--font-body);
-    font-size: 16px;
-    font-weight: 500;
+    font-size: var(--body) !important;
+    font-weight: 700;
     line-height: 1;
     transition:
         background-color var(--dur-fast) var(--ease),
@@ -184,9 +181,10 @@
 .consultation-split .frm_button_submit:focus-visible,
 .consultation-split .forminator-button-submit:hover,
 .consultation-split .forminator-button-submit:focus-visible {
-    background: #111;
+    background: var(--bg-darkest);
     transform: translateY(-1px);
 }
+
 
 @media (max-width: 860px) {
 
@@ -198,24 +196,29 @@
     .consultation-split__card--visual {
         min-height: 320px;
     }
+
+    .consultation-split__card--visual .consultation-split__booking-frame {
+        min-height: 432px;
+    }
 }
 
 @media (max-width: 640px) {
     .consultation-split {
-        padding: 54px 0;
+        padding-bottom: var(--section-space-md);
     }
+
 
     .consultation-split__heading {
         max-width: 320px;
-        font-size: clamp(28px, 8vw, 36px);
     }
 
     .consultation-split__card {
         border-radius: 22px;
+        padding-top: 1rem;
     }
 
     .consultation-split__card--form {
-        padding: 24px 20px 20px;
+        padding: var(--space-2xs) var(--gutter-mobile) var(--gutter-mobile);
     }
 
     .consultation-split .wpforms-container .wpforms-submit-container,

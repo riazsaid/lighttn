@@ -23,17 +23,7 @@
 ---------------------------------------------------------- */
 /*
 .page-slug-home .hero__title {
-    font-size: clamp(2.25rem, 4vw, 3.5rem);
-}
-*/
-
-/* ----------------------------------------------------------
-   EXAMPLE: About page (slug: about)
----------------------------------------------------------- */
-/*
-.page-slug-about .cpt-intro__content {
-    max-width: 55ch;
-}
+    font-size: var(--p);}
 */
 
 /* ----------------------------------------------------------
@@ -41,13 +31,13 @@
 ---------------------------------------------------------- */
 /*
 .page-id-12 section {
-    padding-block: var(--space-xl);
+    padding-block: var(--space-md);
 }
 */
 
 .single-industry .industry-static-image {
     padding: 0 0 4rem;
-    background: #000;
+    background: var(--bg-darkest);
 }
 
 .single-industry .industry-static-image__media {
@@ -59,7 +49,7 @@
     display: block;
     width: 100%;
     height: auto;
-    border: 2px solid #1993ff;
+    border: 2px solid var(--raw-1993ff);
 }
 
 @media (max-width: 767px) {

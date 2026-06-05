@@ -34,7 +34,7 @@ $form_id = (int) (function_exists('get_field') ? (get_field('consultation_split_
 $booking_embed_url = trim((string) (function_exists('get_field') ? (get_field('consultation_split_booking_embed_url', 'option') ?: $default_booking_embed_url) : $default_booking_embed_url));
 $phone_number = trim((string) (function_exists('get_field') ? (get_field('phone_number', 'option') ?: '(615) 808-8882') : '(615) 808-8882'));
 $email_address = trim((string) (function_exists('get_field') ? (get_field('email_address', 'option') ?: '') : ''));
-$business_address = trim((string) (function_exists('get_field') ? (get_field('business_address', 'option') ?: "1802 Spencer Mill Rd\nBurns, TN 37029") : "1802 Spencer Mill Rd\nBurns, TN 37029"));
+$business_address = trim((string) (function_exists('get_field') ? (get_field('business_address', 'option') ?: "1982 Spencer Mill Rd\nBurns, TN 37029") : "1982 Spencer Mill Rd\nBurns, TN 37029"));
 $phone_tel = preg_replace('/[^+\d]/', '', $phone_number);
 $map_image_id = !empty($map_image['ID']) ? (int) $map_image['ID'] : 0;
 $map_image_url = !empty($map_image['url']) ? (string) $map_image['url'] : '';
@@ -80,7 +80,7 @@ $section_class = trim('contact-consultation align' . $align . ' ' . $class_name)
 
                 <?php if ($phone_number !== '') : ?>
                     <a class="contact-consultation__detail contact-consultation__detail--phone" href="tel:<?php echo esc_attr($phone_tel); ?>">
-                        <?php echo esc_html($phone_number); ?>
+                        <?php echo esc_html(sprintf(__('P: %s', 'atomic-design'), $phone_number)); ?>
                     </a>
                 <?php endif; ?>
 
@@ -88,12 +88,19 @@ $section_class = trim('contact-consultation align' . $align . ' ' . $class_name)
                     <a class="contact-consultation__detail contact-consultation__detail--email" href="mailto:<?php echo esc_attr($email_address); ?>">
                         <?php esc_html_e('Email Us!', 'atomic-design'); ?>
                     </a>
+                <?php else : ?>
+                    <span class="contact-consultation__detail contact-consultation__detail--email">
+                        <?php esc_html_e('Email Us!', 'atomic-design'); ?>
+                    </span>
                 <?php endif; ?>
 
                 <div class="contact-consultation__detail contact-consultation__detail--hours">
                     <strong><?php esc_html_e('Hours', 'atomic-design'); ?></strong>
-                    <span><?php esc_html_e('Monday-Friday: 8:00 AM - 5:00 PM', 'atomic-design'); ?></span>
-                    <span><?php esc_html_e('Saturday & Sunday: Closed', 'atomic-design'); ?></span>
+                    <span><?php esc_html_e('Monday-Friday:', 'atomic-design'); ?></span>
+                    <span><?php esc_html_e('8:00 AM - 5:00 PM', 'atomic-design'); ?></span>
+                    <br />
+                    <span><?php esc_html_e('Saturday & Sunday:', 'atomic-design'); ?></span>
+                    <span><?php esc_html_e('Closed', 'atomic-design'); ?></span>
                 </div>
             </aside>
         </div>
