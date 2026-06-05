@@ -1,0 +1,16 @@
+.text-content {
+    padding-top: var(--space-md);
+    padding-bottom: var(--section-space-lg);
+    background: var(--bg-surface);
+
+}
+
+.text-content h2 {
+    padding-block: var(--space-xs);
+}
+
+@media (max-width: 48rem) {
+    .text-content {
+        padding-bottom: var(--section-space-md);
+    }
+}
