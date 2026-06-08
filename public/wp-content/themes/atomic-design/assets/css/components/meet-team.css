@@ -1,0 +1,21 @@
+.meet-team{
+    background: var(--bg-surface);
+    padding-bottom: var(--section-space-lg);
+}
+.meet-team .wp-block-image{
+    width: 100%;
+}
+.meet-team .wp-block-image img{
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    object-position: 50% 15%;
+}
+.meet-team .wp-block-image{
+    margin-bottom: var(--space-sm);
+}
+.meet-team p strong{
+    font-weight: bold;
+    display: block;
+}
