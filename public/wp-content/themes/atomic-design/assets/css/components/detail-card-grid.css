@@ -109,10 +109,18 @@
     .detail-card-grid__layout {
         grid-template-columns: 1fr;
     }
+
+    .detail-card-grid {
+        padding-bottom: var(--section-space-md);
+    }
 }
 
 @media (max-width: 720px) {
     .detail-card-grid__cards {
         grid-template-columns: 1fr;
+    }
+
+    .detail-card-grid__heading {
+        padding-bottom: var(--space-sm);
     }
 }
