@@ -212,8 +212,7 @@ p {
     transform: translateY(0);
 }
 
-.scroll-reveal:where(
-    .lighting-audio-services-block__item,
+.scroll-reveal:where(.lighting-audio-services-block__item,
     .steps-grid__item,
     .property-types-grid__item,
     .why-choose-light-tn__card,
@@ -222,15 +221,13 @@ p {
     .proof-points__card,
     .split-callout__card,
     .partners-affiliations-block__card,
-    .testimonial-card
-) {
+    .testimonial-card) {
     transform: translateY(42px);
     transition-duration: 760ms;
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.scroll-reveal.revealed:where(
-    .lighting-audio-services-block__item,
+.scroll-reveal.revealed:where(.lighting-audio-services-block__item,
     .steps-grid__item,
     .property-types-grid__item,
     .why-choose-light-tn__card,
@@ -239,8 +236,7 @@ p {
     .proof-points__card,
     .split-callout__card,
     .partners-affiliations-block__card,
-    .testimonial-card
-) {
+    .testimonial-card) {
     transform: translateY(0);
 }
 

@@ -35,10 +35,15 @@ $footer_popular_links = [
 ];
 
 $footer_social_links = [
-    ['label' => 'Facebook', 'url' => 'https://www.facebook.com/', 'icon' => 'f'],
-    ['label' => 'Instagram', 'url' => 'https://www.instagram.com/', 'icon' => 'ig'],
-    ['label' => 'Youtube', 'url' => 'https://www.youtube.com/', 'icon' => 'play'],
+    ['label' => 'Facebook', 'url' => 'https://www.facebook.com/LightTennessee', 'icon' => 'facebook'],
+    ['label' => 'Instagram', 'url' => 'https://www.instagram.com/lighttennessee/', 'icon' => 'instagram'],
+    ['label' => 'YouTube', 'url' => 'https://www.youtube.com/watch?v=RWnPUwd_d6E', 'icon' => 'youtube'],
 ];
+
+$footer_phone = function_exists('atomic_design_get_contact_phone') ? atomic_design_get_contact_phone() : '(615) 808-8882';
+$footer_phone_tel = function_exists('atomic_design_get_contact_phone_tel') ? atomic_design_get_contact_phone_tel() : preg_replace('/[^+\d]/', '', $footer_phone);
+$footer_email = function_exists('atomic_design_get_contact_email') ? atomic_design_get_contact_email() : '';
+$footer_address = function_exists('atomic_design_get_contact_address') ? atomic_design_get_contact_address() : "1982 Spencer Mill Rd\nBurns, TN 37029";
 ?>
 
 <footer class="site-footer" role="contentinfo">
@@ -75,14 +80,17 @@ $footer_social_links = [
                 <h2 id="footer-contact-heading" class="site-footer__heading">
                     <?php esc_html_e('Light TN', 'atomic-design'); ?></h2>
                 <address class="site-footer__address">
-                    <?php esc_html_e('1802 Spencer Mill Rd', 'atomic-design'); ?><br />
-                    <?php esc_html_e('Burns, TN 37029', 'atomic-design'); ?><br /><br />
+                    <?php echo nl2br(esc_html($footer_address)); ?><br /><br />
                     <?php esc_html_e('TN License (CE-D): 76580', 'atomic-design'); ?>
                 </address>
-                <a class="site-footer__link"
-                    href="tel:6158088882"><?php esc_html_e('(615) 808.8882', 'atomic-design'); ?></a>
-                <a class="site-footer__link"
-                    href="<?php echo esc_url(home_url('/contact-us/')); ?>"><?php esc_html_e('Email Us!', 'atomic-design'); ?></a>
+                <?php if ($footer_phone !== '') : ?>
+                    <a class="site-footer__link"
+                        href="tel:<?php echo esc_attr($footer_phone_tel); ?>"><?php echo esc_html($footer_phone); ?></a>
+                <?php endif; ?>
+                <?php if ($footer_email !== '') : ?>
+                    <a class="site-footer__link"
+                        href="mailto:<?php echo esc_attr($footer_email); ?>"><?php echo esc_html($footer_email); ?></a>
+                <?php endif; ?>
             </section>
 
             <nav class="site-footer__group" aria-labelledby="footer-services-heading">
@@ -136,7 +144,21 @@ $footer_social_links = [
                                 href="<?php echo esc_url($footer_social_link['url']); ?>"
                                 aria-label="<?php echo esc_attr($footer_social_link['label']); ?>" target="_blank"
                                 rel="noopener">
-                                <span aria-hidden="true"><?php echo esc_html($footer_social_link['icon']); ?></span>
+                                <?php if ($footer_social_link['icon'] === 'facebook') : ?>
+                                    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                                        <path d="M14.2 8.1h2.1V4.7c-.4-.1-1.6-.2-3-.2-3 0-5 1.8-5 5.1v2.9H5v3.8h3.3V24h4v-7.7h3.3l.5-3.8h-3.8V10c0-1.1.3-1.9 1.9-1.9Z" />
+                                    </svg>
+                                <?php elseif ($footer_social_link['icon'] === 'instagram') : ?>
+                                    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                                        <path d="M12 7.4A4.6 4.6 0 1 0 12 16.6 4.6 4.6 0 0 0 12 7.4Zm0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+                                        <path d="M17.9 7.2a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Z" />
+                                        <path d="M16.5 1.6h-9A5.9 5.9 0 0 0 1.6 7.5v9a5.9 5.9 0 0 0 5.9 5.9h9a5.9 5.9 0 0 0 5.9-5.9v-9a5.9 5.9 0 0 0-5.9-5.9Zm4.1 14.9a4.1 4.1 0 0 1-4.1 4.1h-9a4.1 4.1 0 0 1-4.1-4.1v-9a4.1 4.1 0 0 1 4.1-4.1h9a4.1 4.1 0 0 1 4.1 4.1v9Z" />
+                                    </svg>
+                                <?php else : ?>
+                                    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                                        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z" />
+                                    </svg>
+                                <?php endif; ?>
                             </a>
                         </li>
                     <?php endforeach; ?>

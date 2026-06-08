@@ -29,7 +29,7 @@
 .lighting-audio-services-block__media {
     margin-bottom: 1rem;
     border-radius: 28px;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .lighting-audio-services-block__image {
@@ -38,7 +38,7 @@
     aspect-ratio: 1.6 / 1;
     object-fit: cover;
     height: 350px;
-    transition: transform 0.4s ease; 
+    transition: transform 0.4s ease;
     transform-origin: center center;
 }
 
@@ -48,6 +48,20 @@
 
 .lighting-audio-services-block__title {
     padding-bottom: 1rem;
+}
+
+.lighting-audio-services-block--numbered .lighting-audio-services-block__title {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+.lighting-audio-services-block__number {
+    min-width: 34px;
+    color: var(--cyan);
+    font-size: 0.86em;
+    line-height: 1;
 }
 
 .lighting-audio-services-block__description {
@@ -98,6 +112,10 @@
 @media (max-width: 640px) {
     .lighting-audio-services-block {
         padding-bottom: var(--section-space-md);
+    }
+
+    .lighting-audio-services-block__heading {
+        padding-bottom: var(--space-sm);
     }
 
     .lighting-audio-services-block__grid {

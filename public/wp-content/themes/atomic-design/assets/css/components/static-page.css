@@ -1,0 +1,25 @@
+.text-content {
+    padding-top: var(--space-md);
+    padding-bottom: var(--section-space-lg);
+}
+.text-content h1{
+    text-align: center;
+}
+.text-content h2 {
+    padding-block: var(--space-xs);
+}
+
+.location-heading {
+    text-align: center;
+    padding-block: var(--space-md);
+}
+
+@media (max-width: 48rem) {
+    .text-content {
+        padding-bottom: var(--section-space-md);
+    }
+
+    .location-heading {
+        padding-block: var(--space-xs);
+    }
+}
