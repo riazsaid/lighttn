@@ -28,3 +28,10 @@
 .who-we-work-with .title-description-columns {
      padding: 0;
 }
+
+
+@media (max-width: 640px) {
+    .who-we-work-with {
+        padding-bottom: var(--section-space-md);
+    }   
+}
