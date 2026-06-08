@@ -6,31 +6,108 @@
 (function () {
     'use strict';
 
-    // Mobile nav toggle
+    // Prepare primary navigation links for the desktop text animation.
+    document.querySelectorAll('.site-nav .menu li a').forEach(link => {
+        const text = link.textContent.trim();
+        const label = document.createElement('span');
+
+        link.setAttribute('data-text', text);
+        link.textContent = '';
+        label.textContent = text;
+        link.appendChild(label);
+    });
+
+    // Mobile nav toggle and submenu accordions.
     const toggle = document.querySelector('.site-header__toggle');
-    const nav    = document.querySelector('.site-nav');
+    const nav = document.querySelector('.site-nav');
+    const mobileNavQuery = window.matchMedia('(max-width: 68rem)');
 
     if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-            const isOpen = nav.classList.toggle('is-open');
-            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
+        const submenuItems = Array.from(nav.querySelectorAll('.menu-item-has-children'));
 
-        // Close nav when clicking a link (single-page feel)
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
+        submenuItems.forEach((item, index) => {
+            const submenu = item.querySelector(':scope > .sub-menu');
+
+            if (!submenu) {
+                return;
+            }
+
+            const submenuId = submenu.id || `primary-submenu-${index + 1}`;
+            const submenuToggle = document.createElement('button');
+            const parentLink = item.querySelector(':scope > a');
+            const label = parentLink ? parentLink.textContent.trim() : 'submenu';
+
+            submenu.id = submenuId;
+            submenuToggle.className = 'site-nav__submenu-toggle';
+            submenuToggle.type = 'button';
+            submenuToggle.setAttribute('aria-expanded', 'false');
+            submenuToggle.setAttribute('aria-controls', submenuId);
+            submenuToggle.setAttribute('aria-label', `Toggle ${label} submenu`);
+            submenuToggle.innerHTML = '<span aria-hidden="true"></span>';
+            item.insertBefore(submenuToggle, submenu);
+
+            submenuToggle.addEventListener('click', () => {
+                const isOpen = item.classList.toggle('is-submenu-open');
+                submenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             });
         });
 
-        // Close nav on outside click
+        const closeNav = () => {
+            nav.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('mobile-nav-open');
+            syncNavA11y();
+        };
+
+        const syncNavA11y = () => {
+            const isHidden = mobileNavQuery.matches && !nav.classList.contains('is-open');
+
+            nav.setAttribute('aria-hidden', isHidden ? 'true' : 'false');
+        };
+
+        toggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            document.body.classList.toggle('mobile-nav-open', isOpen);
+            syncNavA11y();
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeNav);
+        });
+
         document.addEventListener('click', e => {
             if (!toggle.contains(e.target) && !nav.contains(e.target)) {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
+                closeNav();
             }
         });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+                closeNav();
+                toggle.focus();
+            }
+        });
+
+        const handleNavBreakpointChange = e => {
+            closeNav();
+
+            if (!e.matches) {
+                submenuItems.forEach(item => {
+                    item.classList.remove('is-submenu-open');
+                    item.querySelector(':scope > .site-nav__submenu-toggle')
+                        ?.setAttribute('aria-expanded', 'false');
+                });
+            }
+        };
+
+        if (typeof mobileNavQuery.addEventListener === 'function') {
+            mobileNavQuery.addEventListener('change', handleNavBreakpointChange);
+        } else if (typeof mobileNavQuery.addListener === 'function') {
+            mobileNavQuery.addListener(handleNavBreakpointChange);
+        }
+
+        syncNavA11y();
     }
 
     // Add scroll shadow to header
@@ -200,6 +277,10 @@
         const carousels = document.querySelectorAll('[data-partners-carousel]');
 
         carousels.forEach(carousel => {
+            if (carousel.dataset.partnersCarouselReady === 'true') {
+                return;
+            }
+
             const viewport = carousel.querySelector('.partners-affiliations-block__viewport');
             const track = carousel.querySelector('.partners-affiliations-block__track');
             const dots = carousel.querySelector('.partners-affiliations-block__dots');
@@ -211,10 +292,19 @@
 
             let currentPage = 0;
             let dotButtons = [];
+            let resizeTimer = null;
+            let isDragging = false;
+            let hasDragged = false;
+            let suppressClick = false;
+            let pointerStartX = 0;
+            let pointerStartY = 0;
+            let dragStartTranslate = 0;
 
             const getPerPage = () => window.matchMedia('(max-width: 760px)').matches ? 1 : 3;
             const getTrackGap = () => parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || 0) || 0;
             const getTotalSlides = () => Math.max(cards.length - getPerPage() + 1, 1);
+            const getSlideWidth = () => cards[0].getBoundingClientRect().width + getTrackGap();
+            const getTranslateForPage = page => -(page * getSlideWidth());
 
             const setActiveDot = () => {
                 dotButtons.forEach((button, index) => {
@@ -226,11 +316,9 @@
 
             const moveToPage = page => {
                 const totalSlides = getTotalSlides();
-                const cardWidth = cards[0].getBoundingClientRect().width;
-                const slideWidth = cardWidth + getTrackGap();
 
-                currentPage = Math.max(0, Math.min(page, totalSlides - 1));
-                track.style.transform = 'translateX(' + (-currentPage * slideWidth) + 'px)';
+                currentPage = ((page % totalSlides) + totalSlides) % totalSlides;
+                track.style.transform = 'translateX(' + getTranslateForPage(currentPage) + 'px)';
                 setActiveDot();
             };
 
@@ -254,7 +342,9 @@
                     button.type = 'button';
                     button.className = 'partners-affiliations-block__dot';
                     button.setAttribute('aria-label', 'Show partner logos set ' + (index + 1));
-                    button.addEventListener('click', () => moveToPage(index));
+                    button.addEventListener('click', () => {
+                        moveToPage(index);
+                    });
                     dots.appendChild(button);
                     dotButtons.push(button);
                 }
@@ -262,14 +352,82 @@
                 moveToPage(currentPage);
             };
 
-            if (carousel.dataset.partnersCarouselReady === 'true') {
-                return;
-            }
+            const handlePointerDown = event => {
+                if (event.button !== undefined && event.button !== 0) {
+                    return;
+                }
+
+                isDragging = true;
+                hasDragged = false;
+                pointerStartX = event.clientX;
+                pointerStartY = event.clientY;
+                dragStartTranslate = getTranslateForPage(currentPage);
+                track.classList.add('is-dragging');
+                viewport.setPointerCapture?.(event.pointerId);
+            };
+
+            const handlePointerMove = event => {
+                if (!isDragging) {
+                    return;
+                }
+
+                const deltaX = event.clientX - pointerStartX;
+                const deltaY = event.clientY - pointerStartY;
+
+                if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 10) {
+                    return;
+                }
+
+                if (Math.abs(deltaX) > 4) {
+                    hasDragged = true;
+                    event.preventDefault();
+                }
+
+                track.style.transform = 'translateX(' + (dragStartTranslate + deltaX) + 'px)';
+            };
+
+            const handlePointerUp = event => {
+                if (!isDragging) {
+                    return;
+                }
+
+                const deltaX = event.clientX - pointerStartX;
+                const threshold = Math.min(80, Math.max(36, getSlideWidth() * 0.16));
+
+                isDragging = false;
+                track.classList.remove('is-dragging');
+                viewport.releasePointerCapture?.(event.pointerId);
+
+                if (hasDragged) {
+                    suppressClick = true;
+                    window.setTimeout(() => {
+                        suppressClick = false;
+                    }, 0);
+                }
+
+                if (Math.abs(deltaX) >= threshold) {
+                    moveToPage(currentPage + (deltaX < 0 ? 1 : -1));
+                } else {
+                    moveToPage(currentPage);
+                }
+            };
 
             carousel.dataset.partnersCarouselReady = 'true';
             rebuildDots();
 
-            let resizeTimer = null;
+            viewport.addEventListener('pointerdown', handlePointerDown);
+            viewport.addEventListener('pointermove', handlePointerMove);
+            viewport.addEventListener('pointerup', handlePointerUp);
+            viewport.addEventListener('pointercancel', handlePointerUp);
+            carousel.addEventListener('click', event => {
+                if (!suppressClick) {
+                    return;
+                }
+
+                event.preventDefault();
+                event.stopPropagation();
+            }, true);
+
             window.addEventListener('resize', () => {
                 window.clearTimeout(resizeTimer);
                 resizeTimer = window.setTimeout(rebuildDots, 120);
