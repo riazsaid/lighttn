@@ -303,7 +303,7 @@
     }
 
     .design-process__heading {
-        padding-bottom: var(--space-2xs);
+        padding-bottom: var(--space-sm);
         text-align: left;
     }
 
