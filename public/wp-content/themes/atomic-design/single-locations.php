@@ -59,7 +59,10 @@ get_header();
             'post_id' => $post_id,
             'section_index' => 3,
         ]);
-        get_template_part('template-parts/shared/testimonials');
+        get_template_part('template-parts/shared/testimonials', null, [
+            'heading' => get_field('location_testimonials_title', $post_id),
+            'intro' => get_field('location_testimonials_body', $post_id),
+        ]);
         get_template_part('template-parts/shared/about-light-tn', null, [
             'variant' => 'template',
         ]);
