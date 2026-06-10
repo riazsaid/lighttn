@@ -1376,6 +1376,7 @@ function atomic_design_get_allowed_template_acf_fields()
         'detail_card_grid_sections',
         'spotlight_cards_sections',
         'design_process_sections',
+        'service_location_trust_bar_title',
         '_permalink_uri',
     ];
 }
