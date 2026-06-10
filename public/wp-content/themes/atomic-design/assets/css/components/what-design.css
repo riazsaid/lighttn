@@ -24,3 +24,8 @@
 .what-design-wrapper .title-description-columns{
     padding: 0;
 }
+@media (max-width: 640px){
+    .what-design-wrapper{
+        padding-bottom: var(--section-space-md);
+    }
+}
