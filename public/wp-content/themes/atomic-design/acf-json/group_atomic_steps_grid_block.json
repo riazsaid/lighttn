@@ -137,6 +137,24 @@
                     "parent_repeater": "field_atomic_block_steps_grid_items"
                 },
                 {
+                    "key": "field_atomic_block_steps_grid_item_link",
+                    "label": "Card Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Optional. Link this card to a related location detail page.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_atomic_block_steps_grid_items"
+                },
+                {
                     "key": "field_atomic_block_steps_grid_item_timeline",
                     "label": "Timeline",
                     "name": "timeline",
