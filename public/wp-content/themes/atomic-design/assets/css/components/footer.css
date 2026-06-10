@@ -29,6 +29,7 @@
     gap: var(--gap-xs);
     color: var(--bg-surface);
     text-decoration: none;
+    max-width: 300px;
 }
 
 .site-footer__brand-link:hover,

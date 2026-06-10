@@ -1,0 +1,14 @@
+.work-wrapper .insight-columns__inner{
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+    padding:var(--section-space-md) var(--space-md);
+}
+.work-wrapper .insight-columns__header h2{
+    padding: unset;
+}
+@media (max-width: 640px){
+    .work-wrapper .insight-columns__inner{
+        padding:var(--space-2xs);
+    }
+}
