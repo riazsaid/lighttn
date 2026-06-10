@@ -5,7 +5,7 @@
 }
 
 .partners-affiliations-block__group+.partners-affiliations-block__group {
-    margin-top: 18px;
+    margin-top: var(--space-md);
 }
 
 .partners-affiliations-block__heading {
@@ -24,6 +24,9 @@
 
 .partners-affiliations-block__viewport {
     overflow: hidden;
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
 }
 
 .partners-affiliations-block__track {
@@ -31,6 +34,14 @@
     gap: var(--partners-carousel-gap);
     transition: transform var(--dur-base) var(--ease);
     will-change: transform;
+}
+
+.partners-affiliations-block__track.is-dragging {
+    transition: none;
+}
+
+.partners-affiliations-block__viewport:active {
+    cursor: grabbing;
 }
 
 .partners-affiliations-block__card {

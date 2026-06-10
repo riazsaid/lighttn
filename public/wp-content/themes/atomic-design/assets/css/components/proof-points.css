@@ -95,9 +95,21 @@
 
 @media (max-width: 680px) {
 
+    .proof-points {
+        padding-bottom: var(--section-space-md);
+    }
+
     .proof-points__grid,
     .proof-points__cards {
         grid-template-columns: 1fr;
+    }
+
+    .proof-points__header {
+        padding-bottom: var(--space-sm);
+    }
+
+    .proof-points__intro-title {
+        padding-bottom: var(--space-xs);
     }
 
     .proof-points__cards {

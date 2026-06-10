@@ -134,6 +134,10 @@
         padding-bottom: var(--section-space-md);
     }
 
+    .split-callout__heading {
+        padding-bottom: var(--space-sm);
+    }
+
     .split-callout__grid {
         grid-template-columns: 1fr;
         gap: 28px;
