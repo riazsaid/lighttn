@@ -66,6 +66,9 @@
     .property-types-grid__label {
         margin-top: 16px;
     }
+    .property-wrapper .property-types-grid__inner{
+        padding: var(--space-2xs) !important ;
+    }
 }
 
 .property-wrapper .property-types-grid__items {

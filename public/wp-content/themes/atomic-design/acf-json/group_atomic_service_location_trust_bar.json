@@ -1,0 +1,47 @@
+{
+    "key": "group_atomic_service_location_trust_bar",
+    "title": "Trust Bar Settings",
+    "fields": [
+        {
+            "key": "field_atomic_service_location_trust_bar_title",
+            "label": "Trust Bar Title",
+            "name": "service_location_trust_bar_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional. Shows as a left-aligned title beside the global Trust Bar cards on this Service + Location page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service-location"
+            }
+        ]
+    ],
+    "menu_order": 29,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Per-page Trust Bar heading for Service + Location templates. Card data remains global.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1781098200
+}

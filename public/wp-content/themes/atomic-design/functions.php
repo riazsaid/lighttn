@@ -236,6 +236,30 @@ function atomic_design_admin_assets($hook_suffix)
 add_action('admin_enqueue_scripts', 'atomic_design_admin_assets');
 
 /**
+ * Keep Service + Location edit boxes in the same order as the template.
+ *
+ * WordPress stores metabox order per admin user, so ACF's JSON menu_order can be
+ * overridden after someone drags boxes around. This keeps this template editor
+ * predictable for every user.
+ */
+function atomic_design_service_location_metabox_order($order)
+{
+    return [
+        'normal'   => implode(',', [
+            'acf-group_atomic_hero_shared',
+            'acf-group_atomic_service_location_permalink',
+            'acf-group_atomic_title_description_sections_shared',
+            'acf-group_atomic_steps_grid_sections_shared',
+            'acf-group_atomic_service_location_trust_bar',
+            'acf-group_atomic_faq_shared',
+        ]),
+        'side'     => '',
+        'advanced' => '',
+    ];
+}
+add_filter('get_user_option_meta-box-order_service-location', 'atomic_design_service_location_metabox_order');
+
+/**
  * Ensure common layout blocks expose Gutenberg's custom class field.
  *
  * Some environments hide the "Additional CSS class(es)" control unless the
@@ -1352,6 +1376,7 @@ function atomic_design_get_allowed_template_acf_fields()
         'detail_card_grid_sections',
         'spotlight_cards_sections',
         'design_process_sections',
+        'service_location_trust_bar_title',
         '_permalink_uri',
     ];
 }
