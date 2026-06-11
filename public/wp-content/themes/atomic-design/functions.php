@@ -144,6 +144,36 @@ function atomic_design_fix_svg_mime_type($data, $file, $filename, $mimes, $real_
 add_filter('wp_check_filetype_and_ext', 'atomic_design_fix_svg_mime_type', 10, 5);
 
 /**
+ * Output per-page JSON-LD schema from the Schema JSON ACF field.
+ *
+ * Editors can paste either a full <script type="application/ld+json">...</script>
+ * snippet or complete JSON-LD only. The theme does not add schema properties.
+ */
+function atomic_design_output_schema_json()
+{
+    if (!is_singular() || !function_exists('get_field')) {
+        return;
+    }
+
+    $schema = trim((string) get_field('schema_json'));
+    if ($schema === '') {
+        return;
+    }
+
+    if (stripos($schema, '<script') !== false) {
+        if (!preg_match('/<script[^>]*type=["\']application\/ld\+json["\'][^>]*>.*?<\/script>/is', $schema)) {
+            return;
+        }
+
+        echo "\n" . $schema . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        return;
+    }
+
+    echo "\n<script type=\"application/ld+json\">\n" . $schema . "\n</script>\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+add_action('wp_head', 'atomic_design_output_schema_json');
+
+/**
  * Enqueue scripts and styles
  */
 function atomic_design_assets()
@@ -1377,6 +1407,7 @@ function atomic_design_get_allowed_template_acf_fields()
         'spotlight_cards_sections',
         'design_process_sections',
         'service_location_trust_bar_title',
+        'schema_json',
         '_permalink_uri',
     ];
 }
