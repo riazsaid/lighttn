@@ -80,6 +80,7 @@
     margin-top: -8px;
     margin-bottom: -10px;
     color: var(--bg-darkest);
+    font-weight: 600;
 }
 
 @media (max-width: 1024px) {
