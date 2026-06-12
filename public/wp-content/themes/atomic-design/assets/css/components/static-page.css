@@ -9,7 +9,15 @@
 }
 
 .text-content h2 {
-    padding-block: var(--space-xs);
+    padding-top: var(--space-xs);
+}
+
+.text-content ul {
+    padding-top: 1rem;
+}
+
+.text-content p {
+    padding-top: 1rem;
 }
 
 .location-heading {
