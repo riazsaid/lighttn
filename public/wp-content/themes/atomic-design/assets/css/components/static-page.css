@@ -2,6 +2,15 @@
     padding-top: var(--space-md);
     padding-bottom: var(--section-space-lg);
 }
+
+.page-content-container {
+    padding-block: var(--space-md) var(--section-space-lg);
+}
+
+.page-content-container--full {
+    padding-block: 0;
+}
+
 .text-content h1{
     text-align: center;
 }
@@ -17,6 +26,10 @@
 @media (max-width: 48rem) {
     .text-content {
         padding-bottom: var(--section-space-md);
+    }
+
+    .page-content-container {
+        padding-block: var(--space-sm) var(--section-space-md);
     }
 
     .location-heading {
