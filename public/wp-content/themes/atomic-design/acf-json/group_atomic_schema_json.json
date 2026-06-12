@@ -1,0 +1,75 @@
+{
+    "key": "group_atomic_schema_json",
+    "title": "Schema",
+    "fields": [
+        {
+            "key": "field_atomic_schema_json",
+            "label": "Schema JSON",
+            "name": "schema_json",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Optional complete JSON-LD schema for this page. Paste the full application/ld+json script tag, or paste complete JSON-LD only. The theme does not add schema properties for you.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 8,
+            "placeholder": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": []\n}\n</script>",
+            "new_lines": "",
+            "show_in_rest": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "services"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "locations"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service-location"
+            }
+        ]
+    ],
+    "menu_order": 100,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Per-page JSON-LD schema output in wp_head.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1781136000
+}

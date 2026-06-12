@@ -1,0 +1,47 @@
+{
+    "key": "group_atomic_page_layout_settings",
+    "title": "Page Layout",
+    "fields": [
+        {
+            "key": "field_atomic_page_use_content_container",
+            "label": "Use Content Container",
+            "name": "page_use_content_container",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Enabled by default. Turn off only when this page needs full-width content or full-width custom blocks.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Constrain page content to the site container",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Page-level layout controls for static pages.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1781222400
+}

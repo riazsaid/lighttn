@@ -84,8 +84,8 @@
 
 .consultation-split__card--visual .consultation-split__booking-frame {
     width: 100%;
-    height: 940px;
-    min-height: 940px;
+    height: 600px;
+    min-height: 600px;
     margin: 0;
     transform: none;
     transform-origin: top left;
@@ -211,10 +211,8 @@
     }
 
     .consultation-split__card--visual .consultation-split__booking-frame {
-        width: 100%;
-        height: auto;
-        min-height: 940px;
-        transform: none;
+        height: 620px;
+        min-height: 630px;
     }
 }
 
