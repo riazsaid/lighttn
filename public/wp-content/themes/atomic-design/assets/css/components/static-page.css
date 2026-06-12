@@ -13,7 +13,9 @@
 
 .text-content h1{
     text-align: center;
+    padding-bottom: var(--space-md);
 }
+
 .text-content h2 {
     padding-block: var(--space-xs);
 }
