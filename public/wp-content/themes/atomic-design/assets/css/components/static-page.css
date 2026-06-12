@@ -28,6 +28,11 @@
     padding-block: var(--space-md);
 }
 
+.modula-gallery {
+    padding-top: var(--space-md);
+}
+
+
 @media (max-width: 48rem) {
     .text-content {
         padding-bottom: var(--section-space-md);
@@ -39,5 +44,9 @@
 
     .location-heading {
         padding-block: var(--space-xs);
+    }
+
+    .modula-gallery {
+        padding-top: var(--space-sm);
     }
 }
