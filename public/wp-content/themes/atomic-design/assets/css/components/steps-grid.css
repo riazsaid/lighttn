@@ -164,3 +164,6 @@
         border-radius: 24px;
     }
 }
+.steps-grid__title{
+    padding-bottom: 1rem;
+}
