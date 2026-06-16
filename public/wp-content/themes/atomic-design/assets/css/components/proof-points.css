@@ -18,9 +18,15 @@
     grid-template-columns: minmax(190px, 270px) minmax(0, 1fr);
     gap: clamp(42px, 6vw, 86px);
     align-items: start;
+    overflow: visible;
 }
 
+/* Sticky Left Column */
 .proof-points__intro {
+    position: sticky;
+    top: 140px;
+    align-self: start;
+    height: fit-content;
     padding-top: 6px;
 }
 
@@ -80,8 +86,10 @@
     margin-top: -8px;
     margin-bottom: -10px;
     color: var(--bg-darkest);
+    font-weight: 600;
 }
 
+/* Tablet */
 @media (max-width: 1024px) {
     .proof-points__grid {
         grid-template-columns: 1fr;
@@ -89,15 +97,28 @@
     }
 
     .proof-points__intro {
+        position: static;
         max-width: 720px;
     }
 }
 
+/* Mobile */
 @media (max-width: 680px) {
+    .proof-points {
+        padding-bottom: var(--section-space-md);
+    }
 
     .proof-points__grid,
     .proof-points__cards {
         grid-template-columns: 1fr;
+    }
+
+    .proof-points__header {
+        padding-bottom: var(--space-sm);
+    }
+
+    .proof-points__intro-title {
+        padding-bottom: var(--space-xs);
     }
 
     .proof-points__cards {

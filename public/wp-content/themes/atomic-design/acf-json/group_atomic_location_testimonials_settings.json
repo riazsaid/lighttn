@@ -1,0 +1,67 @@
+{
+    "key": "group_atomic_location_testimonials_settings",
+    "title": "Testimonials Settings",
+    "fields": [
+        {
+            "key": "field_atomic_location_testimonials_title",
+            "label": "Testimonials Title",
+            "name": "location_testimonials_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Optional. Overrides the left-side testimonial heading for this Location page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "TRUSTED BY HOMEOWNERS ACROSS MIDDLE TENNESSEE",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_atomic_location_testimonials_body",
+            "label": "Testimonials Body",
+            "name": "location_testimonials_body",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Optional. Overrides the left-side testimonial intro copy for this Location page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "Our clients’ feedback reflects our focus on thoughtful design, professional installation, and outdoor systems that perform exactly as intended.",
+            "new_lines": "wpautop"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "locations"
+            }
+        ]
+    ],
+    "menu_order": 50,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Per-location testimonial intro fields. Review cards remain global from Synced Components.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1781100600
+}

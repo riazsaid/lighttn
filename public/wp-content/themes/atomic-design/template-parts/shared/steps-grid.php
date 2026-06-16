@@ -6,7 +6,7 @@
  * - section_heading (string) Required.
  * - heading_alignment (string) Optional. center|left.
  * - cta (array|string) Optional link field for the section button.
- * - items (array) Required repeater rows: image, title, timeline, description.
+ * - items (array) Required repeater rows: image, title, timeline, description, link.
  * - portfolio_link (array) Optional ACF link array. Falls back to /gallery/.
  * - align (string) Optional Gutenberg alignment slug, defaults to full.
  * - class_name (string) Optional extra class names.
@@ -65,9 +65,29 @@ $portfolio_target = !empty($portfolio_link['target']) ? (string) $portfolio_link
                 $timeline    = isset($item['timeline']) ? trim((string) $item['timeline']) : '';
                 $description = isset($item['description']) ? trim((string) $item['description']) : '';
                 $image       = isset($item['image']) && is_array($item['image']) ? $item['image'] : [];
+                $link        = isset($item['link']) && is_array($item['link']) ? $item['link'] : [];
+                $link_url    = !empty($link['url']) ? (string) $link['url'] : '';
+                $link_target = !empty($link['target']) ? (string) $link['target'] : '_self';
+                $link_label  = !empty($link['title']) ? (string) $link['title'] : $title;
                 $delay       = 90 + ((int) $index * 70);
+                $item_tag    = $link_url !== '' ? 'a' : 'article';
+                $item_classes = 'steps-grid__item scroll-reveal';
+                if ($link_url !== '') {
+                    $item_classes .= ' steps-grid__item--linked';
+                }
                 ?>
-                <article class="steps-grid__item scroll-reveal" style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;">
+                <<?php echo esc_html($item_tag); ?>
+                    class="<?php echo esc_attr($item_classes); ?>"
+                    style="--reveal-delay: <?php echo esc_attr((string) $delay); ?>ms;"
+                    <?php if ($link_url !== '') : ?>
+                        href="<?php echo esc_url($link_url); ?>"
+                        target="<?php echo esc_attr($link_target); ?>"
+                        <?php if ($link_target === '_blank') : ?>
+                            rel="noopener"
+                        <?php endif; ?>
+                        aria-label="<?php echo esc_attr($link_label ?: __('View details', 'atomic-design')); ?>"
+                    <?php endif; ?>
+                >
                     <?php if (!empty($image['url'])) : ?>
                         <div class="steps-grid__image-wrap">
                             <img
@@ -92,7 +112,7 @@ $portfolio_target = !empty($portfolio_link['target']) ? (string) $portfolio_link
                             <?php echo wp_kses_post(wpautop($description)); ?>
                         </div>
                     <?php endif; ?>
-                </article>
+                </<?php echo esc_html($item_tag); ?>>
             <?php endforeach; ?>
         </div>
 

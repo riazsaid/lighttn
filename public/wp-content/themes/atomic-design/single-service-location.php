@@ -43,39 +43,46 @@ get_header();
             'post_id' => $post_id,
             'section_index' => 1,
         ]);
-        get_template_part('template-parts/shared/insight-columns-sections', null, [
+        get_template_part('template-parts/shared/steps-grid-sections', null, [
             'post_id' => $post_id,
             'section_index' => 1,
         ]);
+
+        // get_template_part('template-parts/shared/insight-columns-sections', null, [
+        //     'post_id' => $post_id,
+        //     'section_index' => 1,
+        // ]);
         get_template_part('template-parts/shared/title-description-sections', null, [
             'post_id' => $post_id,
             'section_index' => 2,
             'class_name' => 'title-description-columns--service-location-areas',
         ]);
-        get_template_part('template-parts/shared/property-types-grid-sections', null, [
-            'post_id' => $post_id,
-            'section_index' => 1,
+        // get_template_part('template-parts/shared/property-types-grid-sections', null, [
+        //     'post_id' => $post_id,
+        //     'section_index' => 1,
+        // ]);
+        // get_template_part('template-parts/shared/proof-points-sections', null, [
+        //     'post_id' => $post_id,
+        //     'section_index' => 1,
+        // ]);
+        // get_template_part('template-parts/shared/consultation-cta-bar');
+        get_template_part('template-parts/shared/trust-bar', null, [
+            'heading' => get_field('service_location_trust_bar_title', $post_id),
         ]);
-        get_template_part('template-parts/shared/proof-points-sections', null, [
-            'post_id' => $post_id,
-            'section_index' => 1,
-        ]);
-        get_template_part('template-parts/shared/consultation-cta-bar');
-        get_template_part('template-parts/shared/trust-bar');
-        get_template_part('template-parts/shared/proof-points-sections', null, [
-            'post_id' => $post_id,
-            'section_index' => 2,
-        ]);
-        get_template_part('template-parts/shared/testimonials');
-        get_template_part('template-parts/shared/about-light-tn', null, [
-            'variant' => 'template',
-        ]);
-        get_template_part('template-parts/shared/split-callout-sections', null, [
-            'post_id' => $post_id,
-            'section_index' => 1,
-        ]);
+        // get_template_part('template-parts/shared/proof-points-sections', null, [
+        //     'post_id' => $post_id,
+        //     'section_index' => 2,
+        // ]);
+        // get_template_part('template-parts/shared/testimonials');
+        // get_template_part('template-parts/shared/about-light-tn', null, [
+        //     'variant' => 'template',
+        // ]);
+        // get_template_part('template-parts/shared/split-callout-sections', null, [
+        //     'post_id' => $post_id,
+        //     'section_index' => 1,
+        // ]);
         get_template_part('template-parts/shared/faqs', null, ['post_id' => $post_id]);
-        get_template_part('template-parts/shared/partners-affiliations');
+        // get_template_part('template-parts/shared/partners-affiliations');
         get_template_part('template-parts/shared/consultation-split');
     }
     ?>

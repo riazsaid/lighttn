@@ -19,3 +19,8 @@
     font-weight: bold;
     display: block;
 }
+@media (max-width: 640px){
+    .meet-team{
+        padding-bottom: var(--section-space-md);
+    }
+}

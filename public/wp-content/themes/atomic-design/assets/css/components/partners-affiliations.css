@@ -5,7 +5,7 @@
 }
 
 .partners-affiliations-block__group+.partners-affiliations-block__group {
-    margin-top: 18px;
+    margin-top: var(--space-md);
 }
 
 .partners-affiliations-block__heading {

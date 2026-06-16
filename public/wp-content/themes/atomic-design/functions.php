@@ -144,6 +144,36 @@ function atomic_design_fix_svg_mime_type($data, $file, $filename, $mimes, $real_
 add_filter('wp_check_filetype_and_ext', 'atomic_design_fix_svg_mime_type', 10, 5);
 
 /**
+ * Output per-page JSON-LD schema from the Schema JSON ACF field.
+ *
+ * Editors can paste either a full <script type="application/ld+json">...</script>
+ * snippet or complete JSON-LD only. The theme does not add schema properties.
+ */
+function atomic_design_output_schema_json()
+{
+    if (!is_singular() || !function_exists('get_field')) {
+        return;
+    }
+
+    $schema = trim((string) get_field('schema_json'));
+    if ($schema === '') {
+        return;
+    }
+
+    if (stripos($schema, '<script') !== false) {
+        if (!preg_match('/<script[^>]*type=["\']application\/ld\+json["\'][^>]*>.*?<\/script>/is', $schema)) {
+            return;
+        }
+
+        echo "\n" . $schema . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        return;
+    }
+
+    echo "\n<script type=\"application/ld+json\">\n" . $schema . "\n</script>\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+add_action('wp_head', 'atomic_design_output_schema_json');
+
+/**
  * Enqueue scripts and styles
  */
 function atomic_design_assets()
@@ -234,6 +264,30 @@ function atomic_design_admin_assets($hook_suffix)
     );
 }
 add_action('admin_enqueue_scripts', 'atomic_design_admin_assets');
+
+/**
+ * Keep Service + Location edit boxes in the same order as the template.
+ *
+ * WordPress stores metabox order per admin user, so ACF's JSON menu_order can be
+ * overridden after someone drags boxes around. This keeps this template editor
+ * predictable for every user.
+ */
+function atomic_design_service_location_metabox_order($order)
+{
+    return [
+        'normal'   => implode(',', [
+            'acf-group_atomic_hero_shared',
+            'acf-group_atomic_service_location_permalink',
+            'acf-group_atomic_title_description_sections_shared',
+            'acf-group_atomic_steps_grid_sections_shared',
+            'acf-group_atomic_service_location_trust_bar',
+            'acf-group_atomic_faq_shared',
+        ]),
+        'side'     => '',
+        'advanced' => '',
+    ];
+}
+add_filter('get_user_option_meta-box-order_service-location', 'atomic_design_service_location_metabox_order');
 
 /**
  * Ensure common layout blocks expose Gutenberg's custom class field.
@@ -1352,6 +1406,8 @@ function atomic_design_get_allowed_template_acf_fields()
         'detail_card_grid_sections',
         'spotlight_cards_sections',
         'design_process_sections',
+        'service_location_trust_bar_title',
+        'schema_json',
         '_permalink_uri',
     ];
 }

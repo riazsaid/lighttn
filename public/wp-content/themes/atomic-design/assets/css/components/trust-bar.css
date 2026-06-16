@@ -13,6 +13,16 @@
     overflow: visible;
 }
 
+.trust-bar-block--has-heading .trust-bar-block__inner {
+    display: block;
+}
+
+.trust-bar-block__heading {
+    margin: 0;
+    padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    text-align: left;
+}
+
 .trust-bar-block__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));

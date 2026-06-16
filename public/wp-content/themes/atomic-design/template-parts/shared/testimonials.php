@@ -13,14 +13,22 @@ if (!function_exists('get_field')) {
     return;
 }
 
+$args = isset($args) && is_array($args) ? $args : [];
 $testimonials = get_field('testimonials_list', 'option');
 
 if (empty($testimonials) || !is_array($testimonials)) {
     return;
 }
 
-$heading = get_field('testimonials_heading', 'option') ?: 'Trusted by Homeowners Across Middle Tennessee';
-$intro   = get_field('testimonials_intro', 'option') ?: 'Our clients’ feedback reflects our focus on thoughtful design, professional installation, and outdoor systems that perform exactly as intended.';
+$default_heading = __('TRUSTED BY HOMEOWNERS ACROSS MIDDLE TENNESSEE', 'atomic-design');
+$default_intro = __('Our clients’ feedback reflects our focus on thoughtful design, professional installation, and outdoor systems that perform exactly as intended.', 'atomic-design');
+
+$heading = isset($args['heading']) && trim((string) $args['heading']) !== ''
+    ? trim((string) $args['heading'])
+    : (get_field('testimonials_heading', 'option') ?: $default_heading);
+$intro = isset($args['intro']) && trim((string) $args['intro']) !== ''
+    ? trim((string) $args['intro'])
+    : (get_field('testimonials_intro', 'option') ?: $default_intro);
 
 $bg_type = get_field('testimonials_bg_type', 'option') ?: 'none';
 $color_1 = get_field('testimonials_color_1', 'option');
