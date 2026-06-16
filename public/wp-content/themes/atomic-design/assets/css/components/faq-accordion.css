@@ -7,6 +7,7 @@
     padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
+    overflow: visible;
 }
 
 .faq-container {
@@ -14,6 +15,16 @@
     grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
     gap: clamp(var(--space-md), 7vw, 88px);
     align-items: start;
+    overflow: visible;
+}
+
+/* Sticky Left Column */
+.faq-heading-wrap {
+    position: sticky;
+    top: 140px;
+    /* Adjust based on header height */
+    align-self: start;
+    height: fit-content;
 }
 
 .faq-heading {
@@ -113,10 +124,15 @@
     outline-offset: 3px;
 }
 
+/* Tablet */
 @media (max-width: 920px) {
     .faq-container {
         grid-template-columns: 1fr;
         gap: var(--space-xs);
+    }
+
+    .faq-heading-wrap {
+        position: static;
     }
 
     .faq-heading {
@@ -124,6 +140,7 @@
     }
 }
 
+/* Mobile */
 @media (max-width: 680px) {
     .faq-accordion-block {
         padding-bottom: var(--section-space-md);
