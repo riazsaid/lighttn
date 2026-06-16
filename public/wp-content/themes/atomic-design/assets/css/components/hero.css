@@ -390,6 +390,14 @@
         padding-bottom: var(--section-space-md);
     }
 
+    .hero__reviews::after {
+        display: none;
+    }
+
+    .hero__reviews::before {
+        display: none;
+    }
+
     .hero__panel {
         min-height: 560px;
     }
