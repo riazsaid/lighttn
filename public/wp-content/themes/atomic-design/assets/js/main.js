@@ -299,6 +299,7 @@
             let pointerStartX = 0;
             let pointerStartY = 0;
             let dragStartTranslate = 0;
+            const dragThreshold = 10;
 
             const getPerPage = () => window.matchMedia('(max-width: 760px)').matches ? 1 : 3;
             const getTrackGap = () => parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || 0) || 0;
@@ -362,8 +363,6 @@
                 pointerStartX = event.clientX;
                 pointerStartY = event.clientY;
                 dragStartTranslate = getTranslateForPage(currentPage);
-                track.classList.add('is-dragging');
-                viewport.setPointerCapture?.(event.pointerId);
             };
 
             const handlePointerMove = event => {
@@ -378,11 +377,17 @@
                     return;
                 }
 
-                if (Math.abs(deltaX) > 4) {
+                if (!hasDragged && Math.abs(deltaX) > dragThreshold) {
                     hasDragged = true;
-                    event.preventDefault();
+                    track.classList.add('is-dragging');
+                    viewport.setPointerCapture?.(event.pointerId);
                 }
 
+                if (!hasDragged) {
+                    return;
+                }
+
+                event.preventDefault();
                 track.style.transform = 'translateX(' + (dragStartTranslate + deltaX) + 'px)';
             };
 
@@ -396,7 +401,9 @@
 
                 isDragging = false;
                 track.classList.remove('is-dragging');
-                viewport.releasePointerCapture?.(event.pointerId);
+                if (hasDragged) {
+                    viewport.releasePointerCapture?.(event.pointerId);
+                }
 
                 if (hasDragged) {
                     suppressClick = true;
