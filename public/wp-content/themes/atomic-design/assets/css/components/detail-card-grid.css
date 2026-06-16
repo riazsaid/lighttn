@@ -1,15 +1,12 @@
+/* ============================================================
+   LIGHT TN DETAIL CARD GRID
+   ============================================================ */
+
 .detail-card-grid {
     padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
-}
-
-.detail-card-grid__layout {
-    display: grid;
-    grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.45fr);
-    gap: clamp(30px, 4vw, 48px);
-    align-items: start;
-    margin-top: clamp(40px, 4.5vw, 48px);
+    overflow: visible;
 }
 
 .detail-card-grid__intro {
@@ -48,9 +45,23 @@
     color: var(--bg-darkest);
 }
 
+.detail-card-grid__layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.45fr);
+    gap: clamp(30px, 4vw, 48px);
+    align-items: start;
+    margin-top: clamp(40px, 4.5vw, 48px);
+    overflow: visible;
+}
+
+/* Sticky Left Column */
 .detail-card-grid__support {
     display: grid;
     gap: 28px;
+    position: sticky;
+    top: 140px;
+    align-self: start;
+    height: fit-content;
 }
 
 .detail-card-grid__support-title {
@@ -105,16 +116,22 @@
     font-size: var(--h3);
 }
 
+/* Tablet */
 @media (max-width: 980px) {
+    .detail-card-grid {
+        padding-bottom: var(--section-space-md);
+    }
+
     .detail-card-grid__layout {
         grid-template-columns: 1fr;
     }
 
-    .detail-card-grid {
-        padding-bottom: var(--section-space-md);
+    .detail-card-grid__support {
+        position: static;
     }
 }
 
+/* Mobile */
 @media (max-width: 720px) {
     .detail-card-grid__cards {
         grid-template-columns: 1fr;
