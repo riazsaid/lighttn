@@ -221,7 +221,7 @@
     line-height: 1;
     color: var(--bg-darkest);
     text-decoration: none;
-    padding-right: 22px;
+    
 }
 
 .site-header__phone:hover,
