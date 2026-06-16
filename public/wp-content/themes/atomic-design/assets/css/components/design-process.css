@@ -82,7 +82,8 @@
 .design-process__visual {
     position: relative;
     display: block;
-    flex: 0 0 var(--design-process-collapsed);
+    /* flex: 0 0 var(--design-process-collapsed); */
+    flex: 1;
     min-width: 0;
     overflow: hidden;
     border-radius: 28px;
@@ -92,7 +93,8 @@
 }
 
 .design-process__visual.is-active {
-    flex: 0 0 calc(100% - ((var(--design-process-count) - 1) * var(--design-process-collapsed)) - ((var(--design-process-count) - 1) * var(--design-process-gap)));
+    /* flex: 0 0 calc(100% - ((var(--design-process-count) - 1) * var(--design-process-collapsed)) - ((var(--design-process-count) - 1) * var(--design-process-gap))); */
+    flex: 0 0 70%;
 }
 
 .design-process__visual .design-process__image-wrap {
