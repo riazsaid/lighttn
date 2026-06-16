@@ -29,6 +29,10 @@
     user-select: none;
 }
 
+.partners-affiliations-block__viewport a.partners-affiliations-block__card {
+    cursor: pointer;
+}
+
 .partners-affiliations-block__track {
     display: flex;
     gap: var(--partners-carousel-gap);
@@ -38,6 +42,10 @@
 
 .partners-affiliations-block__track.is-dragging {
     transition: none;
+}
+
+.partners-affiliations-block__track.is-dragging .partners-affiliations-block__card {
+    cursor: grabbing;
 }
 
 .partners-affiliations-block__viewport:active {
