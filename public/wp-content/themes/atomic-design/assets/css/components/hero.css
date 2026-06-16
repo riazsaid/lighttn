@@ -260,6 +260,22 @@
     pointer-events: none;
 }
 
+.hero__reviews::after {
+    content: "";
+    position: absolute;
+    right: 1px;
+    top: -25px;
+    bottom: 0;
+    width: 21px;
+    height: 25px;
+    border-bottom-right-radius: 48px;
+    box-shadow: 24px 24px 0 24px var(--bg-surface);
+    pointer-events: none;
+}
+
+
+
+
 
 .hero__review-initials {
     display: flex;
@@ -400,6 +416,14 @@
         padding: 34px 22px 30px;
         border-radius: 18px;
         background-position: 62% center;
+    }
+
+    .hero__reviews::after {
+        display: none;
+    }
+
+    .hero__reviews::before {
+        display: none;
     }
 
     .hero__title {
