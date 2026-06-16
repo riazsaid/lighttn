@@ -7,6 +7,7 @@
     padding-bottom: var(--section-space-lg);
     background: var(--bg-surface);
     color: var(--bg-darkest);
+    overflow: visible;
 }
 
 .testimonials-block__inner {
@@ -14,10 +15,17 @@
     grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
     gap: clamp(var(--space-md), 7vw, 86px);
     align-items: start;
+    overflow: visible;
 }
 
+/* Sticky Left Column */
 .testimonials-block__intro {
     max-width: 300px;
+    position: sticky;
+    top: 140px;
+    /* Adjust for sticky header */
+    align-self: start;
+    height: fit-content;
 }
 
 .testimonials-heading {
@@ -59,10 +67,28 @@
 
 .testimonial-text {
     flex: 1;
+    max-height: 5.1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px;
 }
 
 .testimonial-text p {
     margin: 0;
+}
+
+/* Scrollbar */
+.testimonial-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+.testimonial-text::-webkit-scrollbar-track {
+    background: var(--charcoal);
+}
+
+.testimonial-text::-webkit-scrollbar-thumb {
+    background: var(--cyan);
+    border-radius: 10px;
 }
 
 .testimonial-author {
@@ -89,34 +115,7 @@
     font-size: var(--body);
 }
 
-
-.testimonial-text {
-    flex: 1;
-    max-height: 5.1rem;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    padding-right: 5px;
-}
-
-
-/* Optional: smooth scrollbar (Chrome) */
-.testimonial-text::-webkit-scrollbar {
-    width: 5px;
-}
-
-.testimonial-text::-webkit-scrollbar-track {
-    background: var(--charcoal);
-}
-
-.testimonial-text::-webkit-scrollbar-thumb {
-    background: var(--cyan);
-    border-radius: 10px;
-}
-
-
-
+/* Tablet */
 @media (max-width: 920px) {
     .testimonials-block__inner {
         grid-template-columns: 1fr;
@@ -124,10 +123,12 @@
     }
 
     .testimonials-block__intro {
+        position: static;
         max-width: 620px;
     }
 }
 
+/* Mobile */
 @media (max-width: 680px) {
     .testimonials-block {
         padding-bottom: var(--section-space-md);

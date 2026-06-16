@@ -30,6 +30,7 @@
 @import url("./components/about-light-tn.css");
 @import url("./components/insight-columns.css");
 @import url("./components/static-page.css");
+@import url("./components/blog.css");
 @import url("./components/proof-points.css");
 @import url("./components/steps-grid.css");
 @import url("./components/property-types-grid.css");
@@ -45,4 +46,3 @@
 @import url("./components/what-design.css");
 @import url("./components/meet-team.css");
 @import url("./components/how-work.css");
-
