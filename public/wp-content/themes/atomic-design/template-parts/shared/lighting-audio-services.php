@@ -20,6 +20,10 @@ $items = isset($args['items']) && is_array($args['items'])
     ? $args['items']
     : (get_field('lighting_audio_services_items', 'option') ?: []);
 
+$fallback_items = isset($args['fallback_items']) && is_array($args['fallback_items'])
+    ? $args['fallback_items']
+    : [];
+
 $max_items = isset($args['max_items']) ? (int) $args['max_items'] : 0;
 $show_numbers = !empty($args['show_numbers']);
 $heading_alignment = isset($args['heading_alignment']) ? (string) $args['heading_alignment'] : 'center';
@@ -49,6 +53,68 @@ if ($max_items > 0) {
     $items = array_slice($items, 0, $max_items);
 }
 
+$get_item_image = static function ($item): array {
+    $image = is_array($item) ? ($item['image'] ?? null) : null;
+    $image_id = is_array($image) && !empty($image['ID']) ? (int) $image['ID'] : 0;
+    $image_url = is_array($image) && !empty($image['url']) ? (string) $image['url'] : '';
+    $image_alt = is_array($image) && !empty($image['alt']) ? (string) $image['alt'] : '';
+
+    return [
+        'image' => $image,
+        'id'    => $image_id,
+        'url'   => $image_url,
+        'alt'   => $image_alt,
+    ];
+};
+
+$normalize_title = static function ($title): string {
+    $title = strtolower(trim(wp_strip_all_tags((string) $title)));
+    $title = preg_replace('/\s+/', ' ', $title);
+
+    return is_string($title) ? $title : '';
+};
+
+$find_fallback_image = static function ($item, $item_index) use ($fallback_items, $get_item_image, $normalize_title): array {
+    if (empty($fallback_items)) {
+        return $get_item_image([]);
+    }
+
+    $title = is_array($item) && isset($item['title']) ? $normalize_title($item['title']) : '';
+
+    if ($title !== '') {
+        foreach ($fallback_items as $fallback_item) {
+            if (!is_array($fallback_item) || empty($fallback_item['title'])) {
+                continue;
+            }
+
+            $fallback_title = $normalize_title($fallback_item['title']);
+            $fallback_image = $get_item_image($fallback_item);
+
+            if ($fallback_title === '' || (!$fallback_image['id'] && $fallback_image['url'] === '')) {
+                continue;
+            }
+
+            $title_starts_with_fallback = strpos($title, $fallback_title . ' in ') === 0
+                || strpos($title, $fallback_title . ' for ') === 0
+                || strpos($title, $fallback_title . ' near ') === 0;
+
+            if ($title === $fallback_title || $title_starts_with_fallback) {
+                return $fallback_image;
+            }
+        }
+    }
+
+    if (isset($fallback_items[$item_index])) {
+        $fallback_image = $get_item_image($fallback_items[$item_index]);
+
+        if ($fallback_image['id'] || $fallback_image['url'] !== '') {
+            return $fallback_image;
+        }
+    }
+
+    return $get_item_image([]);
+};
+
 if ($heading === '' || empty($items)) {
     return;
 }
@@ -60,10 +126,14 @@ if ($heading === '' || empty($items)) {
 
         <div class="lighting-audio-services-block__grid">
             <?php foreach ($items as $item_index => $item):
-                $image = $item['image'] ?? null;
-                $image_id = is_array($image) && !empty($image['ID']) ? (int) $image['ID'] : 0;
-                $image_url = is_array($image) && !empty($image['url']) ? (string) $image['url'] : '';
-                $image_alt = is_array($image) && !empty($image['alt']) ? (string) $image['alt'] : '';
+                $image_data = $get_item_image($item);
+                if (!$image_data['id'] && $image_data['url'] === '') {
+                    $image_data = $find_fallback_image($item, $item_index);
+                }
+                $image = $image_data['image'];
+                $image_id = $image_data['id'];
+                $image_url = $image_data['url'];
+                $image_alt = $image_data['alt'];
                 $title = isset($item['title']) ? trim((string) $item['title']) : '';
                 $description = isset($item['description']) ? trim((string) $item['description']) : '';
                 $link = isset($item['link']) && is_array($item['link']) ? $item['link'] : [];

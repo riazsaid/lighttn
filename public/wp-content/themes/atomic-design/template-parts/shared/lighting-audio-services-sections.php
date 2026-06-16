@@ -27,6 +27,9 @@ if ($section_index > 0) {
     $sections = isset($sections[$target_index]) ? [$sections[$target_index]] : [];
 }
 
+$fallback_items = function_exists('get_field') ? (get_field('lighting_audio_services_items', 'option') ?: []) : [];
+$fallback_items = is_array($fallback_items) ? $fallback_items : [];
+
 foreach ($sections as $section) {
     $heading           = isset($section['lighting_audio_services_heading']) ? (string) $section['lighting_audio_services_heading'] : '';
     $heading_alignment = isset($section['lighting_audio_services_heading_alignment']) ? (string) $section['lighting_audio_services_heading_alignment'] : 'center';
@@ -45,6 +48,7 @@ foreach ($sections as $section) {
             'heading'           => $heading,
             'heading_alignment' => $heading_alignment,
             'items'             => $items,
+            'fallback_items'    => $fallback_items,
         ]
     );
 }
