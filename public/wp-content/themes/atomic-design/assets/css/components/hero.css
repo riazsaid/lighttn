@@ -283,7 +283,7 @@
     display: flex;
     gap: 3px;
     color: var(--raw-ffba00);
-    font-size: var(--p);
+    font-size: 2rem;
 }
 
 .hero__bbb {
@@ -406,3 +406,5 @@
         justify-self: start;
     }
 }
+
+

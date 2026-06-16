@@ -2,7 +2,9 @@
     background: var(--bg-surface);
     padding-bottom: var(--section-space-lg);
 }
-
+.three-column-layout p strong{
+    font-weight: bold;
+}
 .three-column-layout .wp-block-columns {
     border: 1px solid #e0e0e0;
     border-radius: 16px;
