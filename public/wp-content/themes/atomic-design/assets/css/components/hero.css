@@ -240,10 +240,10 @@
     column-gap: 18px;
     row-gap: 12px;
     align-items: center;
-    padding: 18px 16px 18px 16px;
+    padding: 12px 0 0 16px;
     background: var(--bg-surface);
     color: var(--bg-darkest);
-    border-top-left-radius: 50px;
+    border-top-left-radius: 32px;
     z-index: 2;
 }
 
@@ -285,8 +285,8 @@
 
 .hero__review-initial {
     --hero-initial-bg: var(--raw-6ba8df);
-    width: 54px;
-    height: 54px;
+    width: 70px;
+    height: 70px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -313,9 +313,9 @@
 
 .hero__stars {
     display: flex;
-    gap: 3px;
+    gap: 4px;
     color: var(--raw-ffba00);
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .hero__bbb {
