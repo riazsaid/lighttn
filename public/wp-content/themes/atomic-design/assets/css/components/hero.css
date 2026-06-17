@@ -243,7 +243,7 @@
     padding: 18px 16px 18px 16px;
     background: var(--bg-surface);
     color: var(--bg-darkest);
-    border-top-left-radius: 20px;
+    border-top-left-radius: 50px;
     z-index: 2;
 }
 
@@ -251,10 +251,11 @@
 .hero__reviews::before {
     content: "";
     position: absolute;
-    left: -21px;
+    left: -46px;
     bottom: 0;
-    width: 21px;
-    height: 25px;
+    top: 109px;
+    width: 46px;
+    height: 35px;
     border-bottom-right-radius: 48px;
     box-shadow: 24px 24px 0 24px var(--bg-surface);
     pointer-events: none;
@@ -264,10 +265,10 @@
     content: "";
     position: absolute;
     right: 1px;
-    top: -25px;
+    top: -35px;
     bottom: 0;
-    width: 21px;
-    height: 25px;
+    width: 30px;
+    height: 35px;
     border-bottom-right-radius: 48px;
     box-shadow: 24px 24px 0 24px var(--bg-surface);
     pointer-events: none;
@@ -424,14 +425,6 @@
         padding: 34px 22px 30px;
         border-radius: 18px;
         background-position: 62% center;
-    }
-
-    .hero__reviews::after {
-        display: none;
-    }
-
-    .hero__reviews::before {
-        display: none;
     }
 
     .hero__title {
