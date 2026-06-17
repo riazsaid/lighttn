@@ -17,6 +17,9 @@
 .contact-consultation__heading {
     padding-bottom: var(--space-xs);
 }
+.contact-consultation__subheading{
+    font-weight: bold;
+}
 
 .contact-consultation__top {
     display: grid;
@@ -68,6 +71,7 @@
     color: var(--raw-222222);
     font-size: var(--p);
     text-decoration: none;
+    padding-left: 44px;
 }
 
 .forminator-col {
