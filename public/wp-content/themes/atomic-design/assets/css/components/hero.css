@@ -233,18 +233,50 @@
 .hero__reviews {
     position: absolute;
     right: 79px;
-    bottom: -3px;
+    bottom: 0;
     width: min(100%, 390px);
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 18px;
     row-gap: 12px;
     align-items: center;
-    padding: 18px 0 0 16px;
-    border-top-left-radius: 28px;
+    padding: 18px 16px 18px 16px;
     background: var(--bg-surface);
     color: var(--bg-darkest);
+    border-top-left-radius: 50px;
+    z-index: 2;
 }
+
+/* Creates the scooped corner */
+.hero__reviews::before {
+    content: "";
+    position: absolute;
+    left: -46px;
+    bottom: 0;
+    top: 109px;
+    width: 46px;
+    height: 35px;
+    border-bottom-right-radius: 48px;
+    box-shadow: 24px 24px 0 24px var(--bg-surface);
+    pointer-events: none;
+}
+
+.hero__reviews::after {
+    content: "";
+    position: absolute;
+    right: 1px;
+    top: -35px;
+    bottom: 0;
+    width: 30px;
+    height: 35px;
+    border-bottom-right-radius: 48px;
+    box-shadow: 24px 24px 0 24px var(--bg-surface);
+    pointer-events: none;
+}
+
+
+
+
 
 .hero__review-initials {
     display: flex;
@@ -283,7 +315,7 @@
     display: flex;
     gap: 3px;
     color: var(--raw-ffba00);
-    font-size: var(--p);
+    font-size: 2rem;
 }
 
 .hero__bbb {
@@ -359,6 +391,14 @@
         padding-bottom: var(--section-space-md);
     }
 
+    .hero__reviews::after {
+        display: none;
+    }
+
+    .hero__reviews::before {
+        display: none;
+    }
+
     .hero__panel {
         min-height: 560px;
     }
@@ -385,6 +425,10 @@
         padding: 34px 22px 30px;
         border-radius: 18px;
         background-position: 62% center;
+    }
+
+    .hero__title {
+        font-size: var(--h2);
     }
 
     .hero__actions,
