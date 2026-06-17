@@ -174,7 +174,7 @@ a.contact-consultation__detail--email:hover {
     display: block;
     width: 100%;
     max-width: 520px;
-    min-height: 820px;
+    min-height: 600px;
     margin-left: auto;
     border: 0;
     background: var(--bg-surface);
@@ -281,7 +281,6 @@ a.contact-consultation__detail--email:hover {
 
     .contact-consultation__booking-frame {
         max-width: 520px;
-        min-height: 820px;
         margin-inline: auto;
     }
 }
@@ -294,7 +293,6 @@ a.contact-consultation__detail--email:hover {
 
     .contact-consultation__booking-frame {
         max-width: 100%;
-        min-height: 720px;
     }
 }
 
