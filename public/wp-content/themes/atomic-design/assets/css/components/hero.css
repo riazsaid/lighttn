@@ -82,7 +82,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 28px;
-    width: min(100%, 650px);
+    width: min(100%, 60%);
 }
 
 .hero__actions {
@@ -237,13 +237,12 @@
     width: min(100%, 390px);
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 18px;
-    row-gap: 12px;
+    column-gap: 8px;
     align-items: center;
-    padding: 18px 16px 18px 16px;
+    padding: 12px 0 0 16px;
     background: var(--bg-surface);
     color: var(--bg-darkest);
-    border-top-left-radius: 50px;
+    border-top-left-radius: 32px;
     z-index: 2;
 }
 
@@ -251,13 +250,14 @@
 .hero__reviews::before {
     content: "";
     position: absolute;
-    left: -46px;
+    left: -47px;
     bottom: 0;
-    top: 109px;
-    width: 46px;
-    height: 35px;
-    border-bottom-right-radius: 48px;
-    box-shadow: 24px 24px 0 24px var(--bg-surface);
+    z-index: -1;
+    top: 52px;
+    width: 47px;
+    height: 30px;
+    border-bottom-right-radius: 26px;
+    box-shadow: 24px 25px 0 17px var(--bg-surface);
     pointer-events: none;
 }
 
@@ -266,10 +266,11 @@
     position: absolute;
     right: 1px;
     top: -35px;
+    z-index: -1;
     bottom: 0;
     width: 30px;
     height: 35px;
-    border-bottom-right-radius: 48px;
+    border-bottom-right-radius: 32px;
     box-shadow: 24px 24px 0 24px var(--bg-surface);
     pointer-events: none;
 }
@@ -285,8 +286,8 @@
 
 .hero__review-initial {
     --hero-initial-bg: var(--raw-6ba8df);
-    width: 54px;
-    height: 54px;
+    width: 70px;
+    height: 70px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -303,7 +304,6 @@
 
 .hero__review-label {
     display: block;
-    margin-bottom: 10px;
     font-family: var(--font-body);
     font-size: var(--body);
     font-weight: 700;
@@ -313,9 +313,9 @@
 
 .hero__stars {
     display: flex;
-    gap: 3px;
+    gap: 4px;
     color: var(--raw-ffba00);
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .hero__bbb {
@@ -335,9 +335,16 @@
 
 .hero__bbb-text {
     display: block;
-    font-size: var(--p);
+    font-size: var(--body);
     color: var(--raw-0d7890);
     font-weight: 600;
+}
+
+.hero-star_bbb {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding-top: 2px;
 }
 
 @keyframes hero-vistahaven-enter {
@@ -448,5 +455,21 @@
     .hero__bbb {
         grid-column: auto;
         justify-self: start;
+    }
+
+    .hero__review-copy {
+        padding-top: 12px;
+    }
+
+    .hero__review-label {
+        font-size: var(--p);
+    }
+
+    .hero__bbb-text {
+        font-size: var(--p);
+    }
+
+    .hero-star_bbb {
+        padding-top: 5px;
     }
 }
