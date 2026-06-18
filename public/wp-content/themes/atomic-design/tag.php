@@ -1,26 +1,21 @@
 <?php
 /**
- * Blog index template.
- *
- * Used when a page is assigned as the Posts page in Settings > Reading.
+ * Tag archive template.
  *
  * @package AtomicDesign
  */
 
 get_header();
-
-$posts_page_id = (int) get_option('page_for_posts');
-$blog_title = $posts_page_id > 0 ? get_the_title($posts_page_id) : __('Blogs', 'atomic-design');
 ?>
 
 <main id="site-content" class="blog-index">
     <section class="blog-index__hero">
         <div class="container blog-index__hero-inner">
-            <h1 class="blog-index__title"><?php echo esc_html($blog_title ?: __('Blogs', 'atomic-design')); ?></h1>
+            <h1 class="blog-index__title"><?php single_tag_title(); ?></h1>
         </div>
     </section>
 
-    <section class="blog-index__posts" aria-label="<?php esc_attr_e('Blog posts', 'atomic-design'); ?>">
+    <section class="blog-index__posts" aria-label="<?php esc_attr_e('Tagged blog posts', 'atomic-design'); ?>">
         <div class="container">
             <?php if (have_posts()) : ?>
                 <div class="blog-card-grid">
@@ -42,8 +37,8 @@ $blog_title = $posts_page_id > 0 ? get_the_title($posts_page_id) : __('Blogs', '
                 ?>
             <?php else : ?>
                 <div class="blog-empty">
-                    <h2><?php esc_html_e('No blog posts yet', 'atomic-design'); ?></h2>
-                    <p><?php esc_html_e('Imported posts will appear here automatically.', 'atomic-design'); ?></p>
+                    <h2><?php esc_html_e('No posts found for this tag', 'atomic-design'); ?></h2>
+                    <p><?php esc_html_e('Try another tag or return to the blog.', 'atomic-design'); ?></p>
                 </div>
             <?php endif; ?>
         </div>
