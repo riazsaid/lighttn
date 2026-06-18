@@ -11,18 +11,12 @@ get_header();
 
 $posts_page_id = (int) get_option('page_for_posts');
 $blog_title = $posts_page_id > 0 ? get_the_title($posts_page_id) : __('Blogs', 'atomic-design');
-$blog_intro = $posts_page_id > 0 ? get_the_excerpt($posts_page_id) : '';
-
-if ('' === trim($blog_intro)) {
-    $blog_intro = __('Ideas, project notes, and practical guidance for outdoor lighting design, installation, and long-term performance.', 'atomic-design');
-}
 ?>
 
 <main id="site-content" class="blog-index">
     <section class="blog-index__hero">
         <div class="container blog-index__hero-inner">
             <h1 class="blog-index__title"><?php echo esc_html($blog_title ?: __('Blogs', 'atomic-design')); ?></h1>
-            <p class="blog-index__intro"><?php echo esc_html($blog_intro); ?></p>
         </div>
     </section>
 
@@ -51,15 +45,20 @@ if ('' === trim($blog_intro)) {
                             </a>
 
                             <div class="blog-card__body">
+                                <?php /*
                                 <p class="blog-card__meta">
                                     <span><?php echo esc_html($primary_category); ?></span>
                                     <time datetime="<?php echo esc_attr(get_the_date('c')); ?>"><?php echo esc_html(get_the_date()); ?></time>
                                 </p>
+                                */ ?>
                                 <h2 class="blog-card__title">
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h2>
-                                <?php if (has_excerpt()) : ?>
-                                    <p class="blog-card__excerpt"><?php echo esc_html(get_the_excerpt()); ?></p>
+                                <?php
+                                $card_excerpt = trim(get_the_excerpt());
+                                if ($card_excerpt !== '') :
+                                    ?>
+                                    <p class="blog-card__excerpt"><?php echo esc_html($card_excerpt); ?></p>
                                 <?php endif; ?>
                                 <a class="blog-card__link" href="<?php the_permalink(); ?>">
                                     <?php esc_html_e('Read More', 'atomic-design'); ?>
