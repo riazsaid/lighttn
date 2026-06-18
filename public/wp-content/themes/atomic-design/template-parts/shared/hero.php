@@ -85,13 +85,8 @@ $has_reviews = !empty($review_initials) || $review_label !== '' || $review_ratin
                 <div class="hero__lower">
                     <?php if ($has_actions): ?>
                         <div class="hero__actions hero__reveal">
-                            <button
-                                class="hero__link hero__link--primary"
-                                type="button"
-                                data-consultation-modal-open
-                                aria-haspopup="dialog"
-                                aria-controls="<?php echo esc_attr($modal_id); ?>"
-                            >
+                            <button class="hero__link hero__link--primary" type="button" data-consultation-modal-open
+                                aria-haspopup="dialog" aria-controls="<?php echo esc_attr($modal_id); ?>">
                                 <span class="hero__link-label"><?php echo esc_html($cta_title); ?></span>
                                 <span class="hero__link-icon" aria-hidden="true">
                                     <?php if (!empty($cta_icon['ID'])): ?>
@@ -155,54 +150,47 @@ $has_reviews = !empty($review_initials) || $review_label !== '' || $review_ratin
                     <?php if ($review_label !== ''): ?>
                         <strong class="hero__review-label"><?php echo esc_html($review_label); ?></strong>
                     <?php endif; ?>
+                    <div class="hero-star_bbb">
+                        <?php if ($review_rating > 0): ?>
+                            <div class="hero__stars"
+                                aria-label="<?php echo esc_attr(sprintf(__('%d out of 5 stars', 'atomic-design'), $review_rating)); ?>">
+                                <?php for ($star = 1; $star <= 5; $star++): ?>
+                                    <span aria-hidden="true"><?php echo $star <= $review_rating ? '★' : '☆'; ?></span>
+                                <?php endfor; ?>
+                            </div>
+                        <?php endif; ?>
 
-                    <?php if ($review_rating > 0): ?>
-                        <div class="hero__stars"
-                            aria-label="<?php echo esc_attr(sprintf(__('%d out of 5 stars', 'atomic-design'), $review_rating)); ?>">
-                            <?php for ($star = 1; $star <= 5; $star++): ?>
-                                <span aria-hidden="true"><?php echo $star <= $review_rating ? '★' : '☆'; ?></span>
-                            <?php endfor; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-
-                <?php if (!empty($bbb_logo['ID']) || !empty($bbb_logo['url']) || $bbb_text !== ''): ?>
-                    <div class="hero__bbb">
-                        <?php if (!empty($bbb_logo['ID'])): ?>
-                            <?php echo wp_get_attachment_image($bbb_logo['ID'], 'medium', false, [
-                                'class' => 'hero__bbb-logo',
-                                'alt' => $bbb_text,
-                            ]); ?>
-                        <?php elseif (!empty($bbb_logo['url'])): ?>
-                            <img class="hero__bbb-logo" src="<?php echo esc_url($bbb_logo['url']); ?>"
-                                alt="<?php echo esc_attr($bbb_text); ?>" loading="lazy" />
-                        <?php elseif ($bbb_text !== ''): ?>
-                            <span class="hero__bbb-text"><?php echo esc_html($bbb_text); ?></span>
+                        <?php if (!empty($bbb_logo['ID']) || !empty($bbb_logo['url']) || $bbb_text !== ''): ?>
+                            <div class="hero__bbb">
+                                <?php if (!empty($bbb_logo['ID'])): ?>
+                                    <?php echo wp_get_attachment_image($bbb_logo['ID'], 'medium', false, [
+                                        'class' => 'hero__bbb-logo',
+                                        'alt' => $bbb_text,
+                                    ]); ?>
+                                <?php elseif (!empty($bbb_logo['url'])): ?>
+                                    <img class="hero__bbb-logo" src="<?php echo esc_url($bbb_logo['url']); ?>"
+                                        alt="<?php echo esc_attr($bbb_text); ?>" loading="lazy" />
+                                <?php elseif ($bbb_text !== ''): ?>
+                                    <span class="hero__bbb-text"><?php echo esc_html($bbb_text); ?></span>
+                                <?php endif; ?>
+                            </div>
                         <?php endif; ?>
                     </div>
-                <?php endif; ?>
+                </div>
+
+
             </aside>
         <?php endif; ?>
     </div>
 
     <?php if ($has_actions): ?>
-        <div
-            class="consultation-cta-modal"
-            id="<?php echo esc_attr($modal_id); ?>"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="<?php echo esc_attr($modal_title_id); ?>"
-            hidden
-            data-consultation-modal
-        >
+        <div class="consultation-cta-modal" id="<?php echo esc_attr($modal_id); ?>" role="dialog" aria-modal="true"
+            aria-labelledby="<?php echo esc_attr($modal_title_id); ?>" hidden data-consultation-modal>
             <div class="consultation-cta-modal__overlay" data-consultation-modal-close></div>
             <div class="consultation-cta-modal__panel" role="document">
-                <button
-                    class="consultation-cta-modal__close"
-                    type="button"
+                <button class="consultation-cta-modal__close" type="button"
                     aria-label="<?php esc_attr_e('Close consultation form', 'atomic-design'); ?>"
-                    data-consultation-modal-close
-                >
+                    data-consultation-modal-close>
                     <span aria-hidden="true">×</span>
                 </button>
 
@@ -213,9 +201,9 @@ $has_reviews = !empty($review_initials) || $review_label !== '' || $review_ratin
                 </div>
 
                 <div class="consultation-cta-modal__form">
-                    <?php if ($form_id > 0) : ?>
+                    <?php if ($form_id > 0): ?>
                         <?php echo do_shortcode('[forminator_form id="' . absint($form_id) . '"]'); ?>
-                    <?php else : ?>
+                    <?php else: ?>
                         <div class="consultation-cta-modal__placeholder">
                             <?php esc_html_e('Select a Forminator form for this consultation popup.', 'atomic-design'); ?>
                         </div>
