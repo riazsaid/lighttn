@@ -16,12 +16,18 @@
 .blog-index__hero-inner {
     display: grid;
     gap: 18px;
+    justify-items: center;
+    text-align: center;
 }
 
 .blog-index__title,
 .blog-article__title {
     color: var(--charcoal);
     max-width: 980px;
+}
+
+.blog-index__title {
+    color: var(--raw-ffba00);
 }
 
 .blog-index__intro {
