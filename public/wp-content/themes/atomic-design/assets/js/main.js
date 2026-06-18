@@ -266,7 +266,7 @@
             });
         }, {
             root: null,
-            threshold: 0.12,
+            threshold: 0.01,
             rootMargin: '0px 0px -8% 0px'
         });
 
@@ -455,6 +455,7 @@
             const summaries = Array.from(section.querySelectorAll('[data-step-summary]'));
             const visuals = Array.from(section.querySelectorAll('[data-step-visual]'));
             const visualStack = section.querySelector('.design-process__visual-stack');
+            let activeIndex = -1;
 
             if (!buttons.length || !summaries.length || !visuals.length) {
                 return;
@@ -464,7 +465,29 @@
                 visualStack.style.setProperty('--design-process-count', String(visuals.length));
             }
 
-            const activateStep = index => {
+            const setVisualColumns = index => {
+                if (!visualStack) {
+                    return;
+                }
+
+                if (!desktopMedia.matches) {
+                    visualStack.style.removeProperty('grid-template-columns');
+                    return;
+                }
+
+                visualStack.style.gridTemplateColumns = visuals.map((visual, visualIndex) => {
+                    return visualIndex === index ? 'minmax(0, 12fr)' : 'minmax(72px, 1fr)';
+                }).join(' ');
+            };
+
+            const activateStep = (index, forceUpdate = false) => {
+                if (!forceUpdate && activeIndex === index) {
+                    return;
+                }
+
+                activeIndex = index;
+                setVisualColumns(index);
+
                 buttons.forEach((button, buttonIndex) => {
                     const isActive = buttonIndex === index;
                     button.classList.toggle('is-active', isActive);
@@ -504,6 +527,10 @@
                         activateStep(index);
                     }
                 });
+            });
+
+            desktopMedia.addEventListener?.('change', () => {
+                activateStep(activeIndex >= 0 ? activeIndex : 0, true);
             });
 
             section.dataset.designProcessReady = 'true';
